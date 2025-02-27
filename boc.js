@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Define cumulative box office collections for movies
     const dayValues = {
         "Post Title": ["100", "120", "150", "180", "210", "250", "300", "350", "400", "450", "500", "550", "600", "650", "700"],
-        "BOC Final Template 1": ["100","120"],
+        "BOC Final Template 2": ["100","120"],
         // Add more movie titles and data
     };
 
