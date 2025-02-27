@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch JSON Data
-    fetch("https://cdn.jsdelivr.net/gh/pnf3/my-js-files@main/data.json")
+    fetch("https://cdn.jsdelivr.net/gh/pnf3/my-js-files@main/data-update.json")
         .then(response => response.json())
         .then(dayValues => {
             updateTable(dayValues);
