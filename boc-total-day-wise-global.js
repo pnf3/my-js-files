@@ -1,33 +1,35 @@
-// Define dayValues globally
-window.dayValues = {  
-    "Post Title Example": {"1": "41", "2": "47", "3": "58.5", "4": "34", "5": "35.25", "6": "42", "7": "31.5", 
-                           "8": "33.5", "9": "54", "10": "50", "11": "28", "12": "28.5", "13": "33", "14": "23.25", 
-                           "15": "14.02"},
 
-    "Chhaava Movie Worldwide Box Office Collection Day Wise": {"1": "41", "2": "47", "3": "58.5", "4": "34", "5": "35.25", "6": "42", "7": "31.5", 
-                                                               "8": "33.5", "9": "54", "10": "50", "11": "28", "12": "28.5", "13": "33", "14": "23.25" 
-                                                               }
-};
-
+    // Define cumulative box office collections for movies
+     window.dayValues = {
+        "Post Title Example": {"1": "41", "2": "47", "3": "58.5", "4": "34", "5": "35.25", "6": "42", "7": "31.5", 
+                               "8": "33.5", "9": "54", "10": "50", "11": "28", "12": "28.5", "13": "33", "14": "23.25", 
+                               "15": "14.02"},
+         
+        "Chhaava Movie Worldwide Box Office Collection Day Wise": {"1": "41", "2": "47", "3": "58.5", "4": "34", "5": "35.25", "6": "42", "7": "31.5", 
+                                                                   "8": "33.5", "9": "54", "10": "50", "11": "28", "12": "28.5", "13": "33", "14": "23.25" 
+                                                                   }
+    };
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Checking dayValues:", window.dayValues); // Debugging: Check if dayValues exists
-
     // Get the current post title
     const postTitleElement = document.querySelector("h1.entry-title");
     if (!postTitleElement) return; // Exit if title is missing
 
     const postTitle = postTitleElement.textContent.trim();
+   const cumulativeValuesObj = dayValues[postTitle]; // Now an object
 
-    // Use global dayValues
-    const cumulativeValuesObj = window.dayValues[postTitle]; // Now an object
+// Convert object values to an ordered array
+const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat(value));
 
-    if (!cumulativeValuesObj) {
-        console.warn("No data found for:", postTitle);
-        return;
-    }
+    // Compute daily earnings from cumulative values
+   // let previousValue = 0;
+ //   let dailyEarnings = cumulativeValues.map((currentValue, index) => {
+  //     let earning = index === 0 ? parseFloat(currentValue) : parseFloat(currentValue) - previousValue;
+   //     previousValue = parseFloat(currentValue);
+   //     return earning;
+  //  });
 
-    // Convert object values to an ordered array
-    const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat(value));
+    // Reverse daily earnings to match the table's descending order
+//    dailyEarnings.reverse();
 
     // Get table body
     const tbody = document.getElementById("boxOfficeBody");
@@ -80,6 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Append new rows to the table
     tbody.innerHTML = newRows.join("") + tbody.innerHTML;
+
+    // Update total collection
+   // const totalSumCell = document.getElementById("totalSum");
+   // if (totalSumCell) {
+   //     totalSumCell.textContent = cumulativeValues[cumulativeValues.length - 1] + " Crs";
+   // }
 
     // Helper Functions
     function getDayName(releaseDate, dayNum) {
