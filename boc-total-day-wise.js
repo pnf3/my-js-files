@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Define cumulative box office collections for movies
      const dayValues = {
-        "Ruslaan: Day-Wise Box Office Collection": {
-            "1": "100", "2": "120", "3": "150", "4": "180", "5": "210",
-            "6": "250", "7": "300", "8": "350", "9": "400", "10": "450",
-            "11": "500", "12": "550", "13": "600", "14": "650", "15": "700"
-        },
-        "BOC Final Template 1 Backup with DayWise Entry With Label": {
-            "1": "200", "2": "100", 
-        }
+        "Post Title Example": {"1": "41", "2": "47", "3": "58.5", "4": "34", "5": "35.25", "6": "42", "7": "31.5", 
+                               "8": "33.5", "9": "54", "10": "50", "11": "28", "12": "28.5", "13": "33", "14": "23.25", 
+                               "15": "14.02"},
+         
+        "Chhaava Movie Worldwide Box Office Collection Day Wise": {"1": "41", "2": "47", "3": "58.5", "4": "34", "5": "35.25", "6": "42", "7": "31.5", 
+                                                                   "8": "33.5", "9": "54", "10": "50", "11": "28", "12": "28.5", "13": "33", "14": "23.25" 
+                                                                   }
     };
 
     // Get the current post title
