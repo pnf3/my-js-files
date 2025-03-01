@@ -8,5 +8,5 @@
                                                                    "8": "33.5", "9": "54", "10": "50", "11": "28", "12": "28.5", "13": "33", "14": "23.25",
                                                                    "15": "24.15"
                                                                    },
-"Crazxy Movie Worldwide Box Office Collection Day Wise": {"1": "1.2"}
+"Crazxy Movie Worldwide Box Office Collection Day Wise": {"1": "1.3"}
     };
