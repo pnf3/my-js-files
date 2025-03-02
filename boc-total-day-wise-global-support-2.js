@@ -145,7 +145,7 @@ let todayCollectionCell, currentDayNum;
 
     if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
 
-    const movieName = entryTitle.textContent.replace("Movie Worldwide Box Office Collection Day Wise", "").trim() || "Movie";
+    const movieName = entryTitle.textContent.replace("Worldwide Box Office Collection Day Wise", "").trim() || "Movie";
     document.querySelectorAll("[id^='movie-name-']").forEach(el => el.textContent = movieName);
 
     let latestDay = null, totalSum = 0, currentWeek = null;
@@ -246,7 +246,7 @@ setTimeout(() => {
     if (metaDescription) {
         if (entryTitle.textContent.includes("Box Office Collection")) {
             metaDescription.content = `${movieName} Box Office Collection: Track worldwide earnings, daily updates, and total revenue up to ${latestDay}. Stay tuned for more!`;
-            document.title = `${movieName} Movie Worldwide Box Office Collection ${latestDay}`;
+            document.title = `${movieName} Worldwide Box Office Collection ${latestDay}`;
         } else {
             metaDescription.content = `Explore ${entryTitle.textContent.trim()} List year-wise, from the first film to the latest and upcoming releases, along with the total movie count.`;
         }
