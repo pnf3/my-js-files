@@ -250,7 +250,7 @@ setTimeout(() => {
         } else {
             metaDescription.content = `Explore ${entryTitle.textContent.trim()} List year-wise, from the first film to the latest and upcoming releases, along with the total movie count.`;
         }
-        entryTitle.textContent = entryTitle.textContent.replace("Day Wise", `Day1 to ${latestDay}`);
+       entryTitle.textContent = entryTitle.textContent.replace("Day Wise", latestDay);
 
     }
      
