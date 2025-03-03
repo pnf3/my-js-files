@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
    const cumulativeValuesObj = dayValues[postTitle]; // Now an object
 
 // Convert object values to an ordered array
-const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat(value.toFixed(2)));
+const dailyEarnings = Object.values(cumulativeValuesObj).map(value => Number(parseFloat(value).toFixed(2)));
+
 
     // Compute daily earnings from cumulative values
    // let previousValue = 0;
