@@ -54,7 +54,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
             `<tr>
                 <td>Day ${nextDay}</td>
                 <td>${dayName}</td>
-                <td>${collection.toFixed(1)}</td>
+                <td>${collection.toFixed(2)}</td>
             </tr>`
         );
 
@@ -64,7 +64,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
             newRows.unshift(
                 `<tr class="week-summary">
                     <td colspan="2">${weekOrdinal} Week Total</td>
-                    <td>${weekTotals[weekNum].toFixed(1)}</td>
+                    <td>${weekTotals[weekNum].toFixed(2)}</td>
                 </tr>`
             );
         }
