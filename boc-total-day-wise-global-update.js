@@ -9,6 +9,6 @@ window.dayValues = {
         8: 33.5, 9: 54, 10: 50, 11: 28, 12: 28.5, 13: 33, 14: 23.25, 15: 24.15, 16: 23.17, 17: 25.19
     },
     "Crazxy Movie Worldwide Box Office Collection Day Wise": {
-        1: 1.3
+        1: 1.3, 2: 1.5, 3: 1.9
     }
 };
