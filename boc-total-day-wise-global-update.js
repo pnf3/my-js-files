@@ -10,5 +10,8 @@ window.dayValues = {
     },
     "Crazxy Movie Worldwide Box Office Collection Day Wise": {
         1: 1.3, 2: 1.5, 3: 1.9
+    },
+    "Badnaam Movie Worldwide Box Office Collection Day Wise": {
+        1: 0.25, 2: 0.30, 3: 0.32
     }
 };
