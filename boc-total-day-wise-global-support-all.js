@@ -54,7 +54,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
             `<tr>
                 <td>Day ${nextDay}</td>
                 <td>${dayName}</td>
-                <td>${collection.toFixed(1)}</td>
+                <td>${collection.toFixed(2)}</td>
             </tr>`
         );
 
@@ -64,7 +64,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
             newRows.unshift(
                 `<tr class="week-summary">
                     <td colspan="2">${weekOrdinal} Week Total</td>
-                    <td>${weekTotals[weekNum].toFixed(1)}</td>
+                    <td>${weekTotals[weekNum].toFixed(2)}</td>
                 </tr>`
             );
         }
@@ -193,7 +193,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
             `<tr>
                 <td>Day ${nextDay}</td>
                 <td>${dayName}</td>
-                <td>${lastCollection.toFixed(1)}</td>
+                <td>${lastCollection.toFixed(2)}</td>
             </tr>`
         );
 
@@ -203,7 +203,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
             newRows.unshift(
                 `<tr class="week-summary">
                     <td colspan="2">${weekOrdinal} Week Total</td>
-                    <td>${weekTotals[weekNum].toFixed(1)}</td>
+                    <td>${weekTotals[weekNum].toFixed(2)}</td>
                 </tr>`
             );
         }
@@ -302,7 +302,7 @@ let todayCollectionCell, currentDayNum;
         let startOfDay = new Date(now);
         startOfDay.setHours(0, 0, 0, 0);
         let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
-        let simulatedCollection = (maxTodayCollection * elapsedTime).toFixed(1);
+        let simulatedCollection = (maxTodayCollection * elapsedTime).toFixed(2);
 
         let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
         if (simulatedCollection > previousValue) {
@@ -312,8 +312,8 @@ let todayCollectionCell, currentDayNum;
             todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup>`;
         }
 
-        totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(1);
-        totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(1);
+        totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
+        totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
 
         generateChart(); // ✅ Update the chart dynamically
     }
@@ -333,14 +333,14 @@ setTimeout(() => {
 
     Object.entries(weekSums).forEach(([week, sum]) => {
         if (sum > 0) {
-            weekTotalElements[week].cells[1].textContent = sum.toFixed(1);
+            weekTotalElements[week].cells[1].textContent = sum.toFixed(2);
         } else {
             weekTotalElements[week].style.display = "none";
         }
     });
 
-    if (totalSumElement) totalSumElement.textContent = totalSum.toFixed(1);
-    if (totalSumElement2) totalSumElement2.textContent = totalSum.toFixed(1);
+    if (totalSumElement) totalSumElement.textContent = totalSum.toFixed(2);
+    if (totalSumElement2) totalSumElement2.textContent = totalSum.toFixed(2);
 
     if (latestDayElement && nextDayElement && latestDay) {
         latestDayElement.textContent = latestDay;
