@@ -176,16 +176,19 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
         let weekNum = Math.ceil(nextDay / 7);
         if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
-        // **Adjust growth based on day of the week**
-        if (dayName === "Friday") {
-            lastCollection *= 1.25;  // ⬆️ 25% Increase
-        } else if (dayName === "Saturday") {
-            lastCollection *= 1.40;  // ⬆️ 40% Increase
-        } else if (dayName === "Sunday") {
-            lastCollection *= 1.20;  // ⬆️ 20% Increase
-        } else {
-            lastCollection *= 0.60;  // ⬇️ 15% Decrease (Monday to Thursday)
-        }
+        // Adjust growth based on the day of the week
+if (dayName === "Friday") {
+    lastCollection *= 1.25;  // ⬆️ 25% Increase over Thursday
+} else if (dayName === "Saturday") {
+    lastCollection *= 1.40;  // ⬆️ 40% Increase over Friday
+} else if (dayName === "Sunday") {
+    lastCollection *= 1.15;  // ⬆️ 15% Increase over Saturday
+} else if (dayName === "Monday") {
+    lastCollection *= 0.40;  // ⬇️ 60% Decrease from Sunday
+} else {
+    lastCollection *= 0.75;  // ⬇️ 25% Decrease (Tuesday to Thursday)
+}
+
 
         weekTotals[weekNum] += lastCollection;
 
