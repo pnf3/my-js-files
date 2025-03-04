@@ -624,7 +624,7 @@ updateTime();
 
 // Run function when the page is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => loadRelatedPostsTable(), 1);
+    setTimeout(() => loadRelatedPostsTable(), 500);
 });
 
 
