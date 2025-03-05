@@ -354,7 +354,7 @@ setTimeout(() => {
     if (metaDescription) {
         if (entryTitle.textContent.includes("Box Office Collection")) {
             metaDescription.content = `${movieName} Box Office Collection: Track worldwide earnings, daily updates, and total revenue up to ${latestDay}. Stay tuned for more!`;
-            document.title = `${movieName} Worldwide Box Office Collection ${latestDay}`;
+          //  document.title = `${movieName} Worldwide Box Office Collection ${latestDay}`;
         } else {
             metaDescription.content = `Explore ${entryTitle.textContent.trim()} List year-wise, from the first film to the latest and upcoming releases, along with the total movie count.`;
         }
