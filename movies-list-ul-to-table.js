@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
     const entryTitle = document.querySelector("h1.entry-title");
 
- //   if (metaDescription) {
- //     metaDescription.content = `Explore //${pageTitle} List year wise, from the first film to //the latest and upcoming releases, along with the //total movies count.`;
-//}
+   if (metaDescription) {
+     metaDescription.content = `Explore ${pageTitle} List year wise, from the first film to the latest and upcoming releases, along with the total movies count.`;
+}
 
     // Update last movie list item
     const lastMovieItem = moviesList.querySelector("li:last-child");
