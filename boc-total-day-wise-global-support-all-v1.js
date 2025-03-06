@@ -593,7 +593,7 @@ updateTime();
 
         if (relatedItems.length === 0) {
             // Retry after 500ms if elements are not yet loaded
-            setTimeout(loadRelatedPostsTable, 500);
+            setTimeout(loadRelatedPostsTable, 0);
             return;
         }
 
@@ -622,7 +622,7 @@ updateTime();
 
     // Run function when the page is fully loaded
     document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(loadRelatedPostsTable, 1000); // Delay initial execution by 1 second
+        setTimeout(loadRelatedPostsTable, 1000000); // Delay initial execution by 1 second
     });
 
 
