@@ -285,7 +285,10 @@ let todayCollectionCell, currentDayNum;
                     totalSum += collection;
                 }
 
-                if (currentWeek) weekSums[currentWeek] += collection;
+                if (row === todayRow) {
+    weekSums[currentWeek] += parseFloat(simulatedCollection) || 0;
+}
+
                 if (!latestDay) latestDay = row.cells[0].textContent.trim();
             } else {
                 row.style.display = "none";
