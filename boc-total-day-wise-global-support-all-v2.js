@@ -592,49 +592,7 @@ updateTime();
       });
   });
   
-     function loadRelatedPostsTable(retryCount = 0) {
-    const maxRetries = 10; // Limit retries to prevent infinite loops
-    const relatedItems = document.querySelectorAll(".related-items .post");
-    const tableBody = document.querySelector("#moviesTable tbody");
-
-    if (!tableBody) {
-        console.warn("Table body not found. Aborting function.");
-        return;
-    }
-
-    if (relatedItems.length === 0) {
-        if (retryCount < maxRetries) {
-            setTimeout(() => loadRelatedPostsTable(retryCount + 1), 500);
-        } else {
-            console.warn("Max retries reached. No related posts found.");
-        }
-        return;
-    }
-
-    const relatedWrap = document.getElementById("related-wrap");
-    if (relatedWrap) relatedWrap.innerHTML = ""; // Clear existing layout
-
-    tableBody.innerHTML = ""; // Clear previous entries to prevent duplicates
-
-    relatedItems.forEach(post => {
-        let titleElement = post.querySelector(".entry-title a");
-        let link = titleElement ? titleElement.href : "#";
-        let title = titleElement ? titleElement.textContent.trim() : "Unknown Title";
-
-        let row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${title}</td>
-            <td><a href="${link}" target="_blank">View</a></td>
-        `;
-
-        tableBody.appendChild(row);
-    });
-}
-
-// Run function when the page is fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => loadRelatedPostsTable(), 500);
-});
+    //Related Posts Here
 
 
 
