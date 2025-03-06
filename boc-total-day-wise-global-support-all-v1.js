@@ -622,7 +622,7 @@ updateTime();
 
     // Run function when the page is fully loaded
     document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(loadRelatedPostsTable, 1000000); // Delay initial execution by 1 second
+        setTimeout(loadRelatedPostsTable, 0); // Delay initial execution by 1 second
     });
 
 
