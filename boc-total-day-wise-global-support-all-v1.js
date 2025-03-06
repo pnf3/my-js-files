@@ -245,12 +245,12 @@ let todayCollectionCell, currentDayNum;
     const nextDayElement = document.getElementById("next-day");
     const totalSumElement = document.getElementById("totalSum");
     const totalSumElement2 = document.getElementById("totalSum-2");
+    const currentWeekSumElement = document.getElementById("currentWeekSum");
     const rows = document.querySelectorAll("#boxOfficeBody tr");
     const releaseDateElement = document.getElementById("theatrical-date");
     const chartCanvas = document.getElementById("boxOfficeChart");
     let chartInstance = null;
-      
-
+    
     if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
 
     const movieName = entryTitle.textContent.replace("Worldwide Box Office Collection Day Wise", "").trim() || "Movie";
@@ -278,17 +278,15 @@ let todayCollectionCell, currentDayNum;
             const collectionCell = row.cells[2];
             const collection = parseFloat(collectionCell?.textContent.trim());
 
-           if (!isNaN(collection)) {
-    if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-	   // Exclude today’s full collection before 11:59 PM, but simulate it
-    
-    } else {
-	 totalSum += collection;
-        if (currentWeek) weekSums[currentWeek] += collection;
-    }
-
-    if (!latestDay) latestDay = row.cells[0].textContent.trim();
-} else {
+            if (!isNaN(collection)) {
+                if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
+                    // Exclude today’s full collection before 11:59 PM, but simulate it
+                } else {
+                    totalSum += collection;
+                    if (currentWeek) weekSums[currentWeek] += collection;
+                }
+                if (!latestDay) latestDay = row.cells[0].textContent.trim();
+            } else {
                 row.style.display = "none";
             }
         }
@@ -296,7 +294,6 @@ let todayCollectionCell, currentDayNum;
 
     function updateTodayCollection() {
         let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
-
         let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
         let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
 
@@ -318,16 +315,12 @@ let todayCollectionCell, currentDayNum;
 
         totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
         totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
-	   // ✅ Add simulation value to current week's sum
-    if (currentWeek && weekSums[currentWeek] !== undefined) {
-        weekSums[currentWeek] += parseFloat(simulatedCollection);
-
-        if (weekTotalElements[currentWeek]) {
-            let weekSumCell = weekTotalElements[currentWeek].cells[1]; // Assuming 2nd cell holds week sum
-            weekSumCell.textContent = weekSums[currentWeek].toFixed(2);
+        
+        if (currentWeek) {
+            currentWeekSumElement.textContent = (weekSums[currentWeek] + parseFloat(simulatedCollection)).toFixed(2);
         }
-    }
- generateChart(); // ✅ Update the chart dynamically
+        
+        generateChart(); // ✅ Update the chart dynamically
     }
 
     // Run immediately when the page loads
