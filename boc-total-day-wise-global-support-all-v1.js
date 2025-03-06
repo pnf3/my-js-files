@@ -36,7 +36,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
     let maxDayAllowed = Math.floor((today - releaseDate) / (1000 * 60 * 60 * 24)) + 1;
 
     let newRows = [];
-//   let weekTotals = {};
+    let weekTotals = {};
 
     // Insert missing days dynamically
     for (let i = 0; i < dailyEarnings.length; i++) {
@@ -45,10 +45,10 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
 
         let dayName = getDayName(releaseDate, nextDay);
         let weekNum = Math.ceil(nextDay / 7);
-     //   if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
+        if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
         let collection = dailyEarnings[i] || 0;
-    //    weekTotals[weekNum] += collection;
+        weekTotals[weekNum] += collection;
 
         newRows.unshift(
             `<tr>
@@ -59,15 +59,15 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
         );
 
         // Insert Week Summary on Last Day of the Week
-    //    if (nextDay % 7 === 0) {
-        //    let weekOrdinal = getOrdinal(weekNum);
-       //     newRows.unshift(
-        //        `<tr class="week-summary">
-         //           <td colspan="2">${weekOrdinal} Week Total</td>
-         //           <td>${weekTotals[weekNum].toFixed(2)}</td>
-          //      </tr>`
-           // );
-      //  }
+        if (nextDay % 7 === 0) {
+            let weekOrdinal = getOrdinal(weekNum);
+            newRows.unshift(
+                `<tr class="week-summary">
+                    <td colspan="2">${weekOrdinal} Week Total</td>
+                    <td>${weekTotals[weekNum].toFixed(2)}</td>
+                </tr>`
+            );
+        }
     }
 
     // Append new rows to the table
@@ -245,12 +245,12 @@ let todayCollectionCell, currentDayNum;
     const nextDayElement = document.getElementById("next-day");
     const totalSumElement = document.getElementById("totalSum");
     const totalSumElement2 = document.getElementById("totalSum-2");
-    const currentWeekSumElement = document.getElementById("currentWeekSum");
     const rows = document.querySelectorAll("#boxOfficeBody tr");
     const releaseDateElement = document.getElementById("theatrical-date");
     const chartCanvas = document.getElementById("boxOfficeChart");
     let chartInstance = null;
-    
+      
+
     if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
 
     const movieName = entryTitle.textContent.replace("Worldwide Box Office Collection Day Wise", "").trim() || "Movie";
@@ -283,8 +283,9 @@ let todayCollectionCell, currentDayNum;
                     // Exclude today’s full collection before 11:59 PM, but simulate it
                 } else {
                     totalSum += collection;
-                    if (currentWeek) weekSums[currentWeek] += collection;
                 }
+
+                if (currentWeek) weekSums[currentWeek] += collection;
                 if (!latestDay) latestDay = row.cells[0].textContent.trim();
             } else {
                 row.style.display = "none";
@@ -294,6 +295,7 @@ let todayCollectionCell, currentDayNum;
 
     function updateTodayCollection() {
         let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+
         let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
         let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
 
@@ -315,11 +317,7 @@ let todayCollectionCell, currentDayNum;
 
         totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
         totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
-        
-        if (currentWeek) {
-            currentWeekSumElement.textContent = (weekSums[currentWeek] + parseFloat(simulatedCollection)).toFixed(2);
-        }
-        
+
         generateChart(); // ✅ Update the chart dynamically
     }
 
