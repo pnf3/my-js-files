@@ -278,16 +278,16 @@ let todayCollectionCell, currentDayNum;
             const collectionCell = row.cells[2];
             const collection = parseFloat(collectionCell?.textContent.trim());
 
-            if (!isNaN(collection)) {
-                if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-                    // Exclude today’s full collection before 11:59 PM, but simulate it
-                } else {
-                    totalSum += collection;
-                }
+           if (!isNaN(collection)) {
+    if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
+        // Exclude today’s full collection before 11:59 PM, but simulate it
+    } else {
+        totalSum += collection;
+        if (currentWeek) weekSums[currentWeek] += collection;
+    }
 
-                if (currentWeek) weekSums[currentWeek] += collection;
-                if (!latestDay) latestDay = row.cells[0].textContent.trim();
-            } else {
+    if (!latestDay) latestDay = row.cells[0].textContent.trim();
+} else {
                 row.style.display = "none";
             }
         }
