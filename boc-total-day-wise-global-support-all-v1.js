@@ -36,7 +36,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
     let maxDayAllowed = Math.floor((today - releaseDate) / (1000 * 60 * 60 * 24)) + 1;
 
     let newRows = [];
- //   let weekTotals = {};
+//   let weekTotals = {};
 
     // Insert missing days dynamically
     for (let i = 0; i < dailyEarnings.length; i++) {
@@ -45,9 +45,9 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
 
         let dayName = getDayName(releaseDate, nextDay);
         let weekNum = Math.ceil(nextDay / 7);
-        if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
+     //   if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
-     //   let collection = dailyEarnings[i] || 0;
+        let collection = dailyEarnings[i] || 0;
     //    weekTotals[weekNum] += collection;
 
         newRows.unshift(
