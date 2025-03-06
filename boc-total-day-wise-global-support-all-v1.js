@@ -283,9 +283,18 @@ let todayCollectionCell, currentDayNum;
                     // Exclude today’s full collection before 11:59 PM, but simulate it
                 } else {
                     totalSum += collection;
+			if (currentWeek) {
+    weekSums[currentWeek] += collection; // Add past days' collections
+
+    // If it's the current week's last recorded day (today), add the simulated value
+    if (row === todayRow) {
+        weekSums[currentWeek] += parseFloat(simulatedCollection) || 0;
+    }
+}
+
                 }
 
-                if (currentWeek) weekSums[currentWeek] += collection;
+              
                 if (!latestDay) latestDay = row.cells[0].textContent.trim();
             } else {
                 row.style.display = "none";
