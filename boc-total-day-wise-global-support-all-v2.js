@@ -593,7 +593,58 @@ updateTime();
   });
   
     //Related Posts Here
+document.addEventListener("DOMContentLoaded", function () {
+    function convertRelatedPostsToTable() {
+        const relatedWrap = document.getElementById("related-wrap");
+        const relatedItems = relatedWrap.querySelectorAll(".related-items .post");
 
+        if (relatedItems.length === 0) return; // Prevent empty table creation
+
+        // Create the table structure with id and class
+        let tableHTML = `
+            <h3>You Might Like</h3>
+<table id="moviesTable" class="custom-table" border="1" style="width:100%; border-collapse: collapse;">
+                <thead>
+
+                    <tr>
+                        <th>Title</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        relatedItems.forEach((item) => {
+            const titleElement = item.querySelector(".entry-title a");
+            const title = titleElement ? titleElement.textContent.trim() : "No Title";
+            const link = titleElement ? titleElement.href : "#";
+
+            tableHTML += `
+                <tr>
+                    <td>${title}</td>
+                    <td style="text-align:center;">
+                        <a href="${link}" title="View ${title}" target="_blank">View</a>
+                    </td>
+                </tr>
+            `;
+        });
+
+        tableHTML += `</tbody></table>`;
+
+        // Replace the existing related content with the table
+        relatedWrap.innerHTML = tableHTML;
+    }
+
+    // Initial conversion
+    convertRelatedPostsToTable();
+
+    // Observe for dynamically loaded content
+    const observer = new MutationObserver(() => {
+        convertRelatedPostsToTable();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+});
 
 
    // Get the button element by its class
