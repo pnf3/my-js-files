@@ -314,6 +314,10 @@ let todayCollectionCell, currentDayNum;
         } else {
             todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup>`;
         }
+if (currentWeek) {
+    weekSums[currentWeek] += parseFloat(simulatedCollection) - previousValue;
+    weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
+}
 
         totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
         totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
