@@ -279,21 +279,15 @@ let todayCollectionCell, currentDayNum;
             const collection = parseFloat(collectionCell?.textContent.trim());
 
             if (!isNaN(collection)) {
-    if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-        // Exclude today's full collection before 11:59 PM but simulate it
-    } else {
-        totalSum += collection;
-        if (currentWeek) weekSums[currentWeek] += collection; // Add past days
-    }
+                if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
+                    // Exclude today’s full collection before 11:59 PM, but simulate it
+                } else {
+                    totalSum += collection;
+                }
 
-    if (!latestDay) latestDay = row.cells[0].textContent.trim();
-}
-
-// ✅ Add simulated collection separately for today
-if (currentWeek && todayRow) {
-    weekSums[currentWeek] += parseFloat(simulatedCollection) || 0;
-}
- else {
+                if (currentWeek) weekSums[currentWeek] += collection;
+                if (!latestDay) latestDay = row.cells[0].textContent.trim();
+            } else {
                 row.style.display = "none";
             }
         }
@@ -321,18 +315,8 @@ if (currentWeek && todayRow) {
             todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup>`;
         }
 
-       // ✅ Ensure `simulatedCollection` is a valid number
-simulatedCollection = parseFloat(simulatedCollection) || 0;
-
-// ✅ Update the current week's sum with simulated collection
-if (currentWeek) {
-    weekSums[currentWeek] += simulatedCollection;
-}
-
-// ✅ Update the displayed totals
-totalSumElement.textContent = (totalSum + simulatedCollection).toFixed(2);
-totalSumElement2.textContent = (totalSum + simulatedCollection).toFixed(2);
-
+        totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
+        totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
 
         generateChart(); // ✅ Update the chart dynamically
     }
