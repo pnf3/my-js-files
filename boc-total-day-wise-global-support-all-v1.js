@@ -280,16 +280,12 @@ let todayCollectionCell, currentDayNum;
 
             if (!isNaN(collection)) {
                 if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-                    // Excluif (row === todayRow) {
-    weekSums[currentWeek] += parseFloat(simulatedCollection) || 0;de today’s full collection before 11:59 PM, but simulate it
+                    // Exclude today’s full collection before 11:59 PM, but simulate it
                 } else {
                     totalSum += collection;
-			 
                 }
 
-               
-}
-
+                if (currentWeek) weekSums[currentWeek] += collection;
                 if (!latestDay) latestDay = row.cells[0].textContent.trim();
             } else {
                 row.style.display = "none";
@@ -592,53 +588,49 @@ updateTime();
       });
   });
   
- function loadRelatedPostsTable() {
+     function loadRelatedPostsTable(retryCount = 0) {
+    const maxRetries = 10; // Limit retries to prevent infinite loops
+    const relatedItems = document.querySelectorAll(".related-items .post");
     const tableBody = document.querySelector("#moviesTable tbody");
-    const relatedWrap = document.getElementById("related-wrap");
-    const relatedContainer = document.querySelector(".related-items");
 
-    if (!tableBody || !relatedContainer) {
-        console.warn("Table body or related items container not found. Aborting.");
+    if (!tableBody) {
+        console.warn("Table body not found. Aborting function.");
         return;
     }
 
-    function updateTable() {
-        const relatedItems = document.querySelectorAll(".related-items .post");
-
-        if (relatedItems.length === 0) return; // No related posts found yet
-
-        if (relatedWrap) relatedWrap.innerHTML = ""; // Clear existing layout
-        tableBody.innerHTML = ""; // Clear previous table entries
-
-        relatedItems.forEach(post => {
-            let titleElement = post.querySelector(".entry-title a");
-            let link = titleElement ? titleElement.href : "#";
-            let title = titleElement ? titleElement.textContent.trim() : "Unknown Title";
-
-            let row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${title}</td>
-                <td><a href="${link}" target="_blank">View</a></td>
-            `;
-
-            tableBody.appendChild(row);
-        });
+    if (relatedItems.length === 0) {
+        if (retryCount < maxRetries) {
+            setTimeout(() => loadRelatedPostsTable(retryCount + 1), 500);
+        } else {
+            console.warn("Max retries reached. No related posts found.");
+        }
+        return;
     }
 
-    // Run once initially in case posts are already loaded
-    updateTable();
+    const relatedWrap = document.getElementById("related-wrap");
+    if (relatedWrap) relatedWrap.innerHTML = ""; // Clear existing layout
 
-    // Set up a MutationObserver to listen for changes in the related posts container
-    const observer = new MutationObserver(() => {
-        updateTable();
+    tableBody.innerHTML = ""; // Clear previous entries to prevent duplicates
+
+    relatedItems.forEach(post => {
+        let titleElement = post.querySelector(".entry-title a");
+        let link = titleElement ? titleElement.href : "#";
+        let title = titleElement ? titleElement.textContent.trim() : "Unknown Title";
+
+        let row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${title}</td>
+            <td><a href="${link}" target="_blank">View</a></td>
+        `;
+
+        tableBody.appendChild(row);
     });
-
-    observer.observe(relatedContainer, { childList: true, subtree: true });
 }
 
 // Run function when the page is fully loaded
-document.addEventListener("DOMContentLoaded", loadRelatedPostsTable);
-
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => loadRelatedPostsTable(), 500);
+});
 
 
 
