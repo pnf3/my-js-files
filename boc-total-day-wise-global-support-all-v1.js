@@ -280,10 +280,7 @@ let todayCollectionCell, currentDayNum;
 
            if (!isNaN(collection)) {
     if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-	    let simulatedCollection = // calculate simulated collection
-		  //  totalSum += simulatedCollection;
-    if (currentWeek) weekSums[currentWeek] += simulatedCollection;
-        // Exclude today’s full collection before 11:59 PM, but simulate it
+	   
     } else {
         totalSum += collection;
         if (currentWeek) weekSums[currentWeek] += collection;
