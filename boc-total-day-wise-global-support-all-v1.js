@@ -282,8 +282,9 @@ let todayCollectionCell, currentDayNum;
     if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
 	   
     } else {
+	    let simulatedCollection = // calculate simulated collectio
         totalSum += collection;
-        if (currentWeek) weekSums[currentWeek] += collection;
+      if (currentWeek) weekSums[currentWeek] += simulatedCollection;
     }
 
     if (!latestDay) latestDay = row.cells[0].textContent.trim();
