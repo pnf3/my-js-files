@@ -588,21 +588,23 @@ updateTime();
       });
   });
   
-     function loadRelatedPostsTable() {
+ function loadRelatedPostsTable() {
+    const tableBody = document.querySelector("#moviesTable tbody");
+    const relatedWrap = document.getElementById("related-wrap");
+    const relatedContainer = document.querySelector(".related-items");
+
+    if (!tableBody || !relatedContainer) {
+        console.warn("Table body or related items container not found. Aborting.");
+        return;
+    }
+
+    function updateTable() {
         const relatedItems = document.querySelectorAll(".related-items .post");
 
-        if (relatedItems.length === 0) {
-            // Retry after 500ms if elements are not yet loaded
-            setTimeout(loadRelatedPostsTable, 0);
-            return;
-        }
+        if (relatedItems.length === 0) return; // No related posts found yet
 
-        const tableBody = document.querySelector("#moviesTable tbody");
-        const relatedWrap = document.getElementById("related-wrap");
-
-        if (relatedWrap) {
-            relatedWrap.innerHTML = ""; // Remove existing div layout
-        }
+        if (relatedWrap) relatedWrap.innerHTML = ""; // Clear existing layout
+        tableBody.innerHTML = ""; // Clear previous table entries
 
         relatedItems.forEach(post => {
             let titleElement = post.querySelector(".entry-title a");
@@ -610,7 +612,6 @@ updateTime();
             let title = titleElement ? titleElement.textContent.trim() : "Unknown Title";
 
             let row = document.createElement("tr");
-
             row.innerHTML = `
                 <td>${title}</td>
                 <td><a href="${link}" target="_blank">View</a></td>
@@ -620,10 +621,20 @@ updateTime();
         });
     }
 
-    // Run function when the page is fully loaded
-    document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(loadRelatedPostsTable, 0); // Delay initial execution by 1 second
+    // Run once initially in case posts are already loaded
+    updateTable();
+
+    // Set up a MutationObserver to listen for changes in the related posts container
+    const observer = new MutationObserver(() => {
+        updateTable();
     });
+
+    observer.observe(relatedContainer, { childList: true, subtree: true });
+}
+
+// Run function when the page is fully loaded
+document.addEventListener("DOMContentLoaded", loadRelatedPostsTable);
+
 
 
 
