@@ -318,10 +318,7 @@ let todayCollectionCell, currentDayNum;
 
         totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
         totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
- // Update weekSums or weekTotals with simulated collection
-    if (currentWeek) {
-        weekSums[currentWeek] += parseFloat(simulatedCollection); // Add to week sum
-        weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);        generateChart(); // ✅ Update the chart dynamically
+ generateChart(); // ✅ Update the chart dynamically
     }
 
     // Run immediately when the page loads
