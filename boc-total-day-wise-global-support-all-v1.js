@@ -283,10 +283,11 @@ let todayCollectionCell, currentDayNum;
                     // Exclude today’s full collection before 11:59 PM, but simulate it
                 } else {
                     totalSum += collection;
+			 if (row === todayRow) {
+    weekSums[currentWeek] += parseFloat(simulatedCollection) || 0;
                 }
 
-                if (row === todayRow) {
-    weekSums[currentWeek] += parseFloat(simulatedCollection) || 0;
+               
 }
 
                 if (!latestDay) latestDay = row.cells[0].textContent.trim();
