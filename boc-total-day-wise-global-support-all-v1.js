@@ -36,7 +36,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
     let maxDayAllowed = Math.floor((today - releaseDate) / (1000 * 60 * 60 * 24)) + 1;
 
     let newRows = [];
-    let weekTotals = {};
+ //   let weekTotals = {};
 
     // Insert missing days dynamically
     for (let i = 0; i < dailyEarnings.length; i++) {
@@ -47,8 +47,8 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
         let weekNum = Math.ceil(nextDay / 7);
         if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
-        let collection = dailyEarnings[i] || 0;
-        weekTotals[weekNum] += collection;
+     //   let collection = dailyEarnings[i] || 0;
+    //    weekTotals[weekNum] += collection;
 
         newRows.unshift(
             `<tr>
@@ -59,15 +59,15 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
         );
 
         // Insert Week Summary on Last Day of the Week
-        if (nextDay % 7 === 0) {
-            let weekOrdinal = getOrdinal(weekNum);
-            newRows.unshift(
-                `<tr class="week-summary">
-                    <td colspan="2">${weekOrdinal} Week Total</td>
-                    <td>${weekTotals[weekNum].toFixed(2)}</td>
-                </tr>`
-            );
-        }
+    //    if (nextDay % 7 === 0) {
+        //    let weekOrdinal = getOrdinal(weekNum);
+       //     newRows.unshift(
+        //        `<tr class="week-summary">
+         //           <td colspan="2">${weekOrdinal} Week Total</td>
+         //           <td>${weekTotals[weekNum].toFixed(2)}</td>
+          //      </tr>`
+           // );
+      //  }
     }
 
     // Append new rows to the table
@@ -354,8 +354,10 @@ setTimeout(() => {
     if (metaDescription) {
         if (entryTitle.textContent.includes("Box Office Collection")) {
             metaDescription.content = `${movieName} Box Office Collection: Track worldwide earnings, daily updates, and total revenue up to ${latestDay}. Stay tuned for more!`;
-            document.title = `${movieName} Worldwide Box Office Collection ${latestDay}`;
-        } else {
+          //  document.title = `${movieName} Worldwide Box Office Collection ${latestDay}`;
+        } 
+	
+	else {
             metaDescription.content = `Explore ${entryTitle.textContent.trim()} List year-wise, from the first film to the latest and upcoming releases, along with the total movie count.`;
         }
         entryTitle.textContent = entryTitle.textContent.replace("Day Wise", latestDay);
@@ -564,35 +566,6 @@ function updateTime() {
     setTimeout(updateTime, 3600000);
 }
 
-// Function to update JSON-LD `dateModified`
-function updateJSONLD(dateTimeString) {
-    const jsonLDElement = document.querySelector('script[type="application/ld+json"]');
-    if (!jsonLDElement) {
-        console.warn("JSON-LD script not found! Skipping update.");
-        return;
-    }
-
-    try {
-        let jsonLDData = JSON.parse(jsonLDElement.textContent);
-        jsonLDData.dateModified = dateTimeString; // Update modified date
-
-        // Remove old script
-        jsonLDElement.remove();
-
-        // Create a new JSON-LD script element
-        const newScript = document.createElement('script');
-        newScript.setAttribute("type", "application/ld+json");
-        newScript.textContent = JSON.stringify(jsonLDData, null, 2);
-
-        // Insert new script in the document head or body
-        document.head.appendChild(newScript);
-
-        console.log("Updated JSON-LD dateModified:", dateTimeString);
-    } catch (error) {
-        console.error("Error updating JSON-LD:", error);
-    }
-}
-
 // Run on page load
 updateTime();
 
@@ -718,46 +691,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-});
-
-
-
-
-document.addEventListener(&quot;DOMContentLoaded&quot;, function () {
-    const metaDescription = document.querySelector(&quot;meta[name=&#39;description&#39;]&quot;);
-    const entryTitle = document.querySelector(&quot;h1.entry-title&quot;);
-    const latestDayElement = document.getElementById(&quot;latest-day&quot;);
-
-    if (!entryTitle || !latestDayElement) return;
-
-    // Extract movieName and latestDay
-    const movieName = entryTitle.textContent.replace(&quot;Worldwide Box Office Collection Day Wise&quot;, &quot;&quot;).trim() || &quot;Movie&quot;;
-    const latestDay = latestDayElement.textContent.trim() || &quot;Day X&quot;;
-
-    // Define the new values
-    const newHeadline = `${movieName}`;
-    const newDescription = `${movieName}: Track worldwide earnings day wise, daily updates, and total revenue up to ${latestDay}. Stay tuned for more!`;
-
-    // Select the JSON-LD script tag
-    let jsonLdScript = document.querySelector(&quot;script[type=&#39;application/ld+json&#39;]&quot;);
-    
-    if (jsonLdScript) {
-        try {
-            // Parse the existing JSON-LD content
-            let jsonLdData = JSON.parse(jsonLdScript.innerHTML);
-
-            // Update the JSON-LD data
-            jsonLdData.headline = newHeadline;
-            jsonLdData.description = newDescription;
-
-            // Update the JSON-LD script with new data
-            jsonLdScript.innerHTML = JSON.stringify(jsonLdData, null, 2);
-        } catch (error) {
-            console.error(&quot;Error updating JSON-LD data:&quot;, error); 
-        }
-    }
-
-    // Update meta description and title dynamically
-    if (metaDescription) metaDescription.content = newDescription;
-    document.title = newHeadline;
 });
