@@ -280,11 +280,12 @@ let todayCollectionCell, currentDayNum;
 
            if (!isNaN(collection)) {
     if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-	   
+	    let simulatedCollection = // calculate simulated collection
+    totalSum += simulatedCollection;
+    if (currentWeek) weekSums[currentWeek] += simulatedCollection;
     } else {
-	    let simulatedCollection = // calculate simulated collectio
-        totalSum += collection;
-      if (currentWeek) weekSums[currentWeek] += simulatedCollection;
+	 totalSum += collection;
+        if (currentWeek) weekSums[currentWeek] += collection;
     }
 
     if (!latestDay) latestDay = row.cells[0].textContent.trim();
