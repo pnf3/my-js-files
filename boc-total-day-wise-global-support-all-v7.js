@@ -168,7 +168,7 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
     let newRows = [];
     let weekTotals = {};
 
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= 300; i++) {
         let nextDay = lastDay + i;
         if (nextDay > maxDayAllowed) break;
 
