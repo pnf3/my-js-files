@@ -413,9 +413,7 @@ if (!days.includes(todayLabel)) {
 days.unshift("0");
 collections.unshift(0);
 
-    // Reverse to maintain correct chart order (first day at bottom)
-    days.reverse();
-    collections.reverse();
+    
     // Reverse order so the chart is displayed correctly (0 first, then Day 1, etc.)
     if (chartInstance) {
         chartInstance.data.labels = days;
