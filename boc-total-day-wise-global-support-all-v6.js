@@ -383,16 +383,17 @@ setTimeout(() => {
      
 
 function generateChart() {
-    let days = [];
-    let collections = [];
+    let days = ["0"]; // Start with '0' on the X-axis
+    let collections = [0]; // Start with 0 collection for Day 0
 
     document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
         let dayLabel = row.cells[0].innerText;
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-        // Exclude Day 0 from the chart
+        // Exclude Day 0 from actual data but shift Day 1 correctly
         if (dayLabel !== "Day 0") {
-            days.push(dayLabel);
+            let numericDay = parseInt(dayLabel.replace("Day ", "")); 
+            days.push(`Day ${numericDay}`);
             collections.push(collectionValue);
         }
     });
@@ -401,23 +402,16 @@ function generateChart() {
     let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
     let todayLabel = `Day ${currentDayNum}`;
 
-    // If today's data is missing, add it correctly
+    // Ensure today's data is included
     if (!days.includes(todayLabel)) {
         days.push(todayLabel);
         collections.push(todaySimulatedValue);
     } else {
-        // Update the last value (today’s collection)
         let todayIndex = days.indexOf(todayLabel);
         collections[todayIndex] = todaySimulatedValue;
     }
 
-    // Reverse to maintain correct chart order (first day at bottom)
-    days.reverse();
-    collections.reverse();
-
-    // Ensure the X-axis starts from 0 (origin)
-    days = days.map((day, index) => `Day ${index + 1}`);
-
+    // Reverse order so the chart is displayed correctly (0 first, then Day 1, etc.)
     if (chartInstance) {
         chartInstance.data.labels = days;
         chartInstance.data.datasets[0].data = collections;
@@ -438,17 +432,8 @@ function generateChart() {
             },
             options: {
                 scales: {
-                    x: {
-                        title: { display: true, text: "Days" },
-                        beginAtZero: true, // Ensure X-axis starts from 0
-                        ticks: {
-                            callback: (value, index) => `Day ${index + 1}`, // Label days sequentially
-                        }
-                    },
-                    y: {
-                        title: { display: true, text: "Day Collection (\u20B9 Cr)" },
-                        beginAtZero: true // Ensure Y-axis starts from 0
-                    }
+                    x: { title: { display: true, text: "Days" } },
+                    y: { title: { display: true, text: "Day Collection (\u20B9 Cr)" } }
                 }
             }
         });
@@ -457,28 +442,29 @@ function generateChart() {
     generateTotalCollectionChart(collections);
 }
 
+
 function generateTotalCollectionChart() {
-    let totalDays = [];
-    let cumulativeCollections = [];
+    let totalDays = ["0"]; // Start with '0' on the X-axis
+    let cumulativeCollections = [0]; // Start with 0 collection for Day 0
     let totalSum = 0;
 
     let rows = document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)");
     let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
 
-    // Loop in reverse order to process from Day 1 to current day
     [...rows].reverse().forEach(row => {
         let dayLabel = row.cells[0].innerText;
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-        // Exclude Day 0 from the total collection chart
+        // Exclude Day 0 but ensure Day 1 starts correctly
         if (dayLabel !== "Day 0") {
-            totalSum += collectionValue; // Add each day's collection to the total
-            totalDays.push(dayLabel);
+            let numericDay = parseInt(dayLabel.replace("Day ", ""));
+            totalSum += collectionValue;
+            totalDays.push(`Day ${numericDay}`);
             cumulativeCollections.push(totalSum);
         }
     });
 
-    // Ensure today's simulated collection is included in order
+    // Ensure today's simulated collection is included
     let todayLabel = `Day ${currentDayNum}`;
     if (!totalDays.includes(todayLabel)) {
         totalSum += todaySimulatedValue;
@@ -486,10 +472,6 @@ function generateTotalCollectionChart() {
         cumulativeCollections.push(totalSum);
     }
 
-    // Ensure the X-axis starts from 0 (origin)
-    totalDays = totalDays.map((day, index) => `Day ${index + 1}`);
-
-    // No need to reverse; already in correct order (Day 1 → Current Day)
     if (totalChartInstance) {
         totalChartInstance.data.labels = totalDays;
         totalChartInstance.data.datasets[0].data = cumulativeCollections;
@@ -510,22 +492,14 @@ function generateTotalCollectionChart() {
             },
             options: {
                 scales: {
-                    x: {
-                        title: { display: true, text: "Days" },
-                        beginAtZero: true, // Ensure X-axis starts from 0
-                        ticks: {
-                            callback: (value, index) => `Day ${index + 1}`, // Label days sequentially
-                        }
-                    },
-                    y: {
-                        title: { display: true, text: "Total Collection (\u20B9 Cr)" },
-                        beginAtZero: true // Ensure Y-axis starts from 0
-                    }
+                    x: { title: { display: true, text: "Days" } },
+                    y: { title: { display: true, text: "Total Collection (\u20B9 Cr)" } }
                 }
             }
         });
     }
 }
+
 // Generate both charts once when the page loads
 setTimeout(() => {
     generateChart();
