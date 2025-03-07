@@ -382,8 +382,7 @@ setTimeout(() => {
     }
      
 // Function to generate the Daily Collection Chart
-function generateChart() {
- let days = [];
+let days = [];
 let collections = [];
 
 document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
@@ -392,8 +391,7 @@ document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row =>
 
     if (dayLabel !== "Day 0") {
         let numericDay = parseInt(dayLabel.replace("Day ", ""));
-        days.push(`Day ${numericDay}`);
-        collections.push(collectionValue);
+        days.push({ label: `Day ${numericDay}`, value: collectionValue, numericDay });
     }
 });
 
@@ -401,19 +399,23 @@ document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row =>
 let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
 let todayLabel = `Day ${currentDayNum}`;
 
-if (!days.includes(todayLabel)) {
-    days.push(todayLabel);
-    collections.push(todaySimulatedValue);
+if (!days.some(day => day.label === todayLabel)) {
+    days.push({ label: todayLabel, value: todaySimulatedValue, numericDay: currentDayNum });
 } else {
-    let todayIndex = days.indexOf(todayLabel);
-    collections[todayIndex] = todaySimulatedValue;
+    let todayIndex = days.findIndex(day => day.label === todayLabel);
+    days[todayIndex].value = todaySimulatedValue;
 }
 
-// Finally, add Day 0 at the start
-days.unshift("0");
-collections.unshift(0);
+// Sort days in ascending order (Day 1, Day 2, ...)
+days.sort((a, b) => a.numericDay - b.numericDay);
 
-    
+// Finally, add Day 0 at the start
+days.unshift({ label: "0", value: 0, numericDay: 0 });
+
+// Extract labels and values separately
+let sortedDays = days.map(day => day.label);
+let sortedCollections = days.map(day => day.value);
+
     // Reverse order so the chart is displayed correctly (0 first, then Day 1, etc.)
     if (chartInstance) {
         chartInstance.data.labels = days;
