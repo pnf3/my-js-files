@@ -385,19 +385,30 @@ setTimeout(() => {
 // Function to generate the Daily Collection Chart
 function generateChart() {
     let days = ["Day 0"];  // Start with Day 0
-    let collections = [0]; // Start with 0 collection for Day 0
+    let collections = [0]; // Day 0 has a collection of 0
+    let dayCollectionMap = {}; // Store day-wise collections
 
+    // Loop through table rows and store data
     document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
-        let dayLabel = row.cells[0].innerText;
+        let dayLabel = row.cells[0].innerText.trim(); // e.g., "Day 5"
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
         
-        // Exclude Day 0 from automatic addition, since we already added it manually
         if (dayLabel !== "Day 0") {
-            days.push(dayLabel);
-            collections.push(collectionValue);
+            dayCollectionMap[dayLabel] = collectionValue; // Store collection for the day
         }
     });
 
+    // Sort days correctly (convert "Day X" -> X, sort numerically, then convert back)
+    let sortedDays = Object.keys(dayCollectionMap)
+        .sort((a, b) => parseInt(a.replace("Day ", "")) - parseInt(b.replace("Day ", "")));
+
+    // Push sorted days and their corresponding collections
+    sortedDays.forEach(day => {
+        days.push(day);
+        collections.push(dayCollectionMap[day]);
+    });
+
+    // Ensure today's simulated collection is included
     let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
     let todayLabel = `Day ${currentDayNum}`;
 
@@ -409,11 +420,7 @@ function generateChart() {
         collections[todayIndex] = todaySimulatedValue;
     }
 
-    // **Add extra Day (end padding) with 0**
-    let nextDay = `Day ${currentDayNum + 1}`;
-    days.push(nextDay);
-    collections.push(0); // Ensuring the graph ends at 0
-
+    // Update or create the chart
     if (chartInstance) {
         chartInstance.data.labels = days;
         chartInstance.data.datasets[0].data = collections;
@@ -443,6 +450,7 @@ function generateChart() {
 
     generateTotalCollectionChart();
 }
+
 
 
 
