@@ -413,8 +413,8 @@ function generateChart() {
     }
 
     // Reverse to maintain correct chart order (first day at bottom)
- //   days.reverse();
-  //  collections.reverse();
+    days.reverse();
+    collections.reverse();
 
     if (chartInstance) {
         chartInstance.data.labels = days;
