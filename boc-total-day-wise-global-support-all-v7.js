@@ -392,13 +392,13 @@ function generateChart() {
     document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
         let dayLabel = row.cells[0].innerText.trim(); // e.g., "Day 5"
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
-        
+
         if (dayLabel !== "Day 0") {
             dayCollectionMap[dayLabel] = collectionValue; // Store collection for the day
         }
     });
 
-    // Sort days correctly (convert "Day X" -> X, sort numerically, then convert back)
+    // Sort days correctly
     let sortedDays = Object.keys(dayCollectionMap)
         .sort((a, b) => parseInt(a.replace("Day ", "")) - parseInt(b.replace("Day ", "")));
 
@@ -420,96 +420,98 @@ function generateChart() {
         collections[todayIndex] = todaySimulatedValue;
     }
 
-    // ✅ Add one extra "Day (Next)" with 0 collection at the end
-    let nextDay = `Day ${currentDayNum + 1}`;
-    days.push(nextDay);
-    collections.push(0);
-
-    let ctx = document.getElementById("boxOfficeChart").getContext("2d");
-
-    // ✅ Create a gradient background for a sleek effect
-    let gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, "rgba(0, 0, 255, 0.5)");  // Darker at the top
-    gradient.addColorStop(1, "rgba(0, 0, 255, 0)");  // Fade to transparent
-
-    if (chartInstance) {
-        chartInstance.data.labels = days;
-        chartInstance.data.datasets[0].data = collections;
-        chartInstance.update();
-    } else {
-        chartInstance = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: days,
-                datasets: [{
-                    label: "Daily Collection (\u20B9 Cr)",
-                    data: collections,
-                    borderColor: "blue",
-                    backgroundColor: gradient,
-                    fill: true,
-                    pointRadius: 5, // ✅ Visible points
-                    pointBackgroundColor: "red",
-                    pointBorderColor: "white",
-                    pointHoverRadius: 7 // ✅ Enlarge on hover
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        title: { display: true, text: "Days" },
-                        ticks: {
-                            autoSkip: true,  // ✅ Prevents clutter
-                            maxTicksLimit: 10, // ✅ Limits labels
-                            callback: function(value, index, values) {
-                                return index % 2 === 0 ? this.getLabelForValue(value) : ''; 
-                            }
-                        }
-                    },
-                    y: { title: { display: true, text: "Day Collection (\u20B9 Cr)" } }
-                },
-                plugins: {
-                    tooltip: {
-                        enabled: true,
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return `₹ ${tooltipItem.raw.toFixed(2)} Cr`;
-                            }
-                        }
+    // 🎯 1️⃣ Custom Tooltip for Exact Values
+    let tooltipOptions = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function (context) {
+                        let value = context.raw || 0;
+                        return `Collection: ₹${value.toFixed(2)} Cr`;
                     }
                 }
             }
-        });
+        }
+    };
+
+    // 📈 2️⃣ Generate Trendline Data (3-Day Moving Average)
+    let movingAvg = collections.map((val, i, arr) => {
+        if (i === 0) return val;
+        let subset = arr.slice(Math.max(i - 2, 0), i + 1); // 3-day moving average
+        return subset.reduce((sum, num) => sum + num, 0) / subset.length;
+    });
+
+    // 🌟 3️⃣ Highlight Record-Breaking Days
+    let highestCollection = Math.max(...collections);
+    let pointStyles = collections.map(value => value === highestCollection ? "star" : "circle");
+    let pointSizes = collections.map(value => value === highestCollection ? 7 : 4);
+    let pointColors = collections.map(value => value === highestCollection ? "gold" : "blue");
+
+    // 🎨 Chart.js Configuration
+    let chartConfig = {
+        type: "line",
+        data: {
+            labels: days,
+            datasets: [
+                {
+                    label: "Daily Collection (₹ Cr)",
+                    data: collections,
+                    borderColor: "blue",
+                    backgroundColor: "rgba(0,0,255,0.2)",
+                    fill: true,
+                    pointStyle: pointStyles, // Highlight highest collection day
+                    pointRadius: pointSizes,
+                    pointBackgroundColor: pointColors,
+                },
+                {
+                    label: "Trendline",
+                    data: movingAvg,
+                    borderColor: "red",
+                    borderDash: [5, 5], // Dashed line for trendline
+                    fill: false
+                }
+            ]
+        },
+        options: {
+            ...tooltipOptions,
+            scales: {
+                x: { title: { display: true, text: "Days" } },
+                y: { title: { display: true, text: "Day Collection (₹ Cr)" } }
+            }
+        }
+    };
+
+    // 🎯 Update or Create Chart
+    if (chartInstance) {
+        chartInstance.destroy(); // Destroy existing chart before recreating
     }
+    let ctx = document.getElementById("boxOfficeChart").getContext("2d");
+    chartInstance = new Chart(ctx, chartConfig);
 
     generateTotalCollectionChart();
 }
 
-// ✅ Total Collection Chart with Smoothed Lines
+
+
+
+// Function to generate the Total Collection Chart
 function generateTotalCollectionChart() {
-    let totalDays = ["Day 0"];
-    let cumulativeCollections = [0];
+    let totalDays = ["Day 0"]; // Start with Day 0
+    let cumulativeCollections = [0]; // Initial total is 0
     let totalSum = 0;
-    let dayCollectionMap = {};
 
     let rows = document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)");
     let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
 
-    [...rows].forEach(row => {
-        let dayLabel = row.cells[0].innerText.trim();
+    [...rows].reverse().forEach(row => {
+        let dayLabel = row.cells[0].innerText;
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
         if (dayLabel !== "Day 0") {
-            dayCollectionMap[dayLabel] = collectionValue;
+            totalSum += collectionValue;
+            totalDays.push(dayLabel);
+            cumulativeCollections.push(totalSum);
         }
-    });
-
-    let sortedDays = Object.keys(dayCollectionMap)
-        .sort((a, b) => parseInt(a.replace("Day ", "")) - parseInt(b.replace("Day ", "")));
-
-    sortedDays.forEach(day => {
-        totalSum += dayCollectionMap[day]; 
-        totalDays.push(day);
-        cumulativeCollections.push(totalSum);
     });
 
     let todayLabel = `Day ${currentDayNum}`;
@@ -519,17 +521,12 @@ function generateTotalCollectionChart() {
         cumulativeCollections.push(totalSum);
     }
 
-    let nextDay = `Day ${currentDayNum + 1}`;
-    totalDays.push(nextDay);
-    cumulativeCollections.push(totalSum);
-
-    let ctxTotal = document.getElementById("totalCollectionChart").getContext("2d");
-
     if (totalChartInstance) {
         totalChartInstance.data.labels = totalDays;
         totalChartInstance.data.datasets[0].data = cumulativeCollections;
         totalChartInstance.update();
     } else {
+        let ctxTotal = document.getElementById("totalCollectionChart").getContext("2d");
         totalChartInstance = new Chart(ctxTotal, {
             type: "line",
             data: {
@@ -539,24 +536,13 @@ function generateTotalCollectionChart() {
                     data: cumulativeCollections,
                     borderColor: "green",
                     backgroundColor: "rgba(0,255,0,0.2)",
-                    fill: true,
-                    tension: 0.4 // ✅ Smooth curved lines
+                    fill: true
                 }]
             },
             options: {
                 scales: {
                     x: { title: { display: true, text: "Days" } },
                     y: { title: { display: true, text: "Total Collection (\u20B9 Cr)" } }
-                },
-                plugins: {
-                    tooltip: {
-                        enabled: true,
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return `₹ ${tooltipItem.raw.toFixed(2)} Cr`;
-                            }
-                        }
-                    }
                 }
             }
         });
