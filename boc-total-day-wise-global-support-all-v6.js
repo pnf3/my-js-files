@@ -409,6 +409,11 @@ function generateChart() {
         collections[todayIndex] = todaySimulatedValue;
     }
 
+    // **Add extra Day (end padding) with 0**
+    let nextDay = `Day ${currentDayNum + 1}`;
+    days.push(nextDay);
+    collections.push(0); // Ensuring the graph ends at 0
+
     if (chartInstance) {
         chartInstance.data.labels = days;
         chartInstance.data.datasets[0].data = collections;
@@ -438,6 +443,7 @@ function generateChart() {
 
     generateTotalCollectionChart();
 }
+
 
 
 // Function to generate the Total Collection Chart
