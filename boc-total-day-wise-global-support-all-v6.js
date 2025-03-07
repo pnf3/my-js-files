@@ -383,33 +383,36 @@ setTimeout(() => {
      
 // Function to generate the Daily Collection Chart
 function generateChart() {
-    let days = ["0"]; // Start with '0' on the X-axis
-    let collections = [0]; // Start with 0 collection for Day 0
+ let days = [];
+let collections = [];
 
-    document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
-        let dayLabel = row.cells[0].innerText;
-        let collectionValue = parseFloat(row.cells[2].innerText) || 0;
+document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
+    let dayLabel = row.cells[0].innerText;
+    let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-        // Exclude Day 0 from actual data but shift Day 1 correctly
-        if (dayLabel !== "Day 0") {
-            let numericDay = parseInt(dayLabel.replace("Day ", "")); 
-            days.push(`Day ${numericDay}`);
-            collections.push(collectionValue);
-        }
-    });
-
-    // Get today's collection value
-    let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
-    let todayLabel = `Day ${currentDayNum}`;
-
-    // Ensure today's data is included
-    if (!days.includes(todayLabel)) {
-        days.push(todayLabel);
-        collections.push(todaySimulatedValue);
-    } else {
-        let todayIndex = days.indexOf(todayLabel);
-        collections[todayIndex] = todaySimulatedValue;
+    if (dayLabel !== "Day 0") {
+        let numericDay = parseInt(dayLabel.replace("Day ", ""));
+        days.push(`Day ${numericDay}`);
+        collections.push(collectionValue);
     }
+});
+
+// Get today's collection
+let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
+let todayLabel = `Day ${currentDayNum}`;
+
+if (!days.includes(todayLabel)) {
+    days.push(todayLabel);
+    collections.push(todaySimulatedValue);
+} else {
+    let todayIndex = days.indexOf(todayLabel);
+    collections[todayIndex] = todaySimulatedValue;
+}
+
+// Finally, add Day 0 at the start
+days.unshift("0");
+collections.unshift(0);
+
     // Reverse to maintain correct chart order (first day at bottom)
     days.reverse();
     collections.reverse();
