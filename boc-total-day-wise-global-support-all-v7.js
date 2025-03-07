@@ -563,18 +563,19 @@ function generateTotalCollectionChart() {
     }
 }
 
-// ✅ Generate both charts when the page loads
+// Generate both charts once when the page loads
 setTimeout(() => {
     generateChart();
     generateTotalCollectionChart();
 }, 1000);
 
-// ✅ Auto-update charts dynamically every 5 seconds
+// Update charts dynamically every 5 seconds
 setInterval(() => {
     generateChart();
     generateTotalCollectionChart();
 }, 5000);
 
+});
 
 function parseDate(dateStr) {
     let parts = dateStr.replace(/,/g, "").split(" ");
