@@ -381,42 +381,41 @@ setTimeout(() => {
 
     }
      
+
+// Function to generate the Daily Collection Chart
 function generateChart() {
-  let days = [];
-let collections = [];
+    let days = [];
+    let collections = [];
 
-document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
-    let dayLabel = row.cells[0].innerText;
-    let collectionValue = parseFloat(row.cells[2].innerText) || 0;
+    document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
+        let dayLabel = row.cells[0].innerText;
+        let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-    if (dayLabel !== "Day 0") {
-        let numericDay = parseInt(dayLabel.replace("Day ", ""));
-        days.push({ label: `Day ${numericDay}`, value: collectionValue, numericDay });
+        // Exclude Day 0 from the chart
+        if (dayLabel !== "Day 0") {
+            days.push(dayLabel);
+            collections.push(collectionValue);
+        }
+    });
+
+    // Get today's collection value
+    let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
+    let todayLabel = `Day ${currentDayNum}`;
+
+    // If today's data is missing, add it correctly
+    if (!days.includes(todayLabel)) {
+        days.push(todayLabel);
+        collections.push(todaySimulatedValue);
+    } else {
+        // Update the last value (today’s collection)
+        let todayIndex = days.indexOf(todayLabel);
+        collections[todayIndex] = todaySimulatedValue;
     }
-});
 
-// Get today's collection
-let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
-let todayLabel = `Day ${currentDayNum}`;
+    // Reverse to maintain correct chart order (first day at bottom)
+    days.reverse();
+    collections.reverse();
 
-if (!days.some(day => day.label === todayLabel)) {
-    days.push({ label: todayLabel, value: todaySimulatedValue, numericDay: currentDayNum });
-} else {
-    let todayIndex = days.findIndex(day => day.label === todayLabel);
-    days[todayIndex].value = todaySimulatedValue;
-}
-
-// Sort days in ascending order (Day 1, Day 2, ...)
-days.sort((a, b) => a.numericDay - b.numericDay);
-
-// Finally, add Day 0 at the start
-days.unshift({ label: "0", value: 0, numericDay: 0 });
-
-// Extract labels and values separately
-let sortedDays = days.map(day => day.label);
-let sortedCollections = days.map(day => day.value);
-
-    // Reverse order so the chart is displayed correctly (0 first, then Day 1, etc.)
     if (chartInstance) {
         chartInstance.data.labels = days;
         chartInstance.data.datasets[0].data = collections;
@@ -447,30 +446,29 @@ let sortedCollections = days.map(day => day.value);
     generateTotalCollectionChart(collections);
 }
 
-
-
+// Function to generate the Total Collection Chart
 function generateTotalCollectionChart() {
-    let totalDays = ["0"]; // Start with '0' on the X-axis
-    let cumulativeCollections = [0]; // Start with 0 collection for Day 0
+    let totalDays = [];
+    let cumulativeCollections = [];
     let totalSum = 0;
 
     let rows = document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)");
     let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
 
+    // Loop in reverse order to process from Day 1 to current day
     [...rows].reverse().forEach(row => {
         let dayLabel = row.cells[0].innerText;
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-        // Exclude Day 0 but ensure Day 1 starts correctly
+        // Exclude Day 0 from the total collection chart
         if (dayLabel !== "Day 0") {
-            let numericDay = parseInt(dayLabel.replace("Day ", ""));
-            totalSum += collectionValue;
-            totalDays.push(`Day ${numericDay}`);
+            totalSum += collectionValue; // Add each day's collection to the total
+            totalDays.push(dayLabel);
             cumulativeCollections.push(totalSum);
         }
     });
 
-    // Ensure today's simulated collection is included
+    // Ensure today's simulated collection is included in order
     let todayLabel = `Day ${currentDayNum}`;
     if (!totalDays.includes(todayLabel)) {
         totalSum += todaySimulatedValue;
@@ -478,6 +476,7 @@ function generateTotalCollectionChart() {
         cumulativeCollections.push(totalSum);
     }
 
+    // No need to reverse; already in correct order (Day 1 → Current Day)
     if (totalChartInstance) {
         totalChartInstance.data.labels = totalDays;
         totalChartInstance.data.datasets[0].data = cumulativeCollections;
@@ -505,7 +504,6 @@ function generateTotalCollectionChart() {
         });
     }
 }
-
 // Generate both charts once when the page loads
 setTimeout(() => {
     generateChart();
