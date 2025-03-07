@@ -392,13 +392,13 @@ function generateChart() {
     document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
         let dayLabel = row.cells[0].innerText.trim(); // e.g., "Day 5"
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
-
+        
         if (dayLabel !== "Day 0") {
             dayCollectionMap[dayLabel] = collectionValue; // Store collection for the day
         }
     });
 
-    // Sort days correctly
+    // Sort days correctly (convert "Day X" -> X, sort numerically, then convert back)
     let sortedDays = Object.keys(dayCollectionMap)
         .sort((a, b) => parseInt(a.replace("Day ", "")) - parseInt(b.replace("Day ", "")));
 
@@ -420,73 +420,43 @@ function generateChart() {
         collections[todayIndex] = todaySimulatedValue;
     }
 
-    // 🎯 1️⃣ Custom Tooltip for Exact Values
-    let tooltipOptions = {
-        plugins: {
-            tooltip: {
-                callbacks: {
-                    label: function (context) {
-                        let value = context.raw || 0;
-                        return `Collection: ₹${value.toFixed(2)} Cr`;
-                    }
-                }
-            }
-        }
-    };
-
-    // 📈 2️⃣ Generate Trendline Data (3-Day Moving Average)
-    let movingAvg = collections.map((val, i, arr) => {
-        if (i === 0) return val;
-        let subset = arr.slice(Math.max(i - 2, 0), i + 1); // 3-day moving average
-        return subset.reduce((sum, num) => sum + num, 0) / subset.length;
-    });
-
-    // 🌟 3️⃣ Highlight Record-Breaking Days
-    let highestCollection = Math.max(...collections);
-    let pointStyles = collections.map(value => value === highestCollection ? "star" : "circle");
-    let pointSizes = collections.map(value => value === highestCollection ? 7 : 4);
-    let pointColors = collections.map(value => value === highestCollection ? "gold" : "blue");
-
-    // 🎨 Chart.js Configuration
-    let chartConfig = {
-        type: "line",
-        data: {
-            labels: days,
-            datasets: [
-                {
-                    label: "Daily Collection (₹ Cr)",
+    // Update or create the chart
+    if (chartInstance) {
+        chartInstance.data.labels = days;
+        chartInstance.data.datasets[0].data = collections;
+        chartInstance.update();
+    } else {
+        let ctx = document.getElementById("boxOfficeChart").getContext("2d");
+        chartInstance = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: days,
+                datasets: [{
+                    label: "Daily Collection (\u20B9 Cr)",
                     data: collections,
                     borderColor: "blue",
                     backgroundColor: "rgba(0,0,255,0.2)",
-                    fill: true,
-                    pointStyle: pointStyles, // Highlight highest collection day
-                    pointRadius: pointSizes,
-                    pointBackgroundColor: pointColors,
-                },
-                {
-                    label: "Trendline",
-                    data: movingAvg,
-                    borderColor: "red",
-                    borderDash: [5, 5], // Dashed line for trendline
-                    fill: false
+                    fill: true
+                }]
+            },
+            options: {
+		    plugins: {
+        tooltip: {
+            callbacks: {
+                label: function (context) {
+                    let value = context.raw || 0;
+                    return `Collection: ₹${value.toFixed(2)} Cr`;
                 }
-            ]
-        },
-        options: {
-            ...tooltipOptions,
-            scales: {
-                x: { title: { display: true, text: "Days" } },
-                y: { title: { display: true, text: "Day Collection (₹ Cr)" } }
             }
         }
-    };
-
-    // 🎯 Update or Create Chart
-    if (chartInstance) {
-        chartInstance.destroy(); // Destroy existing chart before recreating
+    },
+                scales: {
+                    x: { title: { display: true, text: "Days" } },
+                    y: { title: { display: true, text: "Day Collection (\u20B9 Cr)" } }
+                }
+            }
+        });
     }
-    let ctx = document.getElementById("boxOfficeChart").getContext("2d");
-    chartInstance = new Chart(ctx, chartConfig);
 
     generateTotalCollectionChart();
 }
@@ -540,6 +510,16 @@ function generateTotalCollectionChart() {
                 }]
             },
             options: {
+		    plugins: {
+        tooltip: {
+            callbacks: {
+                label: function (context) {
+                    let value = context.raw || 0;
+                    return `Collection: ₹${value.toFixed(2)} Cr`;
+                }
+            }
+        }
+    },
                 scales: {
                     x: { title: { display: true, text: "Days" } },
                     y: { title: { display: true, text: "Total Collection (\u20B9 Cr)" } }
