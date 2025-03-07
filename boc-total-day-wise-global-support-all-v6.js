@@ -382,6 +382,7 @@ setTimeout(() => {
     }
      
 
+// Function to generate the Daily Collection Chart
 function generateChart() {
     let days = ["Day 0"]; // Start with Day 0
     let collections = [0]; // Start with 0 for Day 0
@@ -445,6 +446,7 @@ function generateChart() {
     generateTotalCollectionChart(collections);
 }
 
+// Function to generate the Total Collection Chart
 function generateTotalCollectionChart() {
     let totalDays = ["Day 0"]; // Start with Day 0
     let cumulativeCollections = [0]; // Start with 0 for Day 0
