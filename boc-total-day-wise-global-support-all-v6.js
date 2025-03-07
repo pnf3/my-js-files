@@ -381,8 +381,8 @@ setTimeout(() => {
 
     }
      
-// Function to generate the Daily Collection Chart
-let days = [];
+function generateChart() {
+  let days = [];
 let collections = [];
 
 document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
@@ -446,7 +446,6 @@ let sortedCollections = days.map(day => day.value);
 
     generateTotalCollectionChart(collections);
 }
-
 
 
 
