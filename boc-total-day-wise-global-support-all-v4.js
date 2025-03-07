@@ -279,19 +279,30 @@ let todayCollectionCell, currentDayNum;
             const collection = parseFloat(collectionCell?.textContent.trim());
 
             if (!isNaN(collection)) {
-				// Check if the row is for Day 0
+    // Check if the row is for Day 0
     const isDay0 = row.cells[0].innerText.trim() === "Day 0";
-                if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-                    // Exclude today’s full collection before 11:59 PM, but simulate it
-                } else {
-                    totalSum += collection;
-                }
 
-                if (currentWeek) weekSums[currentWeek] += collection;
-                if (!latestDay) latestDay = row.cells[0].textContent.trim();
-            } else {
-                row.style.display = "none";
-            }
+    // Exclude Day 0 and today's full collection before 11:59 PM
+    if (!isDay0) {
+        if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
+            // Exclude today’s full collection before 11:59 PM, but simulate it
+        } else {
+            totalSum += collection;
+        }
+
+        // Update current week's total, excluding Day 0
+        if (currentWeek) {
+            weekSums[currentWeek] += collection;
+        }
+    }
+
+    // Update latestDay, excluding Day 0
+    if (!isDay0 && !latestDay) {
+        latestDay = row.cells[0].textContent.trim();
+    }
+} else {
+    row.style.display = "none";
+}
         }
     }
 
