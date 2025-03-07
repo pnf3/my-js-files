@@ -381,20 +381,28 @@ setTimeout(() => {
 
     }
      
-
+// Function to generate the Daily Collection Chart
 function generateChart() {
-    let days = ["0"]; // Start with '0' on the X-axis
-    let collections = [0]; // Start with 0 collection for Day 0
+    let days = ["0", "Day 1"]; // Start at 0, then Day 1 after 24 hours
+    let collections = [0, 0];  // Start with 0 collections for both
+
+    let isFirstDay = true; // Track if it's the first day
 
     document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
         let dayLabel = row.cells[0].innerText;
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-        // Exclude Day 0 from actual data but shift Day 1 correctly
         if (dayLabel !== "Day 0") {
-            let numericDay = parseInt(dayLabel.replace("Day ", "")); 
-            days.push(`Day ${numericDay}`);
-            collections.push(collectionValue);
+            let numericDay = parseInt(dayLabel.replace("Day ", ""));
+            
+            if (numericDay === 1 && isFirstDay) {
+                // Replace Day 1 value instead of adding again
+                collections[1] = collectionValue;
+                isFirstDay = false;
+            } else {
+                days.push(`Day ${numericDay}`);
+                collections.push(collectionValue);
+            }
         }
     });
 
@@ -411,7 +419,7 @@ function generateChart() {
         collections[todayIndex] = todaySimulatedValue;
     }
 
-    // Reverse order so the chart is displayed correctly (0 first, then Day 1, etc.)
+    // Reverse order to maintain correct chart display
     if (chartInstance) {
         chartInstance.data.labels = days;
         chartInstance.data.datasets[0].data = collections;
@@ -441,6 +449,7 @@ function generateChart() {
 
     generateTotalCollectionChart(collections);
 }
+
 
 
 function generateTotalCollectionChart() {
