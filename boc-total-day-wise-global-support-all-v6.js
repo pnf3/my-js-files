@@ -382,16 +382,15 @@ setTimeout(() => {
     }
      
 
-// Function to generate the Daily Collection Chart
 function generateChart() {
-    let days = ["Day 0"]; // Start with Day 0
-    let collections = [0]; // Start with 0 for Day 0
+    let days = [];
+    let collections = [];
 
     document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
         let dayLabel = row.cells[0].innerText;
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-        // Exclude Day 0 from the daily collections
+        // Exclude Day 0 from the chart
         if (dayLabel !== "Day 0") {
             days.push(dayLabel);
             collections.push(collectionValue);
@@ -416,6 +415,9 @@ function generateChart() {
     days.reverse();
     collections.reverse();
 
+    // Ensure the X-axis starts from 0 (origin)
+    days = days.map((day, index) => `Day ${index + 1}`);
+
     if (chartInstance) {
         chartInstance.data.labels = days;
         chartInstance.data.datasets[0].data = collections;
@@ -436,8 +438,17 @@ function generateChart() {
             },
             options: {
                 scales: {
-                    x: { title: { display: true, text: "Days" } },
-                    y: { title: { display: true, text: "Day Collection (\u20B9 Cr)" } }
+                    x: {
+                        title: { display: true, text: "Days" },
+                        beginAtZero: true, // Ensure X-axis starts from 0
+                        ticks: {
+                            callback: (value, index) => `Day ${index + 1}`, // Label days sequentially
+                        }
+                    },
+                    y: {
+                        title: { display: true, text: "Day Collection (\u20B9 Cr)" },
+                        beginAtZero: true // Ensure Y-axis starts from 0
+                    }
                 }
             }
         });
@@ -446,10 +457,9 @@ function generateChart() {
     generateTotalCollectionChart(collections);
 }
 
-// Function to generate the Total Collection Chart
 function generateTotalCollectionChart() {
-    let totalDays = ["Day 0"]; // Start with Day 0
-    let cumulativeCollections = [0]; // Start with 0 for Day 0
+    let totalDays = [];
+    let cumulativeCollections = [];
     let totalSum = 0;
 
     let rows = document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)");
@@ -476,7 +486,10 @@ function generateTotalCollectionChart() {
         cumulativeCollections.push(totalSum);
     }
 
-    // No need to reverse; already in correct order (Day 0 → Current Day)
+    // Ensure the X-axis starts from 0 (origin)
+    totalDays = totalDays.map((day, index) => `Day ${index + 1}`);
+
+    // No need to reverse; already in correct order (Day 1 → Current Day)
     if (totalChartInstance) {
         totalChartInstance.data.labels = totalDays;
         totalChartInstance.data.datasets[0].data = cumulativeCollections;
@@ -497,8 +510,17 @@ function generateTotalCollectionChart() {
             },
             options: {
                 scales: {
-                    x: { title: { display: true, text: "Days" } },
-                    y: { title: { display: true, text: "Total Collection (\u20B9 Cr)" } }
+                    x: {
+                        title: { display: true, text: "Days" },
+                        beginAtZero: true, // Ensure X-axis starts from 0
+                        ticks: {
+                            callback: (value, index) => `Day ${index + 1}`, // Label days sequentially
+                        }
+                    },
+                    y: {
+                        title: { display: true, text: "Total Collection (\u20B9 Cr)" },
+                        beginAtZero: true // Ensure Y-axis starts from 0
+                    }
                 }
             }
         });
