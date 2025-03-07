@@ -382,16 +382,15 @@ setTimeout(() => {
     }
      
 
-// Function to generate the Daily Collection Chart
 function generateChart() {
-    let days = [];
-    let collections = [];
+    let days = ["Day 0"]; // Start with Day 0
+    let collections = [0]; // Start with 0 for Day 0
 
     document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
         let dayLabel = row.cells[0].innerText;
         let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-        // Exclude Day 0 from the chart
+        // Exclude Day 0 from the daily collections
         if (dayLabel !== "Day 0") {
             days.push(dayLabel);
             collections.push(collectionValue);
