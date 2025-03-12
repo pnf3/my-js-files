@@ -170,7 +170,10 @@ const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat
 
     for (let i = 1; i <= 30; i++) {
         let nextDay = lastDay + i;
-    //    if (nextDay > maxDayAllowed) break;
+    if (nextDay > maxDayAllowed) {
+        console.log(`Skipping Day ${nextDay}: Exceeds maxDayAllowed`);
+        continue; // Skip this iteration
+    }
 
         let dayName = getDayName(releaseDate, nextDay);
         let weekNum = Math.ceil(nextDay / 7);
