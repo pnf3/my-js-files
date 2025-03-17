@@ -870,11 +870,17 @@ document.addEventListener("DOMContentLoaded", function () {
         columnHeaderRow.appendChild(bocHeader);
     }
 
-    // Iterate through each row and update with Release Date and BOC
+    // Iterate through each row and update with Release Date, Movie Name, and BOC
     tableBody.querySelectorAll("tr").forEach(row => {
         let movieCell = row.querySelector("td a"); // Find movie title link
         if (movieCell) {
             let movieTitle = movieCell.textContent.trim(); // Get movie title
+
+            // Remove "Movie Box Office Collection: Day-Wise" from the title
+            movieTitle = movieTitle.replace(" Movie Box Office Collection: Day-Wise", "");
+
+            // Update movie title text in the table
+            movieCell.textContent = movieTitle;
 
             if (dayValues[movieTitle]) { // If movie data exists
                 let movieData = dayValues[movieTitle];
@@ -903,4 +909,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
