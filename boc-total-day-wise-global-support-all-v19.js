@@ -6,8 +6,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const postTitle = postTitleElement.textContent.trim();
     const cumulativeValuesObj = dayValues[postTitle]; // Now an object
 
-   // Convert object values to an ordered array
-    const dailyEarnings = Object.values(cumulativeValuesObj).map(value => parseFloat(value))
+   
+    if (!cumulativeValuesObj) return; // Exit if no data found
+
+    // Convert object values to an ordered array, excluding "total"
+    const dailyEarnings = Object.keys(cumulativeValuesObj)
+        .filter(key => !isNaN(key)) // Only numeric keys (day-wise data)
+        .map(key => parseFloat(cumulativeValuesObj[key]));
+
+    console.log(dailyEarnings); // Debugging: Check filtered daily earnings
+
+
 
     // Compute daily earnings from cumulative values
     // let previousValue = 0;
@@ -705,6 +714,116 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Related Posts Here
+document.addEventListener("DOMContentLoaded", function() {
+    function convertRelatedPostsToTable() {
+        const relatedWrap = document.getElementById("related-wrap");
+        if (!relatedWrap) return; // Prevent errors if the element is missing
+
+        const relatedItems = relatedWrap.querySelectorAll(".related-items .post");
+        if (relatedItems.length === 0) return; // Prevent empty table creation
+
+        let boxOfficeHTML = "";
+        let moviesListHTML = "";
+
+        relatedItems.forEach((item) => {
+            const titleElement = item.querySelector(".entry-title a");
+            const title = titleElement ? titleElement.textContent.trim() : "No Title";
+            const link = titleElement ? titleElement.href : "#";
+
+            // Check if it's a Box Office Collection or a Movies List
+            let isBoxOffice = title.toLowerCase().includes("box office collection");
+            let actionText = isBoxOffice ? "📊 View Report" : "📋 View List";
+
+            let rowHTML = `
+                <tr>
+                    <td>
+                        🎬 <a href="${link}" title="Read more about ${title}" aria-label="Read more about ${title}">
+                            ${title}
+                        </a>
+                    </td>
+                    <td style="text-align:center;">
+                        <a href="${link}" title="${actionText} for ${title}" aria-label="${actionText} for ${title}" class="view-btn">
+                            ${actionText}
+                        </a>
+                    </td>
+                </tr>
+            `;
+
+            // Add to the correct table
+            if (isBoxOffice) {
+                boxOfficeHTML += rowHTML;
+            } else {
+                moviesListHTML += rowHTML;
+            }
+        });
+
+        let finalHTML = "";
+
+        // Generate Box Office Table if there are any
+        if (boxOfficeHTML) {
+            finalHTML += `
+                <h3>📌 Recommended Box Office Reports</h3>
+                <table id="boxOfficeTable" class="custom-table" border="1" style="width:100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Movie</th>
+                            <th>Box Office Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${boxOfficeHTML}
+                    </tbody>
+                </table>
+                <br>
+            `;
+        }
+
+        // Generate Movies List Table if there are any
+        if (moviesListHTML) {
+            finalHTML += `
+                <h3>📌 Recommended Movies List</h3>
+                <table id="moviesListTable" class="custom-table" border="1" style="width:100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Movie</th>
+                            <th>Movies List</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${moviesListHTML}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        // Replace the existing related content with the formatted tables
+        relatedWrap.innerHTML = finalHTML;
+    }
+
+    // Initial conversion
+    convertRelatedPostsToTable();
+
+    // Observe for dynamically loaded content (useful for AJAX or lazy loading)
+    const observer = new MutationObserver(() => {
+        convertRelatedPostsToTable();
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+});
+
+
+// Get the button element by its class
+var button = document.querySelector(".show-cf.btn");
+
+// Replace the text content of the button
+if (button) {
+    button.textContent = "Post a Comment";
+}
+
+// script.js - Updates table with Box Office Collection (BOC)
 document.addEventListener("DOMContentLoaded", function () {
     // Check if "Box Office Collection" tag exists
     const boxOfficeTag = document.querySelector(".queryMessage .query-info");
@@ -820,5 +939,4 @@ document.addEventListener("DOMContentLoaded", function () {
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 });
-
 
