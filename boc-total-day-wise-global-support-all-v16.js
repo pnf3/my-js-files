@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let maxDayAllowed = Math.floor((today - releaseDate) / (1000 * 60 * 60 * 24)) + 1;
 
     let newRows = [];
-    let weekTotals = {};
+    //let weekTotals = {};
 
     // Insert missing days dynamically
     for (let i = 0; i < dailyEarnings.length; i++) {
@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let dayName = getDayName(releaseDate, nextDay);
         let weekNum = Math.ceil(nextDay / 7);
-        if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
+        //  if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
         let collection = dailyEarnings[i] || 0;
-        weekTotals[weekNum] += collection;
+        //   weekTotals[weekNum] += collection;
 
         newRows.unshift(
             `<tr>
@@ -67,15 +67,15 @@ document.addEventListener("DOMContentLoaded", function() {
         );
 
         // Insert Week Summary on Last Day of the Week
-        if (nextDay % 7 === 0) {
-            let weekOrdinal = getOrdinal(weekNum);
-            newRows.unshift(
-                `<tr class="week-summary">
-                    <td colspan="2">${weekOrdinal} Week Total</td>
-                    <td>${weekTotals[weekNum].toFixed(2)}</td>
-                </tr>`
-            );
-        }
+        //  if (nextDay % 7 === 0) {
+        //      let weekOrdinal = getOrdinal(weekNum);
+        //      newRows.unshift(
+        //         `<tr class="week-summary">
+        //             <td colspan="2">${weekOrdinal} Week Total</td>
+        //           <td>${weekTotals[weekNum].toFixed(2)}</td>
+        //       </tr>`
+        //   );
+        // }
     }
 
     // Append new rows to the table
