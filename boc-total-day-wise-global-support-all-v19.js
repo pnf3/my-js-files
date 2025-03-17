@@ -705,116 +705,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Related Posts Here
-document.addEventListener("DOMContentLoaded", function() {
-    function convertRelatedPostsToTable() {
-        const relatedWrap = document.getElementById("related-wrap");
-        if (!relatedWrap) return; // Prevent errors if the element is missing
-
-        const relatedItems = relatedWrap.querySelectorAll(".related-items .post");
-        if (relatedItems.length === 0) return; // Prevent empty table creation
-
-        let boxOfficeHTML = "";
-        let moviesListHTML = "";
-
-        relatedItems.forEach((item) => {
-            const titleElement = item.querySelector(".entry-title a");
-            const title = titleElement ? titleElement.textContent.trim() : "No Title";
-            const link = titleElement ? titleElement.href : "#";
-
-            // Check if it's a Box Office Collection or a Movies List
-            let isBoxOffice = title.toLowerCase().includes("box office collection");
-            let actionText = isBoxOffice ? "📊 View Report" : "📋 View List";
-
-            let rowHTML = `
-                <tr>
-                    <td>
-                        🎬 <a href="${link}" title="Read more about ${title}" aria-label="Read more about ${title}">
-                            ${title}
-                        </a>
-                    </td>
-                    <td style="text-align:center;">
-                        <a href="${link}" title="${actionText} for ${title}" aria-label="${actionText} for ${title}" class="view-btn">
-                            ${actionText}
-                        </a>
-                    </td>
-                </tr>
-            `;
-
-            // Add to the correct table
-            if (isBoxOffice) {
-                boxOfficeHTML += rowHTML;
-            } else {
-                moviesListHTML += rowHTML;
-            }
-        });
-
-        let finalHTML = "";
-
-        // Generate Box Office Table if there are any
-        if (boxOfficeHTML) {
-            finalHTML += `
-                <h3>📌 Recommended Box Office Reports</h3>
-                <table id="boxOfficeTable" class="custom-table" border="1" style="width:100%; border-collapse: collapse;">
-                    <thead>
-                        <tr>
-                            <th>Movie</th>
-                            <th>Box Office Report</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${boxOfficeHTML}
-                    </tbody>
-                </table>
-                <br>
-            `;
-        }
-
-        // Generate Movies List Table if there are any
-        if (moviesListHTML) {
-            finalHTML += `
-                <h3>📌 Recommended Movies List</h3>
-                <table id="moviesListTable" class="custom-table" border="1" style="width:100%; border-collapse: collapse;">
-                    <thead>
-                        <tr>
-                            <th>Movie</th>
-                            <th>Movies List</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${moviesListHTML}
-                    </tbody>
-                </table>
-            `;
-        }
-
-        // Replace the existing related content with the formatted tables
-        relatedWrap.innerHTML = finalHTML;
-    }
-
-    // Initial conversion
-    convertRelatedPostsToTable();
-
-    // Observe for dynamically loaded content (useful for AJAX or lazy loading)
-    const observer = new MutationObserver(() => {
-        convertRelatedPostsToTable();
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-});
-
-
-// Get the button element by its class
-var button = document.querySelector(".show-cf.btn");
-
-// Replace the text content of the button
-if (button) {
-    button.textContent = "Post a Comment";
-}
-
-// script.js - Updates table with Box Office Collection (BOC)
 document.addEventListener("DOMContentLoaded", function () {
     // Check if "Box Office Collection" tag exists
     const boxOfficeTag = document.querySelector(".queryMessage .query-info");
@@ -840,7 +730,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let headerCell = document.createElement("th");
         headerCell.setAttribute("colspan", "3");
-        headerCell.textContent = "Movies Box Office Collection 2025 - Day Wise";
+        headerCell.textContent = "Box Office Collection Day Wise";
         headerCell.style.textAlign = "center"; // Center align the text
 
         headerRow.appendChild(headerCell);
@@ -882,6 +772,9 @@ document.addEventListener("DOMContentLoaded", function () {
         cleanedDayValues[cleanedKey] = dayValues[key];
     }
 
+    // Store rows in an array to sort them later
+    let rowsData = [];
+
     // Iterate through each row and update with Release Date, Movie Name, and BOC
     tableBody.querySelectorAll("tr").forEach(row => {
         let movieCell = row.querySelector("td a"); // Find movie title link
@@ -892,33 +785,40 @@ document.addEventListener("DOMContentLoaded", function () {
             let cleanedMovieTitle = cleanMovieTitle(originalMovieTitle);
             movieCell.textContent = cleanedMovieTitle; // Update table
 
+            let releaseDate = "N/A";
+            let bocTotal = "N/A";
+
             // Check if the cleaned movie title exists in the updated dayValues
             if (cleanedDayValues[cleanedMovieTitle]) { 
                 let movieData = cleanedDayValues[cleanedMovieTitle];
-
-                // Create Release Date cell
-                let releaseDateCell = document.createElement("td");
-                releaseDateCell.textContent = movieData.releaseDate ?? "N/A";
-
-                // Insert Release Date as the first column
-                row.insertBefore(releaseDateCell, row.firstChild);
-
-                // Create BOC cell
-                let bocCell = document.createElement("td");
-                bocCell.textContent = movieData.total ?? "N/A"; // Display manually set total
-                row.appendChild(bocCell);
-            } else {
-                // If no data available, add empty cells
-                let releaseDateCell = document.createElement("td");
-                releaseDateCell.textContent = "N/A";
-                row.insertBefore(releaseDateCell, row.firstChild);
-
-                let bocCell = document.createElement("td");
-                bocCell.textContent = "N/A";
-                row.appendChild(bocCell);
+                releaseDate = movieData.releaseDate ?? "N/A";
+                bocTotal = movieData.total ?? "N/A";
             }
+
+            // Create cells
+            let releaseDateCell = document.createElement("td");
+            releaseDateCell.textContent = releaseDate;
+            row.insertBefore(releaseDateCell, row.firstChild); // Insert at start
+
+            let bocCell = document.createElement("td");
+            bocCell.textContent = bocTotal;
+            row.appendChild(bocCell);
+
+            // Store row data for sorting
+            rowsData.push({ row, releaseDate });
         }
     });
+
+    // Sort rows in descending order based on the release date
+    rowsData.sort((a, b) => {
+        if (a.releaseDate === "N/A") return 1;
+        if (b.releaseDate === "N/A") return -1;
+        return new Date(b.releaseDate) - new Date(a.releaseDate);
+    });
+
+    // Append sorted rows back to the table
+    tableBody.innerHTML = ""; // Clear existing rows
+    rowsData.forEach(({ row }) => tableBody.appendChild(row));
 });
 
 
