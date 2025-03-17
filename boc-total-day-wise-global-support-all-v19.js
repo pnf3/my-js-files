@@ -833,7 +833,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Add a new row above headers for "Box Office Collection Day Wise" (if not already added)
+    // Add a new row above headers for "Box Office Collection Day Wise"
     if (!document.querySelector(".movies-table thead .boc-header-row")) {
         let headerRow = document.createElement("tr");
         headerRow.classList.add("boc-header-row");
@@ -847,22 +847,20 @@ document.addEventListener("DOMContentLoaded", function () {
         tableHead.prepend(headerRow); // Insert at the top of the thead
     }
 
-    // Select the actual column header row (if it exists) or create it
+    // Add column headers if missing
     let columnHeaderRow = tableHead.querySelector("tr:not(.boc-header-row)");
     if (!columnHeaderRow) {
         columnHeaderRow = document.createElement("tr");
         tableHead.appendChild(columnHeaderRow);
     }
 
-    // Add "Release Date" column as the FIRST column if not already present
     if (!document.querySelector(".movies-table thead th.release-date-header")) {
         let releaseDateHeader = document.createElement("th");
         releaseDateHeader.textContent = "Release Date";
         releaseDateHeader.classList.add("release-date-header");
-        columnHeaderRow.insertBefore(releaseDateHeader, columnHeaderRow.firstChild); // Insert at the start
+        columnHeaderRow.insertBefore(releaseDateHeader, columnHeaderRow.firstChild);
     }
 
-    // Add "BOC" column if not already present
     if (!document.querySelector(".movies-table thead th.boc-header")) {
         let bocHeader = document.createElement("th");
         bocHeader.textContent = "BOC (₹ Crore)";
@@ -876,40 +874,49 @@ document.addEventListener("DOMContentLoaded", function () {
     tableBody.querySelectorAll("tr").forEach(row => {
         let movieCell = row.querySelector("td a"); // Find movie title link
         if (movieCell) {
-            let movieTitle = movieCell.textContent.trim(); // Get movie title
+            let movieTitle = movieCell.textContent.trim();
 
-            // Remove " Movie Box Office Collection: Day-Wise" from the title
-            movieTitle = movieTitle.replace(" Movie Box Office Collection: Day-Wise", "");
+            // Remove unnecessary text from movie name
+            movieTitle = movieTitle.replace(" Movie Box Office Collection: Day-Wise", "").trim();
 
-            // Update movie title text in the table
+            // Update movie title in the table
             movieCell.textContent = movieTitle;
 
-            let releaseDate = dayValues[movieTitle]?.releaseDate || "N/A"; // Get release date
-            let bocTotal = dayValues[movieTitle]?.total || "N/A"; // Get total BOC
+            // Try to find release date from `dayValues`
+            let movieData = dayValues[movieTitle] || {}; // Default to empty object if not found
+            let releaseDate = movieData.releaseDate || "N/A"; // If not found, show "N/A"
+            let bocTotal = movieData.total || "N/A"; // If not found, show "N/A"
+
+            // Debugging: Log movieTitle to ensure correct match
+            console.log(`Processed Movie: "${movieTitle}", Release Date: ${releaseDate}, BOC: ${bocTotal}`);
+
+            // Create Release Date cell
+            let releaseDateCell = document.createElement("td");
+            releaseDateCell.textContent = releaseDate;
+
+            // Create BOC cell
+            let bocCell = document.createElement("td");
+            bocCell.textContent = bocTotal;
 
             // Store row data for sorting
             rowsData.push({
                 rowElement: row,
                 releaseDate: releaseDate,
-                parsedDate: releaseDate !== "N/A" ? new Date(releaseDate) : null // Convert to Date for sorting
+                parsedDate: releaseDate !== "N/A" ? new Date(releaseDate) : null
             });
 
-            // Create Release Date cell
-            let releaseDateCell = document.createElement("td");
-            releaseDateCell.textContent = releaseDate;
-            row.insertBefore(releaseDateCell, row.firstChild); // Insert Release Date at the start
+            // Insert Release Date as the first column
+            row.insertBefore(releaseDateCell, row.firstChild);
 
-            // Create BOC cell
-            let bocCell = document.createElement("td");
-            bocCell.textContent = bocTotal; // Display manually set total
+            // Append BOC column
             row.appendChild(bocCell);
         }
     });
 
-    // Sort rows by Release Date in Descending Order (Latest First)
+    // Sort rows by Release Date in Descending Order
     rowsData.sort((a, b) => {
         if (a.parsedDate && b.parsedDate) {
-            return b.parsedDate - a.parsedDate; // Sort by latest release first
+            return b.parsedDate - a.parsedDate;
         }
         return 0;
     });
