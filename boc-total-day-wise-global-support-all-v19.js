@@ -870,43 +870,54 @@ document.addEventListener("DOMContentLoaded", function () {
         columnHeaderRow.appendChild(bocHeader);
     }
 
-    // Iterate through each row and update with Release Date, Movie Name, and BOC
+    // Collect all rows and process them
+    let rowsData = [];
+
     tableBody.querySelectorAll("tr").forEach(row => {
         let movieCell = row.querySelector("td a"); // Find movie title link
         if (movieCell) {
             let movieTitle = movieCell.textContent.trim(); // Get movie title
 
-            // Remove "Movie Box Office Collection: Day-Wise" from the title
+            // Remove " Movie Box Office Collection: Day-Wise" from the title
             movieTitle = movieTitle.replace(" Movie Box Office Collection: Day-Wise", "");
 
             // Update movie title text in the table
             movieCell.textContent = movieTitle;
 
-            if (dayValues[movieTitle]) { // If movie data exists
-                let movieData = dayValues[movieTitle];
+            let releaseDate = dayValues[movieTitle]?.releaseDate || "N/A"; // Get release date
+            let bocTotal = dayValues[movieTitle]?.total || "N/A"; // Get total BOC
 
-                // Create Release Date cell
-                let releaseDateCell = document.createElement("td");
-                releaseDateCell.textContent = movieData.releaseDate ?? "N/A";
+            // Store row data for sorting
+            rowsData.push({
+                rowElement: row,
+                releaseDate: releaseDate,
+                parsedDate: releaseDate !== "N/A" ? new Date(releaseDate) : null // Convert to Date for sorting
+            });
 
-                // Insert Release Date as the first column
-                row.insertBefore(releaseDateCell, row.firstChild);
+            // Create Release Date cell
+            let releaseDateCell = document.createElement("td");
+            releaseDateCell.textContent = releaseDate;
+            row.insertBefore(releaseDateCell, row.firstChild); // Insert Release Date at the start
 
-                // Create BOC cell
-                let bocCell = document.createElement("td");
-                bocCell.textContent = movieData.total ?? "N/A"; // Display manually set total
-                row.appendChild(bocCell);
-            } else {
-                // If no data available, add empty cells
-                let releaseDateCell = document.createElement("td");
-                releaseDateCell.textContent = "N/A";
-                row.insertBefore(releaseDateCell, row.firstChild);
-
-                let bocCell = document.createElement("td");
-                bocCell.textContent = "N/A";
-                row.appendChild(bocCell);
-            }
+            // Create BOC cell
+            let bocCell = document.createElement("td");
+            bocCell.textContent = bocTotal; // Display manually set total
+            row.appendChild(bocCell);
         }
+    });
+
+    // Sort rows by Release Date in Descending Order (Latest First)
+    rowsData.sort((a, b) => {
+        if (a.parsedDate && b.parsedDate) {
+            return b.parsedDate - a.parsedDate; // Sort by latest release first
+        }
+        return 0;
+    });
+
+    // Clear table body and reinsert sorted rows
+    tableBody.innerHTML = "";
+    rowsData.forEach(rowData => {
+        tableBody.appendChild(rowData.rowElement);
     });
 });
 
