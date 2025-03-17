@@ -833,34 +833,36 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Add a new row above headers for "Box Office Collection Day Wise"
+    // Add a new row above headers for "Box Office Collection Day Wise" (if not already added)
     if (!document.querySelector(".movies-table thead .boc-header-row")) {
         let headerRow = document.createElement("tr");
         headerRow.classList.add("boc-header-row");
 
         let headerCell = document.createElement("th");
         headerCell.setAttribute("colspan", "3");
-        headerCell.textContent = "Box Office Collection Day Wise";
+        headerCell.textContent = "Movies Box Office Collection 2025 - Day Wise";
         headerCell.style.textAlign = "center"; // Center align the text
 
         headerRow.appendChild(headerCell);
         tableHead.prepend(headerRow); // Insert at the top of the thead
     }
 
-    // Add column headers if missing
+    // Select the actual column header row (if it exists) or create it
     let columnHeaderRow = tableHead.querySelector("tr:not(.boc-header-row)");
     if (!columnHeaderRow) {
         columnHeaderRow = document.createElement("tr");
         tableHead.appendChild(columnHeaderRow);
     }
 
+    // Add "Release Date" column as the FIRST column if not already present
     if (!document.querySelector(".movies-table thead th.release-date-header")) {
         let releaseDateHeader = document.createElement("th");
         releaseDateHeader.textContent = "Release Date";
         releaseDateHeader.classList.add("release-date-header");
-        columnHeaderRow.insertBefore(releaseDateHeader, columnHeaderRow.firstChild);
+        columnHeaderRow.insertBefore(releaseDateHeader, columnHeaderRow.firstChild); // Insert at the start
     }
 
+    // Add "BOC" column if not already present
     if (!document.querySelector(".movies-table thead th.boc-header")) {
         let bocHeader = document.createElement("th");
         bocHeader.textContent = "BOC (₹ Crore)";
@@ -868,63 +870,54 @@ document.addEventListener("DOMContentLoaded", function () {
         columnHeaderRow.appendChild(bocHeader);
     }
 
-    // Collect all rows and process them
-    let rowsData = [];
+    // Helper function to clean movie title
+    function cleanMovieTitle(title) {
+        return title.replace(" Movie Box Office Collection: Day-Wise", "").trim();
+    }
 
+    // Create a new object with cleaned movie titles for dayValues comparison
+    let cleanedDayValues = {};
+    for (let key in dayValues) {
+        let cleanedKey = cleanMovieTitle(key);
+        cleanedDayValues[cleanedKey] = dayValues[key];
+    }
+
+    // Iterate through each row and update with Release Date, Movie Name, and BOC
     tableBody.querySelectorAll("tr").forEach(row => {
         let movieCell = row.querySelector("td a"); // Find movie title link
         if (movieCell) {
-            let movieTitle = movieCell.textContent.trim();
+            let originalMovieTitle = movieCell.textContent.trim(); // Get movie title
 
-            // Remove unnecessary text from movie name
-            movieTitle = movieTitle.replace(" Movie Box Office Collection: Day-Wise", "").trim();
+            // Clean the movie title in the table
+            let cleanedMovieTitle = cleanMovieTitle(originalMovieTitle);
+            movieCell.textContent = cleanedMovieTitle; // Update table
 
-            // Update movie title in the table
-            movieCell.textContent = movieTitle;
+            // Check if the cleaned movie title exists in the updated dayValues
+            if (cleanedDayValues[cleanedMovieTitle]) { 
+                let movieData = cleanedDayValues[cleanedMovieTitle];
 
-            // Try to find release date from `dayValues`
-            let movieData = dayValues[movieTitle] || {}; // Default to empty object if not found
-            let releaseDate = movieData.releaseDate || "N/A"; // If not found, show "N/A"
-            let bocTotal = movieData.total || "N/A"; // If not found, show "N/A"
+                // Create Release Date cell
+                let releaseDateCell = document.createElement("td");
+                releaseDateCell.textContent = movieData.releaseDate ?? "N/A";
 
-            // Debugging: Log movieTitle to ensure correct match
-            console.log(`Processed Movie: "${movieTitle}", Release Date: ${releaseDate}, BOC: ${bocTotal}`);
+                // Insert Release Date as the first column
+                row.insertBefore(releaseDateCell, row.firstChild);
 
-            // Create Release Date cell
-            let releaseDateCell = document.createElement("td");
-            releaseDateCell.textContent = releaseDate;
+                // Create BOC cell
+                let bocCell = document.createElement("td");
+                bocCell.textContent = movieData.total ?? "N/A"; // Display manually set total
+                row.appendChild(bocCell);
+            } else {
+                // If no data available, add empty cells
+                let releaseDateCell = document.createElement("td");
+                releaseDateCell.textContent = "N/A";
+                row.insertBefore(releaseDateCell, row.firstChild);
 
-            // Create BOC cell
-            let bocCell = document.createElement("td");
-            bocCell.textContent = bocTotal;
-
-            // Store row data for sorting
-            rowsData.push({
-                rowElement: row,
-                releaseDate: releaseDate,
-                parsedDate: releaseDate !== "N/A" ? new Date(releaseDate) : null
-            });
-
-            // Insert Release Date as the first column
-            row.insertBefore(releaseDateCell, row.firstChild);
-
-            // Append BOC column
-            row.appendChild(bocCell);
+                let bocCell = document.createElement("td");
+                bocCell.textContent = "N/A";
+                row.appendChild(bocCell);
+            }
         }
-    });
-
-    // Sort rows by Release Date in Descending Order
-    rowsData.sort((a, b) => {
-        if (a.parsedDate && b.parsedDate) {
-            return b.parsedDate - a.parsedDate;
-        }
-        return 0;
-    });
-
-    // Clear table body and reinsert sorted rows
-    tableBody.innerHTML = "";
-    rowsData.forEach(rowData => {
-        tableBody.appendChild(rowData.rowElement);
     });
 });
 
