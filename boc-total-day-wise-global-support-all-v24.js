@@ -210,16 +210,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Adjust growth based on the day of the week
         if (dayName === "Friday") {
-            lastCollection *= 1.25; // ⬆️ 25% Increase over Thursday
-        } else if (dayName === "Saturday") {
-            lastCollection *= 1.40; // ⬆️ 40% Increase over Friday
-        } else if (dayName === "Sunday") {
-            lastCollection *= 1.15; // ⬆️ 15% Increase over Saturday
-        } else if (dayName === "Monday") {
-            lastCollection *= 0.40; // ⬇️ 60% Decrease from Sunday
-        } else {
-            lastCollection *= 0.75; // ⬇️ 25% Decrease (Tuesday to Thursday)
-        }
+    lastCollection *= 0.45; // ⬇️ 55% Drop from Previous Thursday (New movie releases)
+} else if (dayName === "Saturday") {
+    lastCollection *= 1.50; // ⬆️ 50% Increase over Friday (Weekend boost)
+} else if (dayName === "Sunday") {
+    lastCollection *= 1.15; // ⬆️ 15% Increase over Saturday (Peak day)
+} else if (dayName === "Monday") {
+    lastCollection *= 0.50; // ⬇️ 50% Drop from Sunday (Weekday effect)
+} else if (dayName === "Tuesday") {
+    lastCollection *= 0.85; // ⬇️ 15% Drop from Monday
+} else if (dayName === "Wednesday") {
+    lastCollection *= 0.90; // ⬇️ 10% Drop from Tuesday
+} else if (dayName === "Thursday") {
+    lastCollection *= 0.95; // ⬇️ 5% Drop from Wednesday
+}
+
 
 
         weekTotals[weekNum] += lastCollection;
