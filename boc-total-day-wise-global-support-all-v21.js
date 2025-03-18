@@ -917,13 +917,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // Create cells
             let releaseDateCell = document.createElement("td");
             releaseDateCell.textContent = releaseDate;
+            row.insertBefore(releaseDateCell, row.children[2]); // Inserts at 3rd place
 
             let bocCell = document.createElement("td");
             bocCell.textContent = bocTotal;
-
-            // Insert at desired positions
-            row.insertBefore(releaseDateCell, row.children[3]); // Move Release Date to index 3
-            row.insertBefore(bocCell, row.children[2]); // Move BOC to index 2
+            row.appendChild(bocCell);
 
             // Store row data for sorting
             rowsData.push({ row, releaseDate });
