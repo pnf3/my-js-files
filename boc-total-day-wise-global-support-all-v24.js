@@ -209,21 +209,22 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
         // Adjust growth based on the day of the week
-        if (dayName === "Friday") {
-    lastCollection *= 0.45; // ⬇️ 55% Drop from Previous Thursday (New movie releases)
+       if (dayName === "Friday") {
+    lastCollection *= 1.30; // ⬆️ 30% Increase over Thursday (New release effect)
 } else if (dayName === "Saturday") {
     lastCollection *= 1.50; // ⬆️ 50% Increase over Friday (Weekend boost)
 } else if (dayName === "Sunday") {
-    lastCollection *= 1.15; // ⬆️ 15% Increase over Saturday (Peak day)
+    lastCollection *= 1.10; // ⬆️ 10% Increase over Saturday (Peak day, but some films stabilize)
 } else if (dayName === "Monday") {
     lastCollection *= 0.50; // ⬇️ 50% Drop from Sunday (Weekday effect)
 } else if (dayName === "Tuesday") {
-    lastCollection *= 0.85; // ⬇️ 15% Drop from Monday
+    lastCollection *= 0.85; // ⬇️ 15% Drop from Monday (Settling phase)
 } else if (dayName === "Wednesday") {
-    lastCollection *= 0.90; // ⬇️ 10% Drop from Tuesday
+    lastCollection *= 0.90; // ⬇️ 10% Drop from Tuesday (More stable now)
 } else if (dayName === "Thursday") {
-    lastCollection *= 0.95; // ⬇️ 5% Drop from Wednesday
+    lastCollection *= 0.95; // ⬇️ 5% Drop from Wednesday (Almost stable before new releases)
 }
+
 
 
 
