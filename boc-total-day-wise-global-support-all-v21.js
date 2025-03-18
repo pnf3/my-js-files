@@ -877,9 +877,13 @@ document.addEventListener("DOMContentLoaded", function () {
         releaseDateHeader.textContent = "Release Date";
         releaseDateHeader.classList.add("release-date-header");
 
-        // Insert as the 3rd column (after movie name and before BOC)
-        let bocColumn = document.querySelector(".movies-table thead th.boc-header");
-        columnHeaderRow.insertBefore(releaseDateHeader, bocColumn);
+        // Insert as the 3rd column (AFTER the second column)
+        let secondColumn = columnHeaderRow.children[1]; // Get the second column
+        if (secondColumn) {
+            columnHeaderRow.insertBefore(releaseDateHeader, secondColumn.nextSibling);
+        } else {
+            columnHeaderRow.appendChild(releaseDateHeader);
+        }
     }
 
     // Helper function to clean movie title
@@ -924,10 +928,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let bocCell = document.createElement("td");
             bocCell.textContent = bocTotal;
 
-            // Insert "Release Date" as the 3rd column
-            let secondColumn = row.children[1]; // Movie Name column
+            // Insert "Release Date" as the 3rd column (AFTER the second column)
+            let secondColumn = row.children[1]; // Get the second column
             if (secondColumn) {
-                row.insertBefore(releaseDateCell, secondColumn.nextSibling); // Insert after movie name
+                row.insertBefore(releaseDateCell, secondColumn.nextSibling);
             } else {
                 row.appendChild(releaseDateCell);
             }
@@ -951,3 +955,4 @@ document.addEventListener("DOMContentLoaded", function () {
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 });
+
