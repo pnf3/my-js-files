@@ -10,29 +10,29 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!cumulativeValuesObj) return; // Exit if no data found
 
     // Convert object values to an ordered array, excluding "total"
-  //  const dailyEarnings = Object.keys(cumulativeValuesObj)
-   //     .filter(key => !isNaN(key)) // Only numeric keys (day-wise data)
-   //     .map(key => parseFloat(cumulativeValuesObj[key]));
-
-  //  console.log(dailyEarnings); // Debugging: Check filtered daily earnings
-
- // Convert object values to an ordered array, excluding "total"
-    const cumulativeValues = Object.keys(cumulativeValuesObj)
+    const dailyEarnings = Object.keys(cumulativeValuesObj)
         .filter(key => !isNaN(key)) // Only numeric keys (day-wise data)
-        .sort((a, b) => a - b) // Ensure the order is correct (ascending)
         .map(key => parseFloat(cumulativeValuesObj[key]));
 
-    console.log("Cumulative Values:", cumulativeValues); // Debugging: Check ordered cumulative earnings
+    console.log(dailyEarnings); // Debugging: Check filtered daily earnings
+
+ // Convert object values to an ordered array, excluding "total"
+ //   const cumulativeValues = Object.keys(cumulativeValuesObj)
+   //     .filter(key => !isNaN(key)) // Only numeric keys (day-wise data)
+   //     .sort((a, b) => a - b) // Ensure the order is correct (ascending)
+   //     .map(key => parseFloat(cumulativeValuesObj[key]));
+
+  //  console.log("Cumulative Values:", cumulativeValues); // Debugging: Check ordered cumulative earnings
 
     // Compute daily earnings from cumulative values
-    let previousValue = 0;
-    let dailyEarnings = cumulativeValues.map((currentValue, index) => {
-        let earning = index === 0 ? currentValue : currentValue - previousValue;
-        previousValue = currentValue;
-        return earning;
-    });
+ //   let previousValue = 0;
+ //   let dailyEarnings = cumulativeValues.map((currentValue, index) => {
+  //      let earning = index === 0 ? currentValue : currentValue - previousValue;
+   //     previousValue = currentValue;
+ //       return earning;
+ //   });
 
-    console.log("Daily Earnings:", dailyEarnings); // Debugging: Check computed daily earnings
+  //  console.log("Daily Earnings:", dailyEarnings); // Debugging: Check computed daily earnings
 
     // If your table is in descending order, reverse the daily earnings array
   //  dailyEarnings.reverse();
