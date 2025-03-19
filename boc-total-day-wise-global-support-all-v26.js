@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Daily Earnings:", dailyEarnings); // Debugging: Check computed daily earnings
 
     // If your table is in descending order, reverse the daily earnings array
-    dailyEarnings.reverse();
+   // dailyEarnings.reverse();
 
     // Get table body
     const tbody = document.getElementById("boxOfficeBody");
