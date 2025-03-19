@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!cumulativeValuesObj) return; // Exit if no data found
 
     // Convert object values to an ordered array, excluding "total"
-   // const dailyEarnings = Object.keys(cumulativeValuesObj)
+  //  const dailyEarnings = Object.keys(cumulativeValuesObj)
    //     .filter(key => !isNaN(key)) // Only numeric keys (day-wise data)
    //     .map(key => parseFloat(cumulativeValuesObj[key]));
 
- //   console.log(dailyEarnings); // Debugging: Check filtered daily earnings
+  //  console.log(dailyEarnings); // Debugging: Check filtered daily earnings
 
  // Convert object values to an ordered array, excluding "total"
     const cumulativeValues = Object.keys(cumulativeValuesObj)
@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     console.log("Daily Earnings:", dailyEarnings); // Debugging: Check computed daily earnings
 
-     If your table is in descending order, reverse the daily earnings array
-  //  dailyEarnings.reverse();
+    // If your table is in descending order, reverse the daily earnings array
+    dailyEarnings.reverse();
 
     // Get table body
     const tbody = document.getElementById("boxOfficeBody");
@@ -209,23 +209,17 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
         // Adjust growth based on the day of the week
-       if (dayName === "Friday") {
-    lastCollection *= 1.30; // ⬆️ 30% Increase over Thursday (New release effect)
-} else if (dayName === "Saturday") {
-    lastCollection *= 1.50; // ⬆️ 50% Increase over Friday (Weekend boost)
-} else if (dayName === "Sunday") {
-    lastCollection *= 1.10; // ⬆️ 10% Increase over Saturday (Peak day, but some films stabilize)
-} else if (dayName === "Monday") {
-    lastCollection *= 0.50; // ⬇️ 50% Drop from Sunday (Weekday effect)
-} else if (dayName === "Tuesday") {
-    lastCollection *= 0.85; // ⬇️ 15% Drop from Monday (Settling phase)
-} else if (dayName === "Wednesday") {
-    lastCollection *= 0.90; // ⬇️ 10% Drop from Tuesday (More stable now)
-} else if (dayName === "Thursday") {
-    lastCollection *= 0.95; // ⬇️ 5% Drop from Wednesday (Almost stable before new releases)
-}
-
-
+        if (dayName === "Friday") {
+            lastCollection *= 1.25; // ⬆️ 25% Increase over Thursday
+        } else if (dayName === "Saturday") {
+            lastCollection *= 1.40; // ⬆️ 40% Increase over Friday
+        } else if (dayName === "Sunday") {
+            lastCollection *= 1.15; // ⬆️ 15% Increase over Saturday
+        } else if (dayName === "Monday") {
+            lastCollection *= 0.40; // ⬇️ 60% Decrease from Sunday
+        } else {
+            lastCollection *= 0.75; // ⬇️ 25% Decrease (Tuesday to Thursday)
+        }
 
 
         weekTotals[weekNum] += lastCollection;
