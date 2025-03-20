@@ -850,14 +850,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Add a new row above headers for "Movie Details" (if not already added)
-    if (!document.querySelector(".movies-table thead .details-header-row")) {
+    // Add a new row above headers for "Box Office Collection Day Wise" (if not already added)
+    if (!document.querySelector(".movies-table thead .boc-header-row")) {
         let headerRow = document.createElement("tr");
-        headerRow.classList.add("details-header-row");
+        headerRow.classList.add("boc-header-row");
 
         let headerCell = document.createElement("th");
         headerCell.setAttribute("colspan", "3");
-        headerCell.textContent = "Movie Details";
+        headerCell.textContent = "Box Office Collection Day Wise";
         headerCell.style.textAlign = "center"; // Center align the text
 
         headerRow.appendChild(headerCell);
@@ -865,24 +865,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Select the actual column header row (if it exists) or create it
-    let columnHeaderRow = tableHead.querySelector("tr:not(.details-header-row)");
+    let columnHeaderRow = tableHead.querySelector("tr:not(.boc-header-row)");
     if (!columnHeaderRow) {
         columnHeaderRow = document.createElement("tr");
         tableHead.appendChild(columnHeaderRow);
     }
 
-    // Remove existing BOC column if present
-    let bocHeader = document.querySelector(".movies-table thead th.boc-header");
-    if (bocHeader) {
-        bocHeader.remove();
-    }
-
-    // Add "Language" column if not already present
-    if (!document.querySelector(".movies-table thead th.language-header")) {
-        let languageHeader = document.createElement("th");
-        languageHeader.textContent = "Language";
-        languageHeader.classList.add("language-header");
-        columnHeaderRow.appendChild(languageHeader);
+    // Add "BOC" column if not already present
+    if (!document.querySelector(".movies-table thead th.boc-header")) {
+        let bocHeader = document.createElement("th");
+        bocHeader.textContent = "Language";
+        bocHeader.classList.add("boc-header");
+        columnHeaderRow.appendChild(bocHeader);
     }
 
     // Add "Release Date" column as the LAST column instead of the first
@@ -908,7 +902,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Store rows in an array to sort them later
     let rowsData = [];
 
-    // Iterate through each row and update with Release Date, Movie Name, and Language
+    // Iterate through each row and update with Release Date, Movie Name, and BOC
     tableBody.querySelectorAll("tr").forEach(row => {
         let movieCell = row.querySelector("td a"); // Find movie title link
         if (movieCell) {
@@ -919,25 +913,19 @@ document.addEventListener("DOMContentLoaded", function () {
             movieCell.textContent = cleanedMovieTitle; // Update table
 
             let releaseDate = "N/A";
-            let language = "N/A";
+            let bocTotal = "N/A";
 
             // Check if the cleaned movie title exists in the updated dayValues
             if (cleanedDayValues[cleanedMovieTitle]) { 
                 let movieData = cleanedDayValues[cleanedMovieTitle];
                 releaseDate = movieData.releaseDate ?? "N/A";
-                language = movieData.Language ?? "N/A";
+                bocTotal = movieData.Language ?? "N/A";
             }
 
-            // Remove existing BOC cell if present
-            let existingBocCell = row.querySelector("td:last-child");
-            if (existingBocCell) {
-                existingBocCell.remove();
-            }
-
-            // Create Language cell
-            let languageCell = document.createElement("td");
-            languageCell.textContent = language;
-            row.appendChild(languageCell); // Append at the end
+            // Create BOC cell
+            let bocCell = document.createElement("td");
+            bocCell.textContent = bocTotal;
+            row.appendChild(bocCell); // Append at the end
 
             // Create Release Date cell and move it to the end
             let releaseDateCell = document.createElement("td");
@@ -959,4 +947,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Append sorted rows back to the table
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
-});
+}); 
