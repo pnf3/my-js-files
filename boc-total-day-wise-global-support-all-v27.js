@@ -850,14 +850,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Add a new row above headers for "Movies & Release Date" (if not already added)
-    if (!document.querySelector(".movies-table thead .header-row")) {
+    // Add a new row above headers for "Movie Details" (if not already added)
+    if (!document.querySelector(".movies-table thead .details-header-row")) {
         let headerRow = document.createElement("tr");
-        headerRow.classList.add("header-row");
+        headerRow.classList.add("details-header-row");
 
         let headerCell = document.createElement("th");
         headerCell.setAttribute("colspan", "3");
-        headerCell.textContent = "Movies & Release Date";
+        headerCell.textContent = "Movie Details";
         headerCell.style.textAlign = "center"; // Center align the text
 
         headerRow.appendChild(headerCell);
@@ -865,10 +865,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Select the actual column header row (if it exists) or create it
-    let columnHeaderRow = tableHead.querySelector("tr:not(.header-row)");
+    let columnHeaderRow = tableHead.querySelector("tr:not(.details-header-row)");
     if (!columnHeaderRow) {
         columnHeaderRow = document.createElement("tr");
         tableHead.appendChild(columnHeaderRow);
+    }
+
+    // Remove existing BOC column if present
+    let bocHeader = document.querySelector(".movies-table thead th.boc-header");
+    if (bocHeader) {
+        bocHeader.remove();
     }
 
     // Add "Language" column if not already present
@@ -879,12 +885,12 @@ document.addEventListener("DOMContentLoaded", function () {
         columnHeaderRow.appendChild(languageHeader);
     }
 
-    // Add "Release Date" column if not already present
+    // Add "Release Date" column as the LAST column instead of the first
     if (!document.querySelector(".movies-table thead th.release-date-header")) {
         let releaseDateHeader = document.createElement("th");
         releaseDateHeader.textContent = "Release Date";
         releaseDateHeader.classList.add("release-date-header");
-        columnHeaderRow.appendChild(releaseDateHeader);
+        columnHeaderRow.appendChild(releaseDateHeader); // Append at the end
     }
 
     // Helper function to clean movie title
@@ -892,17 +898,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return title.replace(" Movie Box Office Collection: Day-Wise", "").trim();
     }
 
-    // Create a new object with cleaned movie titles for comparison
+    // Create a new object with cleaned movie titles for dayValues comparison
     let cleanedDayValues = {};
     for (let key in dayValues) {
         let cleanedKey = cleanMovieTitle(key);
         cleanedDayValues[cleanedKey] = dayValues[key];
     }
 
-    // Store rows in an array for sorting
+    // Store rows in an array to sort them later
     let rowsData = [];
 
-    // Iterate through each row and update with Language and Release Date
+    // Iterate through each row and update with Release Date, Movie Name, and Language
     tableBody.querySelectorAll("tr").forEach(row => {
         let movieCell = row.querySelector("td a"); // Find movie title link
         if (movieCell) {
@@ -920,6 +926,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 let movieData = cleanedDayValues[cleanedMovieTitle];
                 releaseDate = movieData.releaseDate ?? "N/A";
                 language = movieData.Language ?? "N/A";
+            }
+
+            // Remove existing BOC cell if present
+            let existingBocCell = row.querySelector("td:last-child");
+            if (existingBocCell) {
+                existingBocCell.remove();
             }
 
             // Create Language cell
