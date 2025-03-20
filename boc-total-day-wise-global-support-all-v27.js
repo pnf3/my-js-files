@@ -857,7 +857,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let headerCell = document.createElement("th");
         headerCell.setAttribute("colspan", "3");
-        headerCell.textContent = "Box Office Collection Day Wise";
+        headerCell.textContent = "Indian Movies Box Office Collection: Day-Wise";
         headerCell.style.textAlign = "center"; // Center align the text
 
         headerRow.appendChild(headerCell);
