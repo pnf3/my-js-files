@@ -928,9 +928,23 @@ document.addEventListener("DOMContentLoaded", function () {
             row.appendChild(bocCell); // Append at the end
 
             // Create Release Date cell and move it to the end
-            let releaseDateCell = document.createElement("td");
-            releaseDateCell.textContent = releaseDate;
-            row.appendChild(releaseDateCell); // Append at the end
+           let releaseDateCell = document.createElement("td");
+
+// Format release date if it's a valid date
+if (releaseDate !== "N/A" && !isNaN(new Date(releaseDate))) {
+    let dateObj = new Date(releaseDate);
+    let formattedDate = dateObj.toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+    });
+    releaseDateCell.textContent = formattedDate;
+} else {
+    releaseDateCell.textContent = releaseDate; // Keep "N/A" as it is
+}
+
+row.appendChild(releaseDateCell); // Append at the end
+
 
             // Store row data for sorting
             rowsData.push({ row, releaseDate });
