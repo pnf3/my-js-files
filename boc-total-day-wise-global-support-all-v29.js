@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
 
-    const movieName = entryTitle.textContent.replace("Movie Box Office Collection: Day-Wise", "").trim() || "Movie";
+    const movieName = entryTitle.textContent.replace("Box Office Collection: Day-Wise", "").trim() || "Movie";
     document.querySelectorAll("[id^='movie-name-']").forEach(el => el.textContent = movieName);
 
     let latestDay = null,
