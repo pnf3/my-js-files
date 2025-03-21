@@ -201,12 +201,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let weekTotals = {};
 
     for (let i = 1; i <= 30; i++) {
-        let nextDay = lastDay + i;
-        if (nextDay > maxDayAllowed) break;
+    let nextDay = lastDay + i;
+    if (nextDay > maxDayAllowed) break; // Stop if the day exceeds the allowed limit
 
-        let dayName = getDayName(releaseDate, nextDay);
-        let weekNum = Math.ceil(nextDay / 7);
-        if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
+    // Add rows only if the day is within the limit
+    let dayName = getDayName(releaseDate, nextDay);
+    let weekNum = Math.ceil(nextDay / 7);
+    if (!weekTotals[weekNum]) weekTotals[weekNum] = 0;
 
         // Adjust growth based on the day of the week
         if (dayName === "Friday") {
@@ -222,27 +223,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
 
-        weekTotals[weekNum] += lastCollection;
+       let collection = dailyEarnings[i] || 0;
+    weekTotals[weekNum] += collection;
 
+    newRows.unshift(
+        `<tr>
+            <td>Day ${nextDay}</td>
+            <td>${dayName}</td>
+            <td>${collection.toFixed(2)}</td>
+        </tr>`
+    );
+
+    // Insert Week Summary on Last Day of the Week
+    if (nextDay % 7 === 0) {
+        let weekOrdinal = getOrdinal(weekNum);
         newRows.unshift(
-            `<tr>
-                <td>Day ${nextDay}</td>
-                <td>${dayName}</td>
-                <td>${lastCollection.toFixed(2)}</td>
+            `<tr class="week-summary">
+                <td colspan="2">${weekOrdinal} Week Total</td>
+                <td>${weekTotals[weekNum].toFixed(2)}</td>
             </tr>`
         );
-
-        // **Insert Week Summary on Last Day of the Week**
-        if (nextDay % 7 === 0) {
-            let weekOrdinal = getOrdinal(weekNum);
-            newRows.unshift(
-                `<tr class="week-summary">
-                    <td colspan="2">${weekOrdinal} Week Total</td>
-                    <td>${weekTotals[weekNum].toFixed(2)}</td>
-                </tr>`
-            );
-        }
     }
+}
 
     tbody.innerHTML = newRows.join("") + tbody.innerHTML;
 
@@ -433,97 +435,79 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Function to generate the Daily Collection Chart
-    function generateChart() {
-        let days = ["Day 0"]; // Start with Day 0
-        let collections = [0]; // Day 0 has a collection of 0
-        let dayCollectionMap = {}; // Store day-wise collections
+   function generateChart() {
+    let days = ["Day 0"]; // Start with Day 0
+    let collections = [0]; // Day 0 has a collection of 0
+    let dayCollectionMap = {}; // Store day-wise collections
 
-        // Loop through table rows and store data
-        document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
-            let dayLabel = row.cells[0].innerText.trim(); // e.g., "Day 5"
-            let collectionValue = parseFloat(row.cells[2].innerText);
-if (isNaN(collectionValue)) collectionValue = 0;
+    // Loop through table rows and store data
+    document.querySelectorAll("#boxOfficeBody tr:not(.week-summary)").forEach(row => {
+        let dayLabel = row.cells[0].innerText.trim(); // e.g., "Day 5"
+        let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
-
-            if (dayLabel !== "Day 0") {
-                dayCollectionMap[dayLabel] = collectionValue; // Store collection for the day
-            }
-        });
-
-        // Sort days correctly (convert "Day X" -> X, sort numerically, then convert back)
-        let sortedDays = Object.keys(dayCollectionMap)
-            .sort((a, b) => parseInt(a.replace("Day ", "")) - parseInt(b.replace("Day ", "")));
-
-        // Push sorted days and their corresponding collections
-        sortedDays.forEach(day => {
-            days.push(day);
-            collections.push(dayCollectionMap[day]);
-        });
-
-        // Ensure today's simulated collection is included
-        let todaySimulatedValue = parseFloat(todayCollectionCell.innerText) || 0;
-        let todayLabel = `Day ${currentDayNum}`;
-
-        if (!days.includes(todayLabel)) {
-            days.push(todayLabel);
-            collections.push(todaySimulatedValue);
-        } else {
-            let todayIndex = days.indexOf(todayLabel);
-            collections[todayIndex] = todaySimulatedValue;
+        if (dayLabel !== "Day 0") {
+            dayCollectionMap[dayLabel] = collectionValue; // Store collection for the day
         }
+    });
 
-        // Update or create the chart
-        if (chartInstance) {
-            chartInstance.data.labels = days;
-            chartInstance.data.datasets[0].data = collections;
-            chartInstance.update();
-        } else {
-            let ctx = document.getElementById("boxOfficeChart").getContext("2d");
-            chartInstance = new Chart(ctx, {
-                type: "line",
-                data: {
-                    labels: days,
-                    datasets: [{
-                        label: "Daily Collection (\u20B9 Cr)",
-                        data: collections,
-                        borderColor: "blue",
-                        backgroundColor: "rgba(0,0,255,0.2)",
-                        fill: true
-                    }]
-                },
-                options: {
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let value = context.raw || 0;
-                                    return `Collection: ₹${value.toFixed(2)} Cr`;
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: "Days"
-                            }
-                        },
-                        y: {
-                            title: {
-                                display: true,
-                                text: "Day Collection (\u20B9 Cr)"
+    // Sort days correctly (convert "Day X" -> X, sort numerically, then convert back)
+    let sortedDays = Object.keys(dayCollectionMap)
+        .sort((a, b) => parseInt(a.replace("Day ", "")) - parseInt(b.replace("Day ", "")));
+
+    // Push sorted days and their corresponding collections
+    sortedDays.forEach(day => {
+        days.push(day);
+        collections.push(dayCollectionMap[day]);
+    });
+
+    // Update or create the chart
+    if (chartInstance) {
+        chartInstance.data.labels = days;
+        chartInstance.data.datasets[0].data = collections;
+        chartInstance.update();
+    } else {
+        let ctx = document.getElementById("boxOfficeChart").getContext("2d");
+        chartInstance = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: days,
+                datasets: [{
+                    label: "Daily Collection (\u20B9 Cr)",
+                    data: collections,
+                    borderColor: "blue",
+                    backgroundColor: "rgba(0,0,255,0.2)",
+                    fill: true
+                }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let value = context.raw || 0;
+                                return `Collection: ₹${value.toFixed(2)} Cr`;
                             }
                         }
                     }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Days"
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: "Day Collection (\u20B9 Cr)"
+                        }
+                    }
                 }
-            });
-        }
-
-        generateTotalCollectionChart();
+            }
+        });
     }
-
-
+}
 
 
     // Function to generate the Total Collection Chart
@@ -537,9 +521,7 @@ if (isNaN(collectionValue)) collectionValue = 0;
 
         [...rows].reverse().forEach(row => {
             let dayLabel = row.cells[0].innerText;
-            let collectionValue = parseFloat(row.cells[2].innerText);
-if (isNaN(collectionValue)) collectionValue = 0;
-
+            let collectionValue = parseFloat(row.cells[2].innerText) || 0;
 
             if (dayLabel !== "Day 0") {
                 totalSum += collectionValue;
