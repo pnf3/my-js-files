@@ -31,7 +31,6 @@ function addMissingDays() {
 addMissingDays();
 
 
-<script>
 
 // Growth rates for each weekday
 const growthRates = {
