@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let newRows = [];
     let weekTotals = {};
 
-    for (let i = 1; i <= 1; i++) {
+    for (let i = 1; i <= 30; i++) {
         let nextDay = lastDay + i;
         if (nextDay > maxDayAllowed) break;
 
