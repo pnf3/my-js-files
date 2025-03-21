@@ -10,10 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entryTitle.textContent.includes("Movies List")) {
             metaDescription.content = `Explore ${pageTitle} List year wise, from the first film to the latest and upcoming releases, along with the total movies count.`;
             document.title = `${pageTitle} List: Year-Wise Filmography`;
+			entryTitle.textContent = entryTitle.textContent.replace("Filmography", `Complete Filmography`);
         }
 		
-        entryTitle.textContent = entryTitle.textContent.replace("Filmography", `Complete Filmography`);
-
     }
 
 
