@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Helper Functions
     function extractActorName(titleElement) {
-      return titleElement?.textContent.replace("Movies List", "").trim() || "Actor";
+      return titleElement?.textContent.replace("Movies List: Year-Wise Complete Filmography", "").trim() || "Actor";
     }
 
     function generateDynamicCard(actorName) {
