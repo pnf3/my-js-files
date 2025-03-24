@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entryTitle.textContent.includes("Movies List")) {
             metaDescription.content = `Explore ${pageTitle} List year wise, from the first film to the latest and upcoming releases, along with the total movies count.`;
             document.title = `${pageTitle} List: Year-Wise Filmography`;
-			entryTitle.textContent = entryTitle.textContent.replace("Movies List", `Movies List: Year-Wise Complete Filmography`);
+			entryTitle.textContent = entryTitle.textContent.replace("Filmography", `Complete Filmography`);
         }
 		
     }
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Helper Functions
     function extractActorName(titleElement) {
-      return titleElement?.textContent.replace("Movies List", "").trim() || "Actor";
+      return titleElement?.textContent.replace(": Year-Wise Complete Filmography", "").trim() || "Actor";
     }
 
     function generateDynamicCard(actorName) {
