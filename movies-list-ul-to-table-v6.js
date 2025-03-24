@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const entryTitle = document.querySelector("h1.entry-title");
 
    if (metaDescription) {
-        if (entryTitle.textContent.includes("Movies List: Year-Wise Filmography")) {
+        if (entryTitle.textContent.includes("Movies List")) {
             metaDescription.content = `Explore ${pageTitle} List year wise, from the first film to the latest and upcoming releases, along with the total movies count.`;
             document.title = `${pageTitle} List: Year-Wise Filmography`;
-			entryTitle.textContent = entryTitle.textContent.replace("Movies List: Year-Wise Filmography", `Movies List: Year-Wise Complete Filmography`);
+			entryTitle.textContent = entryTitle.textContent.replace("Movies List", `Movies List: Year-Wise Complete Filmography`);
         }
 		
     }
