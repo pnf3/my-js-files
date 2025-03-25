@@ -246,12 +246,9 @@ return "Blockbuster 🚀";
 })();
 
 
-    window.addEventListener("DOMContentLoaded", function() {
-        var titleElement = document.querySelector("h1.entry-title");
-        if (!titleElement) return; // If no title, exit
-
-        var movieTitle = titleElement.textContent.trim(); // Get the H1 text
-        var movieData = window.dayValues[movieTitle]; // Find matching movie data
+  window.addEventListener("DOMContentLoaded", function() {
+        var pageTitle = document.title.trim(); // Get the page title
+        var movieData = window.dayValues[pageTitle]; // Find matching movie data
 
         if (movieData) {
             var totalBoxOffice = movieData["total"] || 0;
@@ -274,12 +271,12 @@ return "Blockbuster 🚀";
             }
 
             // Insert values into HTML
-           // document.getElementById("totalSum-2").textContent = totalBoxOffice.toFixed(2);
+            document.getElementById("totalSum-2").textContent = totalBoxOffice.toFixed(2);
             document.getElementById("budget-2").textContent = budget.toFixed(2);
             document.getElementById("rating-2").textContent = rating;
             document.getElementById("verdict-2").textContent = verdict;
             document.getElementById("language-2").textContent = language;
         } else {
-            console.warn("No data found for movie:", movieTitle);
+            console.warn("No data found for movie:", pageTitle);
         }
     });
