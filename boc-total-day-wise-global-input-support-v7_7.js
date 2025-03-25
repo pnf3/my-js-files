@@ -246,7 +246,6 @@ return "Blockbuster 🚀";
 })();
 
 
-    <script>
     window.addEventListener("DOMContentLoaded", function() {
         var titleElement = document.querySelector("h1.entry-title");
         if (!titleElement) return; // If no title, exit
@@ -284,4 +283,3 @@ return "Blockbuster 🚀";
             console.warn("No data found for movie:", movieTitle);
         }
     });
-</script>
