@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function convertListToTable(list, actorName) {
-    const table = createTable([...list.querySelectorAll("li")], actorName);
-    list.parentNode.insertBefore(table, list); // Insert table before the list
-    list.remove(); // Remove the original list
-}
+    const items = [...list.querySelectorAll("li")];
+    const table = createTable(items, actorName);
 
+    list.replaceWith(table);
+}
 
 function createTable(items, actorName) {
     const table = document.createElement("table");
