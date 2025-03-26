@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
     }
 
-    function convertListToTable(list, actorName) {
+   function convertListToTable(list, actorName) {
     const items = [...list.querySelectorAll("li")];
     const table = createTable(items, actorName);
     list.replaceWith(table);
@@ -68,28 +68,22 @@ function createTable(items, actorName) {
     table.setAttribute("aria-labelledby", "movies-list-title");
 
     let tableRows = items.map((item, index) => {
-        const anchor = item.querySelector("a"); // Get <a> tag if available
-        let textContent = item.textContent.trim(); // Get full text
-        
-        if (anchor) {
-            textContent = textContent.replace(anchor.textContent, "").trim(); // Remove link text from textContent
-        }
+        const anchor = item.querySelector("a"); // Get the <a> tag if available
+        let textContent = item.childNodes[0].nodeValue.trim(); // Extract text before any <a> tag
 
-        // Extract year and title properly
-        const match = textContent.match(/^(\d{4})[:\s]*(.*)$/); 
+        // Extract year and movie name properly
+        const match = textContent.match(/^(\d{4})[:\s]*(.*)$/);
         let year = match ? match[1] : "";  // Year (first match group)
         let title = match ? match[2] : ""; // Title (second match group)
 
-        // If there's a link, use its text as the movie title
-        if (anchor) {
-            title = anchor.textContent;
-        }
+        // If there's a link, use it for the movie title
+        let movieName = anchor ? `<a href="${anchor.href}" target="_blank">${anchor.textContent}</a>` : title;
 
         return `
           <tr>
             <td>${items.length - index}</td>
             <td>${year}</td>
-            <td>${title}</td>
+            <td>${movieName}</td>
           </tr>`;
     }).join("");
 
