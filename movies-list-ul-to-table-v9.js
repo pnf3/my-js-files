@@ -68,16 +68,22 @@ function createTable(items, actorName) {
     table.setAttribute("aria-labelledby", "movies-list-title");
 
     let tableRows = items.map((item, index) => {
-        const anchor = item.querySelector("a"); // Check if <a> exists
+        const anchor = item.querySelector("a"); // Get <a> tag if available
         let textContent = item.textContent.trim(); // Get full text
-
-        // If there's a link, remove its text to extract only the year and title
+        
         if (anchor) {
-            textContent = textContent.replace(anchor.textContent, "").trim();
+            textContent = textContent.replace(anchor.textContent, "").trim(); // Remove link text from textContent
         }
 
-        const [year, ...titleParts] = textContent.split(": ");
-        const title = anchor ? anchor.textContent : titleParts.join(": "); // Use <a> text if exists
+        // Extract year and title properly
+        const match = textContent.match(/^(\d{4})[:\s]*(.*)$/); 
+        let year = match ? match[1] : "";  // Year (first match group)
+        let title = match ? match[2] : ""; // Title (second match group)
+
+        // If there's a link, use its text as the movie title
+        if (anchor) {
+            title = anchor.textContent;
+        }
 
         return `
           <tr>
@@ -105,6 +111,7 @@ function createTable(items, actorName) {
 
     return table;
 }
+
 
 
   });
