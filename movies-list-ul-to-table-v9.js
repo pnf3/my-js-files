@@ -56,14 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function convertListToTable(list, actorName) {
-    list.style.display = "none"; // Hide the list immediately
-
     const items = [...list.querySelectorAll("li")];
     const table = createTable(items, actorName);
-
-    list.replaceWith(table); // Replace the list with the table
+    list.replaceWith(table);
 }
-
 
 function createTable(items, actorName) {
     const table = document.createElement("table");
@@ -72,17 +68,22 @@ function createTable(items, actorName) {
     table.setAttribute("aria-labelledby", "movies-list-title");
 
     let tableRows = items.map((item, index) => {
-        const anchor = item.querySelector("a"); // Get the <a> tag if available
-        const [year, ...titleParts] = item.childNodes[0].nodeValue.trim().split(": ");
-        const title = titleParts.join(": ");
+        const anchor = item.querySelector("a"); // Check if <a> exists
+        let textContent = item.textContent.trim(); // Get full text
 
-        let movieName = anchor ? `<a href="${anchor.href}" target="_blank">${title}</a>` : title;
+        // If there's a link, remove its text to extract only the year and title
+        if (anchor) {
+            textContent = textContent.replace(anchor.textContent, "").trim();
+        }
+
+        const [year, ...titleParts] = textContent.split(": ");
+        const title = anchor ? anchor.textContent : titleParts.join(": "); // Use <a> text if exists
 
         return `
           <tr>
             <td>${items.length - index}</td>
             <td>${year}</td>
-            <td>${movieName}</td>
+            <td>${title}</td>
           </tr>`;
     }).join("");
 
@@ -104,5 +105,6 @@ function createTable(items, actorName) {
 
     return table;
 }
+
 
   });
