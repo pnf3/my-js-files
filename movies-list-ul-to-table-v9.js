@@ -56,11 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function convertListToTable(list, actorName) {
+    list.style.display = "none"; // Hide the list immediately
+
     const items = [...list.querySelectorAll("li")];
     const table = createTable(items, actorName);
 
-    list.replaceWith(table);
+    list.replaceWith(table); // Replace the list with the table
 }
+
 
 function createTable(items, actorName) {
     const table = document.createElement("table");
