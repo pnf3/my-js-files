@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let newRows = [];
     let weekTotals = {};
 
-    for (let i = 0; i <= 0; i++) {
+    for (let i = 2; i <= 0; i++) {
         let nextDay = lastDay + i;
         if (nextDay > maxDayAllowed) break;
 
@@ -360,8 +360,8 @@ document.addEventListener("DOMContentLoaded", function() {
             timeZone: "Asia/Kolkata"
         }));
 
-     //   let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
-	    let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
+        let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
+	  //  let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
         let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
 
         if (prevCollection === 0 || !todayCollectionCell) return;
