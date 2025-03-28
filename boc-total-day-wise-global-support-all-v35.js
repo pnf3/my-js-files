@@ -322,21 +322,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateTodayCollection() {
-        let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
-        let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
+    let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
 
-        let maxTodayCollection = parseFloat(todayCollectionCell?.innerText) || 0;
-        let simulatedCollection = (maxTodayCollection * elapsedTime).toFixed(2);
+    let maxTodayCollection = parseFloat(todayCollectionCell?.innerText) || 0;
+    let simulatedCollection = Math.max(previousValue, (maxTodayCollection * elapsedTime).toFixed(2));
 
-        let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
-        if (simulatedCollection > previousValue) {
-            todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
-        } else {
-            todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup>`;
-        }
+    let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
+    let difference = simulatedCollection - previousValue;
 
-        totalSumElement.textContent = totalSum.toFixed(2);
-        totalSumElement2.textContent = totalSum.toFixed(2);
+    if (difference > 0) {
+        weekSums[currentWeek] += difference;
+        totalSum += difference;
+    }
+
+    todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> 
+        <span style="color: green;" class="up-arrow">&#9650;</span>`;
+
+    totalSumElement.textContent = totalSum.toFixed(2);
+    totalSumElement2.textContent = totalSum.toFixed(2);
 
         generateChart(); // ✅ Update the chart dynamically
     }
