@@ -326,13 +326,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let startOfDay = new Date(now);
     startOfDay.setHours(0, 0, 0, 0);
 
-    // Fetch the estimated total collection for today from the table (or API if needed)
-    let estimatedTodayMax = parseFloat(todayCollectionCell?.getAttribute("data-estimate")) || 100; // Default 100 if no estimate is set
+    // Fetch manually entered value (if any)
+    let manualValue = parseFloat(todayCollectionCell?.innerText) || 0;
+
+    // Estimated max for today (set via data-estimate or default 100)
+    let estimatedTodayMax = parseFloat(todayCollectionCell?.getAttribute("data-estimate")) || 100; 
 
     let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day passed
     let simulatedCollection = (estimatedTodayMax * elapsedTime).toFixed(2); // Gradual increase
 
-    let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
+    let previousValue = parseFloat(todayCollectionCell.getAttribute("data-prev")) || 0; // Store previous value
     let difference = simulatedCollection - previousValue;
 
     if (difference > 0) {
@@ -343,11 +346,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> 
-        <span style="color: green;" class="up-arrow">&#9650;</span>`;
+    // Before 11:59 PM → Hide manual value & show simulated collection
+    if (now.getHours() < 23 || now.getMinutes() < 59) {
+        todayCollectionCell.setAttribute("data-prev", simulatedCollection); // Save simulated value
+        todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> 
+            <span style="color: green;" class="up-arrow">&#9650;</span>`;
+    } else {
+        // At 11:59 PM, restore manual value if available
+        if (manualValue > 0) {
+            todayCollectionCell.innerHTML = `${manualValue}`;
+        }
+    }
 
     totalSumElement.textContent = totalSum.toFixed(2);
     totalSumElement2.textContent = totalSum.toFixed(2);
+
 
         generateChart(); // ✅ Update the chart dynamically
     }
