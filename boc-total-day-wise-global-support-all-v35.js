@@ -282,115 +282,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let chartInstance, totalChartInstance;
 let todayCollectionCell, currentDayNum;
-document.addEventListener("DOMContentLoaded", function() {
-    const metaDescription = document.querySelector("meta[name='description']");
-    const entryTitle = document.querySelector("h1.entry-title");
-    const latestDayElement = document.getElementById("latest-day");
-    const nextDayElement = document.getElementById("next-day");
-    const totalSumElement = document.getElementById("totalSum");
-    const totalSumElement2 = document.getElementById("totalSum-2");
-    const rows = document.querySelectorAll("#boxOfficeBody tr");
-    const releaseDateElement = document.getElementById("theatrical-date");
-    const chartCanvas = document.getElementById("boxOfficeChart");
-    let chartInstance = null;
+document.addEventListener("DOMContentLoaded", function () {
+    let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
+    let startOfDay = new Date(now);
+    startOfDay.setHours(0, 0, 0, 0);
 
+    let releaseDateElement = document.getElementById("theatrical-date");
+    let rows = document.querySelectorAll("#boxOfficeBody tr");
+    let totalSumElement = document.getElementById("totalSum");
+    let totalSumElement2 = document.getElementById("totalSum-2");
 
-    if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
+    if (!releaseDateElement || rows.length === 0) return;
 
-    const movieName = entryTitle.textContent.replace("Box Office Collection: Day-Wise", "").trim() || "Movie";
-    document.querySelectorAll("[id^='movie-name-']").forEach(el => el.textContent = movieName);
-
-    let latestDay = null,
-        totalSum = 0,
-        currentWeek = null;
-    const weekSums = {},
-        weekTotalElements = {};
-
-    let now = new Date(new Date().toLocaleString("en-US", {
-        timeZone: "Asia/Kolkata"
-    }));
-    let releaseDateText = releaseDateElement.innerText.trim();
-    let releaseDate = parseDate(releaseDateText);
+    let releaseDate = parseDate(releaseDateElement.innerText.trim());
     let currentDayNum = Math.floor((now - releaseDate) / (1000 * 60 * 60 * 24)) + 1;
     let todayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
     let todayCollectionCell = todayRow ? todayRow.cells[2] : null;
 
-    totalSum = 0;
+    let totalSum = 0;
+
     for (const row of rows) {
-        if (row.classList.contains("week-summary")) {
-            currentWeek = row.cells[0].textContent.match(/\d+/)?.[0];
-            if (currentWeek) {
-                weekSums[currentWeek] = 0;
-                weekTotalElements[currentWeek] = row;
-            }
-        } else {
-            const collectionCell = row.cells[2];
-            const collection = parseFloat(collectionCell?.textContent.trim());
+        const collectionCell = row.cells[2];
+        const collection = parseFloat(collectionCell?.textContent.trim());
 
-            if (!isNaN(collection)) {
-                // Check if the row is for Day 0
-                const isDay0 = row.cells[0].innerText.trim() === "Day 0";
+        if (!isNaN(collection)) {
+            const isDay0 = row.cells[0].innerText.trim() === "Day 0";
 
-                // Exclude Day 0 and today's full collection before 11:59 PM
-               if (!isDay0) {
-    if (row === todayRow) {
-        // Simulate today's collection dynamically
-        let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day passed
-        let simulatedTodayCollection = collection * elapsedTime; // Scale based on time
+            if (!isDay0) {
+                if (row === todayRow) {
+                    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
+                    let simulatedTodayCollection = collection * elapsedTime;
 
-        totalSum += simulatedTodayCollection; // Add only the simulated value
-    } else {
-        totalSum += collection; // Normal addition for past days
-    }
-}
-
-
-                    // Update current week's total, excluding Day 0
-                    if (currentWeek) {
-                        weekSums[currentWeek] += collection;
-                    }
+                    totalSum += simulatedTodayCollection;
+                } else {
+                    totalSum += collection;
                 }
-
-                // Update latestDay, excluding Day 0
-                if (!isDay0 && !latestDay) {
-                    latestDay = row.cells[0].textContent.trim();
-                }
-            } else {
-                row.style.display = "none";
             }
         }
     }
 
     function updateTodayCollection() {
-        let now = new Date(new Date().toLocaleString("en-US", {
-            timeZone: "Asia/Kolkata"
-        }));
-
-        let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
-        let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
-
-        if (prevCollection === 0 || !todayCollectionCell) return;
-
-        let maxTodayCollection = prevCollection * 0.9;
-        let startOfDay = new Date(now);
-        startOfDay.setHours(0, 0, 0, 0);
+        let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
         let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
+
+        let maxTodayCollection = parseFloat(todayCollectionCell?.innerText) || 0;
         let simulatedCollection = (maxTodayCollection * elapsedTime).toFixed(2);
 
         let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
         if (simulatedCollection > previousValue) {
             todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
-            animateArrow(todayCollectionCell);
         } else {
             todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup>`;
         }
-        if (currentWeek) {
-            weekSums[currentWeek] += parseFloat(simulatedCollection) - previousValue;
-            weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
-        }
 
-        totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
-        totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
+        totalSumElement.textContent = totalSum.toFixed(2);
+        totalSumElement2.textContent = totalSum.toFixed(2);
 
         generateChart(); // ✅ Update the chart dynamically
     }
