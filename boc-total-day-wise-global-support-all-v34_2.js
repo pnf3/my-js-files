@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function updateTodayCollection() {
+   function updateTodayCollection() {
     let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
 
     if (!todayCollectionCell) return; // Ensure today's cell exists
@@ -384,19 +384,28 @@ document.addEventListener("DOMContentLoaded", function() {
     // Store the new proportional value
     todayCollectionCell.dataset.prevValue = proportionalCollection;
 
+    // ✅ Fix: Adjust weekly total dynamically without double counting
     if (currentWeek) {
-        weekSums[currentWeek] += parseFloat(proportionalCollection) - previousValue;
-        weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
+        let weekAlreadyHasToday = parseFloat(weekTotalElements[currentWeek].dataset.todayValue) || 0;
+        let newWeekSum = weekSums[currentWeek] - weekAlreadyHasToday + parseFloat(proportionalCollection);
+
+        weekSums[currentWeek] = newWeekSum;
+        weekTotalElements[currentWeek].dataset.todayValue = proportionalCollection;
+        weekTotalElements[currentWeek].cells[1].textContent = newWeekSum.toFixed(2);
     }
-    // Update total sum dynamically
-    if (incrementalIncrease > 0) {
-        totalSum += incrementalIncrease;
-        totalSumElement.textContent = totalSum.toFixed(2);
-        totalSumElement2.textContent = totalSum.toFixed(2);
-    }
+
+    // ✅ Fix: Adjust total sum dynamically without double counting
+    let totalAlreadyHasToday = parseFloat(totalSumElement.dataset.todayValue) || 0;
+    let newTotalSum = totalSum - totalAlreadyHasToday + parseFloat(proportionalCollection);
+
+    totalSum = newTotalSum;
+    totalSumElement.dataset.todayValue = proportionalCollection;
+    totalSumElement.textContent = newTotalSum.toFixed(2);
+    totalSumElement2.textContent = newTotalSum.toFixed(2);
 
     generateChart(); // ✅ Update the chart dynamically
 }
+
 
 
     // Run immediately when the page loads
