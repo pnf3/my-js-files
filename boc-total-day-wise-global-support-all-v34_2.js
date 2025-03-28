@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let proportionalCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Collection up to current time
 
     let previousValue = parseFloat(todayCollectionCell.dataset.prevValue) || 0; // Track last displayed value
-    let incrementalIncrease = proportionalCollection - previousValue; // Ensure only the increase is added
+    let incrementalIncrease = parseFloat(proportionalCollection) - previousValue; // Ensure only the increase is added
 
     if (incrementalIncrease > 0) {
         todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
@@ -384,25 +384,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // Store the new proportional value
     todayCollectionCell.dataset.prevValue = proportionalCollection;
 
-    // ✅ Fix: Prevent weekly sum double-counting by replacing the old value
-    if (currentWeek) {
-        let prevWeekValue = parseFloat(weekTotalElements[currentWeek].dataset.todayValue) || 0;
-        weekSums[currentWeek] = weekSums[currentWeek] - prevWeekValue + parseFloat(proportionalCollection);
-        
-        weekTotalElements[currentWeek].dataset.todayValue = proportionalCollection;
+    // ✅ Fix: Correctly update weekly sum by adding only the incremental value
+    if (currentWeek && incrementalIncrease > 0) {
+        weekSums[currentWeek] += incrementalIncrease;
         weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
     }
 
-    // ✅ Fix: Prevent total sum double-counting by replacing the old value
-    let prevTotalValue = parseFloat(totalSumElement.dataset.todayValue) || 0;
-    totalSum = totalSum - prevTotalValue + parseFloat(proportionalCollection);
-
-    totalSumElement.dataset.todayValue = proportionalCollection;
-    totalSumElement.textContent = totalSum.toFixed(2);
-    totalSumElement2.textContent = totalSum.toFixed(2);
+    // ✅ Fix: Update total sum only with incremental value
+    if (incrementalIncrease > 0) {
+        totalSum += incrementalIncrease;
+        totalSumElement.textContent = totalSum.toFixed(2);
+        totalSumElement2.textContent = totalSum.toFixed(2);
+    }
 
     generateChart(); // ✅ Update the chart dynamically
 }
+
 
 
 
