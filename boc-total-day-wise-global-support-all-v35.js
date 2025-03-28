@@ -323,12 +323,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateTodayCollection() {
     let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
-    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
+    let startOfDay = new Date(now);
+    startOfDay.setHours(0, 0, 0, 0);
 
-    let maxTodayCollection = parseFloat(todayCollectionCell?.innerText) || 0;
-    let simulatedCollection = Math.max(previousValue, (maxTodayCollection * elapsedTime).toFixed(2));
+    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Time fraction
+    let maxTodayCollection = parseFloat(todayCollectionCell?.innerText) || 0; // Full today's collection
 
     let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
+    let simulatedCollection;
+
+    if (now.getHours() === 23 && now.getMinutes() >= 59) {
+        // If it's 11:59 PM, set the full collection
+        simulatedCollection = maxTodayCollection.toFixed(2);
+    } else {
+        // Otherwise, increase it gradually throughout the day
+        simulatedCollection = Math.max(previousValue, (maxTodayCollection * elapsedTime).toFixed(2));
+    }
+
     let difference = simulatedCollection - previousValue;
 
     if (difference > 0) {
