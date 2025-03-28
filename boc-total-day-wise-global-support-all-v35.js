@@ -360,8 +360,8 @@ document.addEventListener("DOMContentLoaded", function() {
             timeZone: "Asia/Kolkata"
         }));
 
-        let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
-	 //   let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
+     //   let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
+	    let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
         let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
 
         if (prevCollection === 0 || !todayCollectionCell) return;
