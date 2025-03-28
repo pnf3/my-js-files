@@ -1,4 +1,4 @@
-ldocument.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     // Get the current post title
     const postTitleElement = document.querySelector("h1.entry-title");
     if (!postTitleElement) return; // Exit if title is missing
@@ -332,12 +332,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 const isDay0 = row.cells[0].innerText.trim() === "Day 0";
 
                 // Exclude Day 0 and today's full collection before 11:59 PM
-                if (!isDay0) {
-                    if (row === todayRow && (now.getHours() < 23 || now.getMinutes() < 59)) {
-                        // Exclude today’s full collection before 11:59 PM, but simulate it
-                    } else {
-                        totalSum += collection;
-                    }
+               if (!isDay0) {
+    if (row === todayRow) {
+        // Simulate today's collection dynamically
+        let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day passed
+        let simulatedTodayCollection = collection * elapsedTime; // Scale based on time
+
+        totalSum += simulatedTodayCollection; // Add only the simulated value
+    } else {
+        totalSum += collection; // Normal addition for past days
+    }
+}
+
 
                     // Update current week's total, excluding Day 0
                     if (currentWeek) {
@@ -360,21 +366,18 @@ document.addEventListener("DOMContentLoaded", function() {
             timeZone: "Asia/Kolkata"
         }));
 
-        let todayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
-    let todayCollectionCell = todayRow ? todayRow.cells[2] : null;
+        let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
+        let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
 
-    if (!todayCollectionCell) return;
+        if (prevCollection === 0 || !todayCollectionCell) return;
 
-    // Get today's actual collection (instead of the displayed one)
-    let actualTodayCollection = parseFloat(todayCollectionCell.dataset.actualCollection || 0); // Store real collection in data attribute
-    let startOfDay = new Date(now);
-    startOfDay.setHours(0, 0, 0, 0);
-    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
+        let maxTodayCollection = prevCollection * 0.9;
+        let startOfDay = new Date(now);
+        startOfDay.setHours(0, 0, 0, 0);
+        let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
+        let simulatedCollection = (maxTodayCollection * elapsedTime).toFixed(2);
 
-    // Simulate the collection growth throughout the day
-    let simulatedCollection = (actualTodayCollection * elapsedTime).toFixed(2);
-
-    let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
+        let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
         if (simulatedCollection > previousValue) {
             todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
             animateArrow(todayCollectionCell);
@@ -965,4 +968,4 @@ row.appendChild(releaseDateCell); // Append at the end
     // Append sorted rows back to the table
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
-}); o;]
+}); 
