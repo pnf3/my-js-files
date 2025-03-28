@@ -384,26 +384,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // Store the new proportional value
     todayCollectionCell.dataset.prevValue = proportionalCollection;
 
-    // ✅ Fix: Prevent double counting in weekly total
-    let weekPrevValue = parseFloat(todayCollectionCell.dataset.weekPrevValue) || 0; // Store last weekly sum for today
-    let weeklyIncrement = proportionalCollection - weekPrevValue;
-
-    if (weeklyIncrement > 0) {
-        todayCollectionCell.dataset.weekPrevValue = proportionalCollection; // Update stored weekly value
-        if (currentWeek) {
-            weekSums[currentWeek] += weeklyIncrement; // Only add today's new part
-            weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
-        }
-
-        // ✅ Fix: Only add new incremental value to totalSum (no duplication)
-        totalSum += weeklyIncrement;
+    if (currentWeek) {
+        weekSums[currentWeek] += parseFloat(proportionalCollection) - previousValue;
+        weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
+    }
+    // Update total sum dynamically
+    if (incrementalIncrease > 0) {
+        totalSum += incrementalIncrease;
         totalSumElement.textContent = totalSum.toFixed(2);
         totalSumElement2.textContent = totalSum.toFixed(2);
     }
 
     generateChart(); // ✅ Update the chart dynamically
 }
-
 
 
     // Run immediately when the page loads
