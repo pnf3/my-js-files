@@ -357,23 +357,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateTodayCollection() {
     let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
-
+    
     if (!todayCollectionCell) return; // Ensure today's cell exists
+    
+    let fullTodayCollection = parseFloat(todayCollectionCell.innerText) || 0; // Get today's actual collection
+    let startOfDay = new Date(now);
+    startOfDay.setHours(0, 0, 0, 0);
 
-    let todayCollection = parseFloat(todayCollectionCell.innerText) || 0; // Use actual value
+    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day elapsed
+    let proportionalCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Calculate collection up to now
 
-    // Update weekly total if applicable
+    let previousValue = parseFloat(todayCollectionCell.dataset.prevValue) || 0; // Store last displayed value
+    todayCollectionCell.dataset.prevValue = proportionalCollection; // Update stored value
+
+    if (proportionalCollection > previousValue) {
+        todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
+        animateArrow(todayCollectionCell);
+    } else {
+        todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup>`;
+    }
+
+    // Update weekly total dynamically
     if (currentWeek) {
-        weekSums[currentWeek] += todayCollection;
+        weekSums[currentWeek] += parseFloat(proportionalCollection) - previousValue;
         weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
     }
 
-    // Update total sum
-    totalSumElement.textContent = (totalSum + todayCollection).toFixed(2);
-    totalSumElement2.textContent = (totalSum + todayCollection).toFixed(2);
+    // Update total sum dynamically
+    totalSumElement.textContent = (totalSum + parseFloat(proportionalCollection) - previousValue).toFixed(2);
+    totalSumElement2.textContent = (totalSum + parseFloat(proportionalCollection) - previousValue).toFixed(2);
 
-        generateChart(); // ✅ Update the chart dynamically
-    }
+    generateChart(); // ✅ Update the chart dynamically
+}
 
     // Run immediately when the page loads
     updateTodayCollection();
