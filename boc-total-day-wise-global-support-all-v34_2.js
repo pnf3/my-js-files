@@ -361,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!todayCollectionCell) return; // Ensure today's cell exists
 
     let fullTodayCollection = parseFloat(todayCollectionCell.dataset.fullValue) || parseFloat(todayCollectionCell.innerText) || 0;
-
+    
     // Store today's full value for reference
     todayCollectionCell.dataset.fullValue = fullTodayCollection;
 
@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let proportionalCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Collection up to current time
 
     let previousValue = parseFloat(todayCollectionCell.dataset.prevValue) || 0; // Track last displayed value
-    let incrementalIncrease = proportionalCollection - previousValue; // Only add the new difference
+    let incrementalIncrease = proportionalCollection - previousValue; // Ensure only the increase is added
 
     if (incrementalIncrease > 0) {
         todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
@@ -384,27 +384,26 @@ document.addEventListener("DOMContentLoaded", function() {
     // Store the new proportional value
     todayCollectionCell.dataset.prevValue = proportionalCollection;
 
-    // ✅ Fix: Adjust weekly total without double counting
+    // ✅ Fix: Prevent weekly sum double-counting by replacing the old value
     if (currentWeek) {
-        let previousTodayValue = parseFloat(weekTotalElements[currentWeek].dataset.todayValue) || 0;
-        let newWeekSum = weekSums[currentWeek] - previousTodayValue + parseFloat(proportionalCollection);
-
-        weekSums[currentWeek] = newWeekSum;
-        weekTotalElements[currentWeek].dataset.todayValue = proportionalCollection; // Store latest value
-        weekTotalElements[currentWeek].cells[1].textContent = newWeekSum.toFixed(2);
+        let prevWeekValue = parseFloat(weekTotalElements[currentWeek].dataset.todayValue) || 0;
+        weekSums[currentWeek] = weekSums[currentWeek] - prevWeekValue + parseFloat(proportionalCollection);
+        
+        weekTotalElements[currentWeek].dataset.todayValue = proportionalCollection;
+        weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
     }
 
-    // ✅ Fix: Adjust total sum without double counting
-    let previousTotalToday = parseFloat(totalSumElement.dataset.todayValue) || 0;
-    let newTotalSum = totalSum - previousTotalToday + parseFloat(proportionalCollection);
+    // ✅ Fix: Prevent total sum double-counting by replacing the old value
+    let prevTotalValue = parseFloat(totalSumElement.dataset.todayValue) || 0;
+    totalSum = totalSum - prevTotalValue + parseFloat(proportionalCollection);
 
-    totalSum = newTotalSum;
-    totalSumElement.dataset.todayValue = proportionalCollection; // Store latest value
-    totalSumElement.textContent = newTotalSum.toFixed(2);
-    totalSumElement2.textContent = newTotalSum.toFixed(2);
+    totalSumElement.dataset.todayValue = proportionalCollection;
+    totalSumElement.textContent = totalSum.toFixed(2);
+    totalSumElement2.textContent = totalSum.toFixed(2);
 
     generateChart(); // ✅ Update the chart dynamically
 }
+
 
 
 
