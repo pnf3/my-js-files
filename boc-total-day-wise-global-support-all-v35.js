@@ -321,15 +321,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function updateTodayCollection() {
+   function updateTodayCollection() {
     let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
     let startOfDay = new Date(now);
     startOfDay.setHours(0, 0, 0, 0);
 
-    // Fetch manually entered value (if any)
-    let manualValue = parseFloat(todayCollectionCell?.innerText) || 0;
+    if (!todayCollectionCell) return;
 
-    // Estimated max for today (set via data-estimate or default 100)
+    // ✅ Get manually entered value
+    let manualValue = parseFloat(todayCollectionCell?.getAttribute("data-manual")) || 0;
+
+    // ✅ Get estimated full-day collection (if available)
     let estimatedTodayMax = parseFloat(todayCollectionCell?.getAttribute("data-estimate")) || 100; 
 
     let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day passed
@@ -346,13 +348,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Before 11:59 PM → Hide manual value & show simulated collection
+    // ✅ Before 11:59 PM → Hide manual value & show simulated value
     if (now.getHours() < 23 || now.getMinutes() < 59) {
         todayCollectionCell.setAttribute("data-prev", simulatedCollection); // Save simulated value
+        todayCollectionCell.setAttribute("data-manual", manualValue); // Store manual value safely
         todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> 
             <span style="color: green;" class="up-arrow">&#9650;</span>`;
     } else {
-        // At 11:59 PM, restore manual value if available
+        // ✅ At 11:59 PM, restore the manual value (if it exists)
         if (manualValue > 0) {
             todayCollectionCell.innerHTML = `${manualValue}`;
         }
