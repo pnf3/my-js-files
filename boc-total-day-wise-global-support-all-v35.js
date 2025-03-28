@@ -360,19 +360,21 @@ document.addEventListener("DOMContentLoaded", function() {
             timeZone: "Asia/Kolkata"
         }));
 
-        let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
-        let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
+        let todayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
+    let todayCollectionCell = todayRow ? todayRow.cells[2] : null;
 
-        if (prevCollection === 0 || !todayCollectionCell) return;
+    if (!todayCollectionCell) return;
 
-        let maxTodayCollection = parseFloat(todayCollectionCell?.innerText) || 0; // Use actual today’s collection
+    // Get today's actual collection (instead of the displayed one)
+    let actualTodayCollection = parseFloat(todayCollectionCell.dataset.actualCollection || 0); // Store real collection in data attribute
+    let startOfDay = new Date(now);
+    startOfDay.setHours(0, 0, 0, 0);
+    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
 
-        let startOfDay = new Date(now);
-        startOfDay.setHours(0, 0, 0, 0);
-        let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
-        let simulatedCollection = (maxTodayCollection * elapsedTime).toFixed(2);
+    // Simulate the collection growth throughout the day
+    let simulatedCollection = (actualTodayCollection * elapsedTime).toFixed(2);
 
-        let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
+    let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
         if (simulatedCollection > previousValue) {
             todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
             animateArrow(todayCollectionCell);
