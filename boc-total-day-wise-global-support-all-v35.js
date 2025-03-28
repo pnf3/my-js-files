@@ -326,20 +326,25 @@ document.addEventListener("DOMContentLoaded", function () {
     let startOfDay = new Date(now);
     startOfDay.setHours(0, 0, 0, 0);
 
-    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Time fraction
-    let maxTodayCollection = parseFloat(todayCollectionCell?.innerText) || 0; // Full today's collection
+    let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day elapsed
+    let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
+    let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
 
-    let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
+    if (!prevCollection || !todayCollectionCell) return; // Prevents errors
+
+    let estimatedTodayCollection = prevCollection * 1.0; // Assume today matches yesterday
     let simulatedCollection;
 
     if (now.getHours() === 23 && now.getMinutes() >= 59) {
-        // If it's 11:59 PM, set the full collection
-        simulatedCollection = maxTodayCollection.toFixed(2);
+        // At 11:59 PM, finalize today's full collection
+        simulatedCollection = estimatedTodayCollection.toFixed(2);
     } else {
-        // Otherwise, increase it gradually throughout the day
-        simulatedCollection = Math.max(previousValue, (maxTodayCollection * elapsedTime).toFixed(2));
+        // Otherwise, scale it gradually over time
+        simulatedCollection = Math.max(parseFloat(todayCollectionCell.innerText) || 0, 
+                                       (estimatedTodayCollection * elapsedTime).toFixed(2));
     }
 
+    let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
     let difference = simulatedCollection - previousValue;
 
     if (difference > 0) {
