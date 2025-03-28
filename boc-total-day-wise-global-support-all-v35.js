@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let newRows = [];
     let weekTotals = {};
 
-    for (let i = 2; i <= 0; i++) {
+    for (let i = 1; i <= 0; i++) {
         let nextDay = lastDay + i;
         if (nextDay > maxDayAllowed) break;
 
@@ -360,29 +360,37 @@ document.addEventListener("DOMContentLoaded", function() {
             timeZone: "Asia/Kolkata"
         }));
 
-        let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
-	  //  let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
-        let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
+      // Get today's row and its manually entered value
+    let todayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum}`);
+    if (!todayRow || !todayCollectionCell) return;
+    
+    // Get the full target value that was manually entered
+    let manualValue = parseFloat(todayCollectionCell.textContent.replace('<sup class="star">*</sup>', '').trim());
+    if (isNaN(manualValue)) return;
 
-        if (prevCollection === 0 || !todayCollectionCell) return;
+    // Calculate progress through the day (0-1)
+    let startOfDay = new Date(now);
+    startOfDay.setHours(0, 0, 0, 0);
+    let endOfDay = new Date(now);
+    endOfDay.setHours(23, 59, 59, 999);
+    
+    let totalDayLength = endOfDay - startOfDay;
+    let elapsedTime = now - startOfDay;
+    let progress = Math.min(elapsedTime / totalDayLength, 1); // Cap at 100%
 
-        let maxTodayCollection = prevCollection * 0.99;
-        let startOfDay = new Date(now);
-        startOfDay.setHours(0, 0, 0, 0);
-        let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24);
-        let simulatedCollection = (maxTodayCollection * elapsedTime).toFixed(2);
+    // Calculate current collection (progress% of manual value)
+    let currentCollection = manualValue * progress;
+    let isComplete = (progress >= 1);
 
-        let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
-        if (simulatedCollection > previousValue) {
-            todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
-            animateArrow(todayCollectionCell);
-        } else {
-            todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup>`;
-        }
-        if (currentWeek) {
-            weekSums[currentWeek] += parseFloat(simulatedCollection) - previousValue;
-            weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
-        }
+    // Format the display
+    let displayValue = currentCollection.toFixed(2);
+    if (!isComplete) {
+        displayValue += '<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>';
+        animateArrow(todayCollectionCell);
+    }
+
+    // Update the table cell
+    todayCollectionCell.innerHTML = displayValue;
 
         totalSumElement.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
         totalSumElement2.textContent = (totalSum + parseFloat(simulatedCollection)).toFixed(2);
