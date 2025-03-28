@@ -327,29 +327,29 @@ document.addEventListener("DOMContentLoaded", function () {
     startOfDay.setHours(0, 0, 0, 0);
 
     let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day elapsed
+
     let prevDayRow = Array.from(rows).find(row => row.cells[0].innerText === `Day ${currentDayNum - 1}`);
     let prevCollection = prevDayRow ? parseFloat(prevDayRow.cells[2].innerText) : 0;
 
     if (!prevCollection || !todayCollectionCell) return; // Prevents errors
 
-    let estimatedTodayCollection = prevCollection * 1.0; // Assume today matches yesterday
+    let estimatedTodayCollection = prevCollection * 1.0; // Assume today reaches full collection
+    let previousSimulated = parseFloat(todayCollectionCell.innerText) || 0;
     let simulatedCollection;
 
     if (now.getHours() === 23 && now.getMinutes() >= 59) {
         // At 11:59 PM, finalize today's full collection
         simulatedCollection = estimatedTodayCollection.toFixed(2);
     } else {
-        // Otherwise, scale it gradually over time
-        simulatedCollection = Math.max(parseFloat(todayCollectionCell.innerText) || 0, 
-                                       (estimatedTodayCollection * elapsedTime).toFixed(2));
+        // Gradually increase today's collection
+        simulatedCollection = Math.max(previousSimulated, (estimatedTodayCollection * elapsedTime).toFixed(2));
     }
 
-    let previousValue = parseFloat(todayCollectionCell.innerText) || 0;
-    let difference = simulatedCollection - previousValue;
+    let difference = simulatedCollection - previousSimulated;
 
     if (difference > 0) {
+        totalSum += difference; // Only add the new difference
         weekSums[currentWeek] += difference;
-        totalSum += difference;
     }
 
     todayCollectionCell.innerHTML = `${simulatedCollection}<sup class="star">*</sup> 
@@ -357,6 +357,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     totalSumElement.textContent = totalSum.toFixed(2);
     totalSumElement2.textContent = totalSum.toFixed(2);
+
+    if (currentWeek) {
+        weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
+    }
 
         generateChart(); // ✅ Update the chart dynamically
     }
