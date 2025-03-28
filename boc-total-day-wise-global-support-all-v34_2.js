@@ -361,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!todayCollectionCell) return; // Ensure today's cell exists
 
     let fullTodayCollection = parseFloat(todayCollectionCell.dataset.fullValue) || parseFloat(todayCollectionCell.innerText) || 0;
-    
+
     // Store today's full value for reference
     todayCollectionCell.dataset.fullValue = fullTodayCollection;
 
@@ -369,28 +369,29 @@ document.addEventListener("DOMContentLoaded", function() {
     startOfDay.setHours(0, 0, 0, 0);
 
     let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day elapsed
-    let proportionalCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Collection up to current time
+    let stimulatedCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Collection up to current time
 
     let previousValue = parseFloat(todayCollectionCell.dataset.prevValue) || 0; // Track last displayed value
-    let incrementalIncrease = parseFloat(proportionalCollection) - previousValue; // Ensure only the increase is added
+    let incrementalIncrease = parseFloat(stimulatedCollection) - previousValue; // Ensure only the increase is added
 
     if (incrementalIncrease > 0) {
-        todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
+        todayCollectionCell.innerHTML = `${stimulatedCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
         animateArrow(todayCollectionCell);
     } else {
-        todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup>`;
+        todayCollectionCell.innerHTML = `${stimulatedCollection}<sup class="star">*</sup>`;
     }
 
-    // Store the new proportional value
-    todayCollectionCell.dataset.prevValue = proportionalCollection;
+    // Store the new stimulated value
+    todayCollectionCell.dataset.prevValue = stimulatedCollection;
 
-    // ✅ Fix: Correctly update weekly sum by adding only the incremental value
-    if (currentWeek && incrementalIncrease > 0) {
-        weekSums[currentWeek] += incrementalIncrease;
-        weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
+    // ✅ Fix: Adjust weekly sum correctly
+    if (currentWeek) {
+        let correctedWeekSum = weekSums[currentWeek] - fullTodayCollection + parseFloat(stimulatedCollection);
+        weekSums[currentWeek] = correctedWeekSum;
+        weekTotalElements[currentWeek].cells[1].textContent = correctedWeekSum.toFixed(2);
     }
 
-    // ✅ Fix: Update total sum only with incremental value
+    // ✅ Fix: Update total sum correctly
     if (incrementalIncrease > 0) {
         totalSum += incrementalIncrease;
         totalSumElement.textContent = totalSum.toFixed(2);
