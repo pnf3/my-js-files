@@ -357,38 +357,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateTodayCollection() {
     let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
-    
+
     if (!todayCollectionCell) return; // Ensure today's cell exists
+
+    let fullTodayCollection = parseFloat(todayCollectionCell.dataset.fullValue) || parseFloat(todayCollectionCell.innerText) || 0;
     
-    let fullTodayCollection = parseFloat(todayCollectionCell.innerText) || 0; // Get today's actual collection
+    // Store today's full value for reference
+    todayCollectionCell.dataset.fullValue = fullTodayCollection;
+
     let startOfDay = new Date(now);
     startOfDay.setHours(0, 0, 0, 0);
 
     let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day elapsed
-    let proportionalCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Calculate collection up to now
+    let proportionalCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Collection up to current time
 
-    let previousValue = parseFloat(todayCollectionCell.dataset.prevValue) || 0; // Store last displayed value
-    todayCollectionCell.dataset.prevValue = proportionalCollection; // Update stored value
+    let previousValue = parseFloat(todayCollectionCell.dataset.prevValue) || 0; // Track last displayed value
+    let incrementalIncrease = proportionalCollection - previousValue; // Ensure only the increase is added
 
-    if (proportionalCollection > previousValue) {
+    if (incrementalIncrease > 0) {
         todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
         animateArrow(todayCollectionCell);
     } else {
         todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup>`;
     }
 
+    // Store the new proportional value
+    todayCollectionCell.dataset.prevValue = proportionalCollection;
+
     // Update weekly total dynamically
-    if (currentWeek) {
-        weekSums[currentWeek] += parseFloat(proportionalCollection) - previousValue;
+    if (currentWeek && incrementalIncrease > 0) {
+        weekSums[currentWeek] += incrementalIncrease;
         weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
     }
 
     // Update total sum dynamically
-    totalSumElement.textContent = (totalSum + parseFloat(proportionalCollection) - previousValue).toFixed(2);
-    totalSumElement2.textContent = (totalSum + parseFloat(proportionalCollection) - previousValue).toFixed(2);
+    if (incrementalIncrease > 0) {
+        totalSum += incrementalIncrease;
+        totalSumElement.textContent = totalSum.toFixed(2);
+        totalSumElement2.textContent = totalSum.toFixed(2);
+    }
 
     generateChart(); // ✅ Update the chart dynamically
 }
+
 
     // Run immediately when the page loads
     updateTodayCollection();
