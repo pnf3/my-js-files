@@ -337,12 +337,14 @@ document.addEventListener("DOMContentLoaded", function() {
                         // Exclude today’s full collection before 11:59 PM, but simulate it
                     } else {
                         totalSum += collection;
-                    }
+                    
 
                     // Update current week's total, excluding Day 0
                     if (currentWeek) {
                         weekSums[currentWeek] += collection;
                     }
+					
+					}
                 }
 
                 // Update latestDay, excluding Day 0
@@ -355,13 +357,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-  function updateTodayCollection() {
+    function updateTodayCollection() {
     let now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }));
 
     if (!todayCollectionCell) return; // Ensure today's cell exists
 
     let fullTodayCollection = parseFloat(todayCollectionCell.dataset.fullValue) || parseFloat(todayCollectionCell.innerText) || 0;
-
+    
     // Store today's full value for reference
     todayCollectionCell.dataset.fullValue = fullTodayCollection;
 
@@ -369,29 +371,28 @@ document.addEventListener("DOMContentLoaded", function() {
     startOfDay.setHours(0, 0, 0, 0);
 
     let elapsedTime = (now - startOfDay) / (1000 * 60 * 60 * 24); // Fraction of the day elapsed
-    let stimulatedCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Collection up to current time
+    let proportionalCollection = (fullTodayCollection * elapsedTime).toFixed(2); // Collection up to current time
 
     let previousValue = parseFloat(todayCollectionCell.dataset.prevValue) || 0; // Track last displayed value
-    let incrementalIncrease = parseFloat(stimulatedCollection) - previousValue; // Ensure only the increase is added
+    let incrementalIncrease = proportionalCollection - previousValue; // Ensure only the increase is added
 
     if (incrementalIncrease > 0) {
-        todayCollectionCell.innerHTML = `${stimulatedCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
+        todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup> <span style="color: green;" class="up-arrow">&#9650;</span>`;
         animateArrow(todayCollectionCell);
     } else {
-        todayCollectionCell.innerHTML = `${stimulatedCollection}<sup class="star">*</sup>`;
+        todayCollectionCell.innerHTML = `${proportionalCollection}<sup class="star">*</sup>`;
     }
 
-    // Store the new stimulated value
-    todayCollectionCell.dataset.prevValue = stimulatedCollection;
+    // Store the new proportional value
+    todayCollectionCell.dataset.prevValue = proportionalCollection;
 
-    // ✅ Fix: Adjust weekly sum correctly
-    if (currentWeek) {
-        let correctedWeekSum = weekSums[currentWeek] - fullTodayCollection + parseFloat(stimulatedCollection);
-        weekSums[currentWeek] = correctedWeekSum;
-        weekTotalElements[currentWeek].cells[1].textContent = correctedWeekSum.toFixed(2);
+    // Update weekly total dynamically
+    if (currentWeek && incrementalIncrease > 0) {
+        weekSums[currentWeek] += incrementalIncrease;
+        weekTotalElements[currentWeek].cells[1].textContent = weekSums[currentWeek].toFixed(2);
     }
 
-    // ✅ Fix: Update total sum correctly
+    // Update total sum dynamically
     if (incrementalIncrease > 0) {
         totalSum += incrementalIncrease;
         totalSumElement.textContent = totalSum.toFixed(2);
@@ -400,10 +401,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     generateChart(); // ✅ Update the chart dynamically
 }
-
-
-
-
 
 
     // Run immediately when the page loads
