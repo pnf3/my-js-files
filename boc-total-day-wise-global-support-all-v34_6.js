@@ -701,7 +701,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <table id="boxOfficeTable" class="custom-table" border="1" style="width:100%; border-collapse: collapse;">
                     <thead>
                         <tr>
-                            <th>Movie</th>
+                            <th>Read More</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -718,7 +718,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <table id="moviesListTable" class="custom-table" border="1" style="width:100%; border-collapse: collapse;">
                     <thead>
                         <tr>
-                            <th>Movie</th>
+                            <th>Read More</th>
                         </tr>
                     </thead>
                     <tbody>
