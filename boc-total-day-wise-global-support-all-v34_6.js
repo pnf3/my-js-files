@@ -679,7 +679,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let rowHTML = `
                 <tr>
                     <td>
-                        🎬 <a href="${link}" title="Read more about ${title}" aria-label="Read more about ${title}">
+                        <a href="${link}" title="Read more about ${title}" aria-label="Read more about ${title}">
                             ${title}
                         </a>
                     </td>
