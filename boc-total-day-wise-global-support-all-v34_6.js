@@ -658,7 +658,6 @@ function animateArrow(cell) {
 
 
 
-<script>
 document.addEventListener("DOMContentLoaded", function() {
     function convertRelatedPostsToTable() {
         const relatedWrap = document.getElementById("related-wrap");
@@ -743,7 +742,7 @@ document.addEventListener("DOMContentLoaded", function() {
         subtree: true
     });
 });
-</script>
+
 
 
 
