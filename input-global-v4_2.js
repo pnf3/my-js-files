@@ -1,7 +1,6 @@
+const boxOfficeData = {
 
-<script type="application/json" id="boxOfficecompleted">
-{
-	"Chhaava Box Office Collection: Day-Wise": {
+"Chhaava Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-02-14", 
 			"1": 41.12, "2": 89.28, "3": 140.35, "4": 185.42, "5": 225.50, "6": 260.58, "7": 292.65, 
 			"8": 320.72, "9": 346.80, "10": 370.87, "11": 392.94, "12": 413.00, "13": 431.07, "15": 792.72,
@@ -223,20 +222,4 @@
         "releaseDate": "2025-01-10",
         "total": 2.31, "Rating": 8.7, "Language": "Marathi", "Verdict": "null", "futureDays": 0, "Budget": 8
     }
-	
-	
 }
-</script>
-
-
-
-// Get the JSON content from the <script> tag using its ID
-const boxOfficeData = JSON.parse(
-  document.getElementById('boxOfficecompleted').textContent
-);
-
-// Now you can use the data anywhere in your JS
-console.log(boxOfficeData);
-
-// Example: log Chhaava's total
-console.log(boxOfficeData["Chhaava Box Office Collection: Day-Wise"].total);
