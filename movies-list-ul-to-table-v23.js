@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <tbody>
         ${rows}
         <tr>
-          <td colspan="3"><strong>${actorName} Total Number of Movies to Date:</strong> ${items.length}</td>
+          <td colspan="3"><strong>${actorName} Total Movies Count:</strong> ${items.length}</td>
         </tr>
       </tbody>`;
 
