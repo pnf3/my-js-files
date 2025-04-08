@@ -1,6 +1,19 @@
 
 <script type="application/json" id="boxOfficecompleted">
 {
+	"Chhaava Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-02-14", 
+			"1": 41.12, "2": 89.28, "3": 140.35, "4": 185.42, "5": 225.50, "6": 260.58, "7": 292.65, 
+			"8": 320.72, "9": 346.80, "10": 370.87, "11": 392.94, "12": 413.00, "13": 431.07, "15": 792.72,
+			"total": 792.15, "Rating": 9.3, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 130
+		},
+	
+	"Dragon Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-02-21", 
+			"1": 7.53, "2": 15.68, "14": 150.21, 
+			"total": 150.21, "Rating": 9.3, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 37
+		},
+	
 	"Thandel Box Office Collection: Day-Wise": {
         "releaseDate": "2025-02-07",  
         "total": 100.18, "Rating": 8.8, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 70
@@ -29,10 +42,8 @@
 	"Rekhachithram Box Office Collection: Day-Wise": {
         "releaseDate": "2025-01-09", 
         "1": 2.53, "2": 7.09, "3": 12.65, "4": 17.89, "5": 21.34, "6": 22.92, "7": 24.50, 
-        "8": 26.80, "9": 29.95, "10": 32.75, "11": 34.90, "12": 36.85, "13": 38.65, "14": 40.10, 
-        "15": 41.85, "16": 43.60, "17": 45.20, "18": 46.55, "19": 47.90, "20": 49.15, "21": 50.25, 
-        "22": 51.30, "23": 52.20, "24": 53.00, "25": 53.75, "26": 54.45, "27": 55.10, "28": 57.31, 
-        "total": 57.31, "Rating": 8.8, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 8
+        "8": 26.80, "9": 29.95, "10": 32.75, "11": 34.90, "12": 36.85, "13": 38.65, "15": 83.08,
+        "total": 83.08, "Rating": 8.8, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 8
     },
 	
 	"Sankranthiki Vasthunam Box Office Collection: Day-Wise": {
