@@ -1,42 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-    onst pageTitle = document.title.replace(" List", "");
+    // Get references to frequently accessed DOM elements
+    const pageTitle = document.title.replace(" List", "");
     const metaDescription = document.querySelector("meta[name='description']");
     const moviesList = document.getElementById("movies-list");
     const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
     const entryTitle = document.querySelector("h1.entry-title");
 
-    if (moviesList) {
-        // Convert <li> elements to array and sort them by year (descending)
-        const listItems = Array.from(moviesList.querySelectorAll("li"));
-        listItems.sort((a, b) => {
-            const yearA = parseInt(a.textContent.trim().split(":")[0]);
-            const yearB = parseInt(b.textContent.trim().split(":")[0]);
-            return yearB - yearA;
-        });
-
-        // Clear existing list and append sorted items
-        moviesList.innerHTML = "";
-        listItems.forEach(li => moviesList.appendChild(li));
-
-        // Extract years and determine min/max
-        const years = listItems.map(li => parseInt(li.textContent.trim().split(":")[0]));
-        const minYear = Math.min(...years);
-        const maxYear = Math.max(...years);
-
-        // Generate final title with year range
-        const finalTitle = `${pageTitle} Movies List (Year-Wise) | Complete Filmography [${minYear}–${maxYear}]`;
-
-        // Update meta, document title, and heading
-        if (metaDescription) {
-            metaDescription.content = `Explore the complete ${pageTitle} movies list, sorted year-wise — from the debut film to the latest and upcoming releases. Includes total number of movies to date.`;
+   if (metaDescription) {
+        if (entryTitle.textContent.includes("Movies List")) {
+            metaDescription.content = `Explore ${pageTitle} List year wise, from the first film to the latest and upcoming releases, along with the total movies count.`;
+           document.title = `${pageTitle} List: Year-Wise`;
+			 entryTitle.textContent = entryTitle.textContent.replace("Movies List", `Movies List: Year-Wise`);
         }
-
-        document.title = finalTitle;
-
-        if (entryTitle && entryTitle.textContent.includes("Movies List")) {
-            entryTitle.textContent = finalTitle;
-        }
+		
     }
+
 
     // Update last movie list item
     const lastMovieItem = moviesList.querySelector("li:last-child");
