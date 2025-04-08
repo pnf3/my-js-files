@@ -5,16 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const moviesList = document.getElementById("movies-list");
     const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
     const entryTitle = document.querySelector("h1.entry-title");
-	
-	// Helper Functions
-    function extractActorName(titleElement) {
-      return titleElement?.textContent.replace("Movies List: Year-Wise", "").trim() || "Actor";
-    }
 
    if (metaDescription) {
     if (entryTitle.textContent.includes("Movies List")) {
         metaDescription.content = `Explore the complete ${pageTitle} list, sorted year-wise — from the debut film to the latest and upcoming releases. Includes total number of movies to date.`;
-        document.title = `${pageTitle} Movies List (Year-Wise) | Complete Filmography`;
+        document.title = `${pageTitle} List (Year-Wise) | Complete Filmography`;
         entryTitle.textContent = entryTitle.textContent.replace("Movies List", "Movies List (Year-Wise) | Complete Filmography");
     }
 }
@@ -46,13 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Convert Movie List to Table
     convertListToTable(moviesList, actorName);
 
-    
+    // Helper Functions
+    function extractActorName(titleElement) {
+      return titleElement?.textContent.replace("List (Year-Wise) | Complete Filmography", "").trim() || "Actor";
+    }
 
     function generateDynamicCard(actorName) {
       return `
         <div class="card">
-          <p style="margin-bottom:0">
-Explore the complete <span id="actor-name-1">${actorName}</span> movies list, organized year-wise from debut to latest and upcoming films. This comprehensive filmography includes all movies of <span id="actor-name-2">${actorName}</span> with release years, film titles, serial numbers, and the total movie count so far.          </p>
+          <p style="margin-bottom:0">Explore the complete <span id="actor-name-1">${actorName}</span> movies list, organized year-wise from debut to latest and upcoming films. This comprehensive filmography includes all movies of <span id="actor-name-2">${actorName}</span> with release years, film titles, serial numbers, and the total movie count so far.</p>
         </div>`;
     }
 
