@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Get references to frequently accessed DOM elements
-    const pageTitle = document.title.replace(" List", "");
+    const pageTitle = document.title.replace(" Movies List", "");
     const metaDescription = document.querySelector("meta[name='description']");
     const moviesList = document.getElementById("movies-list");
     const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
    if (metaDescription) {
     if (entryTitle.textContent.includes("Movies List")) {
-        metaDescription.content = `Explore the complete ${pageTitle} list, sorted year-wise — from the debut film to the latest and upcoming releases. Includes total number of movies to date.`;
-        document.title = `${pageTitle} List (Year-Wise) | Complete Filmography`;
+        metaDescription.content = `Explore the complete ${pageTitle} movies list, sorted year-wise — from the debut film to the latest and upcoming releases. Includes total number of movies to date.`;
+        document.title = `${pageTitle} Movies List (Year-Wise) | Complete Filmography`;
         entryTitle.textContent = entryTitle.textContent.replace("Movies List", "Movies List (Year-Wise) | Complete Filmography");
     }
 }
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Helper Functions
     function extractActorName(titleElement) {
-      return titleElement?.textContent.replace("List (Year-Wise) | Complete Filmography", "").trim() || "Actor";
+      return titleElement?.textContent.replace("Movies List (Year-Wise) | Complete Filmography", "").trim() || "Actor";
     }
 
     function generateDynamicCard(actorName) {
