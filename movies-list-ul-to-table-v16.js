@@ -1,31 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const includeYearsInTitle = false; // toggle this to true/false
-    const pageTitle = document.title.replace(" List", "");
+    onst pageTitle = document.title.replace(" List", "");
     const metaDescription = document.querySelector("meta[name='description']");
     const moviesList = document.getElementById("movies-list");
+    const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
     const entryTitle = document.querySelector("h1.entry-title");
 
     if (moviesList) {
+        // Convert <li> elements to array and sort them by year (descending)
         const listItems = Array.from(moviesList.querySelectorAll("li"));
-        listItems.sort((a, b) => parseInt(b.textContent) - parseInt(a.textContent));
+        listItems.sort((a, b) => {
+            const yearA = parseInt(a.textContent.trim().split(":")[0]);
+            const yearB = parseInt(b.textContent.trim().split(":")[0]);
+            return yearB - yearA;
+        });
+
+        // Clear existing list and append sorted items
         moviesList.innerHTML = "";
         listItems.forEach(li => moviesList.appendChild(li));
 
-        const years = listItems.map(li => parseInt(li.textContent));
+        // Extract years and determine min/max
+        const years = listItems.map(li => parseInt(li.textContent.trim().split(":")[0]));
         const minYear = Math.min(...years);
         const maxYear = Math.max(...years);
 
-        if (metaDescription && entryTitle.textContent.includes("Movies List")) {
+        // Generate final title with year range
+        const finalTitle = `${pageTitle} Movies List (Year-Wise) | Complete Filmography [${minYear}–${maxYear}]`;
+
+        // Update meta, document title, and heading
+        if (metaDescription) {
             metaDescription.content = `Explore the complete ${pageTitle} movies list, sorted year-wise — from the debut film to the latest and upcoming releases. Includes total number of movies to date.`;
+        }
 
-            const baseTitle = `${pageTitle} Movies List (Year-Wise) | Complete Filmography`;
-            const finalTitle = includeYearsInTitle ? `${baseTitle} [${minYear}–${maxYear}]` : baseTitle;
+        document.title = finalTitle;
 
-            document.title = finalTitle;
+        if (entryTitle && entryTitle.textContent.includes("Movies List")) {
             entryTitle.textContent = finalTitle;
         }
     }
-
 
     // Update last movie list item
     const lastMovieItem = moviesList.querySelector("li:last-child");
