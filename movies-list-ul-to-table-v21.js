@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update meta title and description
   if (metaDescription && entryTitle.textContent.includes("Movies List")) {
-    metaDescription.content = `<meta name="description" content="Explore the complete list of ${pageTitle} movies (${dynamicYearRange}), sorted year-wise — from debut to latest and upcoming films. Includes the total number of movies to date.">`;
+    metaDescription.content = `<meta name="description" content="Discover the complete ${pageTitle} movies list year-wise, covering all films from ${yearRange.start} to ${yearRange.end}.">`;
     document.title = `${pageTitle} Movies List (${dynamicYearRange}) | Year-Wise Complete Filmography`;
     entryTitle.textContent = `${pageTitle} Movies List (${dynamicYearRange}) – Year-Wise Complete Filmography`;
   }
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function generateDynamicCard(actorName, yearRange) {
     return `
       <div class="card">
-        <p style="margin-bottom:0">Explore the complete <span id="actor-name-1">${actorName}</span> movies list (${yearRange}), organized year-wise from debut to the latest and upcoming films. This comprehensive filmography includes all movies of <span id="actor-name-2">${actorName}</span>, along with release years, film titles, serial numbers, and the total number of movies to date.</p>
+        <p style="margin-bottom:0">Discover the complete <span id="actor-name-1">${actorName}</span> movies list year-wise, covering all films from ${yearRange.start} to ${yearRange.end}. This comprehensive <span id="actor-name-2">${actorName}</span> filmography includes every movie from debut to the latest and upcoming releases — featuring release years, film titles, serial numbers, and the total movies count to date.</p>
       </div>`;
   }
 
