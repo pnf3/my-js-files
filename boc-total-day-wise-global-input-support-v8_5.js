@@ -15,9 +15,9 @@
 
     // Load both JSON data parts and merge them
     window.dayValues = {
-		...boxOfficeData,
         ...loadJSONData("boxOfficerunning"), 
-        ...loadJSONData("boxOfficecompleted") 
+     //   ...loadJSONData("boxOfficecompleted"),
+		...boxOfficeData,		
     };
 
    // console.log("Loaded Data:", window.dayValues); // Check in console
