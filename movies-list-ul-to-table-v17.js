@@ -1,31 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Get references to frequently accessed DOM elements
-    const includeYearsInTitle = false; // toggle this to true/false
     const pageTitle = document.title.replace(" List", "");
     const metaDescription = document.querySelector("meta[name='description']");
     const moviesList = document.getElementById("movies-list");
+    const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
     const entryTitle = document.querySelector("h1.entry-title");
 
-    if (moviesList) {
-        const listItems = Array.from(moviesList.querySelectorAll("li"));
-        listItems.sort((a, b) => parseInt(b.textContent) - parseInt(a.textContent));
-        moviesList.innerHTML = "";
-        listItems.forEach(li => moviesList.appendChild(li));
-
-        const years = listItems.map(li => parseInt(li.textContent));
-        const minYear = Math.min(...years);
-        const maxYear = Math.max(...years);
-
-        if (metaDescription && entryTitle.textContent.includes("Movies List")) {
-            metaDescription.content = `Explore the complete ${pageTitle} movies list, sorted year-wise — from the debut film to the latest and upcoming releases. Includes total number of movies to date.`;
-
-            const baseTitle = `${pageTitle} Movies List (Year-Wise) | Complete Filmography`;
-            const finalTitle = includeYearsInTitle ? `${baseTitle} [${minYear}–${maxYear}]` : baseTitle;
-
-            document.title = finalTitle;
-            entryTitle.textContent = finalTitle;
-        }
+   if (metaDescription) {
+    if (entryTitle.textContent.includes("Movies List")) {
+        metaDescription.content = `Explore the complete ${pageTitle} list, sorted year-wise — from the debut film to the latest and upcoming releases. Includes total number of movies to date.`;
+        document.title = `${pageTitle} Movies List (Year-Wise) | Complete Filmography`;
+        entryTitle.textContent = entryTitle.textContent.replace("Movies List", "Movies List (Year-Wise) | Complete Filmography");
     }
+}
+
 
 
     // Update last movie list item
@@ -62,8 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <div class="card">
           <p style="margin-bottom:0">
-            Explore the complete <span id="actor-name-1">${actorName}</span> movies list year wise, from the first film to the latest and upcoming releases. This detailed table includes <span id="actor-name-2">${actorName}</span> all movies list, with movie numbers, release years, movie names, and the total movies count to date.
-          </p>
+Explore the complete <span id="actor-name-1">${actorName}</span> movies list, organized year-wise from debut to latest and upcoming films. This comprehensive filmography includes all movies of <span id="actor-name-2">${actorName}</span> with release years, film titles, serial numbers, and the total movie count so far.          </p>
         </div>`;
     }
 
