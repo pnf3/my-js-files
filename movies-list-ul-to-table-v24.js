@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update meta title and description
   if (metaDescription && entryTitle.textContent.includes("Movies List")) {
-    metaDescription.content = `<meta name="description" content="Discover the complete, year-wise ${pageTitle} movies list (${yearRange}), covering films from debut to the latest and upcoming releases.">`;
+    metaDescription.content = `<meta name="description" content="Discover the complete, year-wise ${pageTitle} movies list (${dynamicYearRange}), covering films from debut to the latest and upcoming releases.">`;
     document.title = `${pageTitle} Movies List (${dynamicYearRange}) | Year-Wise Complete Filmography`;
     entryTitle.textContent = `${pageTitle} Movies List (${dynamicYearRange}) – Year-Wise Complete Filmography`;
   }
