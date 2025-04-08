@@ -142,7 +142,7 @@ function predictCumulativeBoxOffice() {
                 // Apply holiday boost
                 if (holidays.includes(dateString)) {
                     growthRate *= 1.25;
-                    console.log(`🚀 Holiday Boost Applied on ${dateString} (${dayName})!`);
+                  //  console.log(`🚀 Holiday Boost Applied on ${dateString} (${dayName})!`);
                 }
 
                 // Predict the value
@@ -150,7 +150,7 @@ function predictCumulativeBoxOffice() {
                 data[day] = parseFloat(predictedValue.toFixed(2));
 
                 if (verbose) {
-                    console.log(`Day ${day} (${dayName}, ${dateString}): Predicted ${data[day]}`);
+                   // console.log(`Day ${day} (${dayName}, ${dateString}): Predicted ${data[day]}`);
                 }
             }
         }
