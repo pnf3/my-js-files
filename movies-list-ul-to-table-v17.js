@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const moviesList = document.getElementById("movies-list");
     const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
     const entryTitle = document.querySelector("h1.entry-title");
+	
+	// Helper Functions
+    function extractActorName(titleElement) {
+      return titleElement?.textContent.replace("Movies List: Year-Wise", "").trim() || "Actor";
+    }
 
    if (metaDescription) {
     if (entryTitle.textContent.includes("Movies List")) {
@@ -41,10 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Convert Movie List to Table
     convertListToTable(moviesList, actorName);
 
-    // Helper Functions
-    function extractActorName(titleElement) {
-      return titleElement?.textContent.replace("Movies List: Year-Wise", "").trim() || "Actor";
-    }
+    
 
     function generateDynamicCard(actorName) {
       return `
