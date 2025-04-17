@@ -1,5 +1,15 @@
 const boxOfficeData = {
-
+	
+		"The Diplomat Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-03-14", 
+			"1": 2.53, "2": 6.68, "15": 70.51,
+			"total": 70.51, "Rating": 8.8, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 20
+		},
+"COURT: State Vs A Nobody Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-03-14", 
+			"1": 4.12 , "2": 9.28, "15": 91.42,
+			"total": 91.42, "Rating": 9.5, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 10
+		}, 
 "Chhaava Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-02-14", 
 			"1": 41.12, "2": 89.28, "3": 140.35, "4": 185.42, "5": 225.50, "6": 260.58, "7": 292.65, 
