@@ -2,7 +2,7 @@
   "name": "News Focus 360",
   "short_name": "NF360",
   "description": "Get the latest Movies List and Box Office Collection updates. Stay informed about day-wise earnings, worldwide gross, and industry trends.",
-  "start_url": "/",
+  "start_url": "https://www.newsfocus360.com/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1a73e8",  // You can change this to match your brand color
