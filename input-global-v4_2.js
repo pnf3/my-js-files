@@ -1,4 +1,16 @@
 const boxOfficeData = {
+
+	"Robinhood Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-03-28", 
+			"1": 4.51, "2": 9.12, "3": 12.52, "4": 14.75, "5": 15.54, "6": 16.25, "7": 16.75, "8": 20.75,
+			"total": 20.75, "Rating": 7.8, "Language": "Telugu", "Verdict": "null", "futureDays": 7, "Budget": 60, "advanceBooking": 3.42
+		},
+
+	"L2: Empuraan Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-03-27", 
+			"1": 43, "2": 76.51, "3": 104.56, "4": 160.14, "5": 188.53, "6": 204.56, "7": 224.24, "8": 313.54,
+			"total": 313.54, "Rating": 8.0, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 180, "advanceBooking": 34
+		},
 	
 		"The Diplomat Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-03-14", 
