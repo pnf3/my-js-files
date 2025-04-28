@@ -1,9 +1,25 @@
 const boxOfficeData = {
-
+	"Bazooka Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-10", 
+			"1": 9.84, "2": 15.23, "3": 18.82, "4": 22.42, "5": 24.82, "8": 42.12,
+			"total": 42.12, "Rating": 7.1, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 25, "advanceBooking": 7.83, "link":"https://www.newsfocus360.com/2025/04/bazooka-box-office-collection-day-wise.html"
+		},
+		
+	"Akaal Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-10", 
+			"1": 0.25, "2": 0.54, "3": 0.88, "4": 1.17, "5": 1.55, "8": 5.25,
+			"total": 5.25, "Rating": 8.7, "Language": "Punjabi", "Verdict": "null", "futureDays": 0, "Budget": 1.45, "advanceBooking": 3.18, "link":"https://www.newsfocus360.com/2025/04/akaal-box-office-collection-day-wise.html"
+		},
+		
+"Saaree Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-04", 
+			"1": 0.06, "3": 0.13, "8": 0.25, 
+			"total": 0.25, "Rating": 6.2, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 2.12, "advanceBooking": 5.12, "link":"https://www.newsfocus360.com/2025/03/sikandar-box-office-collection-day-wise.html"
+		},
 	"Robinhood Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-03-28", 
 			"1": 4.51, "2": 9.12, "3": 12.52, "4": 14.75, "5": 15.54, "6": 16.25, "7": 16.75, "8": 20.75,
-			"total": 20.75, "Rating": 7.8, "Language": "Telugu", "Verdict": "null", "futureDays": 7, "Budget": 60, "advanceBooking": 3.42
+			"total": 20.75, "Rating": 7.8, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 60, "advanceBooking": 3.42
 		},
 
 	"L2: Empuraan Box Office Collection: Day-Wise": {
