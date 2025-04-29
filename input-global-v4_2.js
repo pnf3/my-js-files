@@ -2,7 +2,7 @@ const boxOfficeData = {
 	"KillBill Society Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-11", 
 			"1": 0.23, "2": 0.62, "3": 1.47, "8": 9.23, 
-			"total": 9.23, "Rating": 7.2, "Language": "Bengali", "Verdict": "null", "futureDays": 4, "Budget": 2.5, "advanceBooking": 0.11, "link":"https://www.newsfocus360.com/2025/04/killbill-society-box-office-collection.html"
+			"total": 9.23, "Rating": 7.2, "Language": "Bengali", "Verdict": "null", "futureDays": 0, "Budget": 2.5, "advanceBooking": 0.11, "link":"https://www.newsfocus360.com/2025/04/killbill-society-box-office-collection.html"
 		},
 		
 		
