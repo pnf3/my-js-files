@@ -1,4 +1,28 @@
 const boxOfficeData = {
+	"KillBill Society Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-11", 
+			"1": 0.23, "2": 0.62, "3": 1.47, "8": 9.23, 
+			"total": 9.23, "Rating": 7.2, "Language": "Bengali", "Verdict": "null", "futureDays": 4, "Budget": 2.5, "advanceBooking": 0.11, "link":"https://www.newsfocus360.com/2025/04/killbill-society-box-office-collection.html"
+		},
+		
+		
+	"Akkada Ammayi Ikkada Abbayi Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-11", 
+			"1": 0.21, "2": 0.46, "3": 0.78, "8": 2.32,
+			"total": 2.32, "Rating": 8.1, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 2, "advanceBooking": 0.11, "link":"https://www.newsfocus360.com/2025/04/akkada-ammayi-ikkada-abbayi-box-office.html"
+		},
+		
+	"Jack (Konchem Krack) Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-10", 
+			"1": 3.01, "2": 3.85, "3": 4.61, "4": 5.43, "5": 6.02, "8": 10.53,
+			"total": 10.53, "Rating": 7.1, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 28, "advanceBooking": 2.45, "link":"https://www.newsfocus360.com/2025/04/jack-konchem-krack-box-office.html"
+		},
+	"Maranamass Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-10", 
+			"1": 3.24, "2": 5.62, "3": 8.46, "4":11.81, "5":14.62, "8":38.54,
+			"total": 38.54, "Rating": 7.4, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 14, "advanceBooking": 1.23, "link":"https://www.newsfocus360.com/2025/04/maranamass-box-office-collection-day.html"
+		},
+	
 	"Bazooka Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 9.84, "2": 15.23, "3": 18.82, "4": 22.42, "5": 24.82, "8": 42.12,
