@@ -1,4 +1,14 @@
 const boxOfficeData = {
+	"Sikandar Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-03-30", 
+			"1": 12.53, "2": 23.75, "3": 33.12,"4": 42.54, "5": 49.53, "6": 54.24, "8": 88.23,
+			"total": 88.23, "Rating": 5.8, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 200, "advanceBooking": 9.53
+		}
+	"Mad Square Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-03-28", 
+			"1": 4.69, "2": 13.75, "3": 24.13, "4": 31.25, "5": 36.18, "6": 40.12, "7": 43.03, "8": 65.23,
+			"total": 65.23, "Rating": 8.4, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 15, "advanceBooking": 3.24
+		}
 	"KillBill Society Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-11", 
 			"1": 0.23, "2": 0.62, "3": 1.47, "8": 9.23, 
