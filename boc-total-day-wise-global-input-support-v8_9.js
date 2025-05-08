@@ -257,7 +257,7 @@ predictCumulativeBoxOffice();
             var rating = movieData["Rating"] || "N/A";
             var verdict = movieData["Verdict"] !== "null" ? movieData["Verdict"] : "TBD";
             var language = movieData["Language"] || "Unknown";
-			var language = movieData["Cast"] || "Unknown";
+			var cast = movieData["Cast"] || "Unknown";
 
             // Calculate Profit/Loss Percentage
             var profitLoss = ((totalBoxOffice - budget) / budget) * 100;
