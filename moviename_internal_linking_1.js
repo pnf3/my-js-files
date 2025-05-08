@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
     }
 
     // 🔍 Select all elements with the .custom-table class
-    const targets = document.querySelectorAll('.movies-list');
+    const targets = document.querySelectorAll('post-sub-body.custom-table');
 
     targets.forEach(el => linkifyElement(el, movieLinks));
 });
