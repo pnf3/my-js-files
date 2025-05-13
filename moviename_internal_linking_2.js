@@ -2,6 +2,7 @@ window.addEventListener('load', function() {
     const movieLinks = {
         "Housefull 5": "https://www.newsfocus360.com/2025/05/housefull-5-box-office-collection-day.html",
         "Bhool Chuk Maaf": "https://www.newsfocus360.com/2025/05/bhool-chuk-maaf-box-office-collection.html"
+		"The Shawshank Redemption": "https://www.newsfocus360.com/2025/05/the-shawshank-redemption-timeless-tale.html"
     };
 
     function linkifyElement(el, linksObj) {
