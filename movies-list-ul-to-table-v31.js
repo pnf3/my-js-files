@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`;
   }
 
-  function convertListToTable(list, actorName) {
+  function convertListToTable(list, actorName, dynamicYearRange) {
     const items = [...list.querySelectorAll("li")];
     const shows = items.map((item) => {
       const anchor = item.querySelector("a");
