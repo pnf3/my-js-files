@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function extractActorName(titleElement) {
     return titleElement?.textContent
-      .replace(/TV Shows List.*$/, "")
+      .replace(/Movies List.*$/, "")
       .trim() || "Actor";
   }
 
