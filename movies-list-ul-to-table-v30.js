@@ -140,11 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const actorName = extractActorName(entryTitle);
 
   // Update meta title and description
-  if (metaDescription && entryTitle.textContent.includes("TV Shows List")) {
-    metaDescription.content = `Discover the complete, year-wise ${pageTitle} TV shows list (${dynamicYearRange}), covering all shows from debut to latest.`;
-    document.title = `${pageTitle} TV Shows List (${dynamicYearRange}) - Complete List`;
-    entryTitle.textContent = `${pageTitle} TV Shows List (${dynamicYearRange}) – Complete List`;
-  }
+ //if (metaDescription && entryTitle.textContent.includes("TV Shows List")) {
+ //   metaDescription.content = `Discover the complete, year-wise ${pageTitle} TV shows list (${dynamicYearRange}), covering all shows from debut to latest.`;
+ //   document.title = `${pageTitle} TV Shows List (${dynamicYearRange}) - Complete List`;
+ //   entryTitle.textContent = `${pageTitle} TV Shows List (${dynamicYearRange}) – Complete List`;
+ // } 
 
   // Add label to last show item
   const lastShowItem = tvList.querySelector("li:last-child");
@@ -152,9 +152,11 @@ document.addEventListener("DOMContentLoaded", () => {
     lastShowItem.textContent += " - First Show";
   }
 
-  // Insert dynamic card before the show list
-  if (postSubBody) {
-    postSubBody.insertAdjacentHTML("beforebegin", generateDynamicCard(actorName, dynamicYearRange));
+  // === INSERT CARD JUST ABOVE TV TABLE ===
+  // Find the first table (movies table), insert card after it
+  const movieTable = document.querySelector("table.custom-table");
+  if (movieTable && movieTable.parentNode) {
+    movieTable.insertAdjacentHTML("afterend", generateDynamicCard(actorName, dynamicYearRange));
   }
 
   // Update all placeholders with actor name
