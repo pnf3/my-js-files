@@ -196,61 +196,60 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`;
   }
 
-  function convertListToTable(list, actorName) {
-    const items = [...list.querySelectorAll("li")];
-    const shows = items.map((item) => {
-      const anchor = item.querySelector("a");
-      const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
-      const yearPart = rawText.split(":")[0]?.trim() || ""; // keeps full range like "1981–1993"
-const namePart = rawText.split(":")[1]?.trim() || "";
+ function convertListToTable(list, actorName) {
+  const items = [...list.querySelectorAll("li")];
+  const shows = items.map((item) => {
+    const anchor = item.querySelector("a");
+    const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
 
-      const name = match ? match[2] : "";
-      const showName = anchor
-        ? `<a href="${anchor.href}" rel="noopener noreferrer">${anchor.textContent}</a>`
-        : name;
+    const yearPart = rawText.split(":")[0]?.trim() || "";
+    const namePart = rawText.split(":")[1]?.trim() || "";
 
-      return { year, name: showName };
-    });
+    const showName = anchor
+      ? `<a href="${anchor.href}" rel="noopener noreferrer">${anchor.textContent}</a>`
+      : namePart;
 
-    // Sort by year descending
+    return { year: yearPart, name: showName };
+  });
+
+  // Sort descending by first year in range
   shows.sort((a, b) => {
-  const yearA = parseInt(a.year.split("–")[0] || a.year, 10);
-  const yearB = parseInt(b.year.split("–")[0] || b.year, 10);
-  return yearB - yearA;
-});
+    const yearA = parseInt(a.year.split("–")[0] || a.year, 10);
+    const yearB = parseInt(b.year.split("–")[0] || b.year, 10);
+    return yearB - yearA;
+  });
 
+  const table = document.createElement("table");
+  table.className = "custom-table";
+  table.setAttribute("role", "table");
+  table.setAttribute("aria-labelledby", "tv-shows-list-title");
 
-    const table = document.createElement("table");
-    table.className = "custom-table";
-    table.setAttribute("role", "table");
-    table.setAttribute("aria-labelledby", "tv-shows-list-title");
+  const rows = shows.map((show, index) => `
+    <tr>
+      <td>${shows.length - index}</td>
+      <td>${show.year}</td>
+      <td>${show.name}</td>
+    </tr>`).join("");
 
-    const rows = shows.map((show, index) => `
+  table.innerHTML = `
+    <caption class="styled-caption">${actorName} All TV Shows List Year-Wise</caption>
+    <thead>
       <tr>
-        <td>${shows.length - index}</td>
-        <td>${show.year}</td>
-        <td>${show.name}</td>
-      </tr>`).join("");
+        <th colspan="3" scope="col">${actorName} TV Shows List</th>
+      </tr>
+      <tr>
+        <th scope="col">S. No.</th>
+        <th scope="col">Release Year</th>
+        <th scope="col">Show Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${rows}
+      <tr>
+        <td colspan="3"><strong>${actorName} Total TV Shows Count:</strong> ${shows.length}</td>
+      </tr>
+    </tbody>`;
 
-    table.innerHTML = `
-      <caption class="styled-caption">${actorName} All TV Shows List Year-Wise</caption>
-      <thead>
-        <tr>
-          <th colspan="3" scope="col">${actorName} TV Shows List</th>
-        </tr>
-        <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Release Year</th>
-          <th scope="col">Show Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${rows}
-        <tr>
-          <td colspan="3"><strong>${actorName} Total TV Shows Count:</strong> ${shows.length}</td>
-        </tr>
-      </tbody>`;
+  list.replaceWith(table);
+}
 
-    list.replaceWith(table);
-  }
-});
