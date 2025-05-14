@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join("");
 
     table.innerHTML = `
-      
+      <caption class="styled-caption">${actorName} All Movies List Year-Wise</caption>
       <thead>
 	  <tr>
           <th colspan="3" scope="col">${actorName} Movies List</th>
@@ -125,79 +125,124 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   
-  document.addEventListener("DOMContentLoaded", function () {
-    // Select the list and list items
-    let tvList = document.getElementById("tv-list");
-    let listItems = tvList.querySelectorAll("li");
-    let shows = [];
+  document.addEventListener("DOMContentLoaded", () => {
+  const metaDescription = document.querySelector("meta[name='description']");
+  const tvList = document.getElementById("tv-list");
+  const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
+  const entryTitle = document.querySelector("h1.entry-title");
 
-    // Extract year and show name
-    listItems.forEach(item => {
-        let parts = item.textContent.split(":");
-        if (parts.length === 2) {
-            let year = parts[0].trim();
-            let name = parts[1].trim();
-            shows.push({ year, name });
-        }
+  if (!tvList || !entryTitle) return;
+
+  // Extract years dynamically
+  const yearRange = getYearRange(tvList); // { start: xxxx, end: yyyy }
+  const pageTitle = document.title.replace(" TV Shows List", "");
+  const dynamicYearRange = `${yearRange.start}–${yearRange.end}`;
+  const actorName = extractActorName(entryTitle);
+
+  // Update meta title and description
+  if (metaDescription && entryTitle.textContent.includes("TV Shows List")) {
+    metaDescription.content = `Discover the complete, year-wise ${pageTitle} TV shows list (${dynamicYearRange}), covering all shows from debut to latest.`;
+    document.title = `${pageTitle} TV Shows List (${dynamicYearRange}) - Complete List`;
+    entryTitle.textContent = `${pageTitle} TV Shows List (${dynamicYearRange}) – Complete List`;
+  }
+
+  // Add label to last show item
+  const lastShowItem = tvList.querySelector("li:last-child");
+  if (lastShowItem) {
+    lastShowItem.textContent += " - First Show";
+  }
+
+  // Insert dynamic card before the show list
+  if (postSubBody) {
+    postSubBody.insertAdjacentHTML("beforebegin", generateDynamicCard(actorName, dynamicYearRange));
+  }
+
+  // Update all placeholders with actor name
+  document.querySelectorAll("[id^='actor-name']").forEach((el) => {
+    el.textContent = actorName;
+  });
+
+  // Convert list to table
+  convertListToTable(tvList, actorName);
+
+  // === Helper Functions ===
+
+  function getYearRange(list) {
+    const years = [...list.querySelectorAll("li")]
+      .map(li => {
+        const match = li.textContent.trim().match(/^(\d{4})/);
+        return match ? parseInt(match[1], 10) : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => a - b);
+    return {
+      start: years[0] || "N/A",
+      end: years[years.length - 1] || "N/A"
+    };
+  }
+
+  function extractActorName(titleElement) {
+    return titleElement?.textContent
+      .replace(/TV Shows List.*$/, "")
+      .trim() || "Actor";
+  }
+
+  function generateDynamicCard(actorName, yearRange) {
+    return `
+      <div class="card">
+        <p style="margin-bottom:0">Explore the full, year-wise <span id="actor-name-1">${actorName}</span> TV shows list (${yearRange}), from their debut series to the latest appearances. This detailed <span id="actor-name-2">${actorName}</span> showography includes release years, show titles, serial numbers, and more.</p>
+      </div>`;
+  }
+
+  function convertListToTable(list, actorName) {
+    const items = [...list.querySelectorAll("li")];
+    const shows = items.map((item) => {
+      const anchor = item.querySelector("a");
+      const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
+      const match = rawText.match(/^(\d{4})[:\s]*(.*)$/);
+      const year = match ? match[1] : "";
+      const name = match ? match[2] : "";
+      const showName = anchor
+        ? `<a href="${anchor.href}" rel="noopener noreferrer">${anchor.textContent}</a>`
+        : name;
+
+      return { year, name: showName };
     });
 
-    // Sort shows by year (latest to oldest)
-    shows.sort((a, b) => {
-        let yearA = parseInt(a.year.match(/\d{4}/)?.[0] || "0", 10);
-        let yearB = parseInt(b.year.match(/\d{4}/)?.[0] || "0", 10);
-        return yearB - yearA;
-    });
+    // Sort by year descending
+    shows.sort((a, b) => parseInt(b.year) - parseInt(a.year));
 
-    // Create table element
-    let table = document.createElement("table");
+    const table = document.createElement("table");
     table.className = "custom-table";
     table.setAttribute("role", "table");
-    table.setAttribute("aria-labelledby", "movies-list-title");
+    table.setAttribute("aria-labelledby", "tv-shows-list-title");
 
-    // Create caption
-   // let caption = document.createElement("caption");
-   // caption.className = "styled-caption";
-  //  caption.textContent = "TV Shows List";
-  //  table.appendChild(caption);
+    const rows = shows.map((show, index) => `
+      <tr>
+        <td>${shows.length - index}</td>
+        <td>${show.year}</td>
+        <td>${show.name}</td>
+      </tr>`).join("");
 
-    // Create table header
-    let thead = document.createElement("thead");
-    thead.innerHTML = `
+    table.innerHTML = `
+      <caption class="styled-caption">${actorName} All TV Shows List Year-Wise</caption>
+      <thead>
         <tr>
-          <th colspan="3" scope="col">${actorName} Movies List</th>
-         
+          <th colspan="3" scope="col">${actorName} TV Shows List</th>
         </tr>
         <tr>
           <th scope="col">S. No.</th>
           <th scope="col">Release Year</th>
-          <th scope="col">Movie Name</th>
+          <th scope="col">Show Name</th>
         </tr>
-    `;
-    table.appendChild(thead);
+      </thead>
+      <tbody>
+        ${rows}
+        <tr>
+          <td colspan="3"><strong>${actorName} Total TV Shows Count:</strong> ${shows.length}</td>
+        </tr>
+      </tbody>`;
 
-    // Create table body
-    let tbody = document.createElement("tbody");
-    shows.forEach((show, index) => {
-        let row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${shows.length - index}</td>
-            <td>${show.year}</td>
-            <td>${show.name}</td>
-        `;
-        tbody.appendChild(row);
-    });
-
-    // Add total count row
-    let totalRow = document.createElement("tr");
-    totalRow.innerHTML = `<td colspan="3"><strong>Total TV Shows Count</strong>: ${shows.length}</td>`;
-    tbody.appendChild(totalRow);
-
-    table.appendChild(tbody);
-
-    // Append the table to the document body (or any specific container)
-    let container = document.getElementById("post-sub-body");
-    container.appendChild(table);
-
-    // Hide the original <ul>
-    tvList.style.display = "none";
+    list.replaceWith(table);
+  }
 });
