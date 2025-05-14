@@ -196,13 +196,14 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`;
   }
 
-  function convertListToTable(list, actorName, dynamicYearRange) {
+  function convertListToTable(list, actorName) {
     const items = [...list.querySelectorAll("li")];
     const shows = items.map((item) => {
       const anchor = item.querySelector("a");
       const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
-      const match = rawText.match(/^(\d{4})[:\s]*(.*)$/);
-      const year = match ? match[1] : "";
+      const yearPart = rawText.split(":")[0]?.trim() || ""; // keeps full range like "1981–1993"
+const namePart = rawText.split(":")[1]?.trim() || "";
+
       const name = match ? match[2] : "";
       const showName = anchor
         ? `<a href="${anchor.href}" rel="noopener noreferrer">${anchor.textContent}</a>`
@@ -212,7 +213,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Sort by year descending
-    shows.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+  shows.sort((a, b) => {
+  const yearA = parseInt(a.year.split("–")[0] || a.year, 10);
+  const yearB = parseInt(b.year.split("–")[0] || b.year, 10);
+  return yearB - yearA;
+});
+
 
     const table = document.createElement("table");
     table.className = "custom-table";
@@ -222,8 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rows = shows.map((show, index) => `
       <tr>
         <td>${shows.length - index}</td>
-        <td>${dynamicYearRange}</td>
-
+        <td>${show.year}</td>
         <td>${show.name}</td>
       </tr>`).join("");
 
