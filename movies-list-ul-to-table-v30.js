@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Extract years dynamically
   const yearRange = getYearRange(tvList); // { start: xxxx, end: yyyy }
-  const pageTitle = document.title.replace(" TV Shows List", "");
+  const pageTitle = document.title.replace(" Movies List", "");
   const dynamicYearRange = `${yearRange.start}–${yearRange.end}`;
   const actorName = extractActorName(entryTitle);
 
