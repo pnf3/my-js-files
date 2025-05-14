@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>`;
   }
 
- function convertListToTable(list, actorName) {
+function convertListToTable(list, actorName) {
   const items = [...list.querySelectorAll("li")];
   const shows = items.map((item) => {
     const anchor = item.querySelector("a");
@@ -252,4 +252,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   list.replaceWith(table);
 }
+});
 
