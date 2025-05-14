@@ -222,8 +222,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const rows = shows.map((show, index) => `
       <tr>
         <td>${shows.length - index}</td>
-        <td><td>${dynamicYearRange}</td>
-</td>
+        <td>${dynamicYearRange}</td>
+
         <td>${show.name}</td>
       </tr>`).join("");
 
