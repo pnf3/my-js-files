@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Insert dynamic card before movie list
   if (postSubBody) {
-    postSubBody.insertAdjacentHTML("beforebegin", generateDynamicCard(actorName, dynamicYearRange));
+    postSubBody.insertAdjacentHTML("afterbegin", generateDynamicCard(actorName, dynamicYearRange));
   }
 
   // Update all actor name placeholders
