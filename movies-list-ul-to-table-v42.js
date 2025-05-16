@@ -156,13 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
     lastShowItem.textContent += " - First Show";
   }
 
-  // === INSERT CARD JUST ABOVE TV TABLE ===
-  // Find the first table (movies table), insert card after it
-  const movieTable = document.querySelector("table.ml-custom-table");
- if (movieTables.length > 0) {
-  const lastTable = movieTables[movieTables.length - 1];
-  lastTable.insertAdjacentHTML("beforebegin", generateDynamicCard(actorName, dynamicYearRange));
-}
+   // Insert dynamic card before movie list
+  if (tvList) {
+    postSubBody.insertAdjacentHTML("beforebegin	", generateDynamicCard(actorName, dynamicYearRange));
+  }
+
 
   // Update all placeholders with actor name
   document.querySelectorAll("[id^='actor-name']").forEach((el) => {
