@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const movieTables = document.querySelectorAll("table.ml-custom-table");
 if (movieTables.length > 0) {
   const lastTable = movieTables[movieTables.length - 1];
-  lastTable.insertAdjacentHTML("beforebegin", generateDynamicCard(actorName, dynamicYearRange));
+  lastTable.insertAdjacentHTML("afterend", generateDynamicCard(actorName, dynamicYearRange));
 }
 
   // Update all placeholders with actor name
