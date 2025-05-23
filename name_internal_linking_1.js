@@ -1,7 +1,9 @@
 window.addEventListener('load', function() {
     const nameLinks = {
        "Akshay Kumar": "https://www.newsfocus360.com/2023/10/akshay-kumar-movies-list.html",
+        "Hrithik Roshan":
         "Nani": "https://www.newsfocus360.com/2018/12/nani-all-movies-list-and-biography-hits.html"
+        
     };
 
     function linkifyElement(el, linksObj) {
