@@ -1,4 +1,23 @@
 const boxOfficeData = {
+	"Odela 2 Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-17", 
+			"1": 2.75, "2": 6.24, "3": 7.75, "4": 10.24, "5": 11.13, "6": 11.54, "8":  13.92,
+			"total": 13.92, "Rating": 8.9, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 25, "advanceBooking": 1.23, "link":"https://www.newsfocus360.com/2025/04/odela-2-box-office-collection-day-wise.html"
+		},
+		
+		
+		"Alappuzha Gymkhana Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-10", 
+			"1": 6.13, "2": 11.25, "3": 16.24, "4": 25.42, "5": 32.47, "8": 113.52,
+			"total": 113.52, "Rating": 8.2, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 20, "advanceBooking": 2.11, "link":"https://www.newsfocus360.com/2025/04/alappuzha-gymkhana-box-office.html"
+		},
+		
+		
+		"Good Bad Ugly Box Office Collection: Day-Wise": {
+			"releaseDate": "2025-04-10", 
+			"1": 42.31, "2": 63.45, "3": 83.49, "4": 106.45, "5": 122.21, "8": 250.80,
+			"total": 250.80, "Rating": 8.4, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 250, "advanceBooking": 8.48, "link":"https://www.newsfocus360.com/2025/04/good-bad-ugly-box-office-collection-day.html"
+		},
 	"Sikandar Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-03-30", 
 			"1": 12.53, "2": 23.75, "3": 33.12,"4": 42.54, "5": 49.53, "6": 54.24, "8": 88.23,
