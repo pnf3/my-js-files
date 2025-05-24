@@ -1,5 +1,7 @@
 window.addEventListener('load', function() {
     const movieLinks = {
+	    "Bombay": "https://www.newsfocus360.com/2025/05/bombay-box-office-collection-day-wise.html",
+"Bhairavam":"https://www.newsfocus360.com/2025/05/bhairavam-box-office-collection-day-wise.html",
         "Housefull 5": "https://www.newsfocus360.com/2025/05/housefull-5-box-office-collection-day.html",
         "Bhool Chuk Maaf": "https://www.newsfocus360.com/2025/05/bhool-chuk-maaf-box-office-collection.html",
 		"The Shawshank Redemption": "https://www.newsfocus360.com/2025/05/the-shawshank-redemption-timeless-tale.html"
