@@ -1,5 +1,7 @@
 window.addEventListener('load', function() {
     const movieLinks = {
+	    "Saunkan Saunkanay 2":"https://www.newsfocus360.com/2025/05/saunkan-saunkanay-2-box-office.html",
+"Thug Life":"https://www.newsfocus360.com/2025/05/thug-life-box-office-collection-day-wise.html",
 	    "Bombay": "https://www.newsfocus360.com/2025/05/bombay-box-office-collection-day-wise.html",
 "Bhairavam":"https://www.newsfocus360.com/2025/05/bhairavam-box-office-collection-day-wise.html",
         "Housefull 5": "https://www.newsfocus360.com/2025/05/housefull-5-box-office-collection-day.html",
