@@ -1,5 +1,14 @@
 window.addEventListener('load', function() {
     const nameLinks = {
+        "Sargun Mehta":"https://www.newsfocus360.com/2025/05/sargun-mehta-movies-list.html",
+"Ammy Virk":"https://www.newsfocus360.com/2024/01/ammy-virk-movies-list.html",
+"Nimrat Khaira":"https://www.newsfocus360.com/2025/05/nimrat-khaira-movies-list.html",
+"Smeep Kang":"https://www.newsfocus360.com/2025/05/smeep-kang-movies-list.html",
+"Kamal Haasan":"https://www.newsfocus360.com/2023/10/kamal-haasan-movies-list.html",
+"Silambarasan":"https://www.newsfocus360.com/2024/07/silambarasan-all-movies-list-year-wise.html",
+"Mani Ratnam":"https://www.newsfocus360.com/2023/11/mani-ratnam-all-movies-list.html",
+"Trisha Krishnan":"https://www.newsfocus360.com/2024/07/trisha-krishnan-all-movies-list-year.html",
+"Abhirami":"https://www.newsfocus360.com/2025/05/abhirami-movies-list.html",
         "Gavie Chahal": "https://www.newsfocus360.com/2025/05/gavie-chahal-movies-list.html",
 "Sanjay Niranjan":"https://www.newsfocus360.com/2025/05/sanjay-niranjan-movies-list.html",
 "Deepshikha Nagpal":"https://www.newsfocus360.com/2025/05/deepshikha-nagpal-movies-list.html",
