@@ -1,5 +1,8 @@
 window.addEventListener('load', function() {
     const movieLinks = {
+	    "Sitaare Zameen Par":"https://www.newsfocus360.com/2025/05/sitaare-zameen-par-box-office.html",
+"War 2":"https://www.newsfocus360.com/2025/05/war-2-box-office-collection-day-wise.html",
+"Kingdom":"https://www.newsfocus360.com/2025/05/kingdom-box-office-collection-day-wise.html",
 	    "Saunkan Saunkanay 2":"https://www.newsfocus360.com/2025/05/saunkan-saunkanay-2-box-office.html",
 "Thug Life":"https://www.newsfocus360.com/2025/05/thug-life-box-office-collection-day-wise.html",
 	    "Bombay": "https://www.newsfocus360.com/2025/05/bombay-box-office-collection-day-wise.html",
