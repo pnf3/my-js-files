@@ -1,5 +1,10 @@
 window.addEventListener('load', function() {
     const nameLinks = {
+        "Bhagyashree Borse":"https://www.newsfocus360.com/2025/05/bhagyashree-borse-movies-list.html",
+"Satyadev Kancharana":"https://www.newsfocus360.com/2025/05/satyadev-kancharana-movies-list.html",
+"Gowtam Tinnanuri":"https://www.newsfocus360.com/2025/05/gowtam-tinnanuri-movies-list.html",
+"Ashok Selvan":"https://www.newsfocus360.com/2025/05/ashok-selvan-movies-list.html",
+"Joju George":"https://www.newsfocus360.com/2025/05/joju-george-movies-list.html",
         "Aishwarya Lekshmi":"https://www.newsfocus360.com/2025/05/aishwarya-lekshmi-movies-list.html",
 "Vijay Deverakonda":"https://www.newsfocus360.com/2018/12/vijay-deverakonda-movies-list.html",
         "Sargun Mehta":"https://www.newsfocus360.com/2025/05/sargun-mehta-movies-list.html",
