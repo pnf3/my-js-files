@@ -1,5 +1,7 @@
 window.addEventListener('load', function() {
     const nameLinks = {
+        "Aishwarya Lekshmi":"https://www.newsfocus360.com/2025/05/aishwarya-lekshmi-movies-list.html",
+"Vijay Deverakonda":"https://www.newsfocus360.com/2018/12/vijay-deverakonda-movies-list.html",
         "Sargun Mehta":"https://www.newsfocus360.com/2025/05/sargun-mehta-movies-list.html",
 "Ammy Virk":"https://www.newsfocus360.com/2024/01/ammy-virk-movies-list.html",
 "Nimrat Khaira":"https://www.newsfocus360.com/2025/05/nimrat-khaira-movies-list.html",
