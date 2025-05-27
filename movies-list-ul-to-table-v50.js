@@ -380,7 +380,7 @@ function convertListToTable(list, actorName) {
 	  </tbody>
 	   <tfoot>
       <tr>
-        <td colspan="3"><strong>${actorName} Total Movies Count as a Producer:</strong> ${shows.length}</td>
+        <td colspan="3"><strong>${actorName} Total Movies Count as a DPWS:</strong> ${shows.length}</td>
       </tr>
 	  </tfoot>
     `;
