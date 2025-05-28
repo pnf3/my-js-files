@@ -20,7 +20,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 7.8,
     "Language": "Tamil",
-    "Verdict": null,
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.05
