@@ -1,4 +1,4 @@
-<script type="application/json" id="boxOfficerunning">{
+var boxOfficerunning = {
   "Ace Box Office Collection: Day-Wise": {
     "1": 3.12,
     "2": 5.28,
@@ -77,5 +77,4 @@
     "Budget": 30,
     "advanceBooking": 2.12
   }
-}
-	</script>
+};
