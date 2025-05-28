@@ -72,7 +72,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 7.4,
     "Language": "Hindi",
-    "Verdict": null,
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 30,
     "advanceBooking": 2.12
