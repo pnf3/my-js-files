@@ -20,7 +20,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 7.8,
     "Language": "Tamil",
-    "Verdict": "null",
+    "Verdict": null,
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.05
@@ -72,7 +72,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 7.4,
     "Language": "Hindi",
-    "Verdict": "null",
+    "Verdict": "Null",
     "futureDays": 7,
     "Budget": 30,
     "advanceBooking": 2.12
