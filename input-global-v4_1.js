@@ -1,4 +1,5 @@
-const boxOfficerunning = {
+<script type="application/json" id="boxOfficerunning">
+{
   "Ace Box Office Collection: Day-Wise": {
     "1": 3.12,
     "2": 5.28,
@@ -9,7 +10,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.1,
     "Language": "Tamil",
-    "Verdict": null,
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 35,
     "advanceBooking": 1.15
@@ -20,7 +21,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 7.8,
     "Language": "Tamil",
-    "Verdict": null,
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.05
@@ -35,7 +36,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 8.9,
     "Language": "Malayalam",
-    "Verdict": null,
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 10,
     "advanceBooking": 2.01
@@ -46,7 +47,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 6.4,
     "Language": "Hindi",
-    "Verdict": null,
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.01
@@ -57,7 +58,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.1,
     "Language": "Hindi",
-    "Verdict": null,
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.12
@@ -72,9 +73,10 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 7.4,
     "Language": "Hindi",
-    "Verdict": "Null",
+    "Verdict": "null",
     "futureDays": 7,
     "Budget": 30,
     "advanceBooking": 2.12
   }
 }
+</script>
