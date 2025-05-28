@@ -9,7 +9,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.1,
     "Language": "Tamil",
-    "Verdict": "null",
+    "Verdict": null,
     "futureDays": 7,
     "Budget": 35,
     "advanceBooking": 1.15
@@ -17,10 +17,10 @@ const boxOfficerunning = {
   "Vembu Box Office Collection: Day-Wise": {
     "1": 0.1,
     "releaseDate": "2025-05-23",
-    "total": 0.12,
+    "total": null,
     "Rating": 7.8,
     "Language": "Tamil",
-    "Verdict": "null",
+    "Verdict": null,
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.05
@@ -35,7 +35,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 8.9,
     "Language": "Malayalam",
-    "Verdict": "null",
+    "Verdict": null,
     "futureDays": 7,
     "Budget": 10,
     "advanceBooking": 2.01
@@ -46,7 +46,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 6.4,
     "Language": "Hindi",
-    "Verdict": "null",
+    "Verdict": null,
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.01
@@ -57,22 +57,22 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.1,
     "Language": "Hindi",
-    "Verdict": "null",
+    "Verdict": null,
     "futureDays": 7,
     "Budget": 1,
     "advanceBooking": 0.12
   },
   "Bhool Chuk Maaf Box Office Collection: Day-Wise": {
-    "1": 3.60,
+    "1": 3.6,
     "2": 10.56,
     "3": 21.82,
     "4": 25.68,
-    "5": 31.50,
+    "5": 31.51,
     "releaseDate": "2025-05-23",
     "total": null,
     "Rating": 7.4,
     "Language": "Hindi",
-    "Verdict": "null",
+    "Verdict": null,
     "futureDays": 7,
     "Budget": 30,
     "advanceBooking": 2.12
