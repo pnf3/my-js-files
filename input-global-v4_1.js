@@ -1,4 +1,4 @@
-var boxOfficerunning = {
+const boxOfficeData = {
   "Ace Box Office Collection: Day-Wise": {
     "1": 3.12,
     "2": 5.28,
@@ -77,4 +77,4 @@ var boxOfficerunning = {
     "Budget": 30,
     "advanceBooking": 2.12
   }
-};
+}
