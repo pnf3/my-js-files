@@ -1,4 +1,204 @@
 const boxOfficerunning = {
+  "Dilli Dark Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 5.5,
+    "advanceBooking": 1.1
+  },
+  "Jinn - The Pet Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 2.5,
+    "advanceBooking": 0.52
+  },
+  "Vellapanti Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 4.1,
+    "advanceBooking": 0.91
+  },
+  "Shashtipoorthi Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Telugu",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 5,
+    "advanceBooking": 1.01
+  },
+  "The Verdict Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 2.5,
+    "advanceBooking": 0.51
+  },
+  "His Story of Itihaas Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 0.5,
+    "advanceBooking": 0.1
+  },
+  "Shubhchintak Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Gujarati",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 0.34,
+    "advanceBooking": 0.06
+  },
+  "Mhanje Waghache Panje Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Marathi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 1.4,
+    "advanceBooking": 0.24
+  },
+  "Agar Magar Kintu Lekin Parantu Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 0.45,
+    "advanceBooking": 0.09
+  },
+  "Moonwalk Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Malayalam",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 3.3,
+    "advanceBooking": 0.6
+  },
+  "Chidiya Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 5.4,
+    "advanceBooking": 1.04
+  },
+  "Ashtapadi Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Marathi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 0.3,
+    "advanceBooking": 0.06
+  },
+  "Manidhargal Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 0.2,
+    "advanceBooking": 0.04
+  },
+  "X Roads Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Telugu",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "Sonar Kellay Jawker Dhan Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Bengali",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 1,
+    "advanceBooking": 0.2
+  },
+  "Tomchi Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 5.5,
+    "advanceBooking": 1.1
+  },
+  "Saunkan Saunkanay 2 Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Punjabi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 5,
+    "advanceBooking": 1
+  },
+  "Bhairavam Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Telugu",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 10.5,
+    "advanceBooking": 2.1
+  },
+  "Bombay Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 16,
+    "advanceBooking": 3.2
+  },
+  "Love Karu Yaaa Shaadi\r Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 5,
+    "advanceBooking": 1.1
+  },
   "Ace Box Office Collection: Day-Wise": {
     "1": 3.12,
     "2": 5.28,
