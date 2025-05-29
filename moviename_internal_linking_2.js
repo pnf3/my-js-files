@@ -1,74 +1,76 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const movieLinks = {
-	    "Ace": "https://www.newsfocus360.com/2025/05/ace-box-office-collection-day-wise.html",
-"Narivetta": "https://www.newsfocus360.com/2025/05/narivetta-box-office-collection-day-wise.html",
-	    "Tomchi":"https://www.newsfocus360.com/2025/05/tomchi-box-office-collection-day-wise.html",
-	    "Sitaare Zameen Par":"https://www.newsfocus360.com/2025/05/sitaare-zameen-par-box-office.html",
-"War 2":"https://www.newsfocus360.com/2025/05/war-2-box-office-collection-day-wise.html",
-"Kingdom":"https://www.newsfocus360.com/2025/05/kingdom-box-office-collection-day-wise.html",
-	    "Saunkan Saunkanay 2":"https://www.newsfocus360.com/2025/05/saunkan-saunkanay-2-box-office.html",
-"Thug Life":"https://www.newsfocus360.com/2025/05/thug-life-box-office-collection-day-wise.html",
-	    "Bombay": "https://www.newsfocus360.com/2025/05/bombay-box-office-collection-day-wise.html",
-"Bhairavam":"https://www.newsfocus360.com/2025/05/bhairavam-box-office-collection-day-wise.html",
+        "Ace": "https://www.newsfocus360.com/2025/05/ace-box-office-collection-day-wise.html",
+        "Narivetta": "https://www.newsfocus360.com/2025/05/narivetta-box-office-collection-day-wise.html",
+        "Tomchi": "https://www.newsfocus360.com/2025/05/tomchi-box-office-collection-day-wise.html",
+        "Sitaare Zameen Par": "https://www.newsfocus360.com/2025/05/sitaare-zameen-par-box-office.html",
+        "War 2": "https://www.newsfocus360.com/2025/05/war-2-box-office-collection-day-wise.html",
+        "Kingdom": "https://www.newsfocus360.com/2025/05/kingdom-box-office-collection-day-wise.html",
+        "Saunkan Saunkanay 2": "https://www.newsfocus360.com/2025/05/saunkan-saunkanay-2-box-office.html",
+        "Thug Life": "https://www.newsfocus360.com/2025/05/thug-life-box-office-collection-day-wise.html",
+        "Bombay": "https://www.newsfocus360.com/2025/05/bombay-box-office-collection-day-wise.html",
+        "Bhairavam": "https://www.newsfocus360.com/2025/05/bhairavam-box-office-collection-day-wise.html",
         "Housefull 5": "https://www.newsfocus360.com/2025/05/housefull-5-box-office-collection-day_24.html",
         "Bhool Chuk Maaf": "https://www.newsfocus360.com/2025/05/bhool-chuk-maaf-box-office-collection_23.html",
-		"The Shawshank Redemption": "https://www.newsfocus360.com/2025/05/the-shawshank-redemption-timeless-tale.html"
+        "The Shawshank Redemption": "https://www.newsfocus360.com/2025/05/the-shawshank-redemption-timeless-tale.html"
     };
 
-    function linkifyElement(el, linksObj) {
-        let html = el.innerHTML;
+    const sortedMovies = Object.keys(movieLinks).sort((a, b) => b.length - a.length);
+    const movieRegexes = sortedMovies.map(title => ({
+        title,
+        regex: new RegExp(`\\b(${title.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')})\\b`, 'g')
+    }));
 
-       function linkifyElement(el, linksObj) {
-    const sortedMovies = Object.keys(linksObj).sort((a, b) => b.length - a.length);
-    const regexes = sortedMovies.map(movie => {
-        const escaped = movie.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-        return { movie, regex: new RegExp(`\\b(${escaped})\\b`, 'g'), link: linksObj[movie] };
-    });
-
-    function linkifyTextNode(textNode) {
-        let parent = textNode.parentNode;
-        let content = textNode.nodeValue;
-
-        let replaced = false;
-
-        regexes.forEach(({ movie, regex, link }) => {
-            if (regex.test(content)) {
-                content = content.replace(regex, `<a href="${link}">$1</a>`);
-                replaced = true;
-            }
-        });
-
-        if (replaced) {
-            const span = document.createElement('span');
-            span.innerHTML = content;
-            parent.replaceChild(span, textNode);
-        }
-    }
-
-    function walk(node) {
+    function processNode(node) {
         if (node.nodeType === Node.TEXT_NODE) {
-            linkifyTextNode(node);
-        } else if (node.nodeType === Node.ELEMENT_NODE && node.nodeName !== 'A' && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
-            for (let child of [...node.childNodes]) {
-                walk(child);
+            let parent = node.parentNode;
+
+            if (parent && parent.closest('a')) return; // skip if inside a link
+
+            let text = node.nodeValue;
+            let hasMatch = false;
+            let frag = document.createDocumentFragment();
+
+            while (text.length > 0) {
+                let found = false;
+                for (let { title, regex } of movieRegexes) {
+                    let match = regex.exec(text);
+                    if (match) {
+                        hasMatch = true;
+
+                        if (match.index > 0) {
+                            frag.appendChild(document.createTextNode(text.slice(0, match.index)));
+                        }
+
+                        const anchor = document.createElement('a');
+                        anchor.href = movieLinks[title];
+                        anchor.textContent = match[0];
+                        frag.appendChild(anchor);
+
+                        text = text.slice(match.index + match[0].length);
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    frag.appendChild(document.createTextNode(text));
+                    break;
+                }
             }
+
+            if (hasMatch) {
+                parent.replaceChild(frag, node);
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'A') {
+            Array.from(node.childNodes).forEach(processNode);
         }
     }
 
-    walk(el);
-}
-
-
-        el.innerHTML = html;
-    }
-
-    // Select all elements with the .post-sub-body class
-    const targets = document.querySelectorAll('.post-sub-body, .post-boc-body');
+    const targets = document.querySelectorAll('.post-sub-body, .combined-table');
 
     targets.forEach(el => {
-        // Skip elements with the .box-office-container class
         if (!el.classList.contains('box-office-container')) {
-            linkifyElement(el, movieLinks);
+            processNode(el);
         }
     });
 });
