@@ -1,5 +1,7 @@
 window.addEventListener('load', function() {
     const movieLinks = {
+	    "Ace": "https://www.newsfocus360.com/2025/05/ace-box-office-collection-day-wise.html",
+"Narivetta": "https://www.newsfocus360.com/2025/05/narivetta-box-office-collection-day-wise.html",
 	    "Tomchi":"https://www.newsfocus360.com/2025/05/tomchi-box-office-collection-day-wise.html",
 	    "Sitaare Zameen Par":"https://www.newsfocus360.com/2025/05/sitaare-zameen-par-box-office.html",
 "War 2":"https://www.newsfocus360.com/2025/05/war-2-box-office-collection-day-wise.html",
