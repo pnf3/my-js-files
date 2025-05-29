@@ -1,5 +1,6 @@
 const boxOfficerunning = {
   "Dilli Dark Box Office Collection: Day-Wise": {
+    "1": 3.62,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
