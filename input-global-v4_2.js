@@ -2,81 +2,81 @@ const boxOfficeData = {
 	"Gulkand Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-05-01", 
 			"1": 0.66, "2": 1.26, "3": 2.06, "4": 3.01, "5": 3.60, "6": 4.32, "7": 4.80, "8": 15.12,
-			"total": 15.12, "Rating": 9.1, "Language": "Marathi", "Verdict": "null", "futureDays": 0, "Budget": 10, "advanceBooking": 0.32, "link":"https://www.newsfocus360.com/2025/04/gulkand-box-office-collection-day-wise.html"
+			"total": 15.12, "Rating": 9.1, "Language": "Marathi", "Verdict": "null", "futureDays": 0, "Budget": 10, "advanceBooking": 0.32
 		},
 		
 		"Ata Thambaycha Naay Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-05-01", 
 			"1": 0.46, "2": 0.89, "3": 1.42, "4": 2.37, "5":  2.88, "6": 3.36, "7": 3.84, "8": 14.16,
-			"total": 14.16, "Rating": 8.9, "Language": "Marathi", "Verdict": "null", "futureDays": 0, "Budget": 5, "advanceBooking": 0.21, "link":"https://www.newsfocus360.com/2025/04/ata-thambaycha-naay-box-office.html"
+			"total": 14.16, "Rating": 8.9, "Language": "Marathi", "Verdict": "null", "futureDays": 0, "Budget": 5, "advanceBooking": 0.21
 		},
 		
 		"Tourist Family Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-05-01", 
 			"1": 3.73, "2": 7.77, "3": 12.63, "4": 20.26, "5": 24.96, "6": 30.01, "7": 35.52, "8": 114.01,
-			"total": 114.01, "Rating": 9.5, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 10, "advanceBooking": 0.51, "link":"https://www.newsfocus360.com/2025/04/tourist-family-box-office-collection.html"
+			"total": 114.01, "Rating": 9.5, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 10, "advanceBooking": 0.51
 		},
 		
 		"The Bhootnii Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-05-01", 
 			"1": 0.32, "2": 0.82, "3": 1.91, "4": 3.25, "5": 3.60, "6": 4.08, "7": 4.56, "8": 10.08,
-			"total": 10.08, "Rating": 7.3, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 15, "advanceBooking": 0.15, "link":"https://www.newsfocus360.com/2025/04/the-bhootnii-box-office-collection-day.html"
+			"total": 10.08, "Rating": 7.3, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 15, "advanceBooking": 0.15
 		},
 		
 		
 		"Raid 2 Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-05-01", 
 			"1": 9.71, "2": 19.34, "3": 28.73, "4": 42.51, "5": 49.92, "6": 56.88, "7": 63.36, "8": 159.61,
-			"total": 159.61, "Rating": 8.3, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 38, "advanceBooking": 4.41, "link":"https://www.newsfocus360.com/2025/04/raid-2-box-office-collection-day-wise.html"
+			"total": 159.61, "Rating": 8.3, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 38, "advanceBooking": 4.41
 		},
 		
 		"Retro Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-05-01", 
 			"1": 36.77, "2": 54.75, "3": 70.59, "4": 85.17, "5":  87.84, "6":  92.16, "7": 95.76, "8": 117.61,
-			"total": 117.61, "Rating": 8.0, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 65, "advanceBooking": 15.12, "link":"https://www.newsfocus360.com/2025/04/retro-box-office-collection-day-wise.html"
+			"total": 117.61, "Rating": 8.0, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 65, "advanceBooking": 15.12
 		},
 		
 		"HIT: The Third Case Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-05-01", 
 			"1": 41.72, "2": 65.75, "3": 83.12, "4": 101.28, "5": 108.96, "6": 117.12, "7": 124.80, "8": 177.36,
-			"total": 177.36, "Rating": 8.8, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 60, "advanceBooking": 25.23, "link":"https://www.newsfocus360.com/2025/04/hit-third-case-box-office-collection.html"
+			"total": 177.36, "Rating": 8.8, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 60, "advanceBooking": 25.23
 		},
 		
 		"Thudarum Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-25", 
 			"1": 28.18, "2": 70.12, "3": 110.28, "4": 139.45, "5": 161.11, "6": 183.25, "7": 207.52, "8": 384.72,
-			"total": 384.72, "Rating": 9.5, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 27, "advanceBooking": 15.14, "link":"https://www.newsfocus360.com/2025/04/thudarum-box-office-collection-day-wise.html"
+			"total": 384.72, "Rating": 9.5, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 27, "advanceBooking": 15.14
 		},
 		
 		"Arjun S/O Vyjayanthi Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-18", 
 			"1": 4.13, "2": 5.26, "3": 8.25, "4": 9.31, "5": 10.28, "8": 15.36,
-			"total": 15.36, "Rating": 8.5, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 15, "advanceBooking": 2.15, "link":"https://www.newsfocus360.com/2025/04/arjun-so-vyjayanthi-box-office.html"
+			"total": 15.36, "Rating": 8.5, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 15, "advanceBooking": 2.15
 		},
 		
 		"Jaat Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 6.21, "2": 10.18, "3": 16.42, "4": 26.46, "5": 33.16, "8": 107.76,
-			"total": 107.76, "Rating": 8.9, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 100, "advanceBooking": 3.23, "link":"https://www.newsfocus360.com/2025/04/jaat-box-office-collection-day-wise.html"
+			"total": 107.76, "Rating": 8.9, "Language": "Hindi", "Verdict": "null", "futureDays": 0, "Budget": 100, "advanceBooking": 3.23
 		},
 	"Odela 2 Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-17", 
 			"1": 2.75, "2": 6.24, "3": 7.75, "4": 10.24, "5": 11.13, "6": 11.54, "8":  13.92,
-			"total": 13.92, "Rating": 8.9, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 25, "advanceBooking": 1.23, "link":"https://www.newsfocus360.com/2025/04/odela-2-box-office-collection-day-wise.html"
+			"total": 13.92, "Rating": 8.9, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 25, "advanceBooking": 1.23
 		},
 		
 		
 		"Alappuzha Gymkhana Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 6.13, "2": 11.25, "3": 16.24, "4": 25.42, "5": 32.47, "8": 113.52,
-			"total": 113.52, "Rating": 8.2, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 20, "advanceBooking": 2.11, "link":"https://www.newsfocus360.com/2025/04/alappuzha-gymkhana-box-office.html"
+			"total": 113.52, "Rating": 8.2, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 20, "advanceBooking": 2.11
 		},
 		
 		
 		"Good Bad Ugly Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 42.31, "2": 63.45, "3": 83.49, "4": 106.45, "5": 122.21, "8": 250.80,
-			"total": 250.80, "Rating": 8.4, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 250, "advanceBooking": 8.48, "link":"https://www.newsfocus360.com/2025/04/good-bad-ugly-box-office-collection-day.html"
+			"total": 250.80, "Rating": 8.4, "Language": "Tamil", "Verdict": "null", "futureDays": 0, "Budget": 250, "advanceBooking": 8.48
 		},
 	"Sikandar Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-03-30", 
@@ -91,43 +91,43 @@ const boxOfficeData = {
 	"KillBill Society Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-11", 
 			"1": 0.23, "2": 0.62, "3": 1.47, "8": 9.23, 
-			"total": 9.23, "Rating": 7.2, "Language": "Bengali", "Verdict": "null", "futureDays": 0, "Budget": 2.5, "advanceBooking": 0.11, "link":"https://www.newsfocus360.com/2025/04/killbill-society-box-office-collection.html"
+			"total": 9.23, "Rating": 7.2, "Language": "Bengali", "Verdict": "null", "futureDays": 0, "Budget": 2.5, "advanceBooking": 0.11
 		},
 		
 		
 	"Akkada Ammayi Ikkada Abbayi Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-11", 
 			"1": 0.21, "2": 0.46, "3": 0.78, "8": 2.32,
-			"total": 2.32, "Rating": 8.1, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 2, "advanceBooking": 0.11, "link":"https://www.newsfocus360.com/2025/04/akkada-ammayi-ikkada-abbayi-box-office.html"
+			"total": 2.32, "Rating": 8.1, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 2, "advanceBooking": 0.11
 		},
 		
 	"Jack (Konchem Krack) Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 3.01, "2": 3.85, "3": 4.61, "4": 5.43, "5": 6.02, "8": 10.53,
-			"total": 10.53, "Rating": 7.1, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 28, "advanceBooking": 2.45, "link":"https://www.newsfocus360.com/2025/04/jack-konchem-krack-box-office.html"
+			"total": 10.53, "Rating": 7.1, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 28, "advanceBooking": 2.45
 		},
 	"Maranamass Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 3.24, "2": 5.62, "3": 8.46, "4":11.81, "5":14.62, "8":38.54,
-			"total": 38.54, "Rating": 7.4, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 14, "advanceBooking": 1.23, "link":"https://www.newsfocus360.com/2025/04/maranamass-box-office-collection-day.html"
+			"total": 38.54, "Rating": 7.4, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 14, "advanceBooking": 1.23
 		},
 	
 	"Bazooka Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 9.84, "2": 15.23, "3": 18.82, "4": 22.42, "5": 24.82, "8": 42.12,
-			"total": 42.12, "Rating": 7.1, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 25, "advanceBooking": 7.83, "link":"https://www.newsfocus360.com/2025/04/bazooka-box-office-collection-day-wise.html"
+			"total": 42.12, "Rating": 7.1, "Language": "Malayalam", "Verdict": "null", "futureDays": 0, "Budget": 25, "advanceBooking": 7.83
 		},
 		
 	"Akaal Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-10", 
 			"1": 0.25, "2": 0.54, "3": 0.88, "4": 1.17, "5": 1.55, "8": 5.25,
-			"total": 5.25, "Rating": 8.7, "Language": "Punjabi", "Verdict": "null", "futureDays": 0, "Budget": 1.45, "advanceBooking": 3.18, "link":"https://www.newsfocus360.com/2025/04/akaal-box-office-collection-day-wise.html"
+			"total": 5.25, "Rating": 8.7, "Language": "Punjabi", "Verdict": "null", "futureDays": 0, "Budget": 1.45, "advanceBooking": 3.18
 		},
 		
 "Saaree Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-04-04", 
 			"1": 0.06, "3": 0.13, "8": 0.25, 
-			"total": 0.25, "Rating": 6.2, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 2.12, "advanceBooking": 5.12, "link":"https://www.newsfocus360.com/2025/03/sikandar-box-office-collection-day-wise.html"
+			"total": 0.25, "Rating": 6.2, "Language": "Telugu", "Verdict": "null", "futureDays": 0, "Budget": 2.12, "advanceBooking": 5.12
 		},
 	"Robinhood Box Office Collection: Day-Wise": {
 			"releaseDate": "2025-03-28", 
