@@ -18,20 +18,52 @@ window.addEventListener('load', function() {
     function linkifyElement(el, linksObj) {
         let html = el.innerHTML;
 
-        const sortedMovies = Object.keys(linksObj).sort((a, b) => b.length - a.length);
+       function linkifyElement(el, linksObj) {
+    const sortedMovies = Object.keys(linksObj).sort((a, b) => b.length - a.length);
+    const regexes = sortedMovies.map(movie => {
+        const escaped = movie.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+        return { movie, regex: new RegExp(`\\b(${escaped})\\b`, 'g'), link: linksObj[movie] };
+    });
 
-        sortedMovies.forEach(movie => {
-            const link = linksObj[movie];
-            const escapedMovie = movie.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-            const regex = new RegExp(`\\b(${escapedMovie})\\b`, 'g');
-            html = html.replace(regex, `<a href="${link}">$1</a>`);
+    function linkifyTextNode(textNode) {
+        let parent = textNode.parentNode;
+        let content = textNode.nodeValue;
+
+        let replaced = false;
+
+        regexes.forEach(({ movie, regex, link }) => {
+            if (regex.test(content)) {
+                content = content.replace(regex, `<a href="${link}">$1</a>`);
+                replaced = true;
+            }
         });
+
+        if (replaced) {
+            const span = document.createElement('span');
+            span.innerHTML = content;
+            parent.replaceChild(span, textNode);
+        }
+    }
+
+    function walk(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            linkifyTextNode(node);
+        } else if (node.nodeType === Node.ELEMENT_NODE && node.nodeName !== 'A' && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+            for (let child of [...node.childNodes]) {
+                walk(child);
+            }
+        }
+    }
+
+    walk(el);
+}
+
 
         el.innerHTML = html;
     }
 
     // Select all elements with the .post-sub-body class
-    const targets = document.querySelectorAll('.post-sub-body, .combined-table');
+    const targets = document.querySelectorAll('.post-sub-body, .post-boc-body');
 
     targets.forEach(el => {
         // Skip elements with the .box-office-container class
