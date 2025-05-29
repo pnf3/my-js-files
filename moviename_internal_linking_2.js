@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
     }
 
     // Select all elements with the .post-sub-body class
-    const targets = document.querySelectorAll('.post-sub-body, .post-boc-body');
+    const targets = document.querySelectorAll('.post-sub-body, .combined-table');
 
     targets.forEach(el => {
         // Skip elements with the .box-office-container class
