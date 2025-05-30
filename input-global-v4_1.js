@@ -1,6 +1,6 @@
 const boxOfficerunning = {
   "Dilli Dark Box Office Collection: Day-Wise": {
-    "1": 1.49,
+    "1": 1.1,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -11,6 +11,7 @@ const boxOfficerunning = {
     "advanceBooking": 1.1
   },
   "Jinn - The Pet Box Office Collection: Day-Wise": {
+    "1": 0.53,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -21,6 +22,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.52
   },
   "Vellapanti Box Office Collection: Day-Wise": {
+    "1": 0.91,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -31,6 +33,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.91
   },
   "Shashtipoorthi Box Office Collection: Day-Wise": {
+    "1": 1.01,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -41,6 +44,7 @@ const boxOfficerunning = {
     "advanceBooking": 1.01
   },
   "The Verdict Box Office Collection: Day-Wise": {
+    "1": 0.5,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -51,6 +55,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.51
   },
   "His Story of Itihaas Box Office Collection: Day-Wise": {
+    "1": 0.1,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -61,6 +66,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.1
   },
   "Shubhchintak Box Office Collection: Day-Wise": {
+    "1": 0.07,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -71,6 +77,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.06
   },
   "Mhanje Waghache Panje Box Office Collection: Day-Wise": {
+    "1": 0.26,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -81,6 +88,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.24
   },
   "Agar Magar Kintu Lekin Parantu Box Office Collection: Day-Wise": {
+    "1": 0.1,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -91,6 +99,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.09
   },
   "Moonwalk Box Office Collection: Day-Wise": {
+    "1": 0.6,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -101,6 +110,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.6
   },
   "Chidiya Box Office Collection: Day-Wise": {
+    "1": 1.03,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -111,6 +121,7 @@ const boxOfficerunning = {
     "advanceBooking": 1.04
   },
   "Ashtapadi Box Office Collection: Day-Wise": {
+    "1": 0.07,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -121,6 +132,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.06
   },
   "Manidhargal Box Office Collection: Day-Wise": {
+    "1": 0.05,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -131,6 +143,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.04
   },
   "X Roads Box Office Collection: Day-Wise": {
+    "1": 0.02,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -141,6 +154,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Sonar Kellay Jawker Dhan Box Office Collection: Day-Wise": {
+    "1": 0.19,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -151,6 +165,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.2
   },
   "Tomchi Box Office Collection: Day-Wise": {
+    "1": 1.1,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -161,6 +176,7 @@ const boxOfficerunning = {
     "advanceBooking": 1.1
   },
   "Saunkan Saunkanay 2 Box Office Collection: Day-Wise": {
+    "1": 1.01,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -171,6 +187,7 @@ const boxOfficerunning = {
     "advanceBooking": 1
   },
   "Bhairavam Box Office Collection: Day-Wise": {
+    "1": 2.11,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -181,6 +198,7 @@ const boxOfficerunning = {
     "advanceBooking": 2.1
   },
   "Bombay Box Office Collection: Day-Wise": {
+    "1": 3.19,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
@@ -191,6 +209,7 @@ const boxOfficerunning = {
     "advanceBooking": 3.2
   },
   "Love Karu Yaaa Shaadi\r Box Office Collection: Day-Wise": {
+    "1": 1.1,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": "",
