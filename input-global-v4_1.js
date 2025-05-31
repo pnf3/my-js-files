@@ -194,7 +194,7 @@ const boxOfficerunning = {
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 7,
-    "Budget": 10.5,
+    "Budget": 35,
     "advanceBooking": 2.1
   },
   "Bombay Box Office Collection: Day-Wise": {
