@@ -1,5 +1,14 @@
 window.addEventListener('load', function () {
     const nameLinks = {
+        "Pavan Prabha": "https://www.newsfocus360.com/2025/05/pavan-prabha-movies-list.html",
+"Rajendra Prasad": "https://www.newsfocus360.com/2025/05/rajendra-prasad-movies-list.html",
+"Naresh": "https://www.newsfocus360.com/2025/05/naresh-movies-list.html",
+"Huma Qureshi": "https://www.newsfocus360.com/2025/05/huma-qureshi-movies-list.html",
+"Swara Bhasker": "https://www.newsfocus360.com/2025/05/swara-bhasker-movies-list.html",
+"Neena Gupta": "https://www.newsfocus360.com/2025/05/neena-gupta-movies-list.html",
+"Seema Pahwa": "https://www.newsfocus360.com/2025/05/seema-pahwa-movies-list.html",
+"Anna Camp": "https://www.newsfocus360.com/2025/05/anna-camp-movies-list.html",
+"Nargis Fakhri": "https://www.newsfocus360.com/2025/05/nargis-fakhri-movies-list.html",
         "Aamir Khan": "https://www.newsfocus360.com/2024/01/aamir-khan-movies-year-wise-complete.html",
 "Aaron Eckhart": "https://www.newsfocus360.com/2023/10/aaron-eckhart-movies-list.html",
 "Aaron Paul": "https://www.newsfocus360.com/2023/10/aaron-paul-movies-list.html",
