@@ -365,7 +365,7 @@ window.addEventListener('load', function () {
 "Savitri": "https://www.newsfocus360.com/2025/05/savitri-movies-list.html",
 "Scarlett Johansson": "https://www.newsfocus360.com/2023/09/scarlett-johansson-movies-list.html",
 "Scott Glenn": "https://www.newsfocus360.com/2025/04/scott-glenn-movies-list.html",
-"Sekhar Kammula": "https://www.newsfocus360.com/2024/01/sekhar-kammula-movies-list.html",
+"Sekhar Kammula": "https://www.newsfocus360.com/2025/05/sekhar-kammula-movies-list.html",
 "Selma Blair": "https://www.newsfocus360.com/2023/10/selma-blair-movies-list.html",
 "Shabana Azmi": "https://www.newsfocus360.com/2025/05/shabana-azmi-movies-list.html",
 "Shah Rukh Khan": "https://www.newsfocus360.com/2023/11/shahrukh-khan-all-movies-list.html",
