@@ -1,6 +1,6 @@
 const boxOfficerunning = {
   "Dilli Dark Box Office Collection: Day-Wise": {
-    "1": 1.1,
+    "1": 0.62,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": 8.3,
@@ -22,7 +22,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.52
   },
   "Vellapanti Box Office Collection: Day-Wise": {
-    "1": 0.91,
+    "1": 0.43,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": 8.1,
@@ -34,9 +34,10 @@ const boxOfficerunning = {
   },
   "Shashtipoorthi Box Office Collection: Day-Wise": {
     "1": 0.74,
+    "2": 1.63,
     "releaseDate": "2025-05-30",
     "total": null,
-    "Rating": 9.6,
+    "Rating": 9.5,
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 7,
@@ -188,9 +189,10 @@ const boxOfficerunning = {
   },
   "Bhairavam Box Office Collection: Day-Wise": {
     "1": 3.14,
+    "2": 6.24,
     "releaseDate": "2025-05-30",
     "total": null,
-    "Rating": 8.2,
+    "Rating": 8.6,
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 7,
