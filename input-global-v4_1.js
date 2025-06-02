@@ -1,4 +1,15 @@
 const boxOfficerunning = {
+  "Housefull 5 Box Office Collection: Day-Wise": {
+    "1": 14.66,
+    "releaseDate": "2025-06-06",
+    "total": null,
+    "Rating": 0,
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 320,
+    "advanceBooking": 5.2
+  },
   "Dilli Dark Box Office Collection: Day-Wise": {
     "1": 0.62,
     "releaseDate": "2025-05-30",
