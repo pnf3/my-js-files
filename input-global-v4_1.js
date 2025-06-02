@@ -53,7 +53,7 @@ const boxOfficerunning = {
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 7,
-    "Budget": 5,
+    "Budget": 20,
     "advanceBooking": 1.01
   },
   "The Verdict Box Office Collection: Day-Wise": {
