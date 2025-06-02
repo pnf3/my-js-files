@@ -1,6 +1,6 @@
 const boxOfficerunning = {
   "Housefull 5 Box Office Collection: Day-Wise": {
-    "1": 14.66,
+    "1": 0,
     "releaseDate": "2025-06-06",
     "total": null,
     "Rating": 0,
@@ -9,6 +9,17 @@ const boxOfficerunning = {
     "futureDays": 7,
     "Budget": 320,
     "advanceBooking": 5.2
+  },
+  "Thug Life Box Office Collection: Day-Wise": {
+    "1": 0,
+    "releaseDate": "2025-06-05",
+    "total": null,
+    "Rating": 0,
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 300,
+    "advanceBooking": 3.1
   },
   "Dilli Dark Box Office Collection: Day-Wise": {
     "1": 0.62,
