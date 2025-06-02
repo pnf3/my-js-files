@@ -54,7 +54,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": 20,
-    "advanceBooking": 1.01
+    "advanceBooking": 0.54
   },
   "The Verdict Box Office Collection: Day-Wise": {
     "1": 0.07,
@@ -65,7 +65,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": 2.5,
-    "advanceBooking": 0.51
+    "advanceBooking": 0.31
   },
   "His Story of Itihaas Box Office Collection: Day-Wise": {
     "1": 0.1,
