@@ -11,7 +11,7 @@ const boxOfficerunning = {
     "advanceBooking": 5.2
   },
   "Thug Life Box Office Collection: Day-Wise": {
-    "1": 0,
+    "1": 12.98,
     "releaseDate": "2025-06-05",
     "total": null,
     "Rating": 0,
@@ -19,7 +19,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": 300,
-    "advanceBooking": 3.1
+    "advanceBooking": 13.12
   },
   "Dilli Dark Box Office Collection: Day-Wise": {
     "1": 0.62,
