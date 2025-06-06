@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function generateDynamicCard(actorName, yearRange) {
-    return `<div class="card"><p class="mb-0">Explore the complete, year-wise list of ${actorName}'s movies (${yearRange}) & TV shows in the roles of Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie titles in chronological order, with release years, a running count, hits and flops, box office collection, OTT releases, and the total number of films to date.</p></div>
+    return `<div class="card"><p class="mb-0">Explore the complete, year-wise ${actorName} movies list (${yearRange}) & TV shows in the roles of Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie titles in chronological order, with release years, a running count, hits and flops, box office collection, OTT releases, and the total number of films to date.</p></div>
 	  <h2>${actorName} Movies List Year-Wise</h2>`;
   }
 
