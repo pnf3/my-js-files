@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastMovieItem = moviesList.querySelector("li:last-child");
     if (lastMovieItem) lastMovieItem.textContent += " - First Movie";
 
-  postSubBody.insertAdjacentHTML("beforebegin", `<h2>${actorName} Movies List Year-Wise</h2>`);
+  moviesList.insertAdjacentHTML("beforebegin", `<h2>${actorName} Movies List Year-Wise</h2>`);
     convertListToTable(moviesList, actorName, "movie");
   }
 
