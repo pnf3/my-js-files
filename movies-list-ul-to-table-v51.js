@@ -95,7 +95,7 @@ table.setAttribute("aria-label", `${actorName} Movies List`);
       return `
         <tr role="row">
           <td scope="row">${items.length - index}</td>
-         <td><time datetime="${year}">${year}</time></td>
+         <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
           <td>${movieName}</td>
         </tr>`;
     }).join("");
@@ -226,7 +226,7 @@ table.setAttribute("aria-label", `${actorName} TV Shows List`);
   const rows = shows.map((show, index) => `
     <tr>
       <td>${shows.length - index}</td>
-     <td><time datetime="${show.year}">${show.year}</time></td>
+    <td><time datetime="${show.year}" aria-label="Year ${show.year}">${show.year}</time></td>
       <td>${show.name}</td>
     </tr>`).join("");
 
@@ -358,7 +358,7 @@ table.setAttribute("aria-label", `${actorName} Movies List as Producer/Director/
   const rows = shows.map((show, index) => `
     <tr>
       <td>${shows.length - index}</td>
-      <td><time datetime="${show.year}">${show.year}</time></td>
+      <td><time datetime="${show.year}" aria-label="Year ${show.year}">${show.year}</time></td>
       <td>${show.name}</td>
     </tr>`).join("");
 
