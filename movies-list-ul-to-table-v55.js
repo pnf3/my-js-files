@@ -110,17 +110,9 @@ function getAriaLabel(actorName, type) {
 
      return `
   <tr role="row">
-    <th scope="row" aria-label="Movie number ${items.length - index}">
-      ${items.length - index}
-    </th>
-    <td>
-      <time datetime="${year}" aria-label="Year ${year}">
-        ${year}
-      </time>
-    </td>
-    <td>
-      ${name}
-    </td>
+    <th scope="row" aria-label="Movie number ${items.length - index}">${items.length - index}</th>
+    <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
+    <td>${name}</td>
   </tr>
 `;
     }).join("");
