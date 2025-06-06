@@ -105,7 +105,7 @@ function getAriaLabel(actorName, type) {
       const [yearPartRaw, namePartRaw] = rawText.includes(":") ? rawText.split(":") : [rawText, rawText];
       const year = yearPartRaw.match(/\d{4}/)?.[0] || "";
       const name = anchor
-        ? `<a href="${anchor.href}" rel="noopener noreferrer">${anchor.textContent}</a>`
+        ? `<a href="${anchor.href}">${anchor.textContent}</a>`
         : (namePartRaw?.trim() || rawText);
 
      return `
