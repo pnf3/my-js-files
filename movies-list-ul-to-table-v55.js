@@ -110,10 +110,8 @@ function getAriaLabel(actorName, type) {
 
       return `
         <tr role="row">
-  <th scope="row">
-    <time datetime="${items.length - index}" aria-label="Movie number ${items.length - index}">
-      ${items.length - index}
-    </time>
+  <th scope="row" aria-label="Movie number ${items.length - index}">
+    ${items.length - index}
   </th>
   <td>
     <time datetime="${year}" aria-label="Year ${year}" title="${type === 'tv' ? 'TV Show' : 'Movie'}: ${name}">
