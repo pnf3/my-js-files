@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!list) return [];
     return [...list.querySelectorAll("li")]
       .map(li => {
-        const match = li.textContent.trim().match(/\b(\d{4})\b/);
+        const match = li.textContent.trim().match(/^(\d{4})/);
         return match ? parseInt(match[1], 10) : null;
       })
       .filter(Boolean);
