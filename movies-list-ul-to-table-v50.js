@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function generateDynamicCard(actorName, yearRange) {
     return `<div class="card"><p class="mb-0">Explore the complete, year-wise list of ${actorName}'s movies (${yearRange}) & TV shows in the roles of Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie titles in chronological order, with release years, a running count, hits and flops, box office collection, OTT releases, and the total number of films to date.</p></div>
-	  <h2 id="movies-list-title">${actorName} Movies List Year-Wise</h2>`;
+	  <h2>${actorName} Movies List Year-Wise</h2>`;
   }
 
   function convertListToTable(list, actorName) {
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!--  <caption class="styled-caption">Complete List of ${actorName} Movies Year-Wise</caption> -->
       <thead role="rowgroup">
 	  <tr>
-          <th role="columnheader" colspan="3" scope="colgroup">${actorName} Movies List</th>
+          <th id="movies-list-title" role="columnheader" colspan="3" scope="colgroup">${actorName} Movies List</th>
          
         </tr>
         <tr role="row">
@@ -192,7 +192,7 @@ if (movieTables.length > 0) {
   }
 
   function generateDynamicCard(actorName, yearRange) {
-    return `<h2 id="tv-shows-list-title">${actorName} TV Shows List Year-Wise</h2>`;
+    return `<h2>${actorName} TV Shows List Year-Wise</h2>`;
   }
 
 function convertListToTable(list, actorName) {
@@ -234,7 +234,7 @@ function convertListToTable(list, actorName) {
   <!--  <caption class="styled-caption">Complete List of ${actorName} TV Shows Year-Wise</caption> -->
     <thead>
       <tr>
-        <th colspan="3" scope="colgroup">${actorName} TV Shows List</th>
+        <th id="tv-shows-list-title" colspan="3" scope="colgroup">${actorName} TV Shows List</th>
       </tr>
       <tr>
         <th scope="col">S. No.</th>
@@ -323,7 +323,7 @@ if (movieTables.length > 0) {
   }
 
   function generateDynamicCard(actorName, yearRange) {
-    return `<h2 id="producer-movies-list-title">${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</h2>
+    return `<h2>${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</h2>
 	<p class="mb-0"><strong>Legend:</strong> (DPWS) — D = Director, P = Producer, W = Writer, S = Screenplay</p>
 	`;
   }
@@ -367,7 +367,7 @@ function convertListToTable(list, actorName) {
  <!--   <caption class="styled-caption">Complete List of ${actorName} Movies as a Director (D), Producer (P), Writer (W), or Screenplay (S)</caption> -->
     <thead>
       <tr>
-        <th colspan="3" scope="colgroup">${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</th>
+        <th  id="producer-movies-list-title" colspan="3" scope="colgroup">${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</th>
       </tr>
       <tr>
         <th scope="col">S. No.</th>
