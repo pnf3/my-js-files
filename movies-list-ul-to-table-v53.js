@@ -43,25 +43,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastMovieItem = moviesList.querySelector("li:last-child");
     if (lastMovieItem) lastMovieItem.textContent += " - First Movie";
 
-    postSubBody.insertAdjacentHTML("beforeend", `<h2>${actorName} Movies List Year-Wise</h2>`);
+   tvList.insertAdjacentHTML("beforebegin", `<h2>${actorName} Movies List Year-Wise</h2>`);
     convertListToTable(moviesList, actorName, "movie");
   }
 
   // === Insert TV Shows Table ===
-  if (tvList) {
-    const lastShowItem = tvList.querySelector("li:last-child");
-    if (lastShowItem) lastShowItem.textContent += " - First Show";
+ if (tvList) {
+  const lastShowItem = tvList.querySelector("li:last-child");
+  if (lastShowItem) lastShowItem.textContent += " - First Show";
 
-    postSubBody.insertAdjacentHTML("beforeend", `<h2>${actorName} TV Shows List Year-Wise</h2>`);
-    convertListToTable(tvList, actorName, "tv");
-  }
+  tvList.insertAdjacentHTML("beforebegin", `<h2>${actorName} TV Shows List Year-Wise</h2>`);
+  convertListToTable(tvList, actorName, "tv");
+}
+
 
   // === Insert DPWS Table ===
-  if (dpwsList) {
-    postSubBody.insertAdjacentHTML("beforeend", `<h2>${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</h2>
+ if (dpwsList) {
+  dpwsList.insertAdjacentHTML("beforebegin", `<h2>${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</h2>
     <p class="mb-0"><strong>Legend:</strong> (DPWS) — D = Director, P = Producer, W = Writer, S = Screenplay</p>`);
-    convertListToTable(dpwsList, actorName, "dpws");
-  }
+  convertListToTable(dpwsList, actorName, "dpws");
+}
+
 
   // === Shared Helper Functions ===
 
