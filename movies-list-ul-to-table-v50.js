@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const table = document.createElement("table");
     table.className = "ml-custom-table";
     table.setAttribute("role", "table");
-    table.setAttribute("aria-labelledby", "movies-list-title");
+//    table.setAttribute("aria-labelledby", "movies-list-title");
 
     const rows = items.map((item, index) => {
       const anchor = item.querySelector("a");
@@ -99,10 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join("");
 
     table.innerHTML = `
-    <!--  <caption class="styled-caption">Complete List of ${actorName} Movies Year-Wise</caption> -->
+    <caption class="styled-caption">${actorName} All Movies List Year-Wise</caption>
       <thead role="rowgroup">
 	  <tr>
-          <th id="movies-list-title" role="columnheader" colspan="3" scope="colgroup">${actorName} Movies List</th>
+          <th role="columnheader" colspan="3" scope="colgroup">${actorName} Movies List</th>
          
         </tr>
         <tr role="row">
@@ -221,7 +221,7 @@ function convertListToTable(list, actorName) {
   const table = document.createElement("table");
   table.className = "ml-custom-table";
   table.setAttribute("role", "table");
-  table.setAttribute("aria-labelledby", "tv-shows-list-title");
+//  table.setAttribute("aria-labelledby", "tv-shows-list-title");
 
   const rows = shows.map((show, index) => `
     <tr>
@@ -231,10 +231,10 @@ function convertListToTable(list, actorName) {
     </tr>`).join("");
 
   table.innerHTML = `
-  <!--  <caption class="styled-caption">Complete List of ${actorName} TV Shows Year-Wise</caption> -->
+  <caption class="styled-caption">${actorName} All TV Shows List Year-Wise</caption>
     <thead>
       <tr>
-        <th id="tv-shows-list-title" colspan="3" scope="colgroup">${actorName} TV Shows List</th>
+        <th colspan="3" scope="colgroup">${actorName} TV Shows List</th>
       </tr>
       <tr>
         <th scope="col">S. No.</th>
@@ -354,7 +354,7 @@ function convertListToTable(list, actorName) {
   const table = document.createElement("table");
   table.className = "ml-custom-table";
   table.setAttribute("role", "table");
-  table.setAttribute("aria-labelledby", "producer-movies-list-title");
+//  table.setAttribute("aria-labelledby", "producer-movies-list-title");
 
   const rows = shows.map((show, index) => `
     <tr>
@@ -364,10 +364,10 @@ function convertListToTable(list, actorName) {
     </tr>`).join("");
 
   table.innerHTML = `
- <!--   <caption class="styled-caption">Complete List of ${actorName} Movies as a Director (D), Producer (P), Writer (W), or Screenplay (S)</caption> -->
+    <caption class="styled-caption">${actorName} All Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</caption>
     <thead>
       <tr>
-        <th  id="producer-movies-list-title" colspan="3" scope="colgroup">${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</th>
+        <th colspan="3" scope="colgroup">${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</th>
       </tr>
       <tr>
         <th scope="col">S. No.</th>
