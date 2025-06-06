@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join("");
 
     table.innerHTML = `
-      <caption class="styled-caption">Complete List of ${actorName} Movies Year-Wise</caption>
+    <!--  <caption class="styled-caption">Complete List of ${actorName} Movies Year-Wise</caption> -->
       <thead role="rowgroup">
 	  <tr>
           <th role="columnheader" colspan="3" scope="colgroup">${actorName} Movies List</th>
@@ -231,7 +231,7 @@ function convertListToTable(list, actorName) {
     </tr>`).join("");
 
   table.innerHTML = `
-    <caption class="styled-caption">Complete List of ${actorName} TV Shows Year-Wise</caption>
+  <!--  <caption class="styled-caption">Complete List of ${actorName} TV Shows Year-Wise</caption> -->
     <thead>
       <tr>
         <th colspan="3" scope="colgroup">${actorName} TV Shows List</th>
@@ -364,7 +364,7 @@ function convertListToTable(list, actorName) {
     </tr>`).join("");
 
   table.innerHTML = `
-    <caption class="styled-caption">Complete List of ${actorName} Movies as a Director (D), Producer (P), Writer (W), or Screenplay (S)</caption>
+ <!--   <caption class="styled-caption">Complete List of ${actorName} Movies as a Director (D), Producer (P), Writer (W), or Screenplay (S)</caption> -->
     <thead>
       <tr>
         <th colspan="3" scope="colgroup">${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</th>
