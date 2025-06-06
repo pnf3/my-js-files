@@ -119,7 +119,7 @@ function getAriaLabel(actorName, type) {
       </time>
     </td>
     <td>
-      <strong>${name}</strong>
+      ${name}
     </td>
   </tr>
 `;
