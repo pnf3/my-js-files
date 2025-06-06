@@ -1,6 +1,26 @@
 const boxOfficerunning = {
+  "Sanju Weds Geetha 2 Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-06-06",
+    "total": null,
+    "Rating": 0,
+    "Language": "Kannada",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 10,
+    "advanceBooking": ""
+  },
+  "Sri Sri Sri Raajavaru Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-06-06",
+    "total": null,
+    "Rating": 0,
+    "Language": "Telugu",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 18,
+    "advanceBooking": ""
+  },
   "Housefull 5 Box Office Collection: Day-Wise": {
-    "1": 0,
+    "1": 15.84,
     "releaseDate": "2025-06-06",
     "total": null,
     "Rating": 0,
@@ -8,18 +28,18 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": 320,
-    "advanceBooking": 5.2
+    "advanceBooking": 16
   },
   "Thug Life Box Office Collection: Day-Wise": {
-    "1": 12.98,
+    "1": 18.72,
     "releaseDate": "2025-06-05",
     "total": null,
-    "Rating": 0,
+    "Rating": 5.1,
     "Language": "Tamil",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": 300,
-    "advanceBooking": 13.12
+    "advanceBooking": 5.12
   },
   "Dilli Dark Box Office Collection: Day-Wise": {
     "1": 0.62,
@@ -60,6 +80,8 @@ const boxOfficerunning = {
     "3": 2.88,
     "4": 4.32,
     "5": 5.04,
+    "6": 5.28,
+    "7": 5.52,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": 9.6,
@@ -218,6 +240,8 @@ const boxOfficerunning = {
     "3": 9.36,
     "4": 10.8,
     "5": 12.24,
+    "6": 12.96,
+    "7": 13.92,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": 8.6,
@@ -257,7 +281,7 @@ const boxOfficerunning = {
     "5": 10.56,
     "6": 11.52,
     "7": 12.24,
-    "8": 15.6,
+    "8": 16.32,
     "releaseDate": "2025-05-23",
     "total": null,
     "Rating": 8.6,
@@ -275,7 +299,7 @@ const boxOfficerunning = {
     "5": 17.52,
     "6": 18.96,
     "7": 21.12,
-    "8": 28.56,
+    "8": 30.96,
     "releaseDate": "2025-05-23",
     "total": null,
     "Rating": 8.7,
@@ -293,7 +317,7 @@ const boxOfficerunning = {
     "5": 31.51,
     "6": 35.76,
     "7": 40.32,
-    "8": 60.72,
+    "8": 66.48,
     "releaseDate": "2025-05-23",
     "total": null,
     "Rating": 7.7,
