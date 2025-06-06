@@ -108,22 +108,20 @@ function getAriaLabel(actorName, type) {
         ? `<a href="${anchor.href}" rel="noopener noreferrer">${anchor.textContent}</a>`
         : (namePartRaw?.trim() || rawText);
 
-      return `
-        <tr role="row">
-  <th scope="row" aria-label="Movie number ${items.length - index}">
-    ${items.length - index}
-  </th>
-  <td>
-    <time datetime="${year}" aria-label="Year ${year}" title="${type === 'tv' ? 'TV Show' : 'Movie'}: ${name}">
-      ${year}
-    </time>
-  </td>
-  <td>
-    <span aria-label="Title: ${name}" title="${type === 'tv' ? 'TV Show' : 'Movie'}: ${name}">
-      ${name}
-    </span>
-  </td>
-</tr>
+     return `
+  <tr role="row">
+    <th scope="row" aria-label="Movie number ${items.length - index}">
+      ${items.length - index}
+    </th>
+    <td>
+      <time datetime="${year}" aria-label="Year ${year}">
+        ${year}
+      </time>
+    </td>
+    <td>
+      <strong>${name}</strong>
+    </td>
+  </tr>
 `;
     }).join("");
 
