@@ -88,11 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const table = document.createElement("table");
     table.className = "ml-custom-table";
     table.setAttribute("role", "table");
-    table.setAttribute("aria-label", `${actorName} ${type === 'tv' ? 'TV Shows' : 'Movies'} List`);
-
+   table.setAttribute("aria-label", getAriaLabel(actorName, type));
     table.innerHTML = generateTableHTML(items, actorName, type);
     list.replaceWith(table);
   }
+function getAriaLabel(actorName, type) {
+  if (type === "tv") return `${actorName} TV Shows List`;
+  if (type === "dpws") return `${actorName} Movies List as Producer, Director, Writer, or Screenplay`;
+  return `${actorName} Movies List`;
+}
 
   function generateTableHTML(items, actorName, type) {
     const rows = items.map((item, index) => {
