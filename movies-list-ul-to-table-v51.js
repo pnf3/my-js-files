@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const table = document.createElement("table");
     table.className = "ml-custom-table";
    table.setAttribute("role", "table");
-table.setAttribute("aria-label", `${actorName} Movies List Table`);
+table.setAttribute("aria-label", `${actorName} Movies List`);
 
 //    table.setAttribute("aria-labelledby", "movies-list-title");
 
@@ -219,7 +219,7 @@ function convertListToTable(list, actorName) {
   const table = document.createElement("table");
   table.className = "ml-custom-table";
   table.setAttribute("role", "table");
-table.setAttribute("aria-label", `${actorName} TV Shows List Table`);
+table.setAttribute("aria-label", `${actorName} TV Shows List`);
 
 //  table.setAttribute("aria-labelledby", "tv-shows-list-title");
 
@@ -351,7 +351,7 @@ function convertListToTable(list, actorName) {
   const table = document.createElement("table");
   table.className = "ml-custom-table";
  table.setAttribute("role", "table");
-table.setAttribute("aria-label", `${actorName} Movies as Producer/Director/Writer Table`);
+table.setAttribute("aria-label", `${actorName} Movies List as Producer/Director/Writer`);
 
 //  table.setAttribute("aria-labelledby", "producer-movies-list-title");
 
