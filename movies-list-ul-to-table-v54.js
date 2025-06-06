@@ -109,7 +109,7 @@ function getAriaLabel(actorName, type) {
         : (namePartRaw?.trim() || rawText);
 
       return `
-        <tr>
+        <tr role="row">
           <th scope="row">${items.length - index}</th>
           <td><time datetime="${year}" aria-label="Year ${year}" title="${type === 'tv' ? 'TV Show' : 'Movie'}: ${name}">${year}</time></td>
           <td>${name}</td>
@@ -128,16 +128,16 @@ function getAriaLabel(actorName, type) {
 
     return `
       <caption class="styled-caption">${captionText}</caption>
-      <thead>
-        <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Year</th>
-          <th scope="col">${type === "tv" ? "Show Name" : "Movie Name"}</th>
+      <thead role="rowgroup">
+        <tr role="row">
+          <th role="columnheader" scope="col">S. No.</th>
+          <th role="columnheader" scope="col">Year</th>
+          <th role="columnheader" scope="col">${type === "tv" ? "Show Name" : "Movie Name"}</th>
         </tr>
       </thead>
-      <tbody>${rows || `<tr><td colspan="3">No data available.</td></tr>`}</tbody>
-      <tfoot>
-        <tr>
+      <tbody role="rowgroup">${rows || `<tr><td colspan="3">No data available.</td></tr>`}</tbody>
+      <tfoot role="rowgroup">
+        <tr role="row">
           <td colspan="3"><strong>${countLabel}</strong> ${items.length}</td>
         </tr>
       </tfoot>`;
