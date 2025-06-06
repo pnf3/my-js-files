@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </tr>
         <tr role="row">
           <th role="columnheader" scope="col">S. No.</th>
-          <th role="columnheader" scope="col">Release Year</th>
+          <th role="columnheader" scope="col">Year</th>
           <th role="columnheader" scope="col">Movie Name</th>
         </tr>
       </thead>
@@ -236,7 +236,7 @@ function convertListToTable(list, actorName) {
       </tr>
       <tr>
         <th scope="col">S. No.</th>
-        <th scope="col">Release Year</th>
+        <th scope="col">Year</th>
         <th scope="col">Show Name</th>
       </tr>
     </thead>
@@ -368,7 +368,7 @@ function convertListToTable(list, actorName) {
       </tr>
       <tr>
         <th scope="col">S. No.</th>
-        <th scope="col">Release Year</th>
+        <th scope="col">Year</th>
         <th scope="col">Movie Name</th>
       </tr>
     </thead>
