@@ -77,7 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function createTable(items, actorName) {
     const table = document.createElement("table");
     table.className = "ml-custom-table";
-    table.setAttribute("role", "table");
+   table.setAttribute("role", "table");
+table.setAttribute("aria-label", `${actorName} Movies List Table`);
+
 //    table.setAttribute("aria-labelledby", "movies-list-title");
 
     const rows = items.map((item, index) => {
@@ -93,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <tr role="row">
           <td scope="row">${items.length - index}</td>
-          <td>${year}</td>
+         <td><time datetime="${year}">${year}</time></td>
           <td>${movieName}</td>
         </tr>`;
     }).join("");
@@ -217,12 +219,14 @@ function convertListToTable(list, actorName) {
   const table = document.createElement("table");
   table.className = "ml-custom-table";
   table.setAttribute("role", "table");
+table.setAttribute("aria-label", `${actorName} TV Shows List Table`);
+
 //  table.setAttribute("aria-labelledby", "tv-shows-list-title");
 
   const rows = shows.map((show, index) => `
     <tr>
       <td>${shows.length - index}</td>
-      <td>${show.year}</td>
+     <td><time datetime="${show.year}">${show.year}</time></td>
       <td>${show.name}</td>
     </tr>`).join("");
 
@@ -346,13 +350,15 @@ function convertListToTable(list, actorName) {
 
   const table = document.createElement("table");
   table.className = "ml-custom-table";
-  table.setAttribute("role", "table");
+ table.setAttribute("role", "table");
+table.setAttribute("aria-label", `${actorName} Movies as Producer/Director/Writer Table`);
+
 //  table.setAttribute("aria-labelledby", "producer-movies-list-title");
 
   const rows = shows.map((show, index) => `
     <tr>
       <td>${shows.length - index}</td>
-      <td>${show.year}</td>
+      <td><time datetime="${show.year}">${show.year}</time></td>
       <td>${show.name}</td>
     </tr>`).join("");
 
