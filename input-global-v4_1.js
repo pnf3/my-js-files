@@ -83,12 +83,13 @@ const boxOfficerunning = {
     "5": 5.04,
     "6": 5.28,
     "7": 5.52,
+    "8": 5.76,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": 9.6,
     "Language": "Telugu",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 20,
     "advanceBooking": 0.54
   },
@@ -99,7 +100,7 @@ const boxOfficerunning = {
     "Rating": 9.2,
     "Language": "Tamil",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 2.5,
     "advanceBooking": 0.31
   },
@@ -110,7 +111,7 @@ const boxOfficerunning = {
     "Rating": 9.4,
     "Language": "Hindi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 0.5,
     "advanceBooking": 0.1
   },
@@ -121,7 +122,7 @@ const boxOfficerunning = {
     "Rating": 8.1,
     "Language": "Gujarati",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 0.34,
     "advanceBooking": 0.06
   },
@@ -132,7 +133,7 @@ const boxOfficerunning = {
     "Rating": 8.1,
     "Language": "Marathi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 1.4,
     "advanceBooking": 0.24
   },
@@ -143,7 +144,7 @@ const boxOfficerunning = {
     "Rating": 8.2,
     "Language": "Hindi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 0.45,
     "advanceBooking": 0.09
   },
@@ -154,7 +155,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Malayalam",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 3.3,
     "advanceBooking": 0.6
   },
@@ -165,7 +166,7 @@ const boxOfficerunning = {
     "Rating": 7.1,
     "Language": "Hindi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 5.4,
     "advanceBooking": 1.04
   },
@@ -176,7 +177,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Marathi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 0.3,
     "advanceBooking": 0.06
   },
@@ -187,7 +188,7 @@ const boxOfficerunning = {
     "Rating": 7.1,
     "Language": "Tamil",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 0.2,
     "advanceBooking": 0.04
   },
@@ -198,7 +199,7 @@ const boxOfficerunning = {
     "Rating": 9.6,
     "Language": "Telugu",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 0.1,
     "advanceBooking": 0.01
   },
@@ -209,7 +210,7 @@ const boxOfficerunning = {
     "Rating": 7.1,
     "Language": "Bengali",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 1,
     "advanceBooking": 0.2
   },
@@ -220,7 +221,7 @@ const boxOfficerunning = {
     "Rating": 7.9,
     "Language": "Hindi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 5.5,
     "advanceBooking": 1.1
   },
@@ -231,7 +232,7 @@ const boxOfficerunning = {
     "Rating": 4.7,
     "Language": "Punjabi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 5,
     "advanceBooking": 1
   },
@@ -243,12 +244,13 @@ const boxOfficerunning = {
     "5": 12.24,
     "6": 12.96,
     "7": 13.92,
+    "8": 16.08,
     "releaseDate": "2025-05-30",
     "total": null,
     "Rating": 8.6,
     "Language": "Telugu",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 35,
     "advanceBooking": 2.1
   },
@@ -259,7 +261,7 @@ const boxOfficerunning = {
     "Rating": 5.1,
     "Language": "Hindi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 16,
     "advanceBooking": 3.2
   },
@@ -270,7 +272,7 @@ const boxOfficerunning = {
     "Rating": 0,
     "Language": "Hindi",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 5,
     "advanceBooking": 1.1
   },
@@ -288,7 +290,7 @@ const boxOfficerunning = {
     "Rating": 8.6,
     "Language": "Tamil",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 35,
     "advanceBooking": 1.15
   },
@@ -306,7 +308,7 @@ const boxOfficerunning = {
     "Rating": 8.7,
     "Language": "Malayalam",
     "Verdict": "null",
-    "futureDays": 7,
+    "futureDays": 0,
     "Budget": 10,
     "advanceBooking": 2.01
   },
