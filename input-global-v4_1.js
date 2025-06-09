@@ -54,7 +54,7 @@ const boxOfficerunning = {
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 0,
-    "Budget": 20,
+    "Budget": 10,
     "advanceBooking": 0.54
   },
   "Bhairavam Box Office Collection: Day-Wise": {
