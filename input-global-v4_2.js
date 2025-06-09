@@ -334,10 +334,7 @@ const boxOfficeData = {
         "total": 1.07, "Rating": 8.1, "Language": "Kannada", "Verdict": "null", "futureDays": 0, "Budget": 1
     },
 	
-	"Sanju Weds Geetha 2 Box Office Collection: Day-Wise": {
-        "releaseDate": "2025-01-17",
-        "total": 0.88, "Rating": 8.9, "Language": "Kannada", "Verdict": "null", "futureDays": 0, "Budget": 0.45
-    },
+	
 	
 	"Umbarro Box Office Collection: Day-Wise": {
         "releaseDate": "2025-01-24",
