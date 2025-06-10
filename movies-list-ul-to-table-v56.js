@@ -27,9 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (metaDescription && entryTitle.textContent.includes("Movies List")) {
   const hasTVShows = !!tvList;
   const typeText = hasTVShows ? "movies list & TV shows" : "movies list";
-  const titleSuffix = hasTVShows ? "Movies & TV Shows List" : "Movies List";
+  const titleSuffix = hasTVShows ? "Movies and TV Shows List" : "Movies List";
 
-  metaDescription.content = `Explore the complete, year-wise ${pageTitle} ${typeText} (${dynamicYearRange}) — from the debut film to the latest release.`;
+  metaDescription.content = `Explore the complete, year-wise List of ${pageTitle} ${titleSuffix} (${dynamicYearRange}) — from the debut film to the latest release.`;
   document.title = `${pageTitle} ${titleSuffix} (${dynamicYearRange})`;
   entryTitle.textContent = `${pageTitle} ${titleSuffix} (${dynamicYearRange})`;
 }
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (postSubBody && moviesList) {
     const introCard = document.createElement("div");
     introCard.className = "card";
-    introCard.textContent = `Explore the complete, year-wise ${actorName} movies and TV shows list (${dynamicYearRange}) in the roles of Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie titles in chronological order, with release years, a running count, hits and flops, box office collection, OTT releases, and the total number of films to date.`;
+    introCard.textContent = `Explore the complete list of ${actorName} movies and TV shows (${dynamicYearRange}), featuring roles as Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie and TV show titles organized year-wise, along with release years, a running count, and the total number of titles to date.`;
     postSubBody.prepend(introCard);
   }
 
