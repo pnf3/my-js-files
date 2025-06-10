@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (metaDescription && entryTitle.textContent.includes("Movies List")) {
   const hasTVShows = !!tvList;
-  const typeText = hasTVShows ? "movies list & TV shows" : "movies list";
+  const typeText = hasTVShows ? "movies and TV shows" : "movies";
   const titleSuffix = hasTVShows ? "Movies and TV Shows List" : "Movies List";
 
-  metaDescription.content = `Explore the complete, year-wise List of ${pageTitle} ${titleSuffix} (${dynamicYearRange}) — from the debut film to the latest release.`;
+  metaDescription.content = `Explore the complete, year-wise List of ${pageTitle} ${typeText} (${dynamicYearRange}) — from the debut film to the latest release.`;
   document.title = `${pageTitle} ${titleSuffix} (${dynamicYearRange})`;
   entryTitle.textContent = `${pageTitle} ${titleSuffix} (${dynamicYearRange})`;
 }
@@ -39,8 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const introCard = document.createElement("div");
     introCard.className = "card";
 	const hasTVShows = !!tvList;
-  const typeText = hasTVShows ? "movies list & TV shows" : "movies list";
-    introCard.textContent = `Explore the complete list of ${actorName} ${typeText} (${dynamicYearRange}), featuring roles as Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie and TV show titles organized year-wise, along with release years, a running count, and the total number of titles to date.`;
+  const typeTexts = hasTVShows ? "movies & TV shows" : "movies";
+  const typeText = hasTVShows ? "movie & TV show" : "movie";
+    introCard.textContent = `Explore the complete list of ${actorName} ${typeTexts} (${dynamicYearRange}), featuring roles as Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all ${typeTexts} titles organized year-wise, along with release years, a running count, and the total number of titles to date.`;
     postSubBody.prepend(introCard);
   }
 
