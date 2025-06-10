@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (postSubBody && moviesList) {
     const introCard = document.createElement("div");
     introCard.className = "card";
-    introCard.textContent = `Explore the complete list of ${actorName} movies and TV shows (${dynamicYearRange}), featuring roles as Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie and TV show titles organized year-wise, along with release years, a running count, and the total number of titles to date.`;
+    introCard.textContent = `Explore the complete list of ${actorName} ${typeText} (${dynamicYearRange}), featuring roles as Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all movie and TV show titles organized year-wise, along with release years, a running count, and the total number of titles to date.`;
     postSubBody.prepend(introCard);
   }
 
