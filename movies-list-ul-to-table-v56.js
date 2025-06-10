@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const hasTVShows = !!tvList;
   const typeTexts = hasTVShows ? "movies & TV shows" : "movies";
   const typeText = hasTVShows ? "movie & TV show" : "movie";
-    introCard.textContent = `Explore the complete list of ${actorName} ${typeTexts} (${dynamicYearRange}), featuring roles as Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all ${typeTexts} titles organized year-wise, along with release years, a running count, and the total number of titles to date.`;
+    introCard.textContent = `Explore the complete list of ${actorName} ${typeTexts} (${dynamicYearRange}), featuring roles as Actor, Director, Producer, or Writer — from the debut film to the latest release. This comprehensive filmography includes all ${typeText} titles organized year-wise, along with release years, a running count, and the total number of titles to date.`;
     postSubBody.prepend(introCard);
   }
 
