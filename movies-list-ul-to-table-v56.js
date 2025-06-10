@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postSubBody = document.querySelector(".post-sub-body#post-sub-body");
   const entryTitle = document.querySelector("h1.entry-title");
   const actorName = extractActorName(entryTitle);
-
+  const typeText = hasTVShows ? "movies list and TV shows" : "movies list";
   const moviesList = document.getElementById("movies-list");
   const tvList = document.getElementById("tv-list");
   const dpwsList = document.getElementById("producer-list");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (metaDescription && entryTitle.textContent.includes("Movies List")) {
   const hasTVShows = !!tvList;
-  const typeText = hasTVShows ? "movies list & TV shows" : "movies list";
+  const typeText = hasTVShows ? "movies list and TV shows" : "movies list";
   const titleSuffix = hasTVShows ? "Movies and TV Shows List" : "Movies List";
 
   metaDescription.content = `Explore the complete, year-wise List of ${pageTitle} ${titleSuffix} (${dynamicYearRange}) — from the debut film to the latest release.`;
