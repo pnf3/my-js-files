@@ -130,14 +130,13 @@ function generateTableHTML(items, actorName, type, includeDetails = true) {
     if (includeDetails && movieDetails) {
       detailsHTML = `
         <div class="details">
-          ${movieDetails.Verdict ? `<div><strong>Verdict:</strong> ${movieDetails.Verdict}</div>` : ""}
-${movieDetails.total ? `<div><strong>Box Office:</strong> ₹${movieDetails.total} Cr</div>` : ""}
-${movieDetails.Budget ? `<div><strong>Budget:</strong> ₹${movieDetails.Budget} Cr</div>` : ""}
-${movieDetails.releaseDate ? `<div><strong>Theatrical Release Date:</strong> ${movieDetails.releaseDate}</div>` : ""}
-${movieDetails.ottReleaseDate ? `<div><strong>OTT Release Date:</strong> ${movieDetails.ottReleaseDate}</div>` : ""}
-${movieDetails.Platform ? `<div><strong>OTT Platform:</strong> ${movieDetails.Platform}</div>` : ""}
-${movieDetails.Rating ? `<div><strong>Rating:</strong> ${movieDetails.Rating}</div>` : ""}
-
+		${movieDetails.releaseDate ? `<div><strong>Theatrical Release Date:</strong> ${movieDetails.releaseDate}</div>` : ""}
+		${movieDetails.ottReleaseDate ? `<div><strong>OTT Release Date:</strong> ${movieDetails.ottReleaseDate}</div>` : ""}
+		${movieDetails.Platform ? `<div><strong>OTT Platform:</strong> ${movieDetails.Platform}</div>` : ""}
+		${movieDetails.Budget ? `<div><strong>Budget:</strong> ₹${movieDetails.Budget} Cr</div>` : ""}
+		${movieDetails.total ? `<div><strong>Box Office:</strong> ₹${movieDetails.total} Cr</div>` : ""}
+		${movieDetails.Verdict ? `<div><strong>Verdict:</strong> ${movieDetails.Verdict}</div>` : ""}
+		${movieDetails.Rating ? `<div><strong>Rating:</strong> ${movieDetails.Rating}</div>` : ""}
         </div>`;
     }
 
