@@ -127,10 +127,16 @@ function generateTableHTML(items, actorName, type, includeDetails = true) {
 
     let detailsHTML = "";
     if (includeDetails && movieDetails) {
-  const dayKeys = Object.keys(movieDetails)
-    .filter(key => /^\d+$/.test(key))
-    .map(Number)
-    .sort((a, b) => a - b);
+  const today = new Date();
+const release = movieDetails.releaseDate ? new Date(movieDetails.releaseDate) : null;
+const daysSinceRelease = release ? Math.floor((today - release) / (1000 * 60 * 60 * 24)) + 1 : Infinity;
+
+const dayKeys = Object.keys(movieDetails)
+  .filter(key => /^\d+$/.test(key))
+  .map(Number)
+  .filter(day => day <= daysSinceRelease)
+  .sort((a, b) => a - b);
+
 
   let lastValue = 0;
   const dayWiseData = dayKeys.map(day => {
