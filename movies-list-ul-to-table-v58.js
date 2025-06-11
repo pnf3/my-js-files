@@ -131,10 +131,13 @@ function generateTableHTML(items, actorName, type, includeDetails = true) {
       detailsHTML = `
         <div class="details">
           ${movieDetails.Verdict ? `<div><strong>Verdict:</strong> ${movieDetails.Verdict}</div>` : ""}
-          ${movieDetails.total ? `<div><strong>Box Office:</strong> ₹${movieDetails.total}</div>` : ""}
-          ${movieDetails.Budget ? `<div><strong>Budget:</strong> ₹${movieDetails.Budget}</div>` : ""}
-          ${movieDetails.releaseDate ? `<div><strong>Release:</strong> ${movieDetails.releaseDate}</div>` : ""}
-          ${movieDetails.Platform ? `<div><strong>OTT:</strong> ${movieDetails.Platform}</div>` : ""}
+${movieDetails.total ? `<div><strong>Box Office:</strong> ₹${movieDetails.total} Cr</div>` : ""}
+${movieDetails.Budget ? `<div><strong>Budget:</strong> ₹${movieDetails.Budget} Cr</div>` : ""}
+${movieDetails.releaseDate ? `<div><strong>Theatrical Release Date:</strong> ${movieDetails.releaseDate}</div>` : ""}
+${movieDetails.ottReleaseDate ? `<div><strong>OTT Release Date:</strong> ${movieDetails.ottReleaseDate}</div>` : ""}
+${movieDetails.Platform ? `<div><strong>OTT Platform:</strong> ${movieDetails.Platform}</div>` : ""}
+${movieDetails.Rating ? `<div><strong>Rating:</strong> ${movieDetails.Rating}</div>` : ""}
+
         </div>`;
     }
 
