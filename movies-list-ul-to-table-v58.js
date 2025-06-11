@@ -106,7 +106,7 @@ function getAriaLabel(actorName, type) {
   return `${actorName} Movies List`;
 }
 
- function generateTableHTML(items, actorName, type, includeDetails = true) {
+function generateTableHTML(items, actorName, type, includeDetails = true) {
   const movieData = window.dayValues || {};
 
   const rows = items.map((item, index) => {
@@ -115,12 +115,14 @@ function getAriaLabel(actorName, type) {
     const [yearPartRaw, namePartRaw] = rawText.includes(":") ? rawText.split(":") : [rawText, rawText];
     const year = yearPartRaw.match(/\d{4}/)?.[0] || "";
     const nameText = namePartRaw?.trim() || rawText;
+
     const plainName = anchor ? anchor.textContent.trim() : nameText;
 
-    // Match movie data from window.dayValues
-    const movieKey = Object.keys(movieData).find(key =>
-      key.toLowerCase().includes(plainName.toLowerCase())
-    );
+    // Match movie data using exact or near-exact match
+    const movieKey = Object.keys(movieData).find(key => {
+      const cleanedKey = key.replace(" Box Office Collection: Day-Wise", "").trim().toLowerCase();
+      return cleanedKey === plainName.toLowerCase();
+    });
 
     const movieDetails = movieKey ? movieData[movieKey] : null;
 
@@ -136,17 +138,12 @@ function getAriaLabel(actorName, type) {
         </div>`;
     }
 
-    const name = anchor
-      ? `<a href="${anchor.href}">${anchor.textContent}</a>`
-      : plainName;
-
     return `
       <tr role="row">
         <td aria-label="Movie number ${items.length - index}">${items.length - index}</td>
         <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
-        <td><div><strong>${name}</strong></div>${detailsHTML}</td>
-      </tr>
-    `;
+        <td><div><strong>${plainName}</strong></div>${detailsHTML}</td>
+      </tr>`;
   }).join("");
 
   const captionText = type === "tv"
@@ -175,5 +172,6 @@ function getAriaLabel(actorName, type) {
       </tr>
     </tfoot>`;
 }
+
 
 });
