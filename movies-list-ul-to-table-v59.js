@@ -127,12 +127,18 @@ function generateTableHTML(items, actorName, type, includeDetails = true) {
 
     let detailsHTML = "";
     if (includeDetails && movieDetails) {
-      // Extract day-wise values like "1", "2", "3"...
-      const dayWiseData = Object.keys(movieDetails)
-        .filter(key => /^\d+$/.test(key)) // only numeric keys
-        .sort((a, b) => +a - +b)          // sort numerically
-        .map(day => `Day ${day}: ₹${parseFloat(movieDetails[day]).toFixed(2)} Cr`)
-        .join(", ");
+  const dayKeys = Object.keys(movieDetails)
+    .filter(key => /^\d+$/.test(key))
+    .map(Number)
+    .sort((a, b) => a - b);
+
+  let lastValue = 0;
+  const dayWiseData = dayKeys.map(day => {
+    const current = parseFloat(movieDetails[day]);
+    const daily = current - lastValue;
+    lastValue = current;
+    return `Day ${day}: ₹${daily.toFixed(2)} Cr`;
+  }).join(", ");
 
       detailsHTML = `
         <div class="details">
@@ -140,10 +146,10 @@ function generateTableHTML(items, actorName, type, includeDetails = true) {
 		${movieDetails.ottReleaseDate ? `<div><strong>OTT Release Date:</strong> ${movieDetails.ottReleaseDate}</div>` : ""}
 		${movieDetails.Platform ? `<div><strong>OTT Platform:</strong> ${movieDetails.Platform}</div>` : ""}
 		${movieDetails.Budget ? `<div><strong>Budget:</strong> ₹${movieDetails.Budget} Cr</div>` : ""}
-		${dayWiseData ? `<div><strong>Day-wise:</strong> ${dayWiseData}</div>` : ""}
 		${movieDetails.total ? `<div><strong>Total Box Office:</strong> ₹${movieDetails.total} Cr</div>` : ""}
 		${movieDetails.Verdict ? `<div><strong>Verdict:</strong> ${movieDetails.Verdict}</div>` : ""}
 		${movieDetails.Rating ? `<div><strong>Rating:</strong> ${movieDetails.Rating}</div>` : ""}
+		${dayWiseData ? `<div><strong>Day-wise:</strong> ${dayWiseData}</div>` : ""}
           
         </div>`;
     }
