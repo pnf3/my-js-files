@@ -146,18 +146,21 @@ const hoursNow = now.getHours();
 const minutesNow = now.getMinutes();
 const currentDayFraction = (hoursNow * 60 + minutesNow) / (24 * 60); // 0 to 1
 
-const dayWiseData = dayKeys.map(day => {
+const dayWiseData = dayKeys.map((day, idx) => {
   const current = parseFloat(movieDetails[day]);
   let daily = current - lastValue;
   lastValue = current;
 
-  // Apply partial value only for the current day
+  // Apply partial value only for current day
   if (day === daysSinceRelease) {
     daily *= currentDayFraction;
   }
 
-  return `Day ${day}: ₹${daily.toFixed(2)} Cr`;
+  const isLastDay = idx === dayKeys.length - 1;
+  const dayLabel = `<strong>Day ${day}${isLastDay && day > 7 ? "+" : ""}</strong>`;
+  return `${dayLabel}: ₹${daily.toFixed(2)} Cr`;
 }).join(", ");
+
 
 
       detailsHTML = `
