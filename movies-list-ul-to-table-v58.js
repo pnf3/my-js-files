@@ -106,95 +106,74 @@ function getAriaLabel(actorName, type) {
   return `${actorName} Movies List`;
 }
 
-  function generateTableHTML(items, actorName, type) {
-    const rows = items.map((item, index) => {
-      const anchor = item.querySelector("a");
-      const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
-      const [yearPartRaw, namePartRaw] = rawText.includes(":") ? rawText.split(":") : [rawText, rawText];
-      const year = yearPartRaw.match(/\d{4}/)?.[0] || "";
-      const name = anchor
-        ? `<a href="${anchor.href}">${anchor.textContent}</a>`
-        : (namePartRaw?.trim() || rawText);
+ function generateTableHTML(items, actorName, type, includeDetails = true) {
+  const movieData = window.dayValues || {};
 
-     return `
-  <tr role="row">
-    <td aria-label="Movie number ${items.length - index}">${items.length - index}</td>
-    <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
-    <td>${name}</td>
-  </tr>
-`;
-    }).join("");
+  const rows = items.map((item, index) => {
+    const anchor = item.querySelector("a");
+    const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
+    const [yearPartRaw, namePartRaw] = rawText.includes(":") ? rawText.split(":") : [rawText, rawText];
+    const year = yearPartRaw.match(/\d{4}/)?.[0] || "";
+    const nameText = namePartRaw?.trim() || rawText;
+    const plainName = anchor ? anchor.textContent.trim() : nameText;
 
-    const captionText = type === "tv"
-      ? `${actorName} TV Shows List`
-      : type === "dpws"
-        ? `${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)`
-        : `${actorName} Movies List`;
+    // Match movie data from window.dayValues
+    const movieKey = Object.keys(movieData).find(key =>
+      key.toLowerCase().includes(plainName.toLowerCase())
+    );
 
-    const countLabel = type === "dpws"
-      ? `${actorName} Total Movies Count as a DPWS:`
-      : `${actorName} Total ${type === "tv" ? "TV Shows" : "Movies"} Count:`;
+    const movieDetails = movieKey ? movieData[movieKey] : null;
+
+    let detailsHTML = "";
+    if (includeDetails && movieDetails) {
+      detailsHTML = `
+        <div class="details">
+          ${movieDetails.Verdict ? `<div><strong>Verdict:</strong> ${movieDetails.Verdict}</div>` : ""}
+          ${movieDetails.total ? `<div><strong>Box Office:</strong> ₹${movieDetails.total}</div>` : ""}
+          ${movieDetails.Budget ? `<div><strong>Budget:</strong> ₹${movieDetails.Budget}</div>` : ""}
+          ${movieDetails.releaseDate ? `<div><strong>Release:</strong> ${movieDetails.releaseDate}</div>` : ""}
+          ${movieDetails.Platform ? `<div><strong>OTT:</strong> ${movieDetails.Platform}</div>` : ""}
+        </div>`;
+    }
+
+    const name = anchor
+      ? `<a href="${anchor.href}">${anchor.textContent}</a>`
+      : plainName;
 
     return `
-      <caption class="styled-caption">${captionText}</caption>
-      <thead role="rowgroup">
-        <tr role="row">
-          <th role="columnheader" scope="col">S. No.</th>
-          <th role="columnheader" scope="col">Year</th>
-          <th role="columnheader" scope="col">${type === "tv" ? "Show Name" : "Movie Name"}</th>
-        </tr>
-      </thead>
-      <tbody role="rowgroup">${rows || `<tr><td colspan="3">No data available.</td></tr>`}</tbody>
-      <tfoot role="rowgroup">
-        <tr role="row">
-          <td colspan="3"><strong>${countLabel}</strong> ${items.length}</td>
-        </tr>
-      </tfoot>`;
-  }
-  
-  window.movieTableConfig = {
-  enableDetails: true  // Set to false to disable extra details
-};
-
-const originalGenerateTableHTML = window.generateTableHTML;
-
-window.generateTableHTML = function (items, actorName, type) {
-  const baseHTML = originalGenerateTableHTML(items, actorName, type);
-
-  if (!window.movieTableConfig.enableDetails || !window.dayValues) {
-    return baseHTML;
-  }
-
-  // Parse HTML, add details to matching rows
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(`<table>${baseHTML}</table>`, 'text/html');
-  const rows = doc.querySelectorAll('tbody tr');
-
-  rows.forEach(row => {
-    const nameCell = row.querySelector('td:nth-child(3)');
-    const title = nameCell?.querySelector('strong')?.textContent?.trim();
-    if (!title) return;
-
-    const matchedKey = Object.keys(window.dayValues).find(key =>
-      key.toLowerCase().includes(title.toLowerCase())
-    );
-    const data = matchedKey && window.dayValues[matchedKey];
-    if (!data) return;
-
-    const extra = document.createElement('div');
-    extra.className = 'details';
-    extra.innerHTML = `
-      ${data.Verdict ? `<div><strong>Verdict:</strong> ${data.Verdict}</div>` : ""}
-      ${data.total ? `<div><strong>Box Office:</strong> ₹${data.total}</div>` : ""}
-      ${data.Budget ? `<div><strong>Budget:</strong> ₹${data.Budget}</div>` : ""}
-      ${data.releaseDate ? `<div><strong>Release:</strong> ${data.releaseDate}</div>` : ""}
-      ${data.Platform ? `<div><strong>OTT:</strong> ${data.Platform}</div>` : ""}
-      ${data.link ? `<div><a href="${data.link}" target="_blank">More Info</a></div>` : ""}
+      <tr role="row">
+        <td aria-label="Movie number ${items.length - index}">${items.length - index}</td>
+        <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
+        <td><div><strong>${name}</strong></div>${detailsHTML}</td>
+      </tr>
     `;
-    nameCell.appendChild(extra);
-  });
+  }).join("");
 
-  return doc.body.innerHTML;
-};
+  const captionText = type === "tv"
+    ? `${actorName} TV Shows List`
+    : type === "dpws"
+      ? `${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)`
+      : `${actorName} Movies List`;
+
+  const countLabel = type === "dpws"
+    ? `${actorName} Total Movies Count as a DPWS:`
+    : `${actorName} Total ${type === "tv" ? "TV Shows" : "Movies"} Count:`;
+
+  return `
+    <caption class="styled-caption">${captionText}</caption>
+    <thead role="rowgroup">
+      <tr role="row">
+        <th role="columnheader" scope="col">S. No.</th>
+        <th role="columnheader" scope="col">Year</th>
+        <th role="columnheader" scope="col">${type === "tv" ? "Show Name" : "Movie Name"}</th>
+      </tr>
+    </thead>
+    <tbody role="rowgroup">${rows || `<tr><td colspan="3">No data available.</td></tr>`}</tbody>
+    <tfoot role="rowgroup">
+      <tr role="row">
+        <td colspan="3"><strong>${countLabel}</strong> ${items.length}</td>
+      </tr>
+    </tfoot>`;
+}
 
 });
