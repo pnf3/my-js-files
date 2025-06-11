@@ -139,12 +139,26 @@ const dayKeys = Object.keys(movieDetails)
 
 
   let lastValue = 0;
-  const dayWiseData = dayKeys.map(day => {
-    const current = parseFloat(movieDetails[day]);
-    const daily = current - lastValue;
-    lastValue = current;
-    return `Day ${day}: ₹${daily.toFixed(2)} Cr`;
-  }).join(", ");
+const now = new Date();
+const isToday = release && release.toDateString() === now.toDateString();
+
+const hoursNow = now.getHours();
+const minutesNow = now.getMinutes();
+const currentDayFraction = (hoursNow * 60 + minutesNow) / (24 * 60); // 0 to 1
+
+const dayWiseData = dayKeys.map(day => {
+  const current = parseFloat(movieDetails[day]);
+  let daily = current - lastValue;
+  lastValue = current;
+
+  // Apply partial value only for the current day
+  if (day === daysSinceRelease) {
+    daily *= currentDayFraction;
+  }
+
+  return `Day ${day}: ₹${daily.toFixed(2)} Cr`;
+}).join(", ");
+
 
       detailsHTML = `
         <div class="details">
