@@ -120,7 +120,7 @@ function getAriaLabel(actorName, type) {
   <tr role="row">
     <td aria-label="Movie number ${items.length - index}">${items.length - index}</td>
     <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
-    <td><div><strong>${name}</strong></div> ${detailsHTML}</td>
+    <td>${name}</td>
   </tr>
 `;
     }).join("");
@@ -152,3 +152,47 @@ function getAriaLabel(actorName, type) {
       </tfoot>`;
   }
 });
+window.movieTableConfig = {
+  enableDetails: true  // Set to false to disable extra details
+};
+
+const originalGenerateTableHTML = window.generateTableHTML;
+
+window.generateTableHTML = function (items, actorName, type) {
+  const baseHTML = originalGenerateTableHTML(items, actorName, type);
+
+  if (!window.movieTableConfig.enableDetails || !window.dayValues) {
+    return baseHTML;
+  }
+
+  // Parse HTML, add details to matching rows
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(`<table>${baseHTML}</table>`, 'text/html');
+  const rows = doc.querySelectorAll('tbody tr');
+
+  rows.forEach(row => {
+    const nameCell = row.querySelector('td:nth-child(3)');
+    const title = nameCell?.querySelector('strong')?.textContent?.trim();
+    if (!title) return;
+
+    const matchedKey = Object.keys(window.dayValues).find(key =>
+      key.toLowerCase().includes(title.toLowerCase())
+    );
+    const data = matchedKey && window.dayValues[matchedKey];
+    if (!data) return;
+
+    const extra = document.createElement('div');
+    extra.className = 'details';
+    extra.innerHTML = `
+      ${data.Verdict ? `<div><strong>Verdict:</strong> ${data.Verdict}</div>` : ""}
+      ${data.total ? `<div><strong>Box Office:</strong> ₹${data.total}</div>` : ""}
+      ${data.Budget ? `<div><strong>Budget:</strong> ₹${data.Budget}</div>` : ""}
+      ${data.releaseDate ? `<div><strong>Release:</strong> ${data.releaseDate}</div>` : ""}
+      ${data.Platform ? `<div><strong>OTT:</strong> ${data.Platform}</div>` : ""}
+      ${data.link ? `<div><a href="${data.link}" target="_blank">More Info</a></div>` : ""}
+    `;
+    nameCell.appendChild(extra);
+  });
+
+  return doc.body.innerHTML;
+};
