@@ -174,3 +174,4 @@ function getAriaLabel(actorName, type) {
     </tfoot>`;
 }
 
+});
