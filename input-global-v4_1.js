@@ -16,12 +16,12 @@ const boxOfficerunning = {
     "advanceBooking": 0.5
   },
   "Housefull 5 Box Office Collection: Day-Wise": {
-    "1": 12.24,
-    "2": 24.72,
-    "3": 41.28,
-    "4": 48.24,
-    "5": 59.04,
-    "6": 67.92,
+    "1": 36,
+    "2": 79,
+    "3": 121.5,
+    "4": 142.5,
+    "5": 159.75,
+    "6": 190.12,
     "releaseDate": "2025-06-06",
     "total": null,
     "Rating": 6.6,
