@@ -617,9 +617,9 @@ const boxOfficerunning = {
     "total": 795.2,
     "Rating": "",
     "Language": "Hindi",
-    "Verdict": "null",
+    "Verdict": "a",
     "futureDays": 0,
-    "Budget": "",
+    "Budget": 135,
     "advanceBooking": ""
   },
   "Thudarum Box Office Collection: Day-Wise": {
