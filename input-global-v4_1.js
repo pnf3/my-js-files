@@ -67,7 +67,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "L2: Empuraan Box Office Collection: Day-Wise": {
-    "releaseDate": 1743013800000,
+    "releaseDate": "2025-03-27",
     "total": 266.53,
     "Rating": 8.1,
     "Language": "Malayalam",
@@ -77,7 +77,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Sankranthiki Vasthunam Box Office Collection: Day-Wise": {
-    "releaseDate": 1736793000000,
+    "releaseDate": "2025-01-14",
     "total": 272.5,
     "Rating": 8.8,
     "Language": "Telugu",
@@ -87,7 +87,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Good Bad Ugly Box Office Collection: Day-Wise": {
-    "releaseDate": 1744223400000,
+    "releaseDate": "2025-04-10",
     "total": 239.5,
     "Rating": 8.3,
     "Language": "Tamil",
@@ -97,7 +97,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Court: State vs A Nobody Box Office Collection: Day-Wise": {
-    "releaseDate": 1741890600000,
+    "releaseDate": "2025-03-14",
     "total": 58.12,
     "Rating": 9.4,
     "Language": "Telugu",
@@ -107,9 +107,9 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "#Single Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-05-09",
     "total": 33.14,
-    "Rating": "",
+    "Rating": 8.8,
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 0,
@@ -117,89 +117,89 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Saunkan Saunkanay 2 Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-05-30",
     "total": 29.26,
-    "Rating": "",
-    "Language": "",
+    "Rating": 7.3,
+    "Language": "Punjabi",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Emergency Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-01-17",
     "total": 24.86,
-    "Rating": "",
-    "Language": "",
+    "Rating": 7.9,
+    "Language": "Hindi",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Dominic and the Ladies Purse Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-01-23",
     "total": 19.59,
-    "Rating": "",
-    "Language": "",
+    "Rating": 8,
+    "Language": "Malayalam",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Fateh Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-01-10",
     "total": 19.08,
-    "Rating": "",
-    "Language": "",
+    "Rating": 8,
+    "Language": "Hindi",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Padakkalam Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-05-08",
     "total": 18.52,
-    "Rating": "",
-    "Language": "",
+    "Rating": 8.7,
+    "Language": "Malayalam",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Identity Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-01-02",
     "total": 16.73,
-    "Rating": "",
-    "Language": "",
+    "Rating": 7.8,
+    "Language": "Malayalam",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Crazxy Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-02-28",
     "total": 15.02,
-    "Rating": "",
-    "Language": "",
+    "Rating": 7.5,
+    "Language": "Hindi",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Bromance Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-02-14",
     "total": 14.69,
-    "Rating": "",
-    "Language": "",
+    "Rating": 7.6,
+    "Language": "Malayalam",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Robinhood Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-03-28",
     "total": 13.3,
-    "Rating": "",
+    "Rating": 7.7,
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 0,
@@ -207,29 +207,29 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Mere Husband Ki Biwi Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-02-21",
     "total": 12.95,
-    "Rating": "",
-    "Language": "",
+    "Rating": 6.7,
+    "Language": "Hindi",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Dilruba Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-03-14",
     "total": 11.95,
-    "Rating": "",
-    "Language": "",
+    "Rating": 8,
+    "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
   },
   "Mazaka Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "2025-02-26",
     "total": 11.48,
-    "Rating": "",
+    "Rating": 8.4,
     "Language": "Telugu",
     "Verdict": "null",
     "futureDays": 0,
@@ -554,16 +554,6 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
-    "advanceBooking": ""
-  },
-  "Chhaava Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
-    "total": 795.2,
-    "Rating": "",
-    "Language": "Hindi",
-    "Verdict": "coming",
-    "futureDays": 0,
-    "Budget": 135,
     "advanceBooking": ""
   },
   "Thudarum Box Office Collection: Day-Wise": {
