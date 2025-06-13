@@ -18,13 +18,13 @@ const boxOfficeData = {
     "advanceBooking": 2.12
   },
   "Chhaava Box Office Collection: Day-Wise": {
-    "releaseDate": "",
-    "total": 807.91,
-    "Rating": "",
-    "Language": "",
+    "releaseDate": "2025-02-14",
+    "total": 795.20,
+    "Rating": 9.1,
+    "Language": "Hindi",
     "Verdict": "null",
-    "futureDays": "",
-    "Budget": "",
-    "advanceBooking": ""
+    "futureDays": 0,
+    "Budget": 135,
+    "advanceBooking": 19.45
   }
 }
