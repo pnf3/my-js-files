@@ -237,7 +237,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Bhaimon Da Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 11.37,
     "Rating": "",
     "Language": "",
@@ -247,7 +247,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Badass Ravikumar Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 11.28,
     "Rating": "",
     "Language": "",
@@ -257,7 +257,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Mor Chhainha Bhuinya 3 Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 10.19,
     "Rating": "",
     "Language": "",
@@ -267,7 +267,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Kadhalikka Neramillai Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 10.24,
     "Rating": "",
     "Language": "",
@@ -277,7 +277,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Arjun S/O Vyjayanthi Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 10.13,
     "Rating": "",
     "Language": "Telugu",
@@ -287,7 +287,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Loveyapa Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 9.73,
     "Rating": "",
     "Language": "",
@@ -297,7 +297,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Azaad Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 8.64,
     "Rating": "",
     "Language": "",
@@ -307,7 +307,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Ground Zero Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 8.46,
     "Rating": "",
     "Language": "",
@@ -317,7 +317,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Jai Mata Ji - Lets Rock Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 8.19,
     "Rating": "",
     "Language": "",
@@ -327,7 +327,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Phule Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 7.55,
     "Rating": "",
     "Language": "",
@@ -337,7 +337,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Subham Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 7.68,
     "Rating": "",
     "Language": "",
@@ -347,7 +347,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Ata Thambaycha Naay Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 7.42,
     "Rating": "",
     "Language": "",
@@ -357,7 +357,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Detective Ujjwalan Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 6.8,
     "Rating": "",
     "Language": "",
@@ -367,7 +367,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Guru Nanak Jahaz Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 6.67,
     "Rating": "",
     "Language": "",
@@ -377,7 +377,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "The Bhootnii Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 6.6,
     "Rating": "",
     "Language": "",
@@ -387,7 +387,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Murmur Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 6.37,
     "Rating": "",
     "Language": "",
@@ -397,7 +397,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Superboys of Malegaon Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 6.09,
     "Rating": "",
     "Language": "",
@@ -407,7 +407,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Eleven Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 6.16,
     "Rating": "",
     "Language": "",
@@ -417,7 +417,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Daveed Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 6.13,
     "Rating": "",
     "Language": "",
@@ -427,7 +427,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Sabdham Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 5.71,
     "Rating": "",
     "Language": "",
@@ -437,7 +437,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Yuddhakaanda Chapter 2 Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 5.59,
     "Rating": "",
     "Language": "",
@@ -447,7 +447,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Pravinkoodu Shappu Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 5.31,
     "Rating": "",
     "Language": "",
@@ -457,7 +457,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Odela 2 Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 4.99,
     "Rating": "",
     "Language": "",
@@ -467,7 +467,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Vanangaan Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 4.34,
     "Rating": "",
     "Language": "",
@@ -477,7 +477,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Oru Jaathi Jathakam Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 3.72,
     "Rating": "",
     "Language": "",
@@ -487,7 +487,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Akaal Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 2.19,
     "Rating": "",
     "Language": "",
@@ -497,7 +497,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Sky Force Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 156.44,
     "Rating": "",
     "Language": "Hindi",
@@ -507,7 +507,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Kesari Chapter 2 Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 143.18,
     "Rating": "",
     "Language": "Hindi",
@@ -517,7 +517,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Jaat Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 115.62,
     "Rating": "",
     "Language": "Hindi",
@@ -527,7 +527,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Bhool Chuk Maaf Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 87.39,
     "Rating": "",
     "Language": "Hindi",
@@ -537,7 +537,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "The Diplomat Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 53.07,
     "Rating": "",
     "Language": "Hindi",
@@ -547,7 +547,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Deva Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 55.37,
     "Rating": "",
     "Language": "Hindi",
@@ -557,7 +557,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Thudarum Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 232.5,
     "Rating": "",
     "Language": "Malayalam",
@@ -567,7 +567,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Raid 2 Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 228.67,
     "Rating": "",
     "Language": "Hindi",
@@ -577,7 +577,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Game Changer Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 182,
     "Rating": "",
     "Language": "Telugu",
@@ -587,7 +587,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Sikandar Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 176.59,
     "Rating": "",
     "Language": "Hindi",
@@ -597,7 +597,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Dragon Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 151,
     "Rating": "",
     "Language": "Tamil",
@@ -607,7 +607,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Daaku Maharaaj Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 132.5,
     "Rating": "",
     "Language": "Telugu",
@@ -617,7 +617,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "HIT: The Third Case Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 120,
     "Rating": "",
     "Language": "Telugu",
@@ -627,7 +627,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Thandel Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 100,
     "Rating": "",
     "Language": "Telugu",
@@ -637,7 +637,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Mad Square Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 66,
     "Rating": "",
     "Language": "Telugu",
@@ -647,7 +647,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Single Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 25,
     "Rating": "",
     "Language": "Telugu",
@@ -657,7 +657,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Arjun Son of Vyjayanthi Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 15,
     "Rating": "",
     "Language": "Telugu",
@@ -667,7 +667,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Jack Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 9,
     "Rating": "",
     "Language": "Telugu",
@@ -677,7 +677,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Vidaamuyarchi Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 194,
     "Rating": "",
     "Language": "Tamil",
@@ -687,7 +687,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Retro Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 97,
     "Rating": "",
     "Language": "Tamil",
@@ -697,7 +697,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Tourist Family Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 81,
     "Rating": "",
     "Language": "Tamil",
@@ -707,7 +707,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Madha Gaja Raja Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 63,
     "Rating": "",
     "Language": "Tamil",
@@ -717,7 +717,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Veera Dheera Sooran Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 62,
     "Rating": "",
     "Language": "Tamil",
@@ -727,7 +727,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Maaman Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 37.95,
     "Rating": "",
     "Language": "Tamil",
@@ -737,7 +737,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Kudumbasthan Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 28,
     "Rating": "",
     "Language": "Tamil",
@@ -747,7 +747,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Alappuzha Gymkhana Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 65,
     "Rating": "",
     "Language": "Malayalam",
@@ -757,7 +757,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Rekhachithram Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 57.3,
     "Rating": "",
     "Language": "Malayalam",
@@ -767,7 +767,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Officer on Duty Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 54.25,
     "Rating": "",
     "Language": "Malayalam",
@@ -777,7 +777,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Prince and Family Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 26,
     "Rating": "",
     "Language": "Malayalam",
@@ -787,7 +787,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Bazooka Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 25.5,
     "Rating": "",
     "Language": "Malayalam",
@@ -797,7 +797,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Maranamass Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 19.5,
     "Rating": "",
     "Language": "Malayalam",
@@ -807,7 +807,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Ponman Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 18.3,
     "Rating": "",
     "Language": "Malayalam",
@@ -817,7 +817,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Choo Mantar Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 5.12,
     "Rating": "",
     "Language": "Kannada",
@@ -827,7 +827,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Gulkand Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 8.01,
     "Rating": "",
     "Language": "Marathi",
@@ -837,7 +837,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Ata Thambaycha Naay! Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 7.28,
     "Rating": "",
     "Language": "Marathi",
@@ -847,7 +847,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Fussclass Dabhade Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 3.64,
     "Rating": "",
     "Language": "Marathi",
@@ -857,7 +857,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Sangeet Manapmaan Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 2.59,
     "Rating": "",
     "Language": "Marathi",
@@ -867,7 +867,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Zapuk Zupuk Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.35,
     "Rating": "",
     "Language": "Marathi",
@@ -877,7 +877,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Ashi Hi Jamva Jamvi Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.32,
     "Rating": "",
     "Language": "Marathi",
@@ -887,7 +887,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "April May 99 Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.21,
     "Rating": "",
     "Language": "Marathi",
@@ -897,7 +897,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Jarann Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.3,
     "Rating": "",
     "Language": "Marathi",
@@ -907,7 +907,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Sant Dnyaneshwaranchi Muktai Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.1,
     "Rating": "",
     "Language": "Marathi",
@@ -917,7 +917,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Devmanus Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1,
     "Rating": "",
     "Language": "Marathi",
@@ -927,7 +927,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Umbarro Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 14.45,
     "Rating": "",
     "Language": "Gujarati",
@@ -937,7 +937,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "All The Best Pandya Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 13.51,
     "Rating": "",
     "Language": "Gujarati",
@@ -947,7 +947,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Jai Mata Ji - Let's Rock Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 9.16,
     "Rating": "",
     "Language": "Gujarati",
@@ -957,7 +957,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Bhram Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 4.8,
     "Rating": "",
     "Language": "Gujarati",
@@ -967,7 +967,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Faati Ne? Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 4.68,
     "Rating": "",
     "Language": "Gujarati",
@@ -977,7 +977,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Mithada Maheman Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 3.83,
     "Rating": "",
     "Language": "Gujarati",
@@ -987,7 +987,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Mom Tane Nai Samjay Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 3.5,
     "Rating": "",
     "Language": "Gujarati",
@@ -997,7 +997,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Jija Sala Jija Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 3.1,
     "Rating": "",
     "Language": "Gujarati",
@@ -1007,7 +1007,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Shubhchintak Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.62,
     "Rating": "",
     "Language": "Gujarati",
@@ -1017,7 +1017,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Kaashi Raaghav Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.52,
     "Rating": "",
     "Language": "Gujarati",
@@ -1027,7 +1027,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "The Eken: Benaras e Bibhishika Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 8.02,
     "Rating": "",
     "Language": "Bengali",
@@ -1037,7 +1037,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Aamar Boss Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 4.55,
     "Rating": "",
     "Language": "Bengali",
@@ -1047,7 +1047,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Killbill Society Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 2.82,
     "Rating": "",
     "Language": "Bengali",
@@ -1057,7 +1057,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Shotyi Bole Shotyi Kichhu Nei Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.82,
     "Rating": "",
     "Language": "Bengali",
@@ -1067,7 +1067,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Puratawn Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.57,
     "Rating": "",
     "Language": "Bengali",
@@ -1077,7 +1077,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Binodiini: Ekti Natir Upakhyan Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.55,
     "Rating": "",
     "Language": "Bengali",
@@ -1087,7 +1087,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Sonar Kellay Jawker Dhan Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.51,
     "Rating": "",
     "Language": "Bengali",
@@ -1097,7 +1097,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Ei Raat Tomar Amaar Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.32,
     "Rating": "",
     "Language": "Bengali",
@@ -1107,7 +1107,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Aarii Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 1.2,
     "Rating": "",
     "Language": "Bengali",
@@ -1117,7 +1117,7 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Mayanagar Box Office Collection: Day-Wise": {
-    "releaseDate": 2025,
+    "releaseDate": "-",
     "total": 0.58,
     "Rating": "",
     "Language": "Bengali",
