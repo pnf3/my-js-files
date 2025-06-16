@@ -277,11 +277,11 @@ const boxOfficerunning = {
     "advanceBooking": ""
   },
   "Arjun S/O Vyjayanthi Box Office Collection: Day-Wise": {
-    "releaseDate": "-",
+    "releaseDate": "2025-04-18",
     "total": 10.13,
-    "Rating": "",
+    "Rating": 8,
     "Language": "Telugu",
-    "Verdict": "null",
+    "Verdict": "Hit",
     "futureDays": 0,
     "Budget": "",
     "advanceBooking": ""
