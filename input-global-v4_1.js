@@ -307,6 +307,76 @@ const boxOfficerunning = {
     "Budget": "",
     "advanceBooking": ""
   },
+  "Akaal Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-04-10",
+    "total": 2.19,
+    "Rating": 8.6,
+    "Language": "Punjabi",
+    "Verdict": "null",
+    "futureDays": 0,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Puratawn Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-04-11",
+    "total": 1.57,
+    "Rating": 6.8,
+    "Language": "Bengali",
+    "Verdict": "null",
+    "futureDays": 0,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Binodiini: Ekti Natir Upakhyan Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-01-23",
+    "total": 1.55,
+    "Rating": 8.3,
+    "Language": "Bengali",
+    "Verdict": "null",
+    "futureDays": 0,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Sonar Kellay Jawker Dhan Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-05-30",
+    "total": 1.51,
+    "Rating": 6.8,
+    "Language": "Bengali",
+    "Verdict": "null",
+    "futureDays": 0,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Ei Raat Tomar Amaar Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-01-31",
+    "total": 1.32,
+    "Rating": 7.4,
+    "Language": "Bengali",
+    "Verdict": "null",
+    "futureDays": 0,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Aarii Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-04-25",
+    "total": 1.2,
+    "Rating": 8.5,
+    "Language": "Bengali",
+    "Verdict": "null",
+    "futureDays": 0,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Mayanagar Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-01-07",
+    "total": 0.58,
+    "Rating": 8.4,
+    "Language": "Bengali",
+    "Verdict": "null",
+    "futureDays": 0,
+    "Budget": "",
+    "advanceBooking": ""
+  },
   "Ground Zero Box Office Collection: Day-Wise": {
     "releaseDate": "-",
     "total": 8.46,
@@ -482,16 +552,6 @@ const boxOfficerunning = {
     "total": 3.72,
     "Rating": "",
     "Language": "Malayalam",
-    "Verdict": "null",
-    "futureDays": 0,
-    "Budget": "",
-    "advanceBooking": ""
-  },
-  "Akaal Box Office Collection: Day-Wise": {
-    "releaseDate": "2025-04-10",
-    "total": 2.19,
-    "Rating": 8.6,
-    "Language": "Punjabi",
     "Verdict": "null",
     "futureDays": 0,
     "Budget": "",
@@ -1061,66 +1121,6 @@ const boxOfficerunning = {
     "releaseDate": "-",
     "total": 1.82,
     "Rating": "",
-    "Language": "Bengali",
-    "Verdict": "null",
-    "futureDays": 0,
-    "Budget": "",
-    "advanceBooking": ""
-  },
-  "Puratawn Box Office Collection: Day-Wise": {
-    "releaseDate": "2025-04-11",
-    "total": 1.57,
-    "Rating": 6.8,
-    "Language": "Bengali",
-    "Verdict": "null",
-    "futureDays": 0,
-    "Budget": "",
-    "advanceBooking": ""
-  },
-  "Binodiini: Ekti Natir Upakhyan Box Office Collection: Day-Wise": {
-    "releaseDate": "2025-01-23",
-    "total": 1.55,
-    "Rating": 8.3,
-    "Language": "Bengali",
-    "Verdict": "null",
-    "futureDays": 0,
-    "Budget": "",
-    "advanceBooking": ""
-  },
-  "Sonar Kellay Jawker Dhan Box Office Collection: Day-Wise": {
-    "releaseDate": "2025-05-30",
-    "total": 1.51,
-    "Rating": 6.8,
-    "Language": "Bengali",
-    "Verdict": "null",
-    "futureDays": 0,
-    "Budget": "",
-    "advanceBooking": ""
-  },
-  "Ei Raat Tomar Amaar Box Office Collection: Day-Wise": {
-    "releaseDate": "2025-01-31",
-    "total": 1.32,
-    "Rating": 7.4,
-    "Language": "Bengali",
-    "Verdict": "null",
-    "futureDays": 0,
-    "Budget": "",
-    "advanceBooking": ""
-  },
-  "Aarii Box Office Collection: Day-Wise": {
-    "releaseDate": "2025-04-25",
-    "total": 1.2,
-    "Rating": 8.5,
-    "Language": "Bengali",
-    "Verdict": "null",
-    "futureDays": 0,
-    "Budget": "",
-    "advanceBooking": ""
-  },
-  "Mayanagar Box Office Collection: Day-Wise": {
-    "releaseDate": "2025-01-07",
-    "total": 0.58,
-    "Rating": 8.4,
     "Language": "Bengali",
     "Verdict": "null",
     "futureDays": 0,
