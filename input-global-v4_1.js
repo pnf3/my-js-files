@@ -1,4 +1,26 @@
 const boxOfficerunning = {
+  "Kuberaa Box Office Collection: Day-Wise": {
+    "1": 15.12,
+    "releaseDate": "2025-06-20",
+    "total": null,
+    "Rating": 0,
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 130,
+    "advanceBooking": 12.52
+  },
+  "Sitaare Zameen Par\r Box Office Collection: Day-Wise": {
+    "1": 9.15,
+    "releaseDate": "2025-06-20",
+    "total": null,
+    "Rating": 0,
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 80,
+    "advanceBooking": 7.69
+  },
   "Housefull 5 Box Office Collection: Day-Wise": {
     "1": 36,
     "2": 79,
