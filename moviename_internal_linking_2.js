@@ -1,5 +1,7 @@
 window.addEventListener('load', function () {
     const movieLinks = {
+        "Kuberaa": "https://www.newsfocus360.com/2025/05/kuberaa-box-office-collection-day-wise.html",
+"Sitaare Zameen Par": "https://www.newsfocus360.com/2025/05/sitaare-zameen-par-box-office.html",
         "Sanju Weds Geetha 2": "https://www.newsfocus360.com/2025/05/sanju-weds-geetha-2-box-office.html",
 "Sri Sri Sri Raajavaru": "https://www.newsfocus360.com/2025/05/sri-sri-sri-raajavaru-box-office.html",
 "Housefull 5": "https://www.newsfocus360.com/2025/05/housefull-5-box-office-collection-day_24.html",
