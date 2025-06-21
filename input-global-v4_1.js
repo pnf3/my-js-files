@@ -1,9 +1,9 @@
 const boxOfficerunning = {
   "Kuberaa Box Office Collection: Day-Wise": {
-    "1": 15.12,
+    "1": 28.38,
     "releaseDate": "2025-06-20",
     "total": null,
-    "Rating": 0,
+    "Rating": 8.6,
     "Language": "Tamil",
     "Verdict": "null",
     "futureDays": 7,
@@ -11,10 +11,10 @@ const boxOfficerunning = {
     "advanceBooking": 12.52
   },
   "Sitaare Zameen Par\r Box Office Collection: Day-Wise": {
-    "1": 9.15,
+    "1": 14.18,
     "releaseDate": "2025-06-20",
     "total": null,
-    "Rating": 0,
+    "Rating": 8.6,
     "Language": "Hindi",
     "Verdict": "null",
     "futureDays": 7,
