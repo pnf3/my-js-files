@@ -214,7 +214,7 @@ window.addEventListener('load', function () {
 "Krish Jagarlamudi": "https://www.newsfocus360.com/2023/09/krish-jagarlamudi-movies-list.html",
 "Krithi Shetty": "https://www.newsfocus360.com/2023/10/krithi-shetty-movies-list.html",
 "Lauren Compton": "https://www.newsfocus360.com/2024/01/lauren-compton-all-movies-list-year-wise.html",
-"Lavanya Tripathi": "https://www.newsfocus360.com/2023/11/lavanya-tripathi-all-movies-kist.html",
+"Lavanya Tripathi": "https://www.newsfocus360.com/2025/06/lavanya-tripathi-movies-list.html",
 "Léa Seydoux": "https://www.newsfocus360.com/2024/01/lea-seydoux-all-movies-list-year-wise.html",
 "Leonardo DiCaprio": "https://www.newsfocus360.com/2023/10/leonardo-dicaprio-movies-list.html",
 "Lesley Ann Warren": "https://www.newsfocus360.com/2025/02/lesley-ann-warren-movies-and-tv-shows.html",
