@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const introCard = document.createElement("div");
     introCard.className = "card";
 	const hasTVShows = !!tvList;
-  const typeTexts = hasTVShows ? "movies & TV shows" : "movies";
-  const typeText = hasTVShows ? "movie & TV show" : "movie";
+  const typeTexts = hasTVShows ? "movies and TV shows" : "movies";
+  const typeText = hasTVShows ? "movie and TV show" : "movie";
     introCard.textContent = `Explore the complete list of ${actorName} ${typeTexts} (${dynamicYearRange}), organized year-wise — from debut project to the latest release.`;
     postSubBody.prepend(introCard);
   }
