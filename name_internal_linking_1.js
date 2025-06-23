@@ -484,7 +484,7 @@ window.addEventListener('load', function () {
 "Vasishta N. Simha": "https://www.newsfocus360.com/2025/04/vasishta-n-simha-movies-list.html",
 "Venkat Prabhu": "https://www.newsfocus360.com/2023/10/venkat-prabhu-movies-list.html",
 "Venkatesh": "https://www.newsfocus360.com/2018/12/venkatesh-movies-list.html",
-"Vennela Kishore": "https://www.newsfocus360.com/2025/05/vennela-kishore-movies-list.html",
+"Vennela Kishore": "https://www.newsfocus360.com/2025/06/vennela-kishore-movies-list.html",
 "Vetrimaaran": "https://www.newsfocus360.com/2023/10/vetrimaaran-movies-list.html",
 "Vichithra": "https://www.newsfocus360.com/2023/11/vichithra-all-movies-list.html",
 "Vicky Kaushal": "https://www.newsfocus360.com/2023/10/vicky-kaushal-movies-list.html",
