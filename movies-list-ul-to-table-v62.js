@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typeText = hasTVShows ? "movies and TV shows" : "movies";
   const titleSuffix = hasTVShows ? "Movies and TV Shows List" : "Movies List";
 
-  metaDescription.content = `Explore the complete list of ${pageTitle} ${typeText} (${dynamicYearRange}), organized year-wise — from debut project to the latest release.`;
+  metaDescription.content = `Explore the complete list of ${pageTitle} ${typeText}, organized year-wise — from the debut in ${yearRange.start} to the latest release in ${yearRange.end}.`;
   document.title = `${pageTitle} ${titleSuffix} (${dynamicYearRange})`;
   entryTitle.textContent = `${pageTitle} ${titleSuffix} (${dynamicYearRange})`;
 }
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const hasTVShows = !!tvList;
   const typeTexts = hasTVShows ? "movies and TV shows" : "movies";
   const typeText = hasTVShows ? "movie and TV show" : "movie";
-    introCard.textContent = `Explore the complete list of ${actorName} ${typeTexts} (${dynamicYearRange}), organized year-wise — from debut project to the latest release.`;
+    introCard.textContent = `Explore the complete list of ${actorName} ${typeTexts}, organized year-wise — from the debut in ${yearRange.start} to the latest release in ${yearRange.end}.`;
     postSubBody.prepend(introCard);
   }
 
