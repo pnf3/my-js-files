@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastMovieItem = moviesList.querySelector("li:last-child");
     if (lastMovieItem) lastMovieItem.textContent += " - First Movie";
 
-    moviesList.insertAdjacentElement("beforebegin", createHeading(`${actorName} Movies List Year-Wise`));
+    moviesList.insertAdjacentElement("beforebegin", createHeading(`${actorName} Movies List`));
     convertListToTable(moviesList, actorName, "movie");
   }
 
@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastShowItem = tvList.querySelector("li:last-child");
     if (lastShowItem) lastShowItem.textContent += " - First Show";
 
-    tvList.insertAdjacentElement("beforebegin", createHeading(`${actorName} TV Shows List Year-Wise`));
+    tvList.insertAdjacentElement("beforebegin", createHeading(`${actorName} TV Shows List`));
     convertListToTable(tvList, actorName, "tv");
   }
 
   if (dpwsList) {
     const dpwsHeading = document.createElement("div");
-    dpwsHeading.innerHTML = `<h2>${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)</h2>
+    dpwsHeading.innerHTML = `<h2>${actorName} Movies List as a Director, Producer, Writer, or Screenplay</h2>
     <p class="mb-0"><strong>Legend:</strong> (DPWS) — D = Director, P = Producer, W = Writer, S = Screenplay</p>`;
     dpwsList.insertAdjacentElement("beforebegin", dpwsHeading);
     convertListToTable(dpwsList, actorName, "dpws");
@@ -126,10 +126,10 @@ function getAriaLabel(actorName, type) {
     }).join("");
 
     const captionText = type === "tv"
-      ? `${actorName} TV Shows List`
+      ? `${actorName} TV Shows List Year-Wise`
       : type === "dpws"
-        ? `${actorName} Movies List as a Director (D), Producer (P), Writer (W), or Screenplay (S)`
-        : `${actorName} Movies List`;
+        ? `${actorName} Movies List Year-Wise as a Director (D), Producer (P), Writer (W), or Screenplay (S)`
+        : `${actorName} Movies List Year-Wise`;
 
     const countLabel = type === "dpws"
       ? `${actorName} Total Movies Count as a DPWS:`
