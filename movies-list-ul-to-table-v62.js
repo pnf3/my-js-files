@@ -107,23 +107,30 @@ function getAriaLabel(actorName, type) {
 }
 
   function generateTableHTML(items, actorName, type) {
-    const rows = items.map((item, index) => {
-      const anchor = item.querySelector("a");
-      const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
-      const [yearPartRaw, namePartRaw] = rawText.includes(":") ? rawText.split(":") : [rawText, rawText];
-      const year = yearPartRaw.match(/\d{4}/)?.[0] || "";
-      const name = anchor
-        ? `<a href="${anchor.href}">${anchor.textContent}</a>`
-        : (namePartRaw?.trim() || rawText);
+  const rows = items.map((item, index) => {
+    const anchor = item.querySelector("a");
+    const rawText = item.childNodes[0]?.nodeValue?.trim() || "";
+    const [yearPartRaw, namePartRaw] = rawText.includes(":")
+      ? rawText.split(":")
+      : [rawText, rawText];
 
-     return `
-  <tr role="row">
-    <td aria-label="Movie number ${items.length - index}">${items.length - index}</td>
-    <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
-    <td>${name}</td>
-  </tr>
-`;
-    }).join("");
+    // ✅ Allow full year or year range
+    const yearMatch = yearPartRaw.match(/\d{4}(?:\s*[–-]\s*\d{4})?/);
+    const year = yearMatch ? yearMatch[0].replace(/\s+/g, " ") : "";
+
+    const name = anchor
+      ? `<a href="${anchor.href}">${anchor.textContent}</a>`
+      : (namePartRaw?.trim() || rawText);
+
+    return `
+      <tr role="row">
+        <td aria-label="Movie number ${items.length - index}">${items.length - index}</td>
+        <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
+        <td>${name}</td>
+      </tr>
+    `;
+  }).join("");
+
 
     const captionText = type === "tv"
       ? `${actorName} TV Shows List Year-Wise`
@@ -152,3 +159,4 @@ function getAriaLabel(actorName, type) {
       </tfoot>`;
   }
 });
+
