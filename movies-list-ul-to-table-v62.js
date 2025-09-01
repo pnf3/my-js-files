@@ -76,14 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getYears(list) {
-    if (!list) return [];
-    return [...list.querySelectorAll("li")]
-      .map(li => {
-        const match = li.textContent.trim().match(/^(\d{4})/);
-        return match ? parseInt(match[1], 10) : null;
-      })
-      .filter(Boolean);
-  }
+  if (!list) return [];
+  return [...list.querySelectorAll("li")]
+    .flatMap(li => {
+      const matches = li.textContent.trim().match(/\d{4}/g); // all 4-digit years
+      return matches ? matches.map(y => parseInt(y, 10)) : [];
+    })
+    .filter(Boolean);
+}
+
 
   function createHeading(text) {
     const h2 = document.createElement("h2");
@@ -152,3 +153,4 @@ function getAriaLabel(actorName, type) {
       </tfoot>`;
   }
 });
+
