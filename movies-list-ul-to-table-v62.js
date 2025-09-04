@@ -158,6 +158,8 @@ function getAriaLabel(actorName, type) {
         </tr>
       </tfoot>`;
   }
+	 generateStructuredData(actorName, moviesList, tvList, dpwsList);
 });
+
 
 
