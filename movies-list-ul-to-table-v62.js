@@ -158,8 +158,47 @@ function getAriaLabel(actorName, type) {
         </tr>
       </tfoot>`;
   }
-	 generateStructuredData(actorName, moviesList, tvList, dpwsList);
+	// === JSON-LD Structured Data ===
+  function generateStructuredData(actorName, moviesList, tvList, dpwsList) {
+    const itemList = [];
+    function parseItems(list, type) {
+      if (!list) return;
+      [...list.querySelectorAll("li")].forEach(li => {
+        const text = li.textContent.trim();
+        const yearMatch = text.match(/^(\d{4})/);
+        const year = yearMatch ? yearMatch[1] : null;
+        const anchor = li.querySelector("a");
+        const name = anchor ? anchor.textContent.trim() : text.replace(/^\d{4}[:\-\s]*/, "").trim();
+        const placeholderImage = `https://placehold.co/600x900/000000/FFFFFF/png?text=${encodeURIComponent(name)}`;
+        itemList.push({
+          "@type": type === "tv" ? "TVSeries" : "Movie",
+          "position": itemList.length + 1,
+          "name": name,
+          ...(year ? { "datePublished": year } : {}),
+          ...(anchor ? { "url": anchor.href } : {}),
+          "image": placeholderImage
+        });
+      });
+    }
+    parseItems(moviesList, "movie");
+    parseItems(tvList, "tv");
+    parseItems(dpwsList, "movie");
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": `${actorName} Filmography`,
+      "itemListElement": itemList
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(structuredData, null, 2);
+    document.head.appendChild(script);
+  }
+
+  // Generate JSON-LD
+  generateStructuredData(actorName, moviesList, tvList, dpwsList);
 });
+
 
 
 
