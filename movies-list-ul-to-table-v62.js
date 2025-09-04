@@ -123,11 +123,11 @@ function getAriaLabel(actorName, type) {
       : (namePartRaw?.trim() || rawText);
 
     return `
-      <tr role="row">
-        <td aria-label="Movie number ${items.length - index}">${items.length - index}</td>
-        <td><time datetime="${year}" aria-label="Year ${year}">${year}</time></td>
-        <td>${name}</td>
-      </tr>
+     <tr role="row">
+  <td>${items.length - index}</td>
+  <td><time datetime="${year}">${year}</time></td>
+  <td>${name}</td>
+</tr>
     `;
   }).join("");
 
@@ -159,4 +159,5 @@ function getAriaLabel(actorName, type) {
       </tfoot>`;
   }
 });
+
 
