@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (moviesList) {
     const lastMovieItem = moviesList.querySelector("li:last-child");
-    if (lastMovieItem) lastMovieItem.textContent += " - First Movie";
+    if (lastMovieItem) lastMovieItem.textContent += "";
 
     moviesList.insertAdjacentElement("beforebegin", createHeading(`${actorName} Movies List`));
     convertListToTable(moviesList, actorName, "movie");
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (tvList) {
     const lastShowItem = tvList.querySelector("li:last-child");
-    if (lastShowItem) lastShowItem.textContent += " - First Show";
+    if (lastShowItem) lastShowItem.textContent += "";
 
     tvList.insertAdjacentElement("beforebegin", createHeading(`${actorName} TV Shows List`));
     convertListToTable(tvList, actorName, "tv");
@@ -198,6 +198,7 @@ function getAriaLabel(actorName, type) {
   // Generate JSON-LD
   generateStructuredData(actorName, moviesList, tvList, dpwsList);
 });
+
 
 
 
