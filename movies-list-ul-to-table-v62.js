@@ -174,7 +174,7 @@ function getAriaLabel(actorName, type) {
           "@type": type === "tv" ? "TVSeries" : "Movie",
           "position": itemList.length + 1,
           "name": name,
-          ...(year ? { "datePublished": year } : {}),
+          ...(year ? { "dateCreated": year } : {}),
           ...(anchor ? { "url": anchor.href } : {}),
           "image": placeholderImage
         });
@@ -198,6 +198,7 @@ function getAriaLabel(actorName, type) {
   // Generate JSON-LD
   generateStructuredData(actorName, moviesList, tvList, dpwsList);
 });
+
 
 
 
