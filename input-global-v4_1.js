@@ -1,4 +1,14 @@
 const boxOfficerunning = {
+  "Dude Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 28,
+    "advanceBooking": 11.2
+  },
   "Housefull 5 Box Office Collection: Day-Wise": {
     "1": 36,
     "2": 79,
