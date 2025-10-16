@@ -125,7 +125,7 @@ function getAriaLabel(actorName, type) {
     return `
      <tr role="row">
   <td>${items.length - index}</td>
-  <td><time datetime="${year}">${year}</time></td>
+  <td>${year}</td>
   <td>${name}</td>
 </tr>
     `;
@@ -198,6 +198,7 @@ function getAriaLabel(actorName, type) {
   // Generate JSON-LD
   generateStructuredData(actorName, moviesList, tvList, dpwsList);
 });
+
 
 
 
