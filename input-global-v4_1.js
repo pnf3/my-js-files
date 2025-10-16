@@ -1,4 +1,104 @@
 const boxOfficerunning = {
+  "Boogambam Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Timepass Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 1.5,
+    "advanceBooking": ""
+  },
+  "Premigala Gamanakke Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "India's Pride: Imli - The Archer Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Hindi",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Paathirathri Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Malayalam",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": ""
+  },
+  "Telusu Kada Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Telugu",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 45,
+    "advanceBooking": ""
+  },
+  "Carmeni Selvam Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.08
+  },
+  "Kambi Katna Kathai Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.41
+  },
+  "Diesel Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 12,
+    "advanceBooking": 2.81
+  },
+  "Bison Kaalamaadan Box Office Collection: Day-Wise": {
+    "releaseDate": "2025-10-17",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": 22,
+    "advanceBooking": 5.42
+  },
   "Dude Box Office Collection: Day-Wise": {
     "releaseDate": "2025-10-17",
     "total": null,
@@ -7,7 +107,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": 28,
-    "advanceBooking": 11.2
+    "advanceBooking": 11.23
   },
   "Housefull 5 Box Office Collection: Day-Wise": {
     "1": 36,
@@ -39,7 +139,7 @@ const boxOfficerunning = {
   },
   "Shashtipoorthi Box Office Collection: Day-Wise": {
     "releaseDate": "2025-05-30",
-    "total": 2.4,
+    "total": 4.51,
     "Rating": 9.6,
     "Language": "Telugu",
     "Verdict": "null",
