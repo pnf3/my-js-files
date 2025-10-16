@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
     const movieLinks = {
+        "Dude": "https://www.newsfocus360.com/2025/10/mithra-mandali-box-office-collection.html",
         "Kuberaa": "https://www.newsfocus360.com/2025/05/kuberaa-box-office-collection-day-wise.html",
 "Sitaare Zameen Par": "https://www.newsfocus360.com/2025/05/sitaare-zameen-par-box-office.html",
         "Sanju Weds Geetha 2": "https://www.newsfocus360.com/2025/05/sanju-weds-geetha-2-box-office.html",
@@ -100,3 +101,4 @@ window.addEventListener('load', function () {
         }
     });
 });
+
