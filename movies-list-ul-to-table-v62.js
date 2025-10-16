@@ -144,15 +144,15 @@ function getAriaLabel(actorName, type) {
 
     return `
       <caption class="styled-caption">${captionText}</caption>
-      <thead role="rowgroup">
+      <thead>
         <tr role="row">
           <th role="columnheader" scope="col">S. No.</th>
           <th role="columnheader" scope="col">Year</th>
           <th role="columnheader" scope="col">${type === "tv" ? "Show Name" : "Movie Name"}</th>
         </tr>
       </thead>
-      <tbody role="rowgroup">${rows || `<tr><td colspan="3">No data available.</td></tr>`}</tbody>
-      <tfoot role="rowgroup">
+      <tbody>${rows || `<tr><td colspan="3">No data available.</td></tr>`}</tbody>
+      <tfoot>
         <tr role="row">
           <td colspan="3"><strong>${countLabel}</strong> ${items.length}</td>
         </tr>
@@ -198,6 +198,7 @@ function getAriaLabel(actorName, type) {
   // Generate JSON-LD
   generateStructuredData(actorName, moviesList, tvList, dpwsList);
 });
+
 
 
 
