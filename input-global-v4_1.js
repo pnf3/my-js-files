@@ -5,7 +5,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": "",
     "Language": "Tamil",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.31
@@ -16,7 +16,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": "",
     "Language": "Kannada",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 1.5,
     "advanceBooking": 0.22
@@ -27,7 +27,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": "",
     "Language": "Kannada",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.13
@@ -38,7 +38,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": "",
     "Language": "Hindi",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.12
@@ -49,7 +49,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 8.9,
     "Language": "Malayalam",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.11
@@ -60,7 +60,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 8.2,
     "Language": "Telugu",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 45,
     "advanceBooking": 0.29
@@ -71,7 +71,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": "",
     "Language": "Tamil",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.13
@@ -82,7 +82,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.2,
     "Language": "Tamil",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 12,
     "advanceBooking": 0.12
@@ -93,7 +93,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.1,
     "Language": "Tamil",
-    "Verdict": "null",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 22,
     "advanceBooking": 0.45
@@ -104,7 +104,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 8.2,
     "Language": "Tamil",
-    "Verdict": "NaN",
+    "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 28,
     "advanceBooking": 5.12
