@@ -2,6 +2,7 @@ const boxOfficerunning = {
   "Boogambam Box Office Collection: Day-Wise": {
     "1": 0.2,
     "2": 0.4,
+    "3": 0.6,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": "",
@@ -14,6 +15,7 @@ const boxOfficerunning = {
   "Timepass Box Office Collection: Day-Wise": {
     "1": 0.2,
     "2": 0.4,
+    "3": 0.6,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": 8.9,
@@ -26,6 +28,7 @@ const boxOfficerunning = {
   "Premigala Gamanakke Box Office Collection: Day-Wise": {
     "1": 0.2,
     "2": 0.4,
+    "3": 0.6,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": "",
@@ -38,6 +41,7 @@ const boxOfficerunning = {
   "India's Pride: Imli - The Archer Box Office Collection: Day-Wise": {
     "1": 0.2,
     "2": 0.4,
+    "3": 0.6,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": "",
@@ -50,6 +54,7 @@ const boxOfficerunning = {
   "Paathirathri Box Office Collection: Day-Wise": {
     "1": 0.6,
     "2": 1,
+    "3": 1.2,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": 9.4,
@@ -62,6 +67,7 @@ const boxOfficerunning = {
   "Telusu Kada Box Office Collection: Day-Wise": {
     "1": 3.6,
     "2": 7,
+    "3": 10.2,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": 8.1,
@@ -74,6 +80,7 @@ const boxOfficerunning = {
   "Kambi Katna Kathai Box Office Collection: Day-Wise": {
     "1": 0.2,
     "2": 0.4,
+    "3": 0.6,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": 9.5,
@@ -86,6 +93,7 @@ const boxOfficerunning = {
   "Diesel Box Office Collection: Day-Wise": {
     "1": 0.6,
     "2": 1,
+    "3": 1.2,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": 9.2,
@@ -98,6 +106,7 @@ const boxOfficerunning = {
   "Bison Kaalamaadan Box Office Collection: Day-Wise": {
     "1": 4.2,
     "2": 9.4,
+    "3": 16.8,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": 9.2,
@@ -110,6 +119,7 @@ const boxOfficerunning = {
   "Dude Box Office Collection: Day-Wise": {
     "1": 21,
     "2": 39.8,
+    "3": 58.8,
     "releaseDate": "2025-10-17",
     "total": null,
     "Rating": 7.8,
