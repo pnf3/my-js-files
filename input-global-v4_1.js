@@ -10,7 +10,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": "",
     "advanceBooking": 0.1
   },
@@ -25,7 +25,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Kannada",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 1.5,
     "advanceBooking": 0.1
   },
@@ -40,7 +40,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Kannada",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": "",
     "advanceBooking": 0.1
   },
@@ -55,7 +55,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Hindi",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": "",
     "advanceBooking": 0.1
   },
@@ -70,7 +70,7 @@ const boxOfficerunning = {
     "Rating": 8.6,
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": "",
     "advanceBooking": 0.3
   },
@@ -85,7 +85,7 @@ const boxOfficerunning = {
     "Rating": 8.1,
     "Language": "Telugu",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 45,
     "advanceBooking": 1.8
   },
@@ -100,7 +100,7 @@ const boxOfficerunning = {
     "Rating": 8.7,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": "",
     "advanceBooking": 0.1
   },
@@ -115,7 +115,7 @@ const boxOfficerunning = {
     "Rating": 8.2,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 12,
     "advanceBooking": 0.3
   },
@@ -130,7 +130,7 @@ const boxOfficerunning = {
     "Rating": 9.2,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 22,
     "advanceBooking": 2.1
   },
@@ -145,7 +145,7 @@ const boxOfficerunning = {
     "Rating": 7.8,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 28,
     "advanceBooking": 10.5
   },
