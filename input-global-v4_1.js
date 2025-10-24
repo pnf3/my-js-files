@@ -1,4 +1,136 @@
 const boxOfficerunning = {
+  "Kanoli Bandset Box Office Collection: Day-Wise": {
+    "1": 0.02,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Malayalam",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.01
+  },
+  "Thuchchaadhanan Box Office Collection: Day-Wise": {
+    "1": 0.02,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.01
+  },
+  "Vidhrohi Box Office Collection: Day-Wise": {
+    "1": 1.02,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 1.01
+  },
+  "Dharmavaram Box Office Collection: Day-Wise": {
+    "1": 0.02,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.03
+  },
+  "Billi Chukki Halli Hakki Box Office Collection: Day-Wise": {
+    "1": 0.5,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.51
+  },
+  "Newton`s 3rd Law Box Office Collection: Day-Wise": {
+    "1": 0.62,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.61
+  },
+  "Tortoise: The Tale of Murders Box Office Collection: Day-Wise": {
+    "1": 0.22,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.21
+  },
+  "Green Box Office Collection: Day-Wise": {
+    "1": 1.02,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 1.12
+  },
+  "Yaarigu Helbedi Box Office Collection: Day-Wise": {
+    "1": 0.1,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.11
+  },
+  "Dilmaar Box Office Collection: Day-Wise": {
+    "1": 0.5,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.51
+  },
+  "Nellikkampoyil Night Riders Box Office Collection: Day-Wise": {
+    "1": 2.42,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Malayalam",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 2.41
+  },
+  "Meeladun Nabi Box Office Collection: Day-Wise": {
+    "1": 0.02,
+    "releaseDate": "2025-10-24",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.01
+  },
   "Boogambam Box Office Collection: Day-Wise": {
     "1": 0.2,
     "2": 0.4,
