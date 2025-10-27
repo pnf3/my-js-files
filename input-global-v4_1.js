@@ -9,7 +9,7 @@ const boxOfficerunning = {
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.01
   },
   "Thuchchaadhanan Box Office Collection: Day-Wise": {
@@ -22,7 +22,7 @@ const boxOfficerunning = {
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.01
   },
   "Vidhrohi Box Office Collection: Day-Wise": {
@@ -61,7 +61,7 @@ const boxOfficerunning = {
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.51
   },
   "Newton`s 3rd Law Box Office Collection: Day-Wise": {
@@ -74,7 +74,7 @@ const boxOfficerunning = {
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.61
   },
   "Tortoise: The Tale of Murders Box Office Collection: Day-Wise": {
@@ -87,7 +87,7 @@ const boxOfficerunning = {
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.21
   },
   "Green Box Office Collection: Day-Wise": {
@@ -100,7 +100,7 @@ const boxOfficerunning = {
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 1.12
   },
   "Yaarigu Helbedi Box Office Collection: Day-Wise": {
@@ -113,7 +113,7 @@ const boxOfficerunning = {
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.11
   },
   "Dilmaar Box Office Collection: Day-Wise": {
@@ -126,7 +126,7 @@ const boxOfficerunning = {
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.51
   },
   "Nellikkampoyil Night Riders Box Office Collection: Day-Wise": {
@@ -139,7 +139,7 @@ const boxOfficerunning = {
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": 6,
     "advanceBooking": 0.8
   },
   "Meeladun Nabi Box Office Collection: Day-Wise": {
@@ -152,7 +152,7 @@ const boxOfficerunning = {
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.01
   },
   "Boogambam Box Office Collection: Day-Wise": {
@@ -169,7 +169,7 @@ const boxOfficerunning = {
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 0,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.1
   },
   "Timepass Box Office Collection: Day-Wise": {
@@ -204,7 +204,7 @@ const boxOfficerunning = {
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 0,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.1
   },
   "India's Pride: Imli - The Archer Box Office Collection: Day-Wise": {
@@ -221,7 +221,7 @@ const boxOfficerunning = {
     "Language": "Hindi",
     "Verdict": "Coming Soon",
     "futureDays": 0,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.1
   },
   "Paathirathri Box Office Collection: Day-Wise": {
@@ -239,7 +239,7 @@ const boxOfficerunning = {
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
     "futureDays": 0,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.3
   },
   "Telusu Kada Box Office Collection: Day-Wise": {
@@ -274,7 +274,7 @@ const boxOfficerunning = {
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 0,
-    "Budget": "",
+    "Budget": "NA",
     "advanceBooking": 0.1
   },
   "Diesel Box Office Collection: Day-Wise": {
