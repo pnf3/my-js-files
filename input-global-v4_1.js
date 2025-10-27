@@ -140,7 +140,7 @@ const boxOfficerunning = {
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 2.41
+    "advanceBooking": 0.8
   },
   "Meeladun Nabi Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -290,7 +290,7 @@ const boxOfficerunning = {
     "total": 4.81,
     "Rating": 7.9,
     "Language": "Tamil",
-    "Verdict": "Coming Soon",
+    "Verdict": "null",
     "futureDays": 0,
     "Budget": 12,
     "advanceBooking": 0.3
