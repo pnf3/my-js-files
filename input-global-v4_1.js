@@ -2,9 +2,10 @@ const boxOfficerunning = {
   "Aaryan Box Office Collection: Day-Wise": {
     "1": 1.05,
     "2": 2.92,
+    "3": 4.3,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 8.4,
+    "Rating": 8,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -14,9 +15,10 @@ const boxOfficerunning = {
   "Dies Irae Box Office Collection: Day-Wise": {
     "1": 12.2,
     "2": 22.69,
+    "3": 35.07,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 8.9,
+    "Rating": 8.7,
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -26,6 +28,7 @@ const boxOfficerunning = {
   "Roi Roi Binale Box Office Collection: Day-Wise": {
     "1": 6.02,
     "2": 13.06,
+    "3": 20.28,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": 9.7,
@@ -38,6 +41,7 @@ const boxOfficerunning = {
   "Misri Box Office Collection: Day-Wise": {
     "1": 1.44,
     "2": 2.06,
+    "3": 2.41,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": 9.7,
@@ -50,9 +54,10 @@ const boxOfficerunning = {
   "The Taj Story Box Office Collection: Day-Wise": {
     "1": 0.7,
     "2": 2.23,
+    "3": 4.81,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 9.1,
+    "Rating": 9,
     "Language": "Hindi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -62,9 +67,10 @@ const boxOfficerunning = {
   "Punha Shivajiraje Bhosale Box Office Collection: Day-Wise": {
     "1": 0.19,
     "2": 0.57,
+    "3": 1.13,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 8.7,
+    "Rating": 8.9,
     "Language": "Marathi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -74,6 +80,7 @@ const boxOfficerunning = {
   "Desiya Thalaivar Box Office Collection: Day-Wise": {
     "1": 0.21,
     "2": 0.26,
+    "3": 0.36,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": 9.3,
@@ -86,9 +93,10 @@ const boxOfficerunning = {
   "Kona Box Office Collection: Day-Wise": {
     "1": 1.24,
     "2": 1.36,
+    "3": 1.41,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 9.5,
+    "Rating": 9.3,
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -98,9 +106,10 @@ const boxOfficerunning = {
   "Brat Box Office Collection: Day-Wise": {
     "1": 0.79,
     "2": 2.06,
+    "3": 2.75,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 9.4,
+    "Rating": 9.3,
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -110,6 +119,7 @@ const boxOfficerunning = {
   "Aan Paavam Pollathathu Box Office Collection: Day-Wise": {
     "1": 0.62,
     "2": 2.06,
+    "3": 3.61,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": 8.7,
@@ -122,6 +132,7 @@ const boxOfficerunning = {
   "Ram Abdullah Antony Box Office Collection: Day-Wise": {
     "1": 0.07,
     "2": 0.09,
+    "3": 0.1,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": 9.1,
@@ -134,6 +145,7 @@ const boxOfficerunning = {
   "Messenger Box Office Collection: Day-Wise": {
     "1": 0.01,
     "2": 0.09,
+    "3": 0.1,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -146,6 +158,7 @@ const boxOfficerunning = {
   "Thadai Athai Udai Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -158,9 +171,10 @@ const boxOfficerunning = {
   "Madhaniyan Box Office Collection: Day-Wise": {
     "1": 0.09,
     "2": 0.1,
+    "3": 0.26,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 9.1,
+    "Rating": 9,
     "Language": "Punjabi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -170,9 +184,10 @@ const boxOfficerunning = {
   "Ikk Kudi Box Office Collection: Day-Wise": {
     "1": 0.14,
     "2": 0.15,
+    "3": 0.33,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 9.1,
+    "Rating": 8.7,
     "Language": "Punjabi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -182,6 +197,7 @@ const boxOfficerunning = {
   "Single Salma Box Office Collection: Day-Wise": {
     "1": 0.05,
     "2": 0.07,
+    "3": 0.09,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -194,6 +210,7 @@ const boxOfficerunning = {
   "Tu Maza Kinara Box Office Collection: Day-Wise": {
     "1": 0.03,
     "2": 0.05,
+    "3": 0.07,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -204,11 +221,12 @@ const boxOfficerunning = {
     "advanceBooking": 0.03
   },
   "Well Done Aai Box Office Collection: Day-Wise": {
-    "1": 0.57,
-    "2": 0.58,
+    "1": 0.02,
+    "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": "",
+    "Rating": 8.7,
     "Language": "Marathi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -218,6 +236,7 @@ const boxOfficerunning = {
   "Omen Box Office Collection: Day-Wise": {
     "1": 0.22,
     "2": 0.24,
+    "3": 0.26,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -230,9 +249,10 @@ const boxOfficerunning = {
   "Karmanye Vadhikaraste Box Office Collection: Day-Wise": {
     "1": 0.36,
     "2": 0.53,
+    "3": 0.55,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 9.1,
+    "Rating": 8.9,
     "Language": "Telugu",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -242,6 +262,7 @@ const boxOfficerunning = {
   "Shree Durga Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -254,6 +275,7 @@ const boxOfficerunning = {
   "Porii Monii Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -266,6 +288,7 @@ const boxOfficerunning = {
   "Comondra Alien Box Office Collection: Day-Wise": {
     "1": 0.03,
     "2": 0.05,
+    "3": 0.07,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -278,6 +301,7 @@ const boxOfficerunning = {
   "Swapnasundari Box Office Collection: Day-Wise": {
     "1": 0.07,
     "2": 0.07,
+    "3": 0.09,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -290,6 +314,7 @@ const boxOfficerunning = {
   "Cherukkanum Pennum Box Office Collection: Day-Wise": {
     "1": 0,
     "2": 0,
+    "3": 0.01,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -302,6 +327,7 @@ const boxOfficerunning = {
   "Shambhu Box Office Collection: Day-Wise": {
     "1": 0.01,
     "2": 0.01,
+    "3": 0.01,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": "",
@@ -314,6 +340,7 @@ const boxOfficerunning = {
   "Baahubali: The Epic Box Office Collection: Day-Wise": {
     "1": 25.61,
     "2": 40.74,
+    "3": 53.98,
     "releaseDate": "2025-10-31",
     "total": null,
     "Rating": 9.7,
@@ -321,14 +348,15 @@ const boxOfficerunning = {
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 40,
-    "advanceBooking": 30.8
+    "advanceBooking": 24.8
   },
   "Mass Jathara Box Office Collection: Day-Wise": {
     "1": 6.38,
     "2": 11.69,
+    "3": 15.3,
     "releaseDate": "2025-10-31",
     "total": null,
-    "Rating": 8.4,
+    "Rating": 8.2,
     "Language": "Telugu",
     "Verdict": "Coming Soon",
     "futureDays": 7,
