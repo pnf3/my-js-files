@@ -436,11 +436,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if (metaDescription) {
         if (entryTitle.textContent.includes("Box Office Collection")) {
             metaDescription.content = `${movieName} - Track worldwide earnings, daily updates, budget, cast, crew, and total gross up to ${latestDay}. Stay tuned for the latest box office performance and verdict.`;
-              document.title = `${movieName} Box Office Collection ${latestDay}`;
+              document.title = `${movieName}  ${latestDay} Box Office Collection`;
         } else {
            // metaDescription.content = `Explore the complete list of ${entryTitle.textContent.trim()} List year-wise, from the first film to the latest and upcoming releases, along with the total movie count.`;
         }
-      //  entryTitle.textContent = entryTitle.textContent.replace("Day-Wise", `Day 1 to ${latestDay}`);
+        entryTitle.textContent = entryTitle.textContent.replace("Day-Wise", `Day 1 to ${latestDay}`);
 const latestDay2 = document.getElementById("latest-day2");
 latestDay2.textContent = latestDay2.textContent.replace("Day-Wise", `From Day 1 to ${latestDay}`);
 
@@ -803,4 +803,5 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
