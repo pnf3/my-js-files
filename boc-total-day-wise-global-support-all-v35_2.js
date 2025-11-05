@@ -440,7 +440,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
            // metaDescription.content = `Explore the complete list of ${entryTitle.textContent.trim()} List year-wise, from the first film to the latest and upcoming releases, along with the total movie count.`;
         }
-        entryTitle.textContent = entryTitle.textContent.replace("Day-Wise", `Day 1 to ${latestDay}`);
+        entryTitle.textContent = entryTitle.textContent.replace("Box Office Collection: Day-Wise", `Day 1 to ${latestDay} Box Office Collection`);
 const latestDay2 = document.getElementById("latest-day2");
 latestDay2.textContent = latestDay2.textContent.replace("Day-Wise", `From Day 1 to ${latestDay}`);
 
@@ -803,5 +803,6 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
