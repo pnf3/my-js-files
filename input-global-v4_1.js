@@ -1,4 +1,345 @@
 const boxOfficerunning = {
+  "Haq Box Office Collection: Day-Wise": {
+    "1": 5.69,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Hindi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 56.8,
+    "advanceBooking": 5.68
+  },
+  "Nuremberg Box Office Collection: Day-Wise": {
+    "1": 0.33,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "English",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 3.2,
+    "advanceBooking": 0.32
+  },
+  "Pagal Kanavu Box Office Collection: Day-Wise": {
+    "1": 0.28,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 2.8,
+    "advanceBooking": 0.28
+  },
+  "Jatadhara Box Office Collection: Day-Wise": {
+    "1": 2.25,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 22.4,
+    "advanceBooking": 2.24
+  },
+  "Jassi Weds Jassi Box Office Collection: Day-Wise": {
+    "1": 1.31,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Hindi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 13.1,
+    "advanceBooking": 1.31
+  },
+  "The Girlfriend Box Office Collection: Day-Wise": {
+    "1": 2.11,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 21.2,
+    "advanceBooking": 2.12
+  },
+  "Rona Box Office Collection: Day-Wise": {
+    "1": 0.36,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 3.4,
+    "advanceBooking": 0.34
+  },
+  "Ranna Baati Box Office Collection: Day-Wise": {
+    "1": 0.36,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Bengali",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 3.6,
+    "advanceBooking": 0.36
+  },
+  "Charkat Box Office Collection: Day-Wise": {
+    "1": 0.21,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Gujarati",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 2.1,
+    "advanceBooking": 0.21
+  },
+  "Hello Knock Knock Kaun Hai? Box Office Collection: Day-Wise": {
+    "1": 0.03,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Hindi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.4,
+    "advanceBooking": 0.04
+  },
+  "Pravas Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Gujarati",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "Aaromaley Box Office Collection: Day-Wise": {
+    "1": 0.65,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 6.6,
+    "advanceBooking": 0.66
+  },
+  "Others (2025) Box Office Collection: Day-Wise": {
+    "1": 1.46,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 14.6,
+    "advanceBooking": 1.46
+  },
+  "Cristina Kathirvelan Box Office Collection: Day-Wise": {
+    "1": 0.1,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 1.1,
+    "advanceBooking": 0.11
+  },
+  "Thanthra Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "MA Previous Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Chattisgarhi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "Happy Khush Ho Gaya Box Office Collection: Day-Wise": {
+    "1": 0.14,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Punjabi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 1.4,
+    "advanceBooking": 0.14
+  },
+  "Abhanga Tukaram Box Office Collection: Day-Wise": {
+    "1": 0.09,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Marathi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.9,
+    "advanceBooking": 0.09
+  },
+  "Kadhipatta Box Office Collection: Day-Wise": {
+    "1": 0.53,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Marathi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 5.3,
+    "advanceBooking": 0.53
+  },
+  "Murder Report Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Korean",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "Love You Muddu Box Office Collection: Day-Wise": {
+    "1": 0.62,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 6.1,
+    "advanceBooking": 0.61
+  },
+  "Innocent Box Office Collection: Day-Wise": {
+    "1": 0.19,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Malayalam",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 1.8,
+    "advanceBooking": 0.18
+  },
+  "I Am God Box Office Collection: Day-Wise": {
+    "1": 1.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 10.1,
+    "advanceBooking": 1.01
+  },
+  "Krishna Leela (2025) Box Office Collection: Day-Wise": {
+    "1": 1.05,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 10.4,
+    "advanceBooking": 1.04
+  },
+  "DDD Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "Nishiddha Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "The Great Pre-Wedding Show Box Office Collection: Day-Wise": {
+    "1": 2.08,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 20.7,
+    "advanceBooking": 2.07
+  },
+  "Premistunnaa Box Office Collection: Day-Wise": {
+    "1": 5.6,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 14.02,
+    "advanceBooking": 5.61
+  },
+  "Tarakeshwari Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "Neyamuru Box Office Collection: Day-Wise": {
+    "1": 0.01,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 0.1,
+    "advanceBooking": 0.01
+  },
+  "Ithiri Neram Box Office Collection: Day-Wise": {
+    "1": 0.22,
+    "releaseDate": 1762453800000,
+    "total": null,
+    "Rating": "Coming Soon",
+    "Language": "Malayalam",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": 2.3,
+    "advanceBooking": 0.23
+  },
   "Aaryan Box Office Collection: Day-Wise": {
     "1": 1.05,
     "2": 2.92,
@@ -11,7 +352,7 @@ const boxOfficerunning = {
     "Rating": 7.9,
     "Language": "Tamil",
     "Verdict": "Average",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 25,
     "advanceBooking": 0.97
   },
@@ -27,7 +368,7 @@ const boxOfficerunning = {
     "Rating": 8.6,
     "Language": "Malayalam",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 1.79
   },
@@ -43,7 +384,7 @@ const boxOfficerunning = {
     "Rating": 9.6,
     "Language": "Assamese",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 4,
     "advanceBooking": 11.2
   },
@@ -59,7 +400,7 @@ const boxOfficerunning = {
     "Rating": 9.6,
     "Language": "Gujarati",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 1,
     "advanceBooking": 0.21
   },
@@ -75,7 +416,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Hindi",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 28,
     "advanceBooking": 2.89
   },
@@ -91,7 +432,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Marathi",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.31
   },
@@ -107,7 +448,7 @@ const boxOfficerunning = {
     "Rating": 9.2,
     "Language": "Tamil",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.01
   },
@@ -123,7 +464,7 @@ const boxOfficerunning = {
     "Rating": 9.3,
     "Language": "Kannada",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 10,
     "advanceBooking": 1.93
   },
@@ -139,7 +480,7 @@ const boxOfficerunning = {
     "Rating": 9.3,
     "Language": "Kannada",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 12.5,
     "advanceBooking": 6.24
   },
@@ -155,7 +496,7 @@ const boxOfficerunning = {
     "Rating": 8.8,
     "Language": "Tamil",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.31
   },
@@ -171,7 +512,7 @@ const boxOfficerunning = {
     "Rating": 9.1,
     "Language": "Tamil",
     "Verdict": "Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.07
   },
@@ -187,7 +528,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.007
   },
@@ -203,7 +544,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 7,
     "advanceBooking": 0.015
   },
@@ -219,7 +560,7 @@ const boxOfficerunning = {
     "Rating": 9,
     "Language": "Punjabi",
     "Verdict": "Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 3.5,
     "advanceBooking": 1.34
   },
@@ -235,7 +576,7 @@ const boxOfficerunning = {
     "Rating": 8.7,
     "Language": "Punjabi",
     "Verdict": "Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 4,
     "advanceBooking": 0.12
   },
@@ -251,7 +592,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Hindi",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.05
   },
@@ -267,7 +608,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Marathi",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.03
   },
@@ -283,7 +624,7 @@ const boxOfficerunning = {
     "Rating": 8.7,
     "Language": "Marathi",
     "Verdict": "Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 4,
     "advanceBooking": 0.52
   },
@@ -299,7 +640,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Kannada",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.21
   },
@@ -315,7 +656,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Telugu",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.56
   },
@@ -331,7 +672,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Bengali",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.01
   },
@@ -347,7 +688,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Bengali",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 2,
     "advanceBooking": 0.01
   },
@@ -363,7 +704,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.03
   },
@@ -379,7 +720,7 @@ const boxOfficerunning = {
     "Rating": 8.1,
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.21
   },
@@ -395,7 +736,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.002
   },
@@ -411,7 +752,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Odia",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.005
   },
@@ -427,7 +768,7 @@ const boxOfficerunning = {
     "Rating": 9.7,
     "Language": "Telugu",
     "Verdict": "Super Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 40,
     "advanceBooking": 24.8
   },
@@ -443,7 +784,7 @@ const boxOfficerunning = {
     "Rating": 8,
     "Language": "Telugu",
     "Verdict": "Hit",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": 90,
     "advanceBooking": 5.4
   },
@@ -461,7 +802,7 @@ const boxOfficerunning = {
     "Rating": 8.8,
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 7,
+    "futureDays": 2,
     "Budget": null,
     "advanceBooking": 0.01
   },
