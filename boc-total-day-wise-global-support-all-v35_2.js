@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (metaDescription) {
         if (entryTitle.textContent.includes("Box Office Collection")) {
-            metaDescription.content = `${movieName} - Track worldwide earnings, daily updates, budget, cast, crew, and total gross up to ${latestDay}. Stay tuned for the latest box office performance and verdict.`;
+            metaDescription.content = `${movieName} - Track worldwide collection, daily updates, rating, budget, and total gross up to ${latestDay}. Stay tuned for the latest box office performance and verdict.`;
               document.title = `${movieName} Day 1 to ${latestDay} Box Office Collection`;
         } else {
            // metaDescription.content = `Explore the complete list of ${entryTitle.textContent.trim()} List year-wise, from the first film to the latest and upcoming releases, along with the total movie count.`;
@@ -803,6 +803,7 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
 
