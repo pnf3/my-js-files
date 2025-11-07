@@ -4,29 +4,28 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!postTitleElement) return; // Exit if title is missing
 
     const postTitle = postTitleElement.textContent.trim();
-    // Normalize title for matching
-function normalizeTitle(title) {
+    function normalizeTitle(title) {
     return title
         .toLowerCase()
-        .replace(/[:\-–|]/g, " ")
-        .replace(/\b(day|days|wise|advance|booking|collection|box|office|total|report|today|tomorrow|releasing|release|movie|film|to|from|1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th|week|show|shows)\b/g, "")
-        .replace(/\d+/g, "")
+        .replace(/[:\-–|]/g, " ") // remove separators
+        .replace(/\b(day|wise|collection|box|office|movie|film|report|:)\b/g, "") // remove common words
         .replace(/\s+/g, " ")
         .trim();
 }
 
-let normalizedPostTitle = normalizeTitle(postTitle);
-let matchedKey = null;
-
-for (let key in dayValues) {
-    let normalizedKey = normalizeTitle(key);
-    if (normalizedPostTitle.includes(normalizedKey) || normalizedKey.includes(normalizedPostTitle)) {
-        matchedKey = key;
-        break;
+function findMovieData(title, dataObj) {
+    const normTitle = normalizeTitle(title);
+    for (let key in dataObj) {
+        const normKey = normalizeTitle(key);
+        if (normTitle === normKey || normTitle.includes(normKey) || normKey.includes(normTitle)) {
+            return dataObj[key];
+        }
     }
+    return null;
 }
 
-const cumulativeValuesObj = matchedKey ? dayValues[matchedKey] : null;
+const cumulativeValuesObj = findMovieData(postTitle, dayValues);
+
  // Now an object
 
    
@@ -826,6 +825,7 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
 
