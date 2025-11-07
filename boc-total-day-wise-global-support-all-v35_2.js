@@ -4,7 +4,30 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!postTitleElement) return; // Exit if title is missing
 
     const postTitle = postTitleElement.textContent.trim();
-    const cumulativeValuesObj = dayValues[postTitle]; // Now an object
+    // Normalize title for matching
+function normalizeTitle(title) {
+    return title
+        .toLowerCase()
+        .replace(/[:\-–|]/g, " ")
+        .replace(/\b(day|days|wise|advance|booking|collection|box|office|total|report|today|tomorrow|releasing|release|movie|film|to|from|1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th|week|show|shows)\b/g, "")
+        .replace(/\d+/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+let normalizedPostTitle = normalizeTitle(postTitle);
+let matchedKey = null;
+
+for (let key in dayValues) {
+    let normalizedKey = normalizeTitle(key);
+    if (normalizedPostTitle.includes(normalizedKey) || normalizedKey.includes(normalizedPostTitle)) {
+        matchedKey = key;
+        break;
+    }
+}
+
+const cumulativeValuesObj = matchedKey ? dayValues[matchedKey] : null;
+ // Now an object
 
    
     if (!cumulativeValuesObj) return; // Exit if no data found
@@ -803,6 +826,7 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
 
