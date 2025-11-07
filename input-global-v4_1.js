@@ -629,7 +629,7 @@ const boxOfficerunning = {
     "Budget": null,
     "advanceBooking": 0.03
   },
-  "Well Done Aai Box Office Collection: Day-Wise": {
+  "Well Done Aai Day-Wise Box Office Collection": {
     "1": 0.02,
     "2": 0.03,
     "3": 0.05,
@@ -2333,3 +2333,4 @@ const boxOfficerunning = {
     "advanceBooking": ""
   }
 }
+
