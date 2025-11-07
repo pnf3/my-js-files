@@ -322,7 +322,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
 
-    const movieName = entryTitle.textContent.replace("Day-Wise Box Office Collection", "").trim() || "Movie";
+  const movieName = entryTitle.textContent
+  .replace(/(Day-Wise Box Office Collection|Box Office Collection: Day-Wise|Day 1 to Day \d+|From Day 1 to Day \d+)/gi, "")
+  .trim() || "Movie";
+
     document.querySelectorAll("[id^='movie-name-']").forEach(el => el.textContent = movieName);
 
     let latestDay = null,
@@ -828,6 +831,7 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
 
