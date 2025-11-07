@@ -322,28 +322,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
 
-   // Extract raw title from <h1> or document.title as fallback
-const entryTitle = document.querySelector("h1.entry-title");
-let rawTitle = entryTitle ? entryTitle.textContent.trim() : document.title.trim();
-
-// 🧠 Universal movie name extractor
-function extractMovieName(title) {
-    return title
-        .replace(/[:\-–|]/g, " ") // remove symbols
-        .replace(/\b(day|days|to|from|wise|advance|booking|box|office|collection|report|total|movie|film|releasing|release|1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th|week|worldwide|domestic|india|gross|update|performance|today|tomorrow|latest|boc)\b/gi, "")
-        .replace(/\bday\s*\d+\b/gi, "") // remove “Day 1”, “Day 2”, etc.
-        .replace(/\d+/g, "") // remove numbers like “2025”
-        .replace(/\s+/g, " ") // collapse extra spaces
-        .trim()
-        .replace(/\b\w/g, char => char.toUpperCase()); // capitalize words
-}
-
-// ✅ Get clean movie name
-const movieName = extractMovieName(rawTitle) || "Movie";
-
-// ✅ Update every element with id starting with “movie-name-”
-document.querySelectorAll("[id^='movie-name-']").forEach(el => el.textContent = movieName);
-
+    const movieName = entryTitle.textContent.replace("Day-Wise Box Office Collection", "").trim() || "Movie";
+    document.querySelectorAll("[id^='movie-name-']").forEach(el => el.textContent = movieName);
 
     let latestDay = null,
         totalSum = 0,
