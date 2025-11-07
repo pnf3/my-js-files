@@ -755,7 +755,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Helper function to clean movie title
     function cleanMovieTitle(title) {
-        return title.replace(" Day-Wise Box Office Collection", "").trim();
+        return title.replace(" Box Office Collection: Day-Wise", "").trim();
     }
 
     // Create a new object with cleaned movie titles for dayValues comparison
@@ -828,6 +828,7 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
 
