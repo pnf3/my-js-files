@@ -421,7 +421,7 @@ const boxOfficerunning = {
     "Rating": 8.6,
     "Language": "Malayalam",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 1.79
   },
@@ -439,7 +439,7 @@ const boxOfficerunning = {
     "Rating": 9.6,
     "Language": "Assamese",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 4,
     "advanceBooking": 11.2
   },
@@ -457,7 +457,7 @@ const boxOfficerunning = {
     "Rating": 9.6,
     "Language": "Gujarati",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 1,
     "advanceBooking": 0.21
   },
@@ -475,7 +475,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Hindi",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 28,
     "advanceBooking": 2.89
   },
@@ -493,7 +493,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Marathi",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.31
   },
@@ -511,7 +511,7 @@ const boxOfficerunning = {
     "Rating": 9.2,
     "Language": "Tamil",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.01
   },
@@ -529,7 +529,7 @@ const boxOfficerunning = {
     "Rating": 9.3,
     "Language": "Kannada",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 10,
     "advanceBooking": 1.93
   },
@@ -547,7 +547,7 @@ const boxOfficerunning = {
     "Rating": 9.3,
     "Language": "Kannada",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 12.5,
     "advanceBooking": 6.24
   },
@@ -565,7 +565,7 @@ const boxOfficerunning = {
     "Rating": 8.8,
     "Language": "Tamil",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.31
   },
@@ -583,7 +583,7 @@ const boxOfficerunning = {
     "Rating": 9.1,
     "Language": "Tamil",
     "Verdict": "Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.07
   },
@@ -601,7 +601,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.007
   },
@@ -619,7 +619,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Tamil",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 7,
     "advanceBooking": 0.015
   },
@@ -637,7 +637,7 @@ const boxOfficerunning = {
     "Rating": 9,
     "Language": "Punjabi",
     "Verdict": "Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 3.5,
     "advanceBooking": 1.34
   },
@@ -655,7 +655,7 @@ const boxOfficerunning = {
     "Rating": 8.7,
     "Language": "Punjabi",
     "Verdict": "Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 4,
     "advanceBooking": 0.12
   },
@@ -673,7 +673,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Hindi",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.05
   },
@@ -691,7 +691,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Marathi",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.03
   },
@@ -709,7 +709,7 @@ const boxOfficerunning = {
     "Rating": 8.7,
     "Language": "Marathi",
     "Verdict": "Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 4,
     "advanceBooking": 0.52
   },
@@ -727,7 +727,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Kannada",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.21
   },
@@ -745,7 +745,7 @@ const boxOfficerunning = {
     "Rating": 8.9,
     "Language": "Telugu",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.56
   },
@@ -763,7 +763,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Bengali",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.01
   },
@@ -781,7 +781,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Bengali",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 2,
     "advanceBooking": 0.01
   },
@@ -799,7 +799,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.03
   },
@@ -817,7 +817,7 @@ const boxOfficerunning = {
     "Rating": 8.1,
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.21
   },
@@ -835,7 +835,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.002
   },
@@ -853,7 +853,7 @@ const boxOfficerunning = {
     "Rating": "",
     "Language": "Odia",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.005
   },
@@ -871,7 +871,7 @@ const boxOfficerunning = {
     "Rating": 9.7,
     "Language": "Telugu",
     "Verdict": "Super Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 40,
     "advanceBooking": 24.8
   },
@@ -889,7 +889,7 @@ const boxOfficerunning = {
     "Rating": 8,
     "Language": "Telugu",
     "Verdict": "Hit",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": 90,
     "advanceBooking": 5.4
   },
@@ -907,7 +907,7 @@ const boxOfficerunning = {
     "Rating": 8.8,
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
-    "futureDays": 2,
+    "futureDays": 0,
     "Budget": null,
     "advanceBooking": 0.01
   },
