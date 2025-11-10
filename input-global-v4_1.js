@@ -2,11 +2,12 @@ const boxOfficerunning = {
   "Haq Box Office Collection: Day-Wise": {
     "1": 0.89,
     "2": 2.92,
+    "3": 6.02,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 8.8,
     "Language": "Hindi",
-    "Verdict": "Coming Soon",
+    "Verdict": "Hit",
     "futureDays": 7,
     "Budget": 5.6,
     "advanceBooking": 0.52
@@ -14,6 +15,7 @@ const boxOfficerunning = {
   "Pagal Kanavu Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -26,9 +28,10 @@ const boxOfficerunning = {
   "Jatadhara Box Office Collection: Day-Wise": {
     "1": 1.05,
     "2": 1.72,
+    "3": 2.92,
     "releaseDate": "2025-11-07",
     "total": null,
-    "Rating": 7.4,
+    "Rating": 7.7,
     "Language": "Telugu",
     "Verdict": "Coming Soon",
     "futureDays": 7,
@@ -37,7 +40,8 @@ const boxOfficerunning = {
   },
   "Jassi Weds Jassi Box Office Collection: Day-Wise": {
     "1": 0.02,
-    "2": 0.34,
+    "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -50,11 +54,12 @@ const boxOfficerunning = {
   "The Girlfriend Box Office Collection: Day-Wise": {
     "1": 3.28,
     "2": 8.6,
+    "3": 13.06,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.2,
     "Language": "Telugu",
-    "Verdict": "Coming Soon",
+    "Verdict": "Hit",
     "futureDays": 7,
     "Budget": 21.2,
     "advanceBooking": 1.91
@@ -62,6 +67,7 @@ const boxOfficerunning = {
   "Rona Box Office Collection: Day-Wise": {
     "1": 0.34,
     "2": 0.53,
+    "3": 0.6,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.1,
@@ -74,6 +80,7 @@ const boxOfficerunning = {
   "Ranna Baati Box Office Collection: Day-Wise": {
     "1": 0.36,
     "2": 0.41,
+    "3": 0.5,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.1,
@@ -86,6 +93,7 @@ const boxOfficerunning = {
   "Charkat Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -96,8 +104,9 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Hello Knock Knock Kaun Hai? Box Office Collection: Day-Wise": {
-    "1": 0.03,
-    "2": 0.05,
+    "1": 0.02,
+    "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.1,
@@ -110,6 +119,7 @@ const boxOfficerunning = {
   "Pravas Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.19,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -122,6 +132,7 @@ const boxOfficerunning = {
   "Aaromaley Box Office Collection: Day-Wise": {
     "1": 0.41,
     "2": 0.88,
+    "3": 1.44,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 8.8,
@@ -134,6 +145,7 @@ const boxOfficerunning = {
   "Others (2025) Box Office Collection: Day-Wise": {
     "1": 0.09,
     "2": 0.69,
+    "3": 1.39,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.7,
@@ -146,6 +158,7 @@ const boxOfficerunning = {
   "Cristina Kathirvelan Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.21,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.3,
@@ -158,6 +171,7 @@ const boxOfficerunning = {
   "Thanthra Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -170,6 +184,7 @@ const boxOfficerunning = {
   "MA Previous Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -182,6 +197,7 @@ const boxOfficerunning = {
   "Happy Khush Ho Gaya Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -194,6 +210,7 @@ const boxOfficerunning = {
   "Abhanga Tukaram Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.17,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -206,6 +223,7 @@ const boxOfficerunning = {
   "Kadhipatta Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -218,6 +236,7 @@ const boxOfficerunning = {
   "Murder Report Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -230,11 +249,12 @@ const boxOfficerunning = {
   "Love You Muddu Box Office Collection: Day-Wise": {
     "1": 1.39,
     "2": 1.63,
+    "3": 1.72,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.6,
     "Language": "Kannada",
-    "Verdict": "Coming Soon",
+    "Verdict": "Super Hit",
     "futureDays": 7,
     "Budget": 6.1,
     "advanceBooking": 0.81
@@ -242,6 +262,7 @@ const boxOfficerunning = {
   "Innocent Box Office Collection: Day-Wise": {
     "1": 0.28,
     "2": 0.69,
+    "3": 1.08,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 8.9,
@@ -254,6 +275,7 @@ const boxOfficerunning = {
   "I Am God Box Office Collection: Day-Wise": {
     "1": 0.53,
     "2": 0.83,
+    "3": 0.84,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.7,
@@ -266,6 +288,7 @@ const boxOfficerunning = {
   "Krishna Leela (2025) Box Office Collection: Day-Wise": {
     "1": 0.31,
     "2": 0.69,
+    "3": 0.74,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.4,
@@ -278,6 +301,7 @@ const boxOfficerunning = {
   "DDD Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -290,6 +314,7 @@ const boxOfficerunning = {
   "Nishiddha Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -302,11 +327,12 @@ const boxOfficerunning = {
   "The Great Pre-Wedding Show Box Office Collection: Day-Wise": {
     "1": 0.33,
     "2": 0.95,
+    "3": 1.89,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.2,
     "Language": "Telugu",
-    "Verdict": "Coming Soon",
+    "Verdict": "Super Hit",
     "futureDays": 7,
     "Budget": 20.7,
     "advanceBooking": 0.19
@@ -314,11 +340,12 @@ const boxOfficerunning = {
   "Premistunnaa Box Office Collection: Day-Wise": {
     "1": 2.41,
     "2": 2.58,
+    "3": 3.61,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.5,
     "Language": "Telugu",
-    "Verdict": "Coming Soon",
+    "Verdict": "Super Hit",
     "futureDays": 7,
     "Budget": 14.02,
     "advanceBooking": 1.4
@@ -326,6 +353,7 @@ const boxOfficerunning = {
   "Tarakeshwari Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -338,6 +366,7 @@ const boxOfficerunning = {
   "Neyamuru Box Office Collection: Day-Wise": {
     "1": 0.02,
     "2": 0.03,
+    "3": 0.05,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": "",
@@ -350,6 +379,7 @@ const boxOfficerunning = {
   "Ithiri Neram Box Office Collection: Day-Wise": {
     "1": 0.19,
     "2": 0.43,
+    "3": 0.65,
     "releaseDate": "2025-11-07",
     "total": null,
     "Rating": 9.5,
