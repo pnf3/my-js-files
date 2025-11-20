@@ -7,7 +7,7 @@ const boxOfficerunning = {
     "Language": "Hindi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": 16,
     "advanceBooking": 6.6
   },
   "120 Bahadur Box Office Collection: Day-Wise": {
@@ -18,7 +18,7 @@ const boxOfficerunning = {
     "Language": "Hindi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": 100,
     "advanceBooking": 2.3
   },
   "Premante Box Office Collection: Day-Wise": {
@@ -29,7 +29,7 @@ const boxOfficerunning = {
     "Language": "Telugu",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": 11,
     "advanceBooking": 0.9
   },
   "Maarutha Box Office Collection: Day-Wise": {
@@ -51,7 +51,7 @@ const boxOfficerunning = {
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
     "futureDays": 7,
-    "Budget": "",
+    "Budget": 10,
     "advanceBooking": 0.2
   },
   "Theeyavar Kulai Nadunga Box Office Collection: Day-Wise": {
