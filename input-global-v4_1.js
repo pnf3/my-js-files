@@ -1,160 +1,127 @@
 const boxOfficerunning = {
   "Mastiii 4 Box Office Collection: Day-Wise": {
-    "1": 7.56,
+    "1": 1.03,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 5.1,
     "Language": "Hindi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 16,
-    "advanceBooking": 6.6
+    "advanceBooking": 0.6
   },
   "120 Bahadur Box Office Collection: Day-Wise": {
-    "1": 2.58,
+    "1": 0.86,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 8.8,
     "Language": "Hindi",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 100,
-    "advanceBooking": 2.3
+    "advanceBooking": 0.5
   },
   "Premante Box Office Collection: Day-Wise": {
-    "1": 1.03,
+    "1": 0.34,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 9.5,
     "Language": "Telugu",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 11,
-    "advanceBooking": 0.9
+    "advanceBooking": 0.2
   },
   "Maarutha Box Office Collection: Day-Wise": {
-    "1": 0.52,
+    "1": 0.09,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.4
+    "advanceBooking": 0.05
   },
   "Vilaayath Budha Box Office Collection: Day-Wise": {
-    "1": 0.17,
+    "1": 2.58,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 7.2,
     "Language": "Malayalam",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": 10,
-    "advanceBooking": 0.2
+    "advanceBooking": 1.5
   },
   "Theeyavar Kulai Nadunga Box Office Collection: Day-Wise": {
-    "1": 0.69,
+    "1": 0.09,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 8.9,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.7
+    "advanceBooking": 0.05
   },
   "The Task Box Office Collection: Day-Wise": {
-    "1": 0.14,
+    "1": 0.07,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 7.3,
     "Language": "Kannada",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.1
-  },
-  "Mask (2025) Box Office Collection: Day-Wise": {
-    "1": 0.52,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Tamil",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.4
-  },
-  "Eko Box Office Collection: Day-Wise": {
-    "1": 0.69,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Malayalam",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.6
-  },
-  "Congratulations Brother Box Office Collection: Day-Wise": {
-    "1": 0.17,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Kannada",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.2
-  },
-  "Radheyaa Box Office Collection: Day-Wise": {
-    "1": 0.69,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Kannada",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.7
-  },
-  "Paanch Minar Box Office Collection: Day-Wise": {
-    "1": 1.55,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Telugu",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 1.4
-  },
-  "Itlu Me Yedava Box Office Collection: Day-Wise": {
-    "1": 0.69,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Telugu",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.7
-  },
-  "The Face of the Faceless Box Office Collection: Day-Wise": {
-    "1": 0.03,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.04
   },
-  "Mufti Police Box Office Collection: Day-Wise": {
-    "1": 0.69,
+  "Mask (2025) Box Office Collection: Day-Wise": {
+    "1": 0.86,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 8.7,
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.5
+  },
+  "Eko Box Office Collection: Day-Wise": {
+    "1": 2.06,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 9.7,
+    "Language": "Malayalam",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 1.2
+  },
+  "Congratulations Brother Box Office Collection: Day-Wise": {
+    "1": 0.52,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 9.2,
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.3
+  },
+  "Radheyaa Box Office Collection: Day-Wise": {
+    "1": 0.02,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": "",
+    "Language": "Kannada",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.01
+  },
+  "Paanch Minar Box Office Collection: Day-Wise": {
+    "1": 0.02,
     "releaseDate": "2025-11-21",
     "total": null,
     "Rating": "",
@@ -162,7 +129,40 @@ const boxOfficerunning = {
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.7
+    "advanceBooking": 0.01
+  },
+  "Itlu Me Yedava Box Office Collection: Day-Wise": {
+    "1": 0.05,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 9.1,
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.03
+  },
+  "The Face of the Faceless Box Office Collection: Day-Wise": {
+    "1": 0.02,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": "",
+    "Language": "Tamil",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.01
+  },
+  "Mufti Police Box Office Collection: Day-Wise": {
+    "1": 0.17,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 9.1,
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.1
   },
   "Lokkhikantopur Local Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -176,7 +176,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Full Stop Box Office Collection: Day-Wise": {
-    "1": 0.07,
+    "1": 0.02,
     "releaseDate": "2025-11-21",
     "total": null,
     "Rating": "",
@@ -187,15 +187,15 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Middle Class Box Office Collection: Day-Wise": {
-    "1": 0.17,
+    "1": 0.86,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 9.6,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.2
+    "advanceBooking": 0.5
   },
   "Raja Veetu Kannukutty Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -209,7 +209,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Iravin Vizhigal Box Office Collection: Day-Wise": {
-    "1": 0.07,
+    "1": 0.02,
     "releaseDate": "2025-11-21",
     "total": null,
     "Rating": "",
@@ -220,92 +220,92 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Yellow (2025) Box Office Collection: Day-Wise": {
-    "1": 0.34,
+    "1": 0.05,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Tamil",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.4
+    "advanceBooking": 0.03
   },
   "Asambhav Box Office Collection: Day-Wise": {
-    "1": 0.34,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Marathi",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.4
-  },
-  "Uut: Bhavanancha Udrek Box Office Collection: Day-Wise": {
-    "1": 0.69,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Marathi",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.6
-  },
-  "Smart Sunbai Box Office Collection: Day-Wise": {
-    "1": 0.34,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Marathi",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.3
-  },
-  "Last Stop Khanda Box Office Collection: Day-Wise": {
     "1": 0.17,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Marathi",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.2
-  },
-  "12A Railway Colony Box Office Collection: Day-Wise": {
-    "1": 1.2,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Telugu",
-    "Verdict": "Coming Soon",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 1.1
-  },
-  "Raju Weds Rambai Box Office Collection: Day-Wise": {
-    "1": 0.14,
-    "releaseDate": "2025-11-21",
-    "total": null,
-    "Rating": "",
-    "Language": "Telugu",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.1
   },
+  "Uut: Bhavanancha Udrek Box Office Collection: Day-Wise": {
+    "1": 0.02,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": "",
+    "Language": "Marathi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.01
+  },
+  "Smart Sunbai Box Office Collection: Day-Wise": {
+    "1": 0.05,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 9.1,
+    "Language": "Marathi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.03
+  },
+  "Last Stop Khanda Box Office Collection: Day-Wise": {
+    "1": 0.05,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 9.1,
+    "Language": "Marathi",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.03
+  },
+  "12A Railway Colony Box Office Collection: Day-Wise": {
+    "1": 0.52,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 8.3,
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.3
+  },
+  "Raju Weds Rambai Box Office Collection: Day-Wise": {
+    "1": 2.75,
+    "releaseDate": "2025-11-21",
+    "total": null,
+    "Rating": 9.2,
+    "Language": "Telugu",
+    "Verdict": "Coming Soon",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 1.6
+  },
   "Full Meals Box Office Collection: Day-Wise": {
     "1": 0.34,
     "releaseDate": "2025-11-21",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Kannada",
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.4
+    "advanceBooking": 0.2
   },
   "Kalivi Vanam Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -338,7 +338,7 @@ const boxOfficerunning = {
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.02
+    "advanceBooking": 0.01
   },
   "Aavani Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -360,7 +360,7 @@ const boxOfficerunning = {
     "Verdict": "Coming Soon",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.06
+    "advanceBooking": 0.01
   },
   "Haq Box Office Collection: Day-Wise": {
     "1": 0.89,
