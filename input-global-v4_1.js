@@ -414,7 +414,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.5,
     "Language": "Kannada",
-    "Verdict": "Coming Soon",
+    "Verdict": "Super Hit",
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.2
