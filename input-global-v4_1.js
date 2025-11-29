@@ -1,36 +1,36 @@
 const boxOfficerunning = {
   "Tere Ishk Mein Box Office Collection: Day-Wise": {
-    "1": 12.81,
+    "1": 11.52,
     "releaseDate": "2025-11-28",
     "total": null,
-    "Rating": "",
+    "Rating": 8.9,
     "Language": "Hindi / Tamil",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": 80,
-    "advanceBooking": 14.9
+    "advanceBooking": 6.7
   },
   "Paatashaala Box Office Collection: Day-Wise": {
-    "1": 0.03,
+    "1": 0.17,
     "releaseDate": "2025-11-28",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Kannada",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.04
+    "advanceBooking": 0.1
   },
   "Flirt (Kannada) Box Office Collection: Day-Wise": {
-    "1": 0.55,
+    "1": 0.09,
     "releaseDate": "2025-11-28",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Kannada",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.64
+    "advanceBooking": 0.05
   },
   "Gangs of Raipur Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -41,21 +41,21 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.02
+    "advanceBooking": 0.01
   },
   "Gustaakh Ishq Box Office Collection: Day-Wise": {
-    "1": 0.19,
+    "1": 0.05,
     "releaseDate": "2025-11-28",
     "total": null,
-    "Rating": "",
+    "Rating": 8.1,
     "Language": "Hindi",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.22
+    "advanceBooking": 0.03
   },
   "Me No Pause Me Play Box Office Collection: Day-Wise": {
-    "1": 2.7,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -63,7 +63,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 3.13
+    "advanceBooking": 0.01
   },
   "Taath Kana Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -88,18 +88,18 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "GST (Ghosts in Trouble) Box Office Collection: Day-Wise": {
-    "1": 1.22,
+    "1": 0.1,
     "releaseDate": "2025-11-28",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Kannada",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 1.41
+    "advanceBooking": 0.65
   },
   "Nayi Idae Yecharikae Box Office Collection: Day-Wise": {
-    "1": 0.45,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -107,10 +107,10 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.51
+    "advanceBooking": 0.01
   },
   "IPL: Indian Penal Law Box Office Collection: Day-Wise": {
-    "1": 2.01,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -118,21 +118,21 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 2.33
+    "advanceBooking": 0.01
   },
   "Revolver Rita Box Office Collection: Day-Wise": {
-    "1": 0.1,
+    "1": 0.31,
     "releaseDate": "2025-11-28",
     "total": null,
-    "Rating": "",
+    "Rating": 8.1,
     "Language": "Tamil",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.12
+    "advanceBooking": 0.18
   },
   "Ondimuniyum Nallapadanum Box Office Collection: Day-Wise": {
-    "1": 0.17,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -140,10 +140,10 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.2
+    "advanceBooking": 0.01
   },
   "Friday (2025) Box Office Collection: Day-Wise": {
-    "1": 0.19,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -151,10 +151,10 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.22
+    "advanceBooking": 0.01
   },
   "BP 180 Box Office Collection: Day-Wise": {
-    "1": 0.67,
+    "1": 0.09,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -162,10 +162,10 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.78
+    "advanceBooking": 0.05
   },
   "Vellakuthira Box Office Collection: Day-Wise": {
-    "1": 0.1,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -173,10 +173,10 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.11
+    "advanceBooking": 0.01
   },
   "Yamla Box Office Collection: Day-Wise": {
-    "1": 0.07,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -184,7 +184,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.08
+    "advanceBooking": 0.01
   },
   "Atmaharaam Live Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -198,7 +198,7 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Fakireeyat Box Office Collection: Day-Wise": {
-    "1": 0.86,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -206,10 +206,10 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 1
+    "advanceBooking": 0.01
   },
   "Kaisi Ye Paheli Box Office Collection: Day-Wise": {
-    "1": 0.05,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -217,7 +217,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.06
+    "advanceBooking": 0.01
   },
   "Asa Mee Ashi Mee Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -253,18 +253,18 @@ const boxOfficerunning = {
     "advanceBooking": 0.01
   },
   "Operation London Cafe Box Office Collection: Day-Wise": {
-    "1": 0.45,
+    "1": 0.07,
     "releaseDate": "2025-11-28",
     "total": null,
-    "Rating": "",
+    "Rating": 9.1,
     "Language": "Kannada",
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.52
+    "advanceBooking": 0.04
   },
   "Bicchugatthiya Bantana Ballirena Box Office Collection: Day-Wise": {
-    "1": 0.12,
+    "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -272,20 +272,9 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.14
+    "advanceBooking": 0.01
   },
   "Andhaka Box Office Collection: Day-Wise": {
-    "1": 0.03,
-    "releaseDate": "2025-11-28",
-    "total": null,
-    "Rating": "",
-    "Language": "Telugu",
-    "Verdict": "null",
-    "futureDays": 7,
-    "Budget": "",
-    "advanceBooking": 0.03
-  },
-  "Janatha Bar Box Office Collection: Day-Wise": {
     "1": 0.02,
     "releaseDate": "2025-11-28",
     "total": null,
@@ -295,6 +284,17 @@ const boxOfficerunning = {
     "futureDays": 7,
     "Budget": "",
     "advanceBooking": 0.01
+  },
+  "Janatha Bar Box Office Collection: Day-Wise": {
+    "1": 0.12,
+    "releaseDate": "2025-11-28",
+    "total": null,
+    "Rating": "",
+    "Language": "Telugu",
+    "Verdict": "null",
+    "futureDays": 7,
+    "Budget": "",
+    "advanceBooking": 0.07
   },
   "Deri Hoye Geche Box Office Collection: Day-Wise": {
     "1": 0.02,
@@ -316,10 +316,10 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.02
+    "advanceBooking": 0.01
   },
   "Victoria Box Office Collection: Day-Wise": {
-    "1": 0.1,
+    "1": 0.09,
     "releaseDate": "2025-11-28",
     "total": null,
     "Rating": "",
@@ -327,7 +327,7 @@ const boxOfficerunning = {
     "Verdict": "null",
     "futureDays": 7,
     "Budget": "",
-    "advanceBooking": 0.12
+    "advanceBooking": 0.05
   },
   "Ayyappanum Vapuranum Box Office Collection: Day-Wise": {
     "1": 0.02,
