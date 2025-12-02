@@ -263,7 +263,7 @@ function normalizeTitle(title) {
     return title
         .toLowerCase()
         .replace(/[:\-–|]/g, " ") // remove separators
-        .replace(/\b(day|wise|advance|booking|collection|box|office|1st|2nd|3rd|week|total|report|today|tomorrow|releasing|from|to|by|show|release|movie|film)\b/g, "")
+        .replace(/\b(day|wise|advance|booking|collection|updated|daily|box|office|1st|2nd|3rd|week|total|report|today|tomorrow|releasing|from|to|by|show|release|movie|film)\b/g, "")
          .replace(/\d+/g, "") // remove numbers like "1", "2", "2025"
 		.replace(/\s+/g, " ") // collapse spaces
         .trim();
@@ -320,3 +320,4 @@ var movieData = matchedKey ? window.dayValues[matchedKey] : null;
         }
 
     });
+
