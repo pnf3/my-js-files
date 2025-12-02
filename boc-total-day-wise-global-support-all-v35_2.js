@@ -9,7 +9,7 @@ function normalizeTitle(title) {
     return title
         .toLowerCase()
         .replace(/[:\-–|]/g, " ")
-        .replace(/\b(day|days|wise|advance|booking|updated|daily|collection|box|office|total|report|today|tomorrow|releasing|release|movie|film|to|from|1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th|week|show|shows)\b/g, "")
+        .replace(/\b(day|days|wise|advance|booking|updated|collection|box|office|total|report|today|tomorrow|releasing|release|movie|film|to|from|1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th|week|show|shows)\b/g, "")
         .replace(/\d+/g, "")
         .replace(/\s+/g, " ")
         .trim();
@@ -831,6 +831,7 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
 
