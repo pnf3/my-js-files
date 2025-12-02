@@ -323,8 +323,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!entryTitle || rows.length === 0 || !releaseDateElement || !chartCanvas) return;
 
   const movieName = entryTitle.textContent
-  .replace(/(Box Office Collection|Updated Daily|Day-Wise Box Office Collection|Box Office Collection: Day-Wise|Day \d+ Box Office Collection|Day 1 to Day \d+|From Day 1 to Day \d+)/gi, "")
+  .replace(/\|/g, "") // Remove all pipe separators
+  .replace(/(Box Office Collection Report|Box Office Collection|Updated Daily|Day[- ]?Wise Box Office Collection|Box Office Collection:? Day[- ]?Wise|Day \d+ Box Office Collection|Day 1 to Day \d+|From Day 1 to Day \d+)/gi, "")
   .trim() || "Movie";
+
 
     document.querySelectorAll("[id^='movie-name-']").forEach(el => el.textContent = movieName);
 
@@ -831,6 +833,7 @@ row.appendChild(releaseDateCell); // Append at the end
     tableBody.innerHTML = ""; // Clear existing rows
     rowsData.forEach(({ row }) => tableBody.appendChild(row));
 }); 
+
 
 
 
