@@ -8,7 +8,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 8.7,
     "Language": "Hindi / Tamil",
-    "Verdict": "Coming Soon",
+    "Verdict": "Hit",
     "futureDays": 1,
     "Budget": 80,
     "advanceBooking": 6.7
@@ -22,7 +22,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.1,
     "Language": "Kannada",
-    "Verdict": "Coming Soon",
+    "Verdict": "Hit",
     "futureDays": 1,
     "Budget": "",
     "advanceBooking": 0.1
@@ -36,7 +36,7 @@ const boxOfficerunning = {
     "total": null,
     "Rating": 9.1,
     "Language": "Kannada",
-    "Verdict": "Coming Soon",
+    "Verdict": "Hit",
     "futureDays": 1,
     "Budget": "",
     "advanceBooking": 0.05
