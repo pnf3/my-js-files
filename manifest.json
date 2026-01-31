@@ -1,19 +1,18 @@
 {
-  "name": "News Focus 360",
+  "name": "Finance By NF360",
   "short_name": "NF360",
-  "description": "Get the latest Movies List and Box Office Collection updates. Stay informed about day-wise earnings, worldwide gross, and industry trends.",
-  "start_url": "https://www.newsfocus360.com/",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#808080",
-  "theme_color": "#1a73e8",  // You can change this to match your brand color
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
   "icons": [
     {
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfTGtwGBepVXALZow6Sfixn6SCrEd8aCmLl9LPK_G52XSxVSJGmguekSMi-KYow8SJpprpF5SXn21C9b1cV3zv3WqR6-Ly_g_6GEDxZ0VOII6FqqU5twavo5LBGmHzT7XJxJf9aC314i9yBMZ8viV2DjskbLGGkAjwbH91hcX6TRcef1UReNC_BczGJ4-w/s320/360%20image.png",
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBk-OnXNV2nt3bTGx_lHuDcEdaaXlxl0Si0PA-h_y2pCJ3f5dFwvIz5Y053At2CsmUqkmmqUCYUdUcyX8zcIvoLqkBrD386rWEbt3a7NLjDQtgclvGidMOFO1sF0QtemfpboJY69Yt0GWIhykBUUSKbf4QU0y9w7AK48E919aDyEkw92cg2X2jw3iJ9Tq1/s1600/3%20%282%29.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfTGtwGBepVXALZow6Sfixn6SCrEd8aCmLl9LPK_G52XSxVSJGmguekSMi-KYow8SJpprpF5SXn21C9b1cV3zv3WqR6-Ly_g_6GEDxZ0VOII6FqqU5twavo5LBGmHzT7XJxJf9aC314i9yBMZ8viV2DjskbLGGkAjwbH91hcX6TRcef1UReNC_BczGJ4-w/s320/360%20image.png",
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgt-9MrnW4lQGAV_aZmghA7VxbDMVK2ebgVoofyH_8a2ky3dXx8XyGAwI3j7XtydnIdcSsxMm1Lz5_PBmW1w0wmQaESg4C6uLtJDjqIsFPYzK0U0_tO6GKYfgqMu334cifjELmdY4BFc95XdgKc2htEEdk9AJ4tlUWdoetA9UJMrcC4dQOxvtfqsX_lMlty/s1600/3%20%281%29.png",
       "sizes": "512x512",
       "type": "image/png"
     }
