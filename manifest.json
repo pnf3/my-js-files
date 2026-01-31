@@ -1,7 +1,7 @@
 {
   "name": "Finance By NF360",
   "short_name": "NF360",
-  "start_url": "/",
+  "start_url": "/p/finance-calculators.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
